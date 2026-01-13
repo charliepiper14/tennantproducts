@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennant Products | Q1 2026 Growth Strategy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f14;
+            --bg-secondary: #111820;
+            --bg-card: #162642;
+            --bg-card-hover: #1e3a5f;
+            --border: rgba(255,255,255,0.08);
+            --accent-green: #10b981;
+            --accent-green-dim: rgba(16, 185, 129, 0.15);
+            --accent-coral: #cc5b27;
+            --accent-coral-dim: rgba(204, 91, 39, 0.15);
+            --accent-blue: #3b82f6;
+            --accent-blue-dim: rgba(59, 130, 246, 0.15);
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 48px 64px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .slide-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-coral);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        h2 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            color: var(--text-primary);
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        
+        p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            max-width: 720px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+        
+        /* Cover Slide */
+        .cover {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 30%, rgba(204, 91, 39, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+        }
+        
+        .cover h1 {
+            font-size: 56px;
+        }
+        
+        .cover .meta {
+            margin-top: 48px;
+            display: flex;
+            gap: 48px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        
+        .cover .meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .logo-badge {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent-coral) 0%, var(--accent-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--bg-primary);
+            margin-bottom: 32px;
+        }
+        
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            margin: 32px 0;
+        }
+        
+        .metrics-grid.four-col {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .metrics-grid.three-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            position: relative;
+        }
+        
+        .metric-card.green {
+            border-top: 3px solid var(--accent-green);
+        }
+        
+        .metric-card.coral {
+            border-top: 3px solid var(--accent-coral);
+        }
+        
+        .metric-card.blue {
+            border-top: 3px solid var(--accent-blue);
+        }
+        
+        .metric-card.red {
+            border-top: 3px solid var(--accent-red);
+        }
+        
+        .metric-card.orange {
+            border-top: 3px solid var(--accent-orange);
+        }
+        
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .metric-value {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+        }
+        
+        .metric-value.large {
+            font-size: 40px;
+        }
+        
+        .metric-change {
+            font-size: 12px;
+            margin-top: 8px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .metric-change.up { color: var(--accent-green); }
+        .metric-change.down { color: var(--accent-red); }
+        .metric-change.neutral { color: var(--text-muted); }
+        
+        /* Data Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        
+        .data-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .data-table tr:hover td {
+            background: var(--bg-card-hover);
+        }
+        
+        .data-table .highlight {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .data-table .green { color: var(--accent-green); font-weight: 600; }
+        .data-table .red { color: var(--accent-red); font-weight: 600; }
+        .data-table .coral { color: var(--accent-coral); font-weight: 600; }
+        .data-table .blue { color: var(--accent-blue); font-weight: 600; }
+        .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+        
+        /* Two Column Layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        /* Insight Box */
+        .insight-box {
+            background: var(--bg-card);
+            border-left: 3px solid var(--accent-green);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        .insight-box.coral {
+            border-left-color: var(--accent-coral);
+        }
+        
+        .insight-box.blue {
+            border-left-color: var(--accent-blue);
+        }
+        
+        .insight-box h4 {
+            color: var(--accent-green);
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .insight-box.coral h4 {
+            color: var(--accent-coral);
+        }
+        
+        .insight-box.blue h4 {
+            color: var(--accent-blue);
+        }
+        
+        .insight-box p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin: 12px 0;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        
+        .progress-label .value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent-coral) 0%, var(--accent-green) 100%);
+        }
+        
+        .progress-fill.green { background: var(--accent-green); }
+        .progress-fill.coral { background: var(--accent-coral); }
+        .progress-fill.blue { background: var(--accent-blue); }
+        .progress-fill.purple { background: var(--accent-purple); }
+        .progress-fill.red { background: var(--accent-red); }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+            margin: 24px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 4px;
+            bottom: 4px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-coral), var(--accent-green));
+            border-radius: 1px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-coral);
+            border: 2px solid var(--bg-primary);
+        }
+        
+        .timeline-month {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-green);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--accent-coral-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--accent-coral);
+        }
+        
+        /* Creative Concepts */
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .concept-card::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -30%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, var(--accent-coral-dim) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .concept-number {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: rgba(204, 91, 39, 0.15);
+            position: absolute;
+            top: 16px;
+            right: 20px;
+        }
+        
+        .concept-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            color: var(--text-primary);
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--accent-coral-dim);
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--accent-coral);
+            margin-right: 6px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .tag.green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.blue { background: var(--accent-blue-dim); color: var(--accent-blue); }
+        .tag.red { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.orange { background: rgba(245, 158, 11, 0.15); color: var(--accent-orange); }
+        
+        /* List Styles */
+        .check-list {
+            list-style: none;
+            margin: 16px 0;
+        }
+        
+        .check-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        
+        .check-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--accent-green);
+        }
+        
+        .check-list li.red::before {
+            background: var(--accent-red);
+        }
+        
+        .check-list li.coral::before {
+            background: var(--accent-coral);
+        }
+        
+        /* Comparison Box */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 24px;
+            align-items: center;
+            margin: 32px 0;
+        }
+        
+        .comparison-box {
+            padding: 28px;
+            border-radius: 12px;
+            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+        
+        .comparison-box.old {
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+        
+        .comparison-box.new {
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+        
+        .comparison-vs {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-align: center;
+        }
+        
+        /* CAC LTV Visual */
+        .cac-ltv-visual {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-green);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .cac-ltv-ratio {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--accent-green);
+            line-height: 1;
+        }
+        
+        /* Footer */
+        .slide-footer {
+            margin-top: auto;
+            padding-top: 32px;
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .slide-footer .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--accent-coral);
+        }
+        
+        /* Print Styles */
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SLIDE 1: Cover -->
+    <section class="slide cover">
+        <div class="logo-badge">TP</div>
+        <div class="slide-tag">Q1 2026 Growth Strategy</div>
+        <h1>Tennant Products</h1>
+        <p class="subtitle">Paid Media Performance Review & Strategic Roadmap</p>
+        <div class="meta">
+            <span>January 2026</span>
+            <span>Target: 3.5-4.0x ROAS</span>
+            <span>Q1 Budget: $40K/mo</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 2: Executive Summary -->
+    <section class="slide">
+        <span class="slide-number">02 / 11</span>
+        <div class="slide-tag">Executive Summary</div>
+        <h2>Q4 2025 Performance Overview</h2>
+        
+        <div class="metrics-grid">
+            <div class="metric-card green">
+                <div class="metric-label">Q4 Shopify Revenue</div>
+                <div class="metric-value large">$601,662</div>
+                <div class="metric-change neutral">2,459 orders</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-label">Average Order Value</div>
+                <div class="metric-value">$244.68</div>
+                <div class="metric-change up">+8% Oct to Dec</div>
+            </div>
+            <div class="metric-card blue">
+                <div class="metric-label">Customer LTV</div>
+                <div class="metric-value">$901</div>
+                <div class="metric-change neutral">Normal customers</div>
+            </div>
+            <div class="metric-card coral">
+                <div class="metric-label">Blended CAC</div>
+                <div class="metric-value">$50</div>
+                <div class="metric-change up">Below max allowable</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-label">CAC:LTV Ratio</div>
+                <div class="metric-value">1:18</div>
+                <div class="metric-change up">Exceptional</div>
+            </div>
+        </div>
+        
+        <div class="two-col">
+            <div>
+                <h3>What Delivered Results</h3>
+                <ul class="check-list">
+                    <li>Meta Retargeting: 7.35x ROAS (7-day), up 53% WoW</li>
+                    <li>Google Branded Search: 5.93x ROAS, 30.8% CTR</li>
+                    <li>Brain - Copy Creative: 5.41x ROAS ($1,054 spend)</li>
+                    <li>Google DSA Campaign: $16 CPA (exceptional efficiency)</li>
+                    <li>Probiotic Campaign: 3.99x ROAS ($5,668 spend)</li>
+                </ul>
+            </div>
+            <div>
+                <h3>What Needs Attention</h3>
+                <ul class="check-list">
+                    <li class="coral">Probiotic inventory: 281 units expiring Feb</li>
+                    <li class="coral">Brain Food+ inventory: April expiration window</li>
+                    <li class="coral">Brain Food+ campaign: Awaiting creative assets</li>
+                    <li class="coral">Q4 Google branded conversion value: -71% vs Q3</li>
+                    <li class="coral">Omnipresent Advt+ underperforming at 2.55x ROAS</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="insight-box">
+            <h4>Key Finding</h4>
+            <p>Strong retention engine with 80.6% returning customer rate in Q4. Unit economics are exceptional with 1:18 CAC:LTV ratio. The business can afford aggressive acquisition while maintaining profitability. Priority is launching Brain Food+ campaign and clearing expiring inventory.</p>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>02 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: Q4 Revenue Performance -->
+    <section class="slide">
+        <span class="slide-number">03 / 11</span>
+        <div class="slide-tag">Revenue Analysis</div>
+        <h2>Q4 2025 Shopify Performance</h2>
+        
+        <div class="metrics-grid three-col">
+            <div class="metric-card green">
+                <div class="metric-label">October 2025</div>
+                <div class="metric-value">$223,633</div>
+                <div class="metric-change neutral">944 orders | $237 AOV</div>
+            </div>
+            <div class="metric-card coral">
+                <div class="metric-label">November 2025</div>
+                <div class="metric-value">$187,612</div>
+                <div class="metric-change neutral">772 orders | $243 AOV</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-label">December 2025</div>
+                <div class="metric-value">$190,417</div>
+                <div class="metric-change up">743 orders | $256 AOV</div>
+            </div>
+        </div>
+        
+        <div class="two-col">
+            <div>
+                <h3>Customer Acquisition Metrics</h3>
+                <table class="data-table">
+                    <tr>
+                        <td>New Customers (Q4)</td>
+                        <td class="highlight">441</td>
+                    </tr>
+                    <tr>
+                        <td>Unique Buyers (Q4)</td>
+                        <td class="highlight">1,649</td>
+                    </tr>
+                    <tr>
+                        <td>Returning Customer Rate</td>
+                        <td class="green">80.6%</td>
+                    </tr>
+                    <tr>
+                        <td>Total Orders (Q4)</td>
+                        <td class="highlight">2,459</td>
+                    </tr>
+                    <tr>
+                        <td>Average Order Value</td>
+                        <td class="green">$244.68</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3>AOV Trend Through Q4</h3>
+                <div class="progress-container" style="margin-top: 24px;">
+                    <div class="progress-label">
+                        <span>October</span>
+                        <span class="value">$236.90</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill coral" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>November</span>
+                        <span class="value">$243.02</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill coral" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>December</span>
+                        <span class="value" style="color: var(--accent-green);">$256.28</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill green" style="width: 100%"></div>
+                    </div>
+                </div>
+                
+                <div class="insight-box coral" style="margin-top: 24px;">
+                    <h4>AOV Growth</h4>
+                    <p>8% improvement from October to December. Higher-value Restore line purchases and bundle strategies driving AOV gains.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>03 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: CAC LTV Analysis -->
+    <section class="slide">
+        <span class="slide-number">04 / 11</span>
+        <div class="slide-tag">Unit Economics</div>
+        <h2>CAC to LTV Analysis</h2>
+        
+        <div class="comparison">
+            <div class="comparison-box old">
+                <h4 style="color: var(--accent-red); margin-bottom: 12px;">Industry Standard</h4>
+                <div class="metric-value" style="font-size: 36px;">3:1</div>
+                <p style="font-size: 13px; margin-top: 12px; color: var(--text-muted);">Typical CAC:LTV benchmark</p>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Considered "healthy"</p>
+            </div>
+            <div class="comparison-vs">vs</div>
+            <div class="comparison-box new">
+                <h4 style="color: var(--accent-green); margin-bottom: 12px;">Tennant Products</h4>
+                <div class="metric-value" style="font-size: 36px;">18:1</div>
+                <p style="font-size: 13px; margin-top: 12px; color: var(--text-muted);">$50 CAC → $901 LTV</p>
+                <p style="font-size: 13px; color: var(--accent-green); margin-top: 8px;">6x better than industry</p>
+            </div>
+        </div>
+        
+        <div class="two-col">
+            <div class="card">
+                <h3>Customer Acquisition Cost (Q4)</h3>
+                <table class="data-table" style="margin: 16px 0 0 0;">
+                    <tr>
+                        <td>Meta Ads CAC</td>
+                        <td class="blue">$44</td>
+                    </tr>
+                    <tr>
+                        <td>Google Ads CAC</td>
+                        <td class="orange">$61</td>
+                    </tr>
+                    <tr>
+                        <td>Blended CAC</td>
+                        <td class="green">$50</td>
+                    </tr>
+                    <tr>
+                        <td>Meta Customers (Q4)</td>
+                        <td class="highlight">225</td>
+                    </tr>
+                    <tr>
+                        <td>Google Customers (Q4)</td>
+                        <td class="highlight">114</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card">
+                <h3>Lifetime Value Segments</h3>
+                <table class="data-table" style="margin: 16px 0 0 0;">
+                    <tr>
+                        <td>One-Time Buyers (53.4%)</td>
+                        <td class="highlight">$245</td>
+                    </tr>
+                    <tr>
+                        <td>Repeat Buyers (46.6%)</td>
+                        <td class="green">$2,784</td>
+                    </tr>
+                    <tr>
+                        <td>Blended LTV (normal)</td>
+                        <td class="green">$901</td>
+                    </tr>
+                    <tr>
+                        <td>Avg Orders per Customer</td>
+                        <td class="highlight">3.77</td>
+                    </tr>
+                    <tr>
+                        <td>High-Value Customers ($1K+)</td>
+                        <td class="highlight">18.7%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="insight-box">
+            <h4>Strategic Implication</h4>
+            <p>Exceptional unit economics support aggressive scaling. Every $50 invested in acquisition returns $901+ over customer lifetime. The 46.6% repeat buyer rate and $2,784 repeat customer LTV creates a powerful compounding effect. Current CAC of $50 is well below the $300+ max allowable CAC based on LTV.</p>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>04 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: Meta Ads Performance -->
+    <section class="slide">
+        <span class="slide-number">05 / 11</span>
+        <div class="slide-tag">Platform Performance</div>
+        <h2>Meta Ads Q4 Results</h2>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Spend</th>
+                    <th>Revenue</th>
+                    <th>ROAS</th>
+                    <th>Purchases</th>
+                    <th>CPA</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">SS - Probiotic Campaign</td>
+                    <td>$5,668</td>
+                    <td class="green">$22,614</td>
+                    <td class="green">3.99x</td>
+                    <td>81</td>
+                    <td>$70</td>
+                    <td><span class="tag green">Top Performer</span></td>
+                </tr>
+                <tr>
+                    <td class="highlight">SS - Retargeting</td>
+                    <td>$248</td>
+                    <td class="green">$1,824</td>
+                    <td class="green">7.35x</td>
+                    <td>12</td>
+                    <td>$21</td>
+                    <td><span class="tag green">Scale</span></td>
+                </tr>
+                <tr>
+                    <td class="highlight">SS - Omnipresent Advt+</td>
+                    <td>$3,892</td>
+                    <td>$9,923</td>
+                    <td class="orange">2.55x</td>
+                    <td>47</td>
+                    <td>$83</td>
+                    <td><span class="tag orange">Monitor</span></td>
+                </tr>
+                <tr>
+                    <td>Brain Food+ CBO (Testing)</td>
+                    <td>$163</td>
+                    <td>$427</td>
+                    <td class="orange">2.62x</td>
+                    <td>3</td>
+                    <td>$54</td>
+                    <td><span class="tag">Learning</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="two-col" style="margin-top: 24px;">
+            <div>
+                <h3>Top Performing Creatives</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Creative</th>
+                            <th>ROAS</th>
+                            <th>Spend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">Brain - Copy</td>
+                            <td class="green">5.41x</td>
+                            <td>$1,054</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Comparison 1 - Copy</td>
+                            <td class="green">4.32x</td>
+                            <td>$1,032</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Carousel 1 - Text</td>
+                            <td class="green">3.18x</td>
+                            <td>$202</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Dr. Ledbetter Testimonial</td>
+                            <td class="green">3.82x</td>
+                            <td>$445</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>Q4 Meta Summary</h3>
+                <div class="card">
+                    <table class="data-table" style="margin: 0;">
+                        <tr>
+                            <td>Total Spend</td>
+                            <td class="highlight">$9,808</td>
+                        </tr>
+                        <tr>
+                            <td>Total Revenue</td>
+                            <td class="green">$32,537</td>
+                        </tr>
+                        <tr>
+                            <td>Blended ROAS</td>
+                            <td class="green">3.32x</td>
+                        </tr>
+                        <tr>
+                            <td>Total Purchases</td>
+                            <td class="highlight">225</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="insight-box coral" style="margin-top: 16px;">
+                    <h4>7-Day Momentum</h4>
+                    <p>Retargeting surging to 7.35x ROAS (+53% WoW). Brain Food creative proving strong. Campaign structure ready for full launch.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>05 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: Google Ads Performance -->
+    <section class="slide">
+        <span class="slide-number">06 / 11</span>
+        <div class="slide-tag">Platform Performance</div>
+        <h2>Google Ads Q4 Results</h2>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Campaign</th>
+                    <th>Spend</th>
+                    <th>Revenue</th>
+                    <th>ROAS</th>
+                    <th>Conv.</th>
+                    <th>CPA</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="highlight">SS - Branded</td>
+                    <td>$1,374</td>
+                    <td class="green">$8,140</td>
+                    <td class="green">5.93x</td>
+                    <td>25.5</td>
+                    <td>$54</td>
+                    <td><span class="tag green">Best ROAS</span></td>
+                </tr>
+                <tr>
+                    <td class="highlight">SS - Performance Max</td>
+                    <td>$4,288</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>72.5</td>
+                    <td>$59</td>
+                    <td><span class="tag blue">Volume Driver</span></td>
+                </tr>
+                <tr>
+                    <td class="highlight">SS - DSA</td>
+                    <td>$1,215</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>~16</td>
+                    <td class="green">$16</td>
+                    <td><span class="tag green">High Efficiency</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="two-col" style="margin-top: 24px;">
+            <div>
+                <h3>Competitive Position</h3>
+                <div class="progress-container" style="margin-top: 16px;">
+                    <div class="progress-label">
+                        <span>Impression Share (Branded)</span>
+                        <span class="value" style="color: var(--accent-green);">99.65%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill green" style="width: 99.65%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Top of Page Rate</span>
+                        <span class="value" style="color: var(--accent-green);">99.18%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill green" style="width: 99.18%"></div>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Branded CTR</span>
+                        <span class="value" style="color: var(--accent-green);">30.82%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 12px;">
+                        <div class="progress-fill green" style="width: 100%"></div>
+                    </div>
+                </div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Outranking Amazon and competitors on branded terms. Near-total market dominance.</p>
+            </div>
+            <div>
+                <h3>Q4 Google Summary</h3>
+                <div class="card">
+                    <table class="data-table" style="margin: 0;">
+                        <tr>
+                            <td>Total Spend</td>
+                            <td class="highlight">$7,027</td>
+                        </tr>
+                        <tr>
+                            <td>Total Conversions</td>
+                            <td class="highlight">114</td>
+                        </tr>
+                        <tr>
+                            <td>Blended CPA</td>
+                            <td class="green">$61.45</td>
+                        </tr>
+                        <tr>
+                            <td>CPA Improvement vs Q3</td>
+                            <td class="green">-17%</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="insight-box" style="margin-top: 16px;">
+                    <h4>7-Day Alert</h4>
+                    <p>Aggressive scaling: +168% spend, +100% conversions WoW. DSA showing exceptional $16 CPA. Branded campaign ramping significantly.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>06 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: Audience Demographics -->
+    <section class="slide">
+        <span class="slide-number">07 / 11</span>
+        <div class="slide-tag">Audience Analysis</div>
+        <h2>Customer Demographics (Google Ads Q4)</h2>
+        
+        <div class="two-col">
+            <div>
+                <h3>Age Distribution</h3>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>65+</span>
+                        <span class="value">27.0% (largest segment)</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill green" style="width: 100%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>45 to 54</span>
+                        <span class="value">25.6%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill green" style="width: 95%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>55 to 64</span>
+                        <span class="value">19.7%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill blue" style="width: 73%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>35 to 44</span>
+                        <span class="value">16.8%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill blue" style="width: 62%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>25 to 34</span>
+                        <span class="value">9.3%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill coral" style="width: 34%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>18 to 24</span>
+                        <span class="value">1.8%</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill coral" style="width: 7%"></div></div>
+                </div>
+            </div>
+            <div>
+                <h3>Gender Split</h3>
+                <div style="margin: 24px 0;">
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Female (Primary Searchers)</span>
+                            <span class="value" style="color: var(--accent-coral);">57.86%</span>
+                        </div>
+                        <div class="progress-bar" style="height: 16px;">
+                            <div class="progress-fill coral" style="width: 58%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-container" style="margin-top: 20px;">
+                        <div class="progress-label">
+                            <span>Male</span>
+                            <span class="value">42.33%</span>
+                        </div>
+                        <div class="progress-bar" style="height: 16px;">
+                            <div class="progress-fill blue" style="width: 42%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 32px;">Top Segments</h3>
+                <table class="data-table">
+                    <tr><td class="highlight">Female 65+</td><td class="green">18.3%</td></tr>
+                    <tr><td class="highlight">Female 55-64</td><td class="blue">13.3%</td></tr>
+                    <tr><td class="highlight">Female 45-54</td><td class="blue">13.2%</td></tr>
+                    <tr><td class="highlight">Male 45-54</td><td class="coral">12.3%</td></tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="insight-box coral" style="margin-top: 24px;">
+            <h4>Targeting Insight</h4>
+            <p>Female 45-65+ dominates Google search traffic (45% combined). Likely caregivers and wives searching for health products for family members. Consider caregiver/family buyer messaging angles. Peak search times: 10am-1pm weekdays. Top states: Texas, California, Florida, New York.</p>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>07 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 8: Top Products -->
+    <section class="slide">
+        <span class="slide-number">08 / 11</span>
+        <div class="slide-tag">Product Analysis</div>
+        <h2>Top Products by Revenue (2025)</h2>
+        
+        <div class="two-col">
+            <div>
+                <h3>Product Performance</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Revenue</th>
+                            <th>Units</th>
+                            <th>AOV</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">Restore Professional - Vanilla</td>
+                            <td class="green">$138,000</td>
+                            <td>604</td>
+                            <td>$229</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Digestive Enzyme Formula</td>
+                            <td>$58,000</td>
+                            <td>729</td>
+                            <td>$80</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Lugol's Iodine Plus</td>
+                            <td>$52,000</td>
+                            <td>862</td>
+                            <td>$61</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Restore Professional - Veggie</td>
+                            <td>$47,000</td>
+                            <td>203</td>
+                            <td>$231</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">Brain Food Plus</td>
+                            <td>$32,000</td>
+                            <td>332</td>
+                            <td>$96</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>Strategic Insights</h3>
+                
+                <div class="card" style="margin-bottom: 16px;">
+                    <h4 style="color: var(--accent-green);">Restore Line Dominance</h4>
+                    <p style="font-size: 13px;">55% of top 5 revenue. Vanilla and Veggie formulas are hero products with highest AOV ($229-$231). Continue positioning as flagship.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 16px;">
+                    <h4 style="color: var(--accent-blue);">Volume Leader: Iodine</h4>
+                    <p style="font-size: 13px;">862 units sold despite lower AOV. Gateway product driving customer acquisition. Consider bundle strategies.</p>
+                </div>
+                
+                <div class="card" style="margin-bottom: 16px;">
+                    <h4 style="color: var(--accent-coral);">Brain Food+ Opportunity</h4>
+                    <p style="font-size: 13px;">$32K revenue with limited advertising. Creative already proving 5.41x ROAS. Major Q1 focus for dedicated campaign.</p>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--accent-orange);">Inventory Priority</h4>
+                    <p style="font-size: 13px;">Brain Food+ (April exp.) and Probiotic (Feb exp.) require BOGO 50% clearance campaigns before expiration.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>08 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 9: 7-Day Momentum -->
+    <section class="slide">
+        <span class="slide-number">09 / 11</span>
+        <div class="slide-tag">Momentum Analysis</div>
+        <h2>7-Day Performance (Jan 6-12 vs Dec 30-Jan 5)</h2>
+        
+        <div class="two-col">
+            <div>
+                <h3>Google Ads</h3>
+                <span class="tag green">Scaling</span>
+                
+                <div class="metrics-grid three-col" style="margin-top: 16px;">
+                    <div class="metric-card green">
+                        <div class="metric-label">Spend</div>
+                        <div class="metric-value">$868</div>
+                        <div class="metric-change up">+168%</div>
+                    </div>
+                    <div class="metric-card green">
+                        <div class="metric-label">Conversions</div>
+                        <div class="metric-value">16</div>
+                        <div class="metric-change up">+100%</div>
+                    </div>
+                    <div class="metric-card orange">
+                        <div class="metric-label">CPA</div>
+                        <div class="metric-value">$54</div>
+                        <div class="metric-change down">+34%</div>
+                    </div>
+                </div>
+                
+                <table class="data-table" style="margin-top: 16px;">
+                    <thead>
+                        <tr>
+                            <th>Campaign</th>
+                            <th>Spend Change</th>
+                            <th>7-Day CPA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="highlight">SS - Branded</td>
+                            <td class="green">+855%</td>
+                            <td>$75</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">SS - PMax</td>
+                            <td class="green">+94%</td>
+                            <td>$55</td>
+                        </tr>
+                        <tr>
+                            <td class="highlight">SS - DSA</td>
+                            <td class="orange">-16%</td>
+                            <td class="green">$16</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>Meta Ads</h3>
+                <span class="tag blue">Optimizing</span>
+                
+                <div class="card" style="margin-top: 16px; border-top: 3px solid var(--accent-green);">
+                    <h4>SS - Retargeting</h4>
+                    <div style="display: flex; align-items: center; gap: 24px; margin-top: 12px;">
+                        <div>
+                            <div class="metric-label">Current ROAS</div>
+                            <div class="metric-value" style="color: var(--accent-green);">7.35x</div>
+                        </div>
+                        <div style="font-size: 24px; color: var(--text-muted);">←</div>
+                        <div>
+                            <div class="metric-label">Prior Period</div>
+                            <div class="metric-value" style="font-size: 24px;">4.81x</div>
+                        </div>
+                        <div style="flex: 1; text-align: right;">
+                            <span class="tag green" style="font-size: 14px;">+53%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 16px;">
+                    <h4>Brain Food+ CBO (Testing)</h4>
+                    <table class="data-table" style="margin: 12px 0 0 0;">
+                        <tr>
+                            <td>Spend</td>
+                            <td class="highlight">$163</td>
+                        </tr>
+                        <tr>
+                            <td>ROAS</td>
+                            <td class="orange">2.62x</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><span class="tag">Learning Phase</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insight-box">
+            <h4>Key Takeaway</h4>
+            <p>Both platforms showing positive momentum entering Q1. Google scaling aggressively with strong conversion volume despite CPA increase. Meta retargeting delivering exceptional 7.35x returns. DSA campaign at $16 CPA represents significant efficiency opportunity for scaling.</p>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>09 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 10: Q1 Strategic Priorities -->
+    <section class="slide">
+        <span class="slide-number">10 / 11</span>
+        <div class="slide-tag">Strategic Priorities</div>
+        <h2>Q1 2026 Focus Areas</h2>
+        
+        <div class="three-col">
+            <div class="concept-card">
+                <span class="concept-number">01</span>
+                <div class="concept-title">Scale Proven Winners</div>
+                <span class="tag green">High Priority</span>
+                <span class="tag">Ongoing</span>
+                <p style="font-size: 13px; margin-top: 12px; position: relative; z-index: 1; color: var(--text-secondary);">Double down on campaigns and creatives with proven ROAS performance.</p>
+                <h4 style="margin-top: 16px; font-size: 12px;">Actions:</h4>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li>Increase Meta retargeting budget (7.35x ROAS)</li>
+                    <li>Maintain Google branded dominance (5.93x)</li>
+                    <li>Scale DSA campaign ($16 CPA efficiency)</li>
+                    <li>Expand Brain Copy creative variants</li>
+                </ul>
+            </div>
+            
+            <div class="concept-card">
+                <span class="concept-number">02</span>
+                <div class="concept-title">Launch Brain Food+</div>
+                <span class="tag">Campaign Launch</span>
+                <span class="tag green">Ready</span>
+                <p style="font-size: 13px; margin-top: 12px; position: relative; z-index: 1; color: var(--text-secondary);">Full campaign deployment with proven creative structure.</p>
+                <h4 style="margin-top: 16px; font-size: 12px;">Specs:</h4>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li>Single CBO, 6 ad sets (full funnel)</li>
+                    <li>Target: 4x+ ROAS, $45-55 CPA</li>
+                    <li>Initial budget: $150-200/day</li>
+                    <li>Pending: Creative assets from Royd & Gay</li>
+                </ul>
+            </div>
+            
+            <div class="concept-card">
+                <span class="concept-number">03</span>
+                <div class="concept-title">Inventory Clear-Out</div>
+                <span class="tag red">Urgent</span>
+                <span class="tag orange">Time-Sensitive</span>
+                <p style="font-size: 13px; margin-top: 12px; position: relative; z-index: 1; color: var(--text-secondary);">Move expiring inventory before spoilage.</p>
+                <h4 style="margin-top: 16px; font-size: 12px;">Timeline:</h4>
+                <ul class="check-list" style="font-size: 12px;">
+                    <li class="red">Probiotic: 281 units exp. February</li>
+                    <li class="coral">Brain Food+: April expiration window</li>
+                    <li>Strategy: BOGO 50% offers</li>
+                    <li>Maintain margins on Restore line</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="two-col" style="margin-top: 32px;">
+            <div class="card" style="border-top: 3px solid var(--accent-green);">
+                <h3>Q1 Performance Targets</h3>
+                <table class="data-table" style="margin: 16px 0 0 0;">
+                    <tr>
+                        <td>Monthly Ad Budget</td>
+                        <td class="highlight">$40,000</td>
+                    </tr>
+                    <tr>
+                        <td>Target ROAS</td>
+                        <td class="green">3.5-4.0x</td>
+                    </tr>
+                    <tr>
+                        <td>Target CPA</td>
+                        <td class="highlight">$45-55</td>
+                    </tr>
+                    <tr>
+                        <td>Brain Food+ Launch</td>
+                        <td class="green">January</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card" style="border-top: 3px solid var(--accent-coral);">
+                <h3>Budget Allocation</h3>
+                <div class="progress-container" style="margin-top: 16px;">
+                    <div class="progress-label">
+                        <span>Proven Winners (Retargeting, Branded)</span>
+                        <span class="value">50%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill green" style="width: 50%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Brain Food+ Campaign</span>
+                        <span class="value">30%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill coral" style="width: 30%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Creative Testing & Inventory Clear</span>
+                        <span class="value">20%</span>
+                    </div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill blue" style="width: 20%"></div></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span></span>
+            <span>10 / 11</span>
+        </div>
+    </section>
+
+    <!-- SLIDE 11: Next Steps -->
+    <section class="slide">
+        <span class="slide-number">11 / 11</span>
+        <div class="slide-tag">Summary</div>
+        <h2>Next Steps & Action Items</h2>
+        
+        <div class="three-col">
+            <div class="card" style="border-top: 3px solid var(--accent-green);">
+                <h3>Immediate (This Week)</h3>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li>Finalize Brain Food+ creative assets (Royd & Gay)</li>
+                    <li>Scale Google DSA campaign budget (+25%)</li>
+                    <li>Confirm probiotic BOGO 50% launch date</li>
+                    <li>Increase Meta retargeting daily budget</li>
+                    <li>Review underperforming Omnipresent ads</li>
+                </ul>
+            </div>
+            
+            <div class="card" style="border-top: 3px solid var(--accent-coral);">
+                <h3>This Month</h3>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li>Launch full Brain Food+ CBO campaign</li>
+                    <li>Execute probiotic inventory clearance</li>
+                    <li>Test new UGC/testimonial creative</li>
+                    <li>Expand Dr. Tennant authority messaging</li>
+                    <li>Implement weekly Loom performance updates</li>
+                </ul>
+            </div>
+            
+            <div class="card" style="border-top: 3px solid var(--accent-blue);">
+                <h3>Q1 Targets</h3>
+                <ul class="check-list" style="font-size: 13px;">
+                    <li>Total Monthly Budget: $40,000</li>
+                    <li>Blended ROAS: 3.5-4.0x minimum</li>
+                    <li>Brain Food+ ROAS: 4x+ target</li>
+                    <li>Clear expiring inventory by deadline</li>
+                    <li>Maintain CAC below $55</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="insight-box" style="margin-top: 32px; border-left-color: var(--accent-green);">
+            <h4>Strategic Summary</h4>
+            <p>Q4 2025 established strong foundations with exceptional unit economics (1:18 CAC:LTV ratio) and proven creative performers. The business transitioned from maintenance mode to active growth with 80.6% returning customer rate demonstrating product-market fit. Q1 focuses on scaling proven winners while launching the Brain Food+ campaign and clearing time-sensitive inventory. With $40K monthly budget and 3.5-4.0x ROAS target, Q1 is positioned for controlled, profitable growth.</p>
+        </div>
+        
+        <div class="metrics-grid four-col" style="margin-top: 24px;">
+            <div class="metric-card green">
+                <div class="metric-label">Q1 Budget</div>
+                <div class="metric-value">$40K/mo</div>
+            </div>
+            <div class="metric-card green">
+                <div class="metric-label">Target ROAS</div>
+                <div class="metric-value">3.5-4.0x</div>
+            </div>
+            <div class="metric-card coral">
+                <div class="metric-label">CAC:LTV Ratio</div>
+                <div class="metric-value">1:18</div>
+            </div>
+            <div class="metric-card blue">
+                <div class="metric-label">Customer LTV</div>
+                <div class="metric-value">$901</div>
+            </div>
+        </div>
+        
+        <div class="slide-footer">
+            <span class="brand">Heath Media</span>
+            <span>Tennant Products | Q1 2026 Growth Strategy</span>
+            <span>Prepared January 2026</span>
+        </div>
+    </section>
+
+</body>
+</html>
