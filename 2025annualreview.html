@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennant Products | 2025 Annual Performance Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f14;
+            --bg-secondary: #111820;
+            --bg-card: #162642;
+            --bg-card-hover: #1e3a5f;
+            --border: rgba(255,255,255,0.08);
+            --accent-green: #10b981;
+            --accent-green-dim: rgba(16, 185, 129, 0.15);
+            --accent-coral: #cc5b27;
+            --accent-coral-dim: rgba(204, 91, 39, 0.15);
+            --accent-blue: #3b82f6;
+            --accent-blue-dim: rgba(59, 130, 246, 0.15);
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-orange: #f59e0b;
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 48px 64px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            font-size: 16px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .slide-tag {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-coral);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        h1 { font-family: 'DM Sans', sans-serif; font-size: 60px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; color: var(--text-primary); }
+        h2 { font-family: 'DM Sans', sans-serif; font-size: 42px; font-weight: 700; margin-bottom: 28px; color: var(--text-primary); }
+        h3 { font-size: 22px; font-weight: 600; margin-bottom: 16px; color: var(--text-primary); }
+        h4 { font-size: 17px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+        p { font-size: 18px; color: var(--text-secondary); max-width: 720px; }
+        .subtitle { font-size: 22px; color: var(--text-secondary); max-width: 600px; margin-bottom: 32px; font-weight: 400; }
+        
+        .cover { justify-content: center; align-items: center; text-align: center; background: radial-gradient(ellipse at 50% 30%, rgba(204, 91, 39, 0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 40%); }
+        .cover h1 { font-size: 64px; }
+        .cover .meta { margin-top: 48px; display: flex; gap: 48px; font-size: 16px; color: var(--text-secondary); }
+        .cover .meta span { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--bg-card); border-radius: 8px; border: 1px solid var(--border); }
+        
+        .logo-badge { width: 280px; margin-bottom: 40px; display: block; }
+        .logo-badge img { width: 280px; height: auto; display: block; object-fit: contain; }
+        
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
+        .metrics-grid.four-col { grid-template-columns: repeat(4, 1fr); }
+        .metrics-grid.three-col { grid-template-columns: repeat(3, 1fr); }
+        .metrics-grid.two-col { grid-template-columns: repeat(2, 1fr); }
+        
+        .metric-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; position: relative; }
+        .metric-card.green { border-top: 3px solid var(--accent-green); }
+        .metric-card.coral { border-top: 3px solid var(--accent-coral); }
+        .metric-card.blue { border-top: 3px solid var(--accent-blue); }
+        .metric-card.red { border-top: 3px solid var(--accent-red); }
+        .metric-card.orange { border-top: 3px solid var(--accent-orange); }
+        
+        .metric-label { font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; }
+        .metric-value { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; color: var(--text-primary); line-height: 1.1; }
+        .metric-value.large { font-size: 44px; }
+        .metric-value.medium { font-size: 32px; }
+        .metric-value.small { font-size: 28px; }
+        .metric-change { font-size: 14px; margin-top: 10px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        .metric-change.up { color: var(--accent-green); }
+        .metric-change.down { color: var(--accent-red); }
+        .metric-change.neutral { color: var(--text-muted); }
+        
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        .data-table th { text-align: left; padding: 14px 18px; background: var(--bg-card); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+        .data-table td { padding: 14px 18px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .data-table tr:hover td { background: var(--bg-card-hover); }
+        .data-table .highlight { color: var(--text-primary); font-weight: 500; }
+        .data-table .green { color: var(--accent-green); font-weight: 600; }
+        .data-table .red { color: var(--accent-red); font-weight: 600; }
+        .data-table .coral { color: var(--accent-coral); font-weight: 600; }
+        .data-table .blue { color: var(--accent-blue); font-weight: 600; }
+        .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+        
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+        .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+        
+        .insight-box { background: var(--bg-card); border-left: 3px solid var(--accent-green); padding: 24px 28px; margin: 24px 0; border-radius: 0 12px 12px 0; }
+        .insight-box.coral { border-left-color: var(--accent-coral); }
+        .insight-box.blue { border-left-color: var(--accent-blue); }
+        .insight-box.red { border-left-color: var(--accent-red); }
+        .insight-box h4 { color: var(--accent-green); margin-bottom: 10px; font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .insight-box.coral h4 { color: var(--accent-coral); }
+        .insight-box.blue h4 { color: var(--accent-blue); }
+        .insight-box.red h4 { color: var(--accent-red); }
+        .insight-box p { color: var(--text-secondary); font-size: 17px; line-height: 1.7; max-width: none; }
+        
+        .progress-container { margin: 14px 0; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 16px; color: var(--text-secondary); }
+        .progress-label .value { color: var(--text-primary); font-weight: 600; }
+        .progress-bar { height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 4px; }
+        .progress-fill.green { background: var(--accent-green); }
+        .progress-fill.coral { background: var(--accent-coral); }
+        .progress-fill.blue { background: var(--accent-blue); }
+        .progress-fill.red { background: var(--accent-red); }
+        .progress-fill.orange { background: var(--accent-orange); }
+        .progress-fill.purple { background: var(--accent-purple); }
+        
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; }
+        
+        .tag { display: inline-block; padding: 6px 12px; background: var(--accent-coral-dim); border-radius: 6px; font-size: 12px; font-weight: 600; color: var(--accent-coral); margin-right: 6px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .tag.green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .tag.blue { background: var(--accent-blue-dim); color: var(--accent-blue); }
+        .tag.red { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); }
+        .tag.orange { background: rgba(245, 158, 11, 0.15); color: var(--accent-orange); }
+        
+        .check-list { list-style: none; margin: 16px 0; }
+        .check-list li { padding: 10px 0; padding-left: 28px; position: relative; color: var(--text-secondary); font-size: 17px; }
+        .check-list li::before { content: ''; position: absolute; left: 0; top: 15px; width: 10px; height: 10px; border-radius: 2px; background: var(--accent-green); }
+        .check-list li.red::before { background: var(--accent-red); }
+        .check-list li.coral::before { background: var(--accent-coral); }
+        
+        .cac-ltv-indicator { background: linear-gradient(135deg, var(--bg-card) 0%, rgba(16, 185, 129, 0.1) 100%); border: 2px solid var(--accent-green); border-radius: 16px; padding: 20px; text-align: center; }
+        .cac-ltv-indicator.coral { background: linear-gradient(135deg, var(--bg-card) 0%, rgba(204, 91, 39, 0.1) 100%); border-color: var(--accent-coral); }
+        .cac-ltv-indicator.red { background: linear-gradient(135deg, var(--bg-card) 0%, rgba(239, 68, 68, 0.1) 100%); border-color: var(--accent-red); }
+        .cac-ltv-indicator .ratio-value { font-family: 'DM Sans', sans-serif; font-size: 42px; font-weight: 700; color: var(--accent-green); line-height: 1; }
+        .cac-ltv-indicator.coral .ratio-value { color: var(--accent-coral); }
+        .cac-ltv-indicator.red .ratio-value { color: var(--accent-red); }
+        .cac-ltv-indicator .ratio-label { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
+        .cac-ltv-indicator .ratio-detail { font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+        
+        .demo-box { background: var(--bg-card); border-radius: 10px; padding: 16px; }
+        .demo-box h4 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        
+        .slide-footer { margin-top: auto; padding-top: 32px; font-size: 14px; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
+        .slide-footer .brand { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--accent-coral); }
+        
+        @media print { .slide { page-break-after: always; } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--bg-card); border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Cover -->
+<section class="slide cover">
+    <div class="logo-badge">
+        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heath Media Logo">
+    </div>
+    <div class="slide-tag">2025 Annual Performance Review</div>
+    <h1>Tennant Products</h1>
+    <p class="subtitle">Full Year Q1-Q4 Analysis | Shopify, Meta Ads & Google Ads</p>
+    <div class="meta">
+        <span>January 2026</span>
+        <span>Total Revenue: $4.57M</span>
+        <span>Blended ROAS: 15.3x</span>
+    </div>
+</section>
+
+<!-- SLIDE 2: Executive Summary -->
+<section class="slide">
+    <span class="slide-number">02 / 23</span>
+    <div class="slide-tag">Executive Summary</div>
+    <h2>2025 Full Year Overview</h2>
+    
+    <div class="metrics-grid">
+        <div class="metric-card green">
+            <div class="metric-label">Shopify Revenue</div>
+            <div class="metric-value large">$4.57M</div>
+            <div class="metric-change neutral">10,628 orders</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Average AOV</div>
+            <div class="metric-value">$429.66</div>
+            <div class="metric-change neutral">Full year avg</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Total Ad Spend</div>
+            <div class="metric-value">$80,645</div>
+            <div class="metric-change up">1.8% of revenue</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">15.3x</div>
+            <div class="metric-change up">All paid channels</div>
+        </div>
+        <div class="metric-card blue">
+            <div class="metric-label">Ad-Attributed Revenue</div>
+            <div class="metric-value medium">$1.24M</div>
+            <div class="metric-change neutral">Meta + Google</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Channel Performance Summary</h3>
+            <table class="data-table">
+                <thead><tr><th>Channel</th><th>Spend</th><th>Revenue</th><th>ROAS</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Meta Ads</td><td>$43,010</td><td class="green">$993,208</td><td class="green">23.1x</td></tr>
+                    <tr><td class="highlight">Google Ads</td><td>$37,635</td><td>$244,137</td><td class="coral">6.5x</td></tr>
+                    <tr><td class="highlight"><strong>Combined</strong></td><td><strong>$80,645</strong></td><td class="green"><strong>$1,237,345</strong></td><td class="green"><strong>15.3x</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3>Quarterly CAC:LTV Trend</h3>
+            <div class="progress-container" style="margin-top: 16px;">
+                <div class="progress-label"><span>Q1 CAC:LTV</span><span class="value" style="color: var(--accent-green);">1:37</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 100%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q2 CAC:LTV</span><span class="value">1:16</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill coral" style="width: 43%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q3 CAC:LTV</span><span class="value" style="color: var(--accent-red);">1:12</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill red" style="width: 32%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q4 CAC:LTV</span><span class="value" style="color: var(--accent-green);">1:18</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 49%"></div></div>
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 12px;">Industry benchmark: 1:3. All quarters exceeding by 4-12x.</p>
+        </div>
+    </div>
+    
+    <div class="insight-box">
+        <h4>Key Finding</h4>
+        <p>Full year revenue of $4.57M with exceptional ad efficiency at just 1.8% of revenue. CAC:LTV ratio remained strong throughout the year, ranging from 1:12 (Q3 low) to 1:37 (Q1 peak), all significantly exceeding the 1:3 industry standard.</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>02 / 23</span></div>
+</section>
+
+<!-- SLIDE 3: Annual Shopify Performance -->
+<section class="slide">
+    <span class="slide-number">03 / 23</span>
+    <div class="slide-tag">Revenue Analysis</div>
+    <h2>Shopify Performance - Full Year 2025</h2>
+    
+    <div class="metrics-grid four-col">
+        <div class="metric-card green">
+            <div class="metric-label">Q1 2025</div>
+            <div class="metric-value">$1.47M</div>
+            <div class="metric-change neutral">2,893 orders | $509.74 AOV</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Q2 2025</div>
+            <div class="metric-value">$1.32M</div>
+            <div class="metric-change down">-10.6% vs Q1</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Q3 2025</div>
+            <div class="metric-value">$1.18M</div>
+            <div class="metric-change down">-10.5% vs Q2</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Q4 2025</div>
+            <div class="metric-value">$594K</div>
+            <div class="metric-change down">-49.7% vs Q3</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Quarterly Breakdown</h3>
+            <table class="data-table">
+                <thead><tr><th>Quarter</th><th>Revenue</th><th>Orders</th><th>AOV</th><th>Trend</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Q1 2025</td><td class="green">$1,474,672</td><td>2,893</td><td class="green">$509.74</td><td><span class="tag green">Peak</span></td></tr>
+                    <tr><td class="highlight">Q2 2025</td><td>$1,318,595</td><td>2,669</td><td>$494.04</td><td><span class="tag coral">-10.6%</span></td></tr>
+                    <tr><td class="highlight">Q3 2025</td><td>$1,179,629</td><td>2,588</td><td>$455.81</td><td><span class="tag coral">-10.5%</span></td></tr>
+                    <tr><td class="highlight">Q4 2025</td><td class="red">$593,554</td><td>2,478</td><td class="red">$239.53</td><td><span class="tag red">-49.7%</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3>AOV Trend Analysis</h3>
+            <div class="progress-container" style="margin-top: 16px;">
+                <div class="progress-label"><span>Q1: $509.74</span><span class="value" style="color: var(--accent-green);">Peak AOV</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 100%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q2: $494.04</span><span class="value">-3.1%</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill coral" style="width: 97%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q3: $455.81</span><span class="value">-10.6%</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill coral" style="width: 89%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q4: $239.53</span><span class="value" style="color: var(--accent-red);">-53% from Q1</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill red" style="width: 47%"></div></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>03 / 23</span></div>
+</section>
+
+<!-- SLIDE 4: Q1 2025 Performance + Demographics -->
+<section class="slide">
+    <span class="slide-number">04 / 23</span>
+    <div class="slide-tag">Q1 2025 Performance</div>
+    <h2>Q1 2025: Peak Performance Quarter</h2>
+    
+    <div class="metrics-grid">
+        <div class="metric-card green">
+            <div class="metric-label">Shopify Revenue</div>
+            <div class="metric-value">$1.47M</div>
+            <div class="metric-change neutral">2,893 orders</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Average AOV</div>
+            <div class="metric-value">$509.74</div>
+            <div class="metric-change up">Highest of year</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Total Ad Spend</div>
+            <div class="metric-value">$17,969</div>
+            <div class="metric-change neutral">Meta + Google</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">31.8x</div>
+            <div class="metric-change up">Exceptional</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">CAC:LTV Ratio</div>
+            <div class="metric-value">1:37</div>
+            <div class="metric-change up">12x industry std</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Platform Performance</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Spend</th><th>ROAS</th><th>CPA</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Meta Ads</td><td>$7,060</td><td class="green">63.3x</td><td class="green">$17.39</td></tr>
+                    <tr><td class="highlight">Google Ads</td><td>$10,909</td><td class="green">11.5x</td><td class="green">$32.60</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="cac-ltv-indicator" style="margin-top: 20px;">
+                <div class="ratio-label">Q1 2025 CAC:LTV Ratio</div>
+                <div class="ratio-value">1:37</div>
+                <div class="ratio-detail">$24.25 Blended CAC → $901 LTV | 741 conversions</div>
+            </div>
+        </div>
+        <div>
+            <h3>Q1 Demographics (Google Ads)</h3>
+            <div class="demo-box" style="margin-bottom: 16px;">
+                <h4>Gender Split</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Female</span><span class="value" style="color: var(--accent-coral);">67.5%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 67.5%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Male</span><span class="value">33.2%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill blue" style="width: 33.2%"></div></div>
+                </div>
+            </div>
+            <div class="demo-box">
+                <h4>Age Distribution</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>45-54</span><span class="value" style="color: var(--accent-green);">26.1%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill green" style="width: 100%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>55-64</span><span class="value">23.2%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill blue" style="width: 89%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>35-44</span><span class="value">18.7%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill coral" style="width: 72%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>65+</span><span class="value">18.4%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill purple" style="width: 70%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>25-34</span><span class="value">11.5%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill orange" style="width: 44%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="insight-box coral">
+        <h4>Q1 Insight</h4>
+        <p>Strongest female skew of the year (67.5%) with 45-54 as the top age segment (26.1%). Q1's exceptional metrics (Meta 63.3x ROAS) were inflated by view-through attribution. Top combined segment: Female 45-54 (16.3%).</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>04 / 23</span></div>
+</section>
+
+<!-- SLIDE 5: Q2 2025 Performance + Demographics -->
+<section class="slide">
+    <span class="slide-number">05 / 23</span>
+    <div class="slide-tag">Q2 2025 Performance</div>
+    <h2>Q2 2025: Performance Decline Begins</h2>
+    
+    <div class="metrics-grid">
+        <div class="metric-card coral">
+            <div class="metric-label">Shopify Revenue</div>
+            <div class="metric-value">$1.32M</div>
+            <div class="metric-change down">-10.6% vs Q1</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Average AOV</div>
+            <div class="metric-value">$494.04</div>
+            <div class="metric-change down">-3.1% vs Q1</div>
+        </div>
+        <div class="metric-card orange">
+            <div class="metric-label">Total Ad Spend</div>
+            <div class="metric-value">$18,783</div>
+            <div class="metric-change up">+4.5% vs Q1</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">18.4x</div>
+            <div class="metric-change down">-42% vs Q1</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">CAC:LTV Ratio</div>
+            <div class="metric-value">1:16</div>
+            <div class="metric-change down">-57% vs Q1</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Platform Performance</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Spend</th><th>ROAS</th><th>CPA</th><th>vs Q1</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Meta Ads</td><td>$9,226</td><td class="coral">32.4x</td><td class="orange">$43.11</td><td class="red">+148%</td></tr>
+                    <tr><td class="highlight">Google Ads</td><td>$9,557</td><td class="red">4.8x</td><td class="red">$73.43</td><td class="red">+125%</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="cac-ltv-indicator coral" style="margin-top: 20px;">
+                <div class="ratio-label">Q2 2025 CAC:LTV Ratio</div>
+                <div class="ratio-value">1:16</div>
+                <div class="ratio-detail">$54.59 Blended CAC → $901 LTV | 344 conversions (-54%)</div>
+            </div>
+        </div>
+        <div>
+            <h3>Q2 Demographics (Google Ads)</h3>
+            <div class="demo-box" style="margin-bottom: 16px;">
+                <h4>Gender Split</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Female</span><span class="value" style="color: var(--accent-coral);">66.9%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 66.9%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Male</span><span class="value">33.8%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill blue" style="width: 33.8%"></div></div>
+                </div>
+            </div>
+            <div class="demo-box">
+                <h4>Age Distribution</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>55-64</span><span class="value" style="color: var(--accent-green);">24.2%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill green" style="width: 100%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>45-54</span><span class="value">23.9%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill blue" style="width: 99%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>65+</span><span class="value">21.8%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill purple" style="width: 90%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>35-44</span><span class="value">18.1%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill coral" style="width: 75%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>25-34</span><span class="value">9.7%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill orange" style="width: 40%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="insight-box red">
+        <h4>Q2 Insight</h4>
+        <p>55-64 became the top age segment (24.2%), overtaking 45-54. 65+ grew significantly (+3.4pp to 21.8%). CPA more than doubled on both platforms. Despite this, CAC:LTV of 1:16 still exceeded industry standard by 5.3x. Top segment: Female 55-64 (16.3%).</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>05 / 23</span></div>
+</section>
+
+<!-- SLIDE 6: Q3 2025 Performance + Demographics -->
+<section class="slide">
+    <span class="slide-number">06 / 23</span>
+    <div class="slide-tag">Q3 2025 Performance</div>
+    <h2>Q3 2025: Continued Decline, Peak CPA</h2>
+    
+    <div class="metrics-grid">
+        <div class="metric-card coral">
+            <div class="metric-label">Shopify Revenue</div>
+            <div class="metric-value">$1.18M</div>
+            <div class="metric-change down">-10.5% vs Q2</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Average AOV</div>
+            <div class="metric-value">$455.81</div>
+            <div class="metric-change down">-7.7% vs Q2</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Total Ad Spend</div>
+            <div class="metric-value">$24,793</div>
+            <div class="metric-change up">+32% vs Q2</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">10.1x</div>
+            <div class="metric-change down">-45% vs Q2</div>
+        </div>
+        <div class="metric-card red">
+            <div class="metric-label">CAC:LTV Ratio</div>
+            <div class="metric-value">1:12</div>
+            <div class="metric-change down">Year low</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Platform Performance</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Spend</th><th>ROAS</th><th>CPA</th><th>vs Q2</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Meta Ads</td><td>$14,650</td><td class="red">13.9x</td><td class="red">$74.37</td><td class="red">+73%</td></tr>
+                    <tr><td class="highlight">Google Ads</td><td>$10,143</td><td class="red">4.7x</td><td class="red">$74.39</td><td class="coral">+1%</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="cac-ltv-indicator red" style="margin-top: 20px;">
+                <div class="ratio-label">Q3 2025 CAC:LTV Ratio</div>
+                <div class="ratio-value">1:12</div>
+                <div class="ratio-detail">$74.40 Blended CAC (peak) → $901 LTV | 333 conversions</div>
+            </div>
+        </div>
+        <div>
+            <h3>Q3 Demographics (Google Ads)</h3>
+            <div class="demo-box" style="margin-bottom: 16px;">
+                <h4>Gender Split</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Female</span><span class="value" style="color: var(--accent-coral);">66.7%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 66.7%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Male</span><span class="value">34.4%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill blue" style="width: 34.4%"></div></div>
+                </div>
+            </div>
+            <div class="demo-box">
+                <h4>Age Distribution</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>55-64</span><span class="value" style="color: var(--accent-green);">25.8%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill green" style="width: 100%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>45-54</span><span class="value">24.5%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill blue" style="width: 95%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>65+</span><span class="value">21.0%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill purple" style="width: 81%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>35-44</span><span class="value">17.6%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill coral" style="width: 68%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>25-34</span><span class="value">9.1%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill orange" style="width: 35%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="insight-box red">
+        <h4>Q3 Crisis Point</h4>
+        <p>Q3 represented the efficiency low point with peak CPA of $74+ on both platforms. 55-64 continued to dominate (25.8%). Male share increased slightly (+0.6pp to 34.4%). Even at worst performance, unit economics remained 4x better than industry. Top segment: Female 55-64 (17.2%).</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>06 / 23</span></div>
+</section>
+
+<!-- SLIDE 7: Q4 2025 Performance + Demographics -->
+<section class="slide">
+    <span class="slide-number">07 / 23</span>
+    <div class="slide-tag">Q4 2025 Performance</div>
+    <h2>Q4 2025: Stabilization & Recovery Signs</h2>
+    
+    <div class="metrics-grid">
+        <div class="metric-card coral">
+            <div class="metric-label">Shopify Revenue</div>
+            <div class="metric-value">$601,662</div>
+            <div class="metric-change neutral">2,459 orders</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Average AOV</div>
+            <div class="metric-value">$244.68</div>
+            <div class="metric-change up">+8% Oct→Dec</div>
+        </div>
+        <div class="metric-card blue">
+            <div class="metric-label">Customer LTV</div>
+            <div class="metric-value">$901</div>
+            <div class="metric-change neutral">Blended normal</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Blended CAC</div>
+            <div class="metric-value">$50</div>
+            <div class="metric-change up">-33% vs Q3</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">CAC:LTV Ratio</div>
+            <div class="metric-value">1:18</div>
+            <div class="metric-change up">+50% vs Q3</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Platform Performance</h3>
+            <table class="data-table">
+                <thead><tr><th>Platform</th><th>Spend</th><th>ROAS</th><th>CPA</th><th>vs Q3</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Meta Ads</td><td>$12,073</td><td class="coral">3.6x</td><td class="orange">$71.44</td><td class="green">-4%</td></tr>
+                    <tr><td class="highlight">Google Ads</td><td>$7,027</td><td class="coral">3.7x</td><td class="coral">$61.45</td><td class="green">-17%</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="cac-ltv-indicator" style="margin-top: 20px;">
+                <div class="ratio-label">Q4 2025 CAC:LTV Ratio</div>
+                <div class="ratio-value">1:18</div>
+                <div class="ratio-detail">$50 Blended CAC → $901 LTV | 80.6% returning rate</div>
+            </div>
+        </div>
+        <div>
+            <h3>Q4 Demographics (Google Ads)</h3>
+            <div class="demo-box" style="margin-bottom: 16px;">
+                <h4>Gender Split</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Female</span><span class="value" style="color: var(--accent-coral);">57.9%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 57.9%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>Male</span><span class="value" style="color: var(--accent-blue);">42.3%</span></div>
+                    <div class="progress-bar" style="height: 12px;"><div class="progress-fill blue" style="width: 42.3%"></div></div>
+                </div>
+            </div>
+            <div class="demo-box">
+                <h4>Age Distribution</h4>
+                <div class="progress-container">
+                    <div class="progress-label"><span>65+</span><span class="value" style="color: var(--accent-green);">27.0%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill green" style="width: 100%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>45-54</span><span class="value">25.6%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill blue" style="width: 95%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>55-64</span><span class="value">19.7%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill purple" style="width: 73%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>35-44</span><span class="value">16.8%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill coral" style="width: 62%"></div></div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-label"><span>25-34</span><span class="value">9.3%</span></div>
+                    <div class="progress-bar" style="height: 10px;"><div class="progress-fill orange" style="width: 34%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="insight-box">
+        <h4>Q4 Insight</h4>
+        <p>Major demographic shift: 65+ became the top age segment (27.0%), overtaking 55-64. Female share dropped significantly from 67% to 58%, with male share increasing to 42% (+8pp). CPA improved 33% from Q3 peak. Q4's 3.5-4x ROAS represents realistic direct conversion baseline. Top segment: Female 65+ (18.3%).</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>07 / 23</span></div>
+</section>
+
+<!-- SLIDE 8: Quarterly Demographics Comparison -->
+<section class="slide">
+    <span class="slide-number">08 / 23</span>
+    <div class="slide-tag">Demographics Trend</div>
+    <h2>Quarterly Demographics Shift (Google Ads)</h2>
+    
+    <div class="two-col">
+        <div>
+            <h3>Gender Trend Q1→Q4</h3>
+            <table class="data-table">
+                <thead><tr><th>Quarter</th><th>Female</th><th>Male</th><th>Shift</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Q1 2025</td><td class="coral">67.5%</td><td>33.2%</td><td><span class="tag green">Peak Female</span></td></tr>
+                    <tr><td class="highlight">Q2 2025</td><td class="coral">66.9%</td><td>33.8%</td><td><span class="tag">-0.6pp</span></td></tr>
+                    <tr><td class="highlight">Q3 2025</td><td class="coral">66.7%</td><td>34.4%</td><td><span class="tag">-0.2pp</span></td></tr>
+                    <tr><td class="highlight">Q4 2025</td><td class="orange">57.9%</td><td class="blue">42.3%</td><td><span class="tag blue">+8pp Male</span></td></tr>
+                </tbody>
+            </table>
+            
+            <div class="insight-box coral" style="margin-top: 16px;">
+                <h4>Gender Shift</h4>
+                <p>Significant shift in Q4: Male audience grew from 33% to 42% (+9pp). This indicates broader audience discovery. Consider male-focused creative variants in 2026.</p>
+            </div>
+        </div>
+        <div>
+            <h3>Top Age Segment Trend</h3>
+            <table class="data-table">
+                <thead><tr><th>Quarter</th><th>#1 Segment</th><th>%</th><th>Shift</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Q1 2025</td><td class="green">45-54</td><td>26.1%</td><td>—</td></tr>
+                    <tr><td class="highlight">Q2 2025</td><td class="blue">55-64</td><td>24.2%</td><td><span class="tag">Older</span></td></tr>
+                    <tr><td class="highlight">Q3 2025</td><td class="blue">55-64</td><td>25.8%</td><td><span class="tag">Stable</span></td></tr>
+                    <tr><td class="highlight">Q4 2025</td><td class="green">65+</td><td>27.0%</td><td><span class="tag green">Oldest</span></td></tr>
+                </tbody>
+            </table>
+            
+            <div class="card" style="margin-top: 16px;">
+                <h4>Top Combined Segments (Q4)</h4>
+                <table class="data-table" style="margin: 12px 0 0 0;">
+                    <tr><td class="highlight">Female 65+</td><td class="green">18.3%</td></tr>
+                    <tr><td class="highlight">Female 55-64</td><td>13.3%</td></tr>
+                    <tr><td class="highlight">Female 45-54</td><td>13.2%</td></tr>
+                    <tr><td class="highlight">Male 45-54</td><td>12.3%</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="insight-box blue" style="margin-top: 24px;">
+        <h4>Strategic Implication</h4>
+        <p>Audience progressively aged throughout 2025, with 65+ becoming dominant by Q4 (27%). This aligns with health supplement category. Consider: (1) Senior-focused messaging and imagery, (2) Caregiver/family buyer angles for female 45-65+ audiences, (3) Larger font sizes and clearer CTAs, (4) Male-targeted campaigns (+9pp growth opportunity).</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>08 / 23</span></div>
+</section>
+
+<!-- SLIDE 9: Q4 Monthly Breakdown -->
+<section class="slide">
+    <span class="slide-number">09 / 23</span>
+    <div class="slide-tag">Q4 2025 Detail</div>
+    <h2>Q4 2025 Shopify Monthly Breakdown</h2>
+    
+    <div class="metrics-grid three-col">
+        <div class="metric-card green">
+            <div class="metric-label">October 2025</div>
+            <div class="metric-value">$223,633</div>
+            <div class="metric-change neutral">944 orders | $237 AOV</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">November 2025</div>
+            <div class="metric-value">$187,612</div>
+            <div class="metric-change neutral">772 orders | $243 AOV</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">December 2025</div>
+            <div class="metric-value">$190,417</div>
+            <div class="metric-change up">743 orders | $256 AOV</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div>
+            <h3>Customer Acquisition Metrics</h3>
+            <table class="data-table">
+                <tr><td>New Customers (Q4)</td><td class="highlight">441</td></tr>
+                <tr><td>Unique Buyers (Q4)</td><td class="highlight">1,649</td></tr>
+                <tr><td>Returning Customer Rate</td><td class="green">80.6%</td></tr>
+                <tr><td>Total Orders (Q4)</td><td class="highlight">2,459</td></tr>
+                <tr><td>Average Order Value</td><td class="green">$244.68</td></tr>
+            </table>
+        </div>
+        <div>
+            <h3>AOV Trend Through Q4</h3>
+            <div class="progress-container" style="margin-top: 24px;">
+                <div class="progress-label"><span>October</span><span class="value">$236.90</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill coral" style="width: 92%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>November</span><span class="value">$243.02</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill coral" style="width: 95%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>December</span><span class="value" style="color: var(--accent-green);">$256.28</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 100%"></div></div>
+            </div>
+            
+            <div class="insight-box coral" style="margin-top: 24px;">
+                <h4>AOV Growth</h4>
+                <p>8% improvement Oct to Dec. Higher-value Restore line purchases and bundle strategies driving AOV gains within Q4.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>09 / 23</span></div>
+</section>
+
+<!-- SLIDE 10: Full Year CAC:LTV Deep Dive -->
+<section class="slide">
+    <span class="slide-number">10 / 23</span>
+    <div class="slide-tag">Unit Economics</div>
+    <h2>CAC to LTV Analysis - Full Year 2025</h2>
+    
+    <table class="data-table">
+        <thead><tr><th>Quarter</th><th>Total Spend</th><th>Conversions</th><th>Blended CPA</th><th>LTV</th><th>CAC:LTV</th><th>vs Industry</th></tr></thead>
+        <tbody>
+            <tr><td class="highlight">Q1 2025</td><td>$17,969</td><td>741</td><td class="green">$24.25</td><td>$901</td><td class="green">1:37</td><td class="green">12.3x better</td></tr>
+            <tr><td class="highlight">Q2 2025</td><td>$18,783</td><td>344</td><td class="coral">$54.60</td><td>$901</td><td class="coral">1:16</td><td class="green">5.3x better</td></tr>
+            <tr><td class="highlight">Q3 2025</td><td>$24,793</td><td>333</td><td class="red">$74.45</td><td>$901</td><td class="red">1:12</td><td class="green">4.0x better</td></tr>
+            <tr><td class="highlight">Q4 2025</td><td>$19,100</td><td>339</td><td class="coral">$56.34</td><td>$901</td><td class="green">1:18</td><td class="green">6.0x better</td></tr>
+            <tr style="background: var(--bg-card);"><td class="highlight"><strong>Full Year</strong></td><td><strong>$80,645</strong></td><td><strong>1,757</strong></td><td><strong>$45.91</strong></td><td><strong>$901</strong></td><td class="green"><strong>1:20</strong></td><td class="green"><strong>6.5x better</strong></td></tr>
+        </tbody>
+    </table>
+    
+    <div class="two-col" style="margin-top: 24px;">
+        <div class="card">
+            <h3>Lifetime Value Segments</h3>
+            <table class="data-table" style="margin: 16px 0 0 0;">
+                <tr><td>One-Time Buyers (53.4%)</td><td class="highlight">$245 LTV</td></tr>
+                <tr><td>Repeat Buyers (46.6%)</td><td class="green">$2,784 LTV</td></tr>
+                <tr><td>Blended LTV (normal)</td><td class="green">$901</td></tr>
+                <tr><td>Avg Orders per Customer</td><td class="highlight">3.77</td></tr>
+                <tr><td>High-Value Customers ($1K+)</td><td class="highlight">18.7%</td></tr>
+            </table>
+        </div>
+        <div class="card">
+            <h3>Max Allowable CAC Analysis</h3>
+            <div class="progress-container" style="margin-top: 16px;">
+                <div class="progress-label"><span>Max Allowable CAC (at 1:3)</span><span class="value" style="color: var(--accent-green);">$300</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 100%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q3 Peak CAC</span><span class="value" style="color: var(--accent-red);">$74</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill red" style="width: 25%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q4 CAC</span><span class="value" style="color: var(--accent-coral);">$50</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill coral" style="width: 17%"></div></div>
+            </div>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 12px;">Even at Q3's peak CPA, CAC remained 75% below max allowable.</p>
+        </div>
+    </div>
+    
+    <div class="insight-box">
+        <h4>Strategic Implication</h4>
+        <p>Exceptional unit economics persisted throughout 2025. The 46.6% repeat buyer rate ($2,784 LTV) creates powerful compounding. Even at Q3's worst (1:12), performance was 4x better than industry standard. This supports aggressive acquisition in 2026.</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>10 / 23</span></div>
+</section>
+
+<!-- SLIDE 11: Full Year Meta Ads -->
+<section class="slide">
+    <span class="slide-number">11 / 23</span>
+    <div class="slide-tag">Platform Analysis</div>
+    <h2>Meta Ads: Full Year 2025 Performance</h2>
+    
+    <table class="data-table">
+        <thead><tr><th>Quarter</th><th>Spend</th><th>Purchases</th><th>Revenue</th><th>ROAS</th><th>CPA</th><th>Trend</th></tr></thead>
+        <tbody>
+            <tr><td class="highlight">Q1 2025</td><td>$7,060</td><td>406</td><td class="green">$446,804</td><td class="green">63.3x</td><td class="green">$17.39</td><td><span class="tag green">Peak</span></td></tr>
+            <tr><td class="highlight">Q2 2025</td><td>$9,226</td><td>214</td><td>$299,140</td><td class="coral">32.4x</td><td class="orange">$43.11</td><td><span class="tag orange">-49% ROAS</span></td></tr>
+            <tr><td class="highlight">Q3 2025</td><td>$14,650</td><td>197</td><td>$204,100</td><td class="coral">13.9x</td><td class="red">$74.37</td><td><span class="tag red">-57% ROAS</span></td></tr>
+            <tr><td class="highlight">Q4 2025</td><td>$12,073</td><td>169</td><td class="red">$43,163</td><td class="red">3.6x</td><td class="orange">$71.44</td><td><span class="tag red">-74% ROAS</span></td></tr>
+            <tr style="background: var(--bg-card);"><td class="highlight"><strong>FULL YEAR</strong></td><td><strong>$43,010</strong></td><td><strong>986</strong></td><td class="green"><strong>$993,208</strong></td><td class="green"><strong>23.1x</strong></td><td><strong>$43.62</strong></td><td></td></tr>
+        </tbody>
+    </table>
+    
+    <div class="two-col" style="margin-top: 24px;">
+        <div class="card">
+            <h3>Key Observations</h3>
+            <ul class="check-list" style="font-size: 16px;">
+                <li>Q1 ROAS of 63.3x inflated by view-through attribution</li>
+                <li class="red">ROAS declined 94% from Q1 (63.3x) to Q4 (3.6x)</li>
+                <li class="red">CPA increased 311% from Q1 ($17) to Q3 ($74)</li>
+                <li>Q4 shows more realistic direct conversion metrics</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Campaign Winners (Q4)</h3>
+            <table class="data-table" style="margin: 0;">
+                <tr><td class="highlight">SS - Retargeting</td><td class="green">7.35x ROAS</td></tr>
+                <tr><td class="highlight">Brain Copy Creative</td><td class="green">5.41x ROAS</td></tr>
+                <tr><td class="highlight">Comparison 1 Copy</td><td class="green">4.32x ROAS</td></tr>
+                <tr><td class="highlight">SS - Probiotic</td><td class="green">3.99x ROAS</td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>11 / 23</span></div>
+</section>
+
+<!-- SLIDE 12: Full Year Google Ads -->
+<section class="slide">
+    <span class="slide-number">12 / 23</span>
+    <div class="slide-tag">Platform Analysis</div>
+    <h2>Google Ads: Full Year 2025 Performance</h2>
+    
+    <table class="data-table">
+        <thead><tr><th>Quarter</th><th>Spend</th><th>Conversions</th><th>Conv. Value</th><th>ROAS</th><th>CPA</th><th>Trend</th></tr></thead>
+        <tbody>
+            <tr><td class="highlight">Q1 2025</td><td>$10,909</td><td>335</td><td class="green">$124,974</td><td class="green">11.5x</td><td class="green">$32.60</td><td><span class="tag green">Peak</span></td></tr>
+            <tr><td class="highlight">Q2 2025</td><td>$9,557</td><td>130</td><td class="red">$45,960</td><td class="red">4.8x</td><td class="red">$73.43</td><td><span class="tag red">-58% ROAS</span></td></tr>
+            <tr><td class="highlight">Q3 2025</td><td>$10,143</td><td>136</td><td>$47,339</td><td class="red">4.7x</td><td class="red">$74.39</td><td><span class="tag orange">Stable</span></td></tr>
+            <tr><td class="highlight">Q4 2025</td><td>$7,027</td><td>114</td><td class="red">$25,864</td><td class="red">3.7x</td><td class="coral">$61.45</td><td><span class="tag coral">CPA improved</span></td></tr>
+            <tr style="background: var(--bg-card);"><td class="highlight"><strong>FULL YEAR</strong></td><td><strong>$37,635</strong></td><td><strong>715</strong></td><td><strong>$244,137</strong></td><td class="coral"><strong>6.5x</strong></td><td><strong>$52.64</strong></td><td></td></tr>
+        </tbody>
+    </table>
+    
+    <div class="two-col" style="margin-top: 24px;">
+        <div class="card">
+            <h3>Key Observations</h3>
+            <ul class="check-list" style="font-size: 16px;">
+                <li class="red">ROAS collapsed 68% from Q1 (11.5x) to Q4 (3.7x)</li>
+                <li class="red">Conversions dropped 66% from Q1 (335) to Q4 (114)</li>
+                <li>CPA peaked in Q3 at $74.39, improved to $61.45 in Q4</li>
+                <li class="coral">Search impression share critically low at 10-12%</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Campaign Performance (Q4)</h3>
+            <table class="data-table" style="margin: 0;">
+                <tr><td class="highlight">SS - Branded</td><td class="green">5.93x ROAS</td><td>$54 CPA</td></tr>
+                <tr><td class="highlight">SS - Performance Max</td><td class="coral">Volume driver</td><td>$59 CPA</td></tr>
+                <tr><td class="highlight">SS - DSA</td><td class="green">High efficiency</td><td class="green">$16 CPA</td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>12 / 23</span></div>
+</section>
+
+<!-- SLIDE 13: Q4 Meta Campaign Detail -->
+<section class="slide">
+    <span class="slide-number">13 / 23</span>
+    <div class="slide-tag">Q4 Platform Deep Dive</div>
+    <h2>Meta Ads Q4 Campaign Performance</h2>
+    
+    <table class="data-table">
+        <thead><tr><th>Campaign</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Purchases</th><th>CPA</th><th>Status</th></tr></thead>
+        <tbody>
+            <tr><td class="highlight">SS - Probiotic Campaign</td><td>$5,668</td><td class="green">$22,614</td><td class="green">3.99x</td><td>81</td><td>$70</td><td><span class="tag green">Top Performer</span></td></tr>
+            <tr><td class="highlight">SS - Retargeting</td><td>$248</td><td class="green">$1,824</td><td class="green">7.35x</td><td>12</td><td>$21</td><td><span class="tag green">Scale</span></td></tr>
+            <tr><td class="highlight">SS - Omnipresent Advt+</td><td>$3,892</td><td>$9,923</td><td class="orange">2.55x</td><td>47</td><td>$83</td><td><span class="tag orange">Monitor</span></td></tr>
+            <tr><td>Brain Food+ CBO (Testing)</td><td>$163</td><td>$427</td><td class="orange">2.62x</td><td>3</td><td>$54</td><td><span class="tag">Learning</span></td></tr>
+        </tbody>
+    </table>
+    
+    <div class="two-col" style="margin-top: 24px;">
+        <div>
+            <h3>Top Performing Creatives</h3>
+            <table class="data-table">
+                <thead><tr><th>Creative</th><th>ROAS</th><th>Spend</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Brain Copy</td><td class="green">5.41x</td><td>$1,054</td></tr>
+                    <tr><td class="highlight">Comparison 1 Copy</td><td class="green">4.32x</td><td>$1,032</td></tr>
+                    <tr><td class="highlight">Carousel 1 Text</td><td class="green">3.18x</td><td>$202</td></tr>
+                    <tr><td class="highlight">Dr. Ledbetter Testimonial</td><td class="green">3.82x</td><td>$445</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3>Q4 Meta Summary</h3>
+            <div class="card">
+                <table class="data-table" style="margin: 0;">
+                    <tr><td>Total Spend</td><td class="highlight">$9,808</td></tr>
+                    <tr><td>Total Revenue</td><td class="green">$32,537</td></tr>
+                    <tr><td>Blended ROAS</td><td class="green">3.32x</td></tr>
+                    <tr><td>Total Purchases</td><td class="highlight">225</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>13 / 23</span></div>
+</section>
+
+<!-- SLIDE 14: Q4 Google Campaign Detail -->
+<section class="slide">
+    <span class="slide-number">14 / 23</span>
+    <div class="slide-tag">Q4 Platform Deep Dive</div>
+    <h2>Google Ads Q4 Campaign Performance</h2>
+    
+    <table class="data-table">
+        <thead><tr><th>Campaign</th><th>Spend</th><th>Revenue</th><th>ROAS</th><th>Conv.</th><th>CPA</th><th>Status</th></tr></thead>
+        <tbody>
+            <tr><td class="highlight">SS - Branded</td><td>$1,374</td><td class="green">$8,140</td><td class="green">5.93x</td><td>25.5</td><td>$54</td><td><span class="tag green">Best ROAS</span></td></tr>
+            <tr><td class="highlight">SS - Performance Max</td><td>$4,288</td><td>N/A</td><td>N/A</td><td>72.5</td><td>$59</td><td><span class="tag blue">Volume Driver</span></td></tr>
+            <tr><td class="highlight">SS - DSA</td><td>$1,215</td><td>N/A</td><td>N/A</td><td>~16</td><td class="green">$16</td><td><span class="tag green">High Efficiency</span></td></tr>
+        </tbody>
+    </table>
+    
+    <div class="two-col" style="margin-top: 24px;">
+        <div>
+            <h3>Competitive Position</h3>
+            <div class="progress-container" style="margin-top: 16px;">
+                <div class="progress-label"><span>Impression Share (Branded)</span><span class="value" style="color: var(--accent-green);">99.65%</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 99.65%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Top of Page Rate</span><span class="value" style="color: var(--accent-green);">99.18%</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 99.18%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Branded CTR</span><span class="value" style="color: var(--accent-green);">30.82%</span></div>
+                <div class="progress-bar" style="height: 14px;"><div class="progress-fill green" style="width: 100%"></div></div>
+            </div>
+        </div>
+        <div>
+            <h3>Q4 Google Summary</h3>
+            <div class="card">
+                <table class="data-table" style="margin: 0;">
+                    <tr><td>Total Spend</td><td class="highlight">$7,027</td></tr>
+                    <tr><td>Total Conversions</td><td class="highlight">114</td></tr>
+                    <tr><td>Blended CPA</td><td class="green">$61.45</td></tr>
+                    <tr><td>CPA Improvement vs Q3</td><td class="green">-17%</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>14 / 23</span></div>
+</section>
+
+<!-- SLIDE 15: Top Products -->
+<section class="slide">
+    <span class="slide-number">15 / 23</span>
+    <div class="slide-tag">Product Analysis</div>
+    <h2>Top Products by Revenue (2025)</h2>
+    
+    <div class="two-col">
+        <div>
+            <h3>Product Performance</h3>
+            <table class="data-table">
+                <thead><tr><th>Product</th><th>Revenue</th><th>Units</th><th>AOV</th></tr></thead>
+                <tbody>
+                    <tr><td class="highlight">Restore Professional - Vanilla</td><td class="green">$138,000</td><td>604</td><td>$229</td></tr>
+                    <tr><td class="highlight">Digestive Enzyme Formula</td><td>$58,000</td><td>729</td><td>$80</td></tr>
+                    <tr><td class="highlight">Lugol's Iodine Plus</td><td>$52,000</td><td>862</td><td>$61</td></tr>
+                    <tr><td class="highlight">Restore Professional - Veggie</td><td>$47,000</td><td>203</td><td>$231</td></tr>
+                    <tr><td class="highlight">Brain Food Plus</td><td>$32,000</td><td>332</td><td>$96</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3>Strategic Insights</h3>
+            <div class="card" style="margin-bottom: 16px;">
+                <h4 style="color: var(--accent-green);">Restore Line Dominance</h4>
+                <p style="font-size: 15px;">55% of top 5 revenue. Vanilla and Veggie formulas are hero products ($229-$231 AOV).</p>
+            </div>
+            <div class="card" style="margin-bottom: 16px;">
+                <h4 style="color: var(--accent-coral);">Brain Food+ Opportunity</h4>
+                <p style="font-size: 15px;">$32K revenue with limited advertising. Creative proving 5.41x ROAS. Major Q1 2026 focus.</p>
+            </div>
+            <div class="card">
+                <h4 style="color: var(--accent-orange);">Inventory Priority</h4>
+                <p style="font-size: 15px;">Brain Food+ (April exp.) and Probiotic (Feb exp.) require BOGO 50% clearance.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>15 / 23</span></div>
+</section>
+
+<!-- SLIDE 16: Q1 vs Q4 Comparison -->
+<section class="slide">
+    <span class="slide-number">16 / 23</span>
+    <div class="slide-tag">Trend Analysis</div>
+    <h2>Q1 to Q4 Performance Comparison</h2>
+    
+    <div class="metrics-grid three-col" style="margin-bottom: 24px;">
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent-coral);">
+            <div class="metric-label">Shopify Revenue</div>
+            <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+                <div><div style="font-size: 14px; color: var(--text-muted);">Q1</div><div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">$1.47M</div></div>
+                <div style="font-size: 24px; color: var(--text-muted); align-self: center;">→</div>
+                <div><div style="font-size: 14px; color: var(--text-muted);">Q4</div><div style="font-size: 28px; font-weight: 700; color: var(--accent-red);">$594K</div></div>
+            </div>
+            <div style="margin-top: 12px; font-size: 16px; color: var(--accent-red);">-60% decline</div>
+        </div>
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent-blue);">
+            <div class="metric-label">Blended ROAS</div>
+            <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+                <div><div style="font-size: 14px; color: var(--text-muted);">Q1</div><div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">31.8x</div></div>
+                <div style="font-size: 24px; color: var(--text-muted); align-self: center;">→</div>
+                <div><div style="font-size: 14px; color: var(--text-muted);">Q4</div><div style="font-size: 28px; font-weight: 700; color: var(--accent-red);">3.6x</div></div>
+            </div>
+            <div style="margin-top: 12px; font-size: 16px; color: var(--accent-red);">-89% decline</div>
+        </div>
+        <div class="card" style="text-align: center; border-top: 3px solid var(--accent-green);">
+            <div class="metric-label">CAC:LTV Ratio</div>
+            <div style="display: flex; justify-content: center; gap: 24px; margin-top: 16px;">
+                <div><div style="font-size: 14px; color: var(--text-muted);">Q1</div><div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">1:37</div></div>
+                <div style="font-size: 24px; color: var(--text-muted); align-self: center;">→</div>
+                <div><div style="font-size: 14px; color: var(--text-muted);">Q4</div><div style="font-size: 28px; font-weight: 700; color: var(--accent-green);">1:18</div></div>
+            </div>
+            <div style="margin-top: 12px; font-size: 16px; color: var(--accent-green);">Still 6x better than industry</div>
+        </div>
+    </div>
+    
+    <div class="two-col">
+        <div class="card">
+            <h3>CPA Trend</h3>
+            <div class="progress-container" style="margin-top: 16px;">
+                <div class="progress-label"><span>Q1 Blended CPA</span><span class="value" style="color: var(--accent-green);">$24.25</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill green" style="width: 33%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q2 Blended CPA</span><span class="value">$54.60</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 73%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q3 Blended CPA (Peak)</span><span class="value" style="color: var(--accent-red);">$74.45</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill red" style="width: 100%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Q4 Blended CPA</span><span class="value" style="color: var(--accent-coral);">$56.34</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 76%"></div></div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Demographics Shift</h3>
+            <table class="data-table" style="margin: 12px 0 0 0;">
+                <tr><td>Female Share</td><td class="coral">67.5% → 57.9%</td><td class="blue">-9.6pp</td></tr>
+                <tr><td>Male Share</td><td class="blue">33.2% → 42.3%</td><td class="green">+9.1pp</td></tr>
+                <tr><td>Top Age Segment</td><td>45-54 → 65+</td><td><span class="tag">Older</span></td></tr>
+                <tr><td>65+ Share</td><td class="green">18.4% → 27.0%</td><td class="green">+8.6pp</td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>16 / 23</span></div>
+</section>
+
+<!-- SLIDE 17: Key Insights -->
+<section class="slide">
+    <span class="slide-number">17 / 23</span>
+    <div class="slide-tag">Strategic Analysis</div>
+    <h2>Key Insights & Learnings</h2>
+    
+    <div class="two-col">
+        <div>
+            <h3 style="color: var(--accent-green);">What Worked in 2025</h3>
+            <ul class="check-list">
+                <li>Total Shopify revenue of $4.57M with 10,628 orders</li>
+                <li>Ad spend efficiency at just 1.8% of revenue</li>
+                <li>CAC:LTV ratio never dropped below 1:12 (4x industry)</li>
+                <li>80.6% returning customer rate (Q4)</li>
+                <li>Meta retargeting consistently strong (7.35x ROAS)</li>
+                <li>Branded search maintained 99%+ impression share</li>
+                <li>DSA campaign efficiency at $16 CPA</li>
+            </ul>
+        </div>
+        <div>
+            <h3 style="color: var(--accent-red);">Areas Requiring Attention</h3>
+            <ul class="check-list">
+                <li class="red">ROAS declined 89% overall (Q1→Q4)</li>
+                <li class="red">AOV dropped 53% from Q1 ($510) to Q4 ($240)</li>
+                <li class="coral">CPA peaked at $74+ in Q3</li>
+                <li class="coral">Google impression share critically low (10-12%)</li>
+                <li class="coral">Q1 metrics inflated by view-through attribution</li>
+                <li class="coral">Expiring inventory (Probiotic Feb, Brain Food+ Apr)</li>
+                <li class="coral">Female audience share declining (-9.6pp)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="insight-box blue" style="margin-top: 24px;">
+        <h4>Critical Understanding</h4>
+        <p>The Q1 2025 ROAS figures were inflated by view-through attribution. Q4 metrics (3.5-4x ROAS) represent realistic direct conversion performance. This explains the apparent "decline" - it's largely attribution normalization rather than business deterioration. The underlying unit economics remained exceptional with CAC:LTV never below 1:12.</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>17 / 23</span></div>
+</section>
+
+<!-- SLIDE 18: Q1 2026 Strategic Priorities -->
+<section class="slide">
+    <span class="slide-number">18 / 23</span>
+    <div class="slide-tag">Strategic Priorities</div>
+    <h2>Q1 2026 Focus Areas</h2>
+    
+    <div class="three-col">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>Scale Proven Winners</h3>
+            <span class="tag green">High Priority</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li>Increase Meta retargeting budget (7.35x ROAS)</li>
+                <li>Maintain Google branded dominance (5.93x)</li>
+                <li>Scale DSA campaign ($16 CPA efficiency)</li>
+                <li>Expand Brain Copy creative variants</li>
+            </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-coral);">
+            <h3>Launch Brain Food+</h3>
+            <span class="tag">Campaign Launch</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li>Single CBO, 6 ad sets (full funnel)</li>
+                <li>Target: 4x+ ROAS, $45-55 CPA</li>
+                <li>Initial budget: $150-200/day</li>
+                <li>Clear April expiring inventory</li>
+            </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-red);">
+            <h3>Inventory Clear-Out</h3>
+            <span class="tag red">Urgent</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li class="red">Probiotic: 281 units exp. February</li>
+                <li class="coral">Brain Food+: April expiration window</li>
+                <li>Strategy: BOGO 50% offers</li>
+                <li>Clear expiring before spoilage</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="two-col" style="margin-top: 32px;">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>Q1 2026 Performance Targets</h3>
+            <table class="data-table" style="margin: 16px 0 0 0;">
+                <tr><td>Monthly Ad Budget</td><td class="highlight">$40,000</td></tr>
+                <tr><td>Target ROAS</td><td class="green">3.5-4.0x</td></tr>
+                <tr><td>Target CPA</td><td class="highlight">$45-55</td></tr>
+                <tr><td>Target CAC:LTV</td><td class="green">1:15+ minimum</td></tr>
+            </table>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-coral);">
+            <h3>Budget Allocation</h3>
+            <div class="progress-container" style="margin-top: 16px;">
+                <div class="progress-label"><span>Proven Winners</span><span class="value">50%</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill green" style="width: 50%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Brain Food+ Campaign</span><span class="value">30%</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill coral" style="width: 30%"></div></div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-label"><span>Testing & Inventory</span><span class="value">20%</span></div>
+                <div class="progress-bar" style="height: 12px;"><div class="progress-fill blue" style="width: 20%"></div></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>18 / 23</span></div>
+</section>
+
+<!-- SLIDE 19: 2026 Recommendations -->
+<section class="slide">
+    <span class="slide-number">19 / 23</span>
+    <div class="slide-tag">Recommendations</div>
+    <h2>2026 Strategic Recommendations</h2>
+    
+    <div class="three-col">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>1. Address Google Impression Share</h3>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px;">Increase daily budgets to capture 88-90% of missed search traffic.</p>
+            <div style="margin-top: 16px;"><span class="tag green">High Impact</span></div>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-coral);">
+            <h3>2. Calibrate Attribution</h3>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px;">Use Q4 metrics (3.5-4.0x ROAS) as realistic baseline for 2026.</p>
+            <div style="margin-top: 16px;"><span class="tag coral">Foundation</span></div>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-blue);">
+            <h3>3. Protect AOV</h3>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px;">Investigate 53% AOV decline. Implement bundles to maintain $400+ AOV.</p>
+            <div style="margin-top: 16px;"><span class="tag blue">Critical</span></div>
+        </div>
+    </div>
+    
+    <div class="three-col" style="margin-top: 24px;">
+        <div class="card" style="border-top: 3px solid var(--accent-orange);">
+            <h3>4. Scale Retargeting</h3>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px;">Retargeting delivers 6-10x ROAS. Allocate more budget to proven audiences.</p>
+            <div style="margin-top: 16px;"><span class="tag orange">Quick Win</span></div>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-red);">
+            <h3>5. Creative Refresh</h3>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px;">Implement systematic rotation. Test male-focused creative variants.</p>
+            <div style="margin-top: 16px;"><span class="tag red">Urgent</span></div>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>6. Leverage CAC:LTV Headroom</h3>
+            <p style="font-size: 15px; color: var(--text-secondary); margin-top: 12px;">With $300+ max CAC, aggressive acquisition is profitable at current efficiency.</p>
+            <div style="margin-top: 16px;"><span class="tag green">Growth</span></div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>19 / 23</span></div>
+</section>
+
+<!-- SLIDE 20: Demographics Strategy -->
+<section class="slide">
+    <span class="slide-number">20 / 23</span>
+    <div class="slide-tag">Demographics Strategy</div>
+    <h2>Audience-Based Recommendations for 2026</h2>
+    
+    <div class="two-col">
+        <div class="card" style="border-top: 3px solid var(--accent-coral);">
+            <h3>Female 45-65+ Strategy</h3>
+            <span class="tag coral">Primary Audience</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li>Caregiver/family buyer messaging angles</li>
+                <li>"Taking care of loved ones" positioning</li>
+                <li>Health journey storytelling</li>
+                <li>Dr. Tennant authority content</li>
+                <li>Testimonial-heavy creative rotation</li>
+            </ul>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 12px;">Represents 45% of Google search traffic</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-blue);">
+            <h3>Male Audience Growth</h3>
+            <span class="tag blue">Emerging Opportunity</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li>Male share grew +9pp in Q4 (33% → 42%)</li>
+                <li>Test male-focused creative variants</li>
+                <li>Performance/energy messaging angles</li>
+                <li>Direct health benefits vs. family care</li>
+                <li>Separate ad sets for male targeting</li>
+            </ul>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: 12px;">Significant growth opportunity identified</p>
+        </div>
+    </div>
+    
+    <div class="two-col" style="margin-top: 24px;">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>65+ Segment Focus</h3>
+            <span class="tag green">Largest Segment</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li>Larger font sizes in creative</li>
+                <li>Clearer CTAs and navigation</li>
+                <li>Longevity/quality of life messaging</li>
+                <li>Trust signals and credentials</li>
+            </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-orange);">
+            <h3>Peak Activity Windows</h3>
+            <span class="tag orange">Scheduling</span>
+            <ul class="check-list" style="font-size: 15px; margin-top: 16px;">
+                <li>Best days: Wednesday, Thursday, Tuesday</li>
+                <li>Peak hours: 10am-1pm</li>
+                <li>Top states: TX, CA, FL, NY</li>
+                <li>Consider dayparting for budget efficiency</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>20 / 23</span></div>
+</section>
+
+<!-- SLIDE 21: Next Steps -->
+<section class="slide">
+    <span class="slide-number">21 / 23</span>
+    <div class="slide-tag">Action Items</div>
+    <h2>Next Steps & Action Items</h2>
+    
+    <div class="three-col">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>Immediate (This Week)</h3>
+            <ul class="check-list" style="font-size: 16px;">
+                <li>Finalize Brain Food+ creative assets</li>
+                <li>Scale Google DSA campaign budget (+25%)</li>
+                <li>Confirm probiotic BOGO 50% launch date</li>
+                <li>Increase Meta retargeting daily budget</li>
+                <li>Review underperforming Omnipresent ads</li>
+            </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-coral);">
+            <h3>This Month</h3>
+            <ul class="check-list" style="font-size: 16px;">
+                <li>Launch full Brain Food+ CBO campaign</li>
+                <li>Execute probiotic inventory clearance</li>
+                <li>Test new UGC/testimonial creative</li>
+                <li>Test male-focused creative variants</li>
+                <li>Weekly Loom performance updates</li>
+            </ul>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-blue);">
+            <h3>Q1 2026 Targets</h3>
+            <ul class="check-list" style="font-size: 16px;">
+                <li>Total Monthly Budget: $40,000</li>
+                <li>Blended ROAS: 3.5-4.0x minimum</li>
+                <li>Brain Food+ ROAS: 4x+ target</li>
+                <li>Clear expiring inventory by deadline</li>
+                <li>Maintain CAC:LTV above 1:15</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="insight-box" style="margin-top: 32px; border-left-color: var(--accent-green);">
+        <h4>Strategic Summary</h4>
+        <p>2025 established strong foundations with exceptional unit economics (CAC:LTV ranging 1:12 to 1:37). The business transitioned from inflated attribution to realistic metrics. 80.6% returning customer rate demonstrates product-market fit. Demographics shifted toward older (65+) and more male audiences. Q1 2026 focuses on scaling proven winners while launching Brain Food+ and clearing time-sensitive inventory.</p>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>21 / 23</span></div>
+</section>
+
+<!-- SLIDE 22: Summary -->
+<section class="slide">
+    <span class="slide-number">22 / 23</span>
+    <div class="slide-tag">Summary</div>
+    <h2>2025 Annual Summary</h2>
+    
+    <div class="metrics-grid">
+        <div class="metric-card green">
+            <div class="metric-label">Total Revenue</div>
+            <div class="metric-value">$4.57M</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Blended ROAS</div>
+            <div class="metric-value">15.3x</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Total Ad Spend</div>
+            <div class="metric-value">$80,645</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">CAC:LTV (Q4)</div>
+            <div class="metric-value">1:18</div>
+        </div>
+        <div class="metric-card blue">
+            <div class="metric-label">Customer LTV</div>
+            <div class="metric-value">$901</div>
+        </div>
+    </div>
+    
+    <div class="insight-box" style="margin-top: 32px; border-left-color: var(--accent-green);">
+        <h4>Year in Review</h4>
+        <p>2025 demonstrated exceptional underlying business fundamentals despite apparent ROAS decline. CAC:LTV ratios ranged from 1:12 (Q3) to 1:37 (Q1), consistently outperforming the 1:3 industry standard by 4-12x. The 80.6% returning customer rate indicates strong product-market fit. While reported ROAS declined 89% Q1→Q4, this largely reflects attribution normalization. Demographics shifted toward older (65+) and more male audiences (+9pp). The Q4 baseline of 3.5-4x ROAS provides realistic benchmarks for 2026.</p>
+    </div>
+    
+    <div class="metrics-grid four-col" style="margin-top: 24px;">
+        <div class="metric-card blue">
+            <div class="metric-label">Q1 2026 Budget</div>
+            <div class="metric-value small">$40K/mo</div>
+        </div>
+        <div class="metric-card coral">
+            <div class="metric-label">Target ROAS</div>
+            <div class="metric-value small">3.5-4.0x</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Target CPA</div>
+            <div class="metric-value small">$45-55</div>
+        </div>
+        <div class="metric-card green">
+            <div class="metric-label">Target CAC:LTV</div>
+            <div class="metric-value small">1:15+</div>
+        </div>
+    </div>
+    
+    <div class="slide-footer"><span class="brand">Heath Media</span><span>Tennant Products | 2025 Annual Review</span><span>Prepared January 2026</span></div>
+</section>
+
+<!-- SLIDE 23: Thank You -->
+<section class="slide cover">
+    <div class="logo-badge">
+        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1754585626/lead-guru-new-logo-W-450_oyvumx.webp" alt="Heath Media Logo">
+    </div>
+    <h1 style="font-size: 48px;">Thank You</h1>
+    <p class="subtitle">Tennant Products | 2025 Annual Performance Review</p>
+    <div class="meta">
+        <span>Prepared by Heath Media</span>
+        <span>January 2026</span>
+    </div>
+</section>
+
+</body>
+</html>
