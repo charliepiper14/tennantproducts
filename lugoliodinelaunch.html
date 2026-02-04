@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lugol's Iodine Campaign Re-Launch | Pre-Call Prep</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1729;
+    --navy-mid: #162642;
+    --navy-light: #1e3355;
+    --coral: #cc5b27;
+    --coral-light: #e8875e;
+    --green: #10b981;
+    --green-bg: rgba(16, 185, 129, 0.12);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.1);
+    --yellow: #f59e0b;
+    --yellow-bg: rgba(245, 158, 11, 0.1);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59, 130, 246, 0.1);
+    --purple: #8b5cf6;
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-bright: #f8fafc;
+    --border: rgba(255,255,255,0.08);
+    --card-bg: rgba(255,255,255,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .slide {
+    min-height: 100vh;
+    padding: 48px 56px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slide-number {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  .slide-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--coral);
+    margin-bottom: 10px;
+  }
+
+  .slide-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-bright);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .slide-subtitle {
+    font-size: 15px;
+    color: var(--text-dim);
+    margin-bottom: 32px;
+  }
+
+  .content { flex: 1; }
+
+  /* Title slide */
+  .title-slide {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(ellipse at 30% 50%, rgba(204,91,39,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(59,130,246,0.05) 0%, transparent 50%);
+  }
+  .title-slide .slide-title { font-size: 44px; margin-bottom: 12px; }
+  .title-slide .slide-subtitle { font-size: 18px; max-width: 600px; }
+  .title-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+  .title-meta span { opacity: 0.7; }
+
+  /* Grid layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+
+  /* Cards */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .card-accent { border-left: 3px solid var(--coral); }
+  .card-green { border-left: 3px solid var(--green); }
+  .card-blue { border-left: 3px solid var(--blue); }
+  .card-yellow { border-left: 3px solid var(--yellow); }
+  .card-red { border-left: 3px solid var(--red); }
+  .card-purple { border-left: 3px solid var(--purple); }
+
+  .card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .card-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1.1;
+  }
+  .card-value.sm { font-size: 22px; }
+  .card-detail {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-bright);
+    margin-bottom: 10px;
+  }
+  .card p, .card li {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .card ul { list-style: none; padding: 0; }
+  .card ul li {
+    padding: 5px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+  .card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+  }
+
+  /* Stat row */
+  .stat-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .stat-box {
+    flex: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .stat-box .val {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-bright);
+  }
+  .stat-box .label {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th {
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:last-child td { border-bottom: none; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .highlight-row { background: rgba(204,91,39,0.06); }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .badge-green { background: var(--green-bg); color: var(--green); }
+  .badge-yellow { background: var(--yellow-bg); color: var(--yellow); }
+  .badge-red { background: var(--red-bg); color: var(--red); }
+  .badge-blue { background: var(--blue-bg); color: var(--blue); }
+
+  /* Callout */
+  .callout {
+    background: rgba(204,91,39,0.06);
+    border: 1px solid rgba(204,91,39,0.2);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 20px;
+  }
+  .callout-green {
+    background: var(--green-bg);
+    border-color: rgba(16,185,129,0.2);
+  }
+  .callout-blue {
+    background: var(--blue-bg);
+    border-color: rgba(59,130,246,0.2);
+  }
+  .callout-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  .callout-green .callout-title { color: var(--green); }
+  .callout-blue .callout-title { color: var(--blue); }
+  .callout p { font-size: 13px; color: var(--text); line-height: 1.6; }
+
+  /* Phase timeline */
+  .phase-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .phase {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+  }
+  .phase::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 8px 8px 0 0;
+  }
+  .phase-1::before { background: var(--blue); }
+  .phase-2::before { background: var(--yellow); }
+  .phase-3::before { background: var(--green); }
+  .phase .phase-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+  .phase-1 .phase-label { color: var(--blue); }
+  .phase-2 .phase-label { color: var(--yellow); }
+  .phase-3 .phase-label { color: var(--green); }
+  .phase h4 { font-size: 16px; color: var(--text-bright); margin-bottom: 10px; }
+  .phase p, .phase li { font-size: 12px; color: var(--text); line-height: 1.6; }
+  .phase ul { list-style: none; padding: 0; }
+  .phase ul li { padding: 3px 0; padding-left: 14px; position: relative; }
+  .phase ul li::before {
+    content: '';
+    position: absolute; left: 0; top: 10px;
+    width: 5px; height: 5px; border-radius: 50%;
+  }
+  .phase-1 ul li::before { background: var(--blue); }
+  .phase-2 ul li::before { background: var(--yellow); }
+  .phase-3 ul li::before { background: var(--green); }
+
+  /* Competitive table */
+  .comp-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .comp-row:last-child { border-bottom: none; }
+  .comp-name { flex: 2; font-weight: 500; color: var(--text-bright); }
+  .comp-price { flex: 1; text-align: center; }
+  .comp-cofactors { flex: 1; text-align: center; }
+  .comp-form { flex: 1; text-align: center; color: var(--text-dim); }
+
+  /* Question cards */
+  .q-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .q-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--coral);
+    background: rgba(204,91,39,0.12);
+    padding: 4px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .q-text { font-size: 14px; color: var(--text-bright); font-weight: 500; }
+  .q-why { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Section divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .text-coral { color: var(--coral); }
+  .text-green { color: var(--green); }
+  .text-blue { color: var(--blue); }
+  .text-yellow { color: var(--yellow); }
+  .text-bright { color: var(--text-bright); }
+  .text-dim { color: var(--text-dim); }
+  .fw-700 { font-weight: 700; }
+  .fw-600 { font-weight: 600; }
+  .fs-sm { font-size: 12px; }
+
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-20 { margin-top: 20px; }
+  .mb-8 { margin-bottom: 8px; }
+  .mb-16 { margin-bottom: 16px; }
+  .mb-20 { margin-bottom: 20px; }
+
+  @media print {
+    .slide { page-break-after: always; min-height: auto; padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1: TITLE ============ -->
+<div class="slide title-slide">
+  <div class="slide-label">Pre-Call Prep Deck</div>
+  <div class="slide-title">Lugol's Iodine<br>Campaign Re-Launch</div>
+  <div class="slide-subtitle">Strategy, data, campaign architecture, and call agenda for the Tennant Products iodine paid media launch</div>
+  <div class="title-meta">
+    <span>Tennant Products</span>
+    <span>|</span>
+    <span>Feb 2026</span>
+    <span>|</span>
+    <span>Meta + Google Ads</span>
+  </div>
+</div>
+
+<!-- ============ SLIDE 2: CONTEXT ============ -->
+<div class="slide">
+  <div class="slide-number">02 / 10</div>
+  <div class="slide-label">Background</div>
+  <div class="slide-title">Where We Left Off</div>
+  <div class="slide-subtitle">Timeline of Lugol's campaign discussions and current status</div>
+  <div class="content">
+    <div class="grid-2">
+      <div>
+        <div class="card card-accent mb-16">
+          <h3>Jan 14 Call</h3>
+          <p>Lugol's Iodine set as Q1 priority alongside Brain Food Plus and GI 60 Probiotic. Targeting end-of-January launch. Need to lock in offers and messaging first.</p>
+        </div>
+        <div class="card card-accent mb-16">
+          <h3>Jan 28 Call</h3>
+          <p>Janice confirmed she's working on ad copy. Charles committed to delivering the budget scaling plan. Launch pushed while Brain Food clearance and probiotic transition took priority.</p>
+        </div>
+        <div class="card card-accent">
+          <h3>Jan 30 Deliverable</h3>
+          <p>7-page Lugol's Iodine Launch Strategy PDF completed and delivered. Covers budget framework (3 phases), campaign architecture (Meta + Google), creative strategy, performance targets, and risk guardrails.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card card-green" style="height: 100%;">
+          <h3>Status Right Now</h3>
+          <ul>
+            <li>Launch strategy PDF delivered, awaiting client review and budget approval from Terry</li>
+            <li>Janice was working on ad copy, need status update</li>
+            <li>No creative assets from Royd yet for iodine specifically</li>
+            <li>Product confirmed as Tennant Products brand (NOT the new separate brand, which is the women's probiotic)</li>
+            <li>Brain Food Plus and GI 60 launches are stabilized, clearing the runway for iodine focus</li>
+            <li>January monthly report delivered showing strong overall account health and room for budget expansion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 3: SHOPIFY DATA ============ -->
+<div class="slide">
+  <div class="slide-number">03 / 10</div>
+  <div class="slide-label">Shopify Performance</div>
+  <div class="slide-title">12-Month Product Data</div>
+  <div class="slide-subtitle">Feb 2025 - Feb 2026 | Zero dedicated paid media spend behind iodine</div>
+  <div class="content">
+    <div class="stat-row">
+      <div class="stat-box" style="border-left: 3px solid var(--coral);">
+        <div class="val">4,017</div>
+        <div class="label">Units Sold (Plus)</div>
+      </div>
+      <div class="stat-box" style="border-left: 3px solid var(--green);">
+        <div class="val">$277K</div>
+        <div class="label">Gross Sales (Plus)</div>
+      </div>
+      <div class="stat-box" style="border-left: 3px solid var(--blue);">
+        <div class="val">$238K</div>
+        <div class="label">Net Sales (Plus)</div>
+      </div>
+      <div class="stat-box" style="border-left: 3px solid var(--yellow);">
+        <div class="val">$69.04</div>
+        <div class="label">Avg Selling Price</div>
+      </div>
+      <div class="stat-box" style="border-left: 3px solid var(--purple);">
+        <div class="val">0.9%</div>
+        <div class="label">Return Rate</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <div class="card">
+          <h3>Lugol's Iodine Plus (Capsules - $70)</h3>
+          <table>
+            <tr><td class="text-dim">Units sold</td><td class="text-right fw-600">4,017</td></tr>
+            <tr><td class="text-dim">Monthly run rate</td><td class="text-right fw-600">335 units / $19,800 net</td></tr>
+            <tr><td class="text-dim">Discounts applied</td><td class="text-right">$37,137 (13.4%)</td></tr>
+            <tr><td class="text-dim">Returns</td><td class="text-right">$2,489 (0.9%)</td></tr>
+          </table>
+        </div>
+        <div class="card mt-16">
+          <h3>Lugol's Iodine Liquid ($52)</h3>
+          <table>
+            <tr><td class="text-dim">Units sold</td><td class="text-right fw-600">480</td></tr>
+            <tr><td class="text-dim">Gross sales</td><td class="text-right fw-600">$25,012</td></tr>
+            <tr><td class="text-dim">Net sales</td><td class="text-right">$21,655</td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="card card-green" style="height:100%;">
+          <h3>Why This Matters for Paid</h3>
+          <ul>
+            <li><strong class="text-bright">#1 supplement by unit volume</strong> across the entire Tennant store. Outsells Digestive Enzymes (3,095), Restore Vanilla (2,341), Probiotic (1,767), and Brain Food (1,576)</li>
+            <li><strong class="text-bright">#3 supplement by net revenue</strong> at $238K, tied with Digestive Enzymes ($241K), behind only Restore Vanilla ($524K)</li>
+            <li><strong class="text-bright">0.9% return rate</strong> means the product delivers on expectations. Refund risk on paid-acquired customers will be minimal</li>
+            <li><strong class="text-bright">335 units/month with zero ad spend.</strong> Even a 10-15% incremental lift (33-50 extra units) at $45-65 CPA is profitable from day one</li>
+            <li><strong class="text-bright">13.4% discount rate</strong> already in play, so a first-time buyer discount for cold traffic won't feel out of line</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-green callout mt-20">
+      <div class="callout-title">Combined Iodine Category</div>
+      <p>4,497 total units | $302,380 gross | $259,398 net revenue | All organic demand, no paid media</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 4: PRODUCT RANKING ============ -->
+<div class="slide">
+  <div class="slide-number">04 / 10</div>
+  <div class="slide-label">Product Hierarchy</div>
+  <div class="slide-title">Where Iodine Sits in the Portfolio</div>
+  <div class="slide-subtitle">Top 10 supplements by net sales | 12 months | Devices excluded</div>
+  <div class="content">
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:40px">#</th>
+            <th>Product</th>
+            <th class="text-right">Units</th>
+            <th class="text-right">Gross Sales</th>
+            <th class="text-right">Net Sales</th>
+            <th class="text-right">Discount %</th>
+            <th class="text-right">Return %</th>
+            <th class="text-center">Paid Ads?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-coral fw-700">1</td>
+            <td class="fw-600 text-bright">Restore Professional - Vanilla</td>
+            <td class="text-right">2,341</td>
+            <td class="text-right">$604,347</td>
+            <td class="text-right fw-600">$523,807</td>
+            <td class="text-right">11.5%</td>
+            <td class="text-right">1.8%</td>
+            <td class="text-center"><span class="badge badge-blue">PMax</span></td>
+          </tr>
+          <tr>
+            <td class="text-coral fw-700">2</td>
+            <td class="fw-600 text-bright">Digestive Enzyme Formula</td>
+            <td class="text-right">3,095</td>
+            <td class="text-right">$297,027</td>
+            <td class="text-right fw-600">$241,021</td>
+            <td class="text-right">17.8%</td>
+            <td class="text-right">1.1%</td>
+            <td class="text-center"><span class="badge badge-blue">PMax</span></td>
+          </tr>
+          <tr class="highlight-row">
+            <td class="text-coral fw-700">3</td>
+            <td class="fw-600 text-bright">Lugol's Iodine Plus</td>
+            <td class="text-right fw-700">4,017</td>
+            <td class="text-right">$277,368</td>
+            <td class="text-right fw-600">$237,743</td>
+            <td class="text-right">13.4%</td>
+            <td class="text-right text-green fw-600">0.9%</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">4</td>
+            <td>Restore Professional - Veggie</td>
+            <td class="text-right">880</td>
+            <td class="text-right">$226,148</td>
+            <td class="text-right">$195,298</td>
+            <td class="text-right">12.5%</td>
+            <td class="text-right">1.2%</td>
+            <td class="text-center"><span class="badge badge-blue">PMax</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">5</td>
+            <td>Restore Veggie Formula</td>
+            <td class="text-right">972</td>
+            <td class="text-right">$178,579</td>
+            <td class="text-right">$154,771</td>
+            <td class="text-right">12.0%</td>
+            <td class="text-right">1.4%</td>
+            <td class="text-center"><span class="badge badge-blue">PMax</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">6</td>
+            <td>Brain Food Plus</td>
+            <td class="text-right">1,576</td>
+            <td class="text-right">$167,736</td>
+            <td class="text-right">$134,741</td>
+            <td class="text-right">17.8%</td>
+            <td class="text-right">1.9%</td>
+            <td class="text-center"><span class="badge badge-green">Meta + G</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">7</td>
+            <td>Raw Materials Capsules</td>
+            <td class="text-right">1,832</td>
+            <td class="text-right">$129,028</td>
+            <td class="text-right">$113,042</td>
+            <td class="text-right">11.8%</td>
+            <td class="text-right">0.6%</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">8</td>
+            <td>Probiotic Formula</td>
+            <td class="text-right">1,767</td>
+            <td class="text-right">$125,682</td>
+            <td class="text-right">$94,226</td>
+            <td class="text-right">23.0%</td>
+            <td class="text-right">2.0%</td>
+            <td class="text-center"><span class="badge badge-green">Meta</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">9</td>
+            <td>N1O1 Nitric Oxide Lozenges</td>
+            <td class="text-right">1,577</td>
+            <td class="text-right">$100,872</td>
+            <td class="text-right">$79,807</td>
+            <td class="text-right">14.5%</td>
+            <td class="text-right">6.3%</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+          </tr>
+          <tr>
+            <td class="text-dim">10</td>
+            <td>Fungal Detox</td>
+            <td class="text-right">1,004</td>
+            <td class="text-right">$79,388</td>
+            <td class="text-right">$66,136</td>
+            <td class="text-right">15.2%</td>
+            <td class="text-right">1.5%</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout mt-20">
+      <div class="callout-title">Key Talking Point</div>
+      <p>Lugol's Iodine Plus is the #1 product by units and #3 by revenue with zero dedicated paid spend. Every other top-3 product has active campaigns behind it. Iodine is the biggest untapped opportunity in the catalog.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 5: COMPETITIVE LANDSCAPE ============ -->
+<div class="slide">
+  <div class="slide-number">05 / 10</div>
+  <div class="slide-label">Competitive Landscape</div>
+  <div class="slide-title">Product Differentiation</div>
+  <div class="slide-subtitle">Tennant's Lugol's Iodine Plus vs major Amazon/DTC competitors</div>
+  <div class="content">
+    <div class="card mb-20">
+      <table>
+        <thead>
+          <tr>
+            <th>Competitor</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Form</th>
+            <th class="text-center">Cofactors?</th>
+            <th class="text-center">Reviews</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td class="fw-600 text-bright">Dr. Tennant's Lugol's Iodine Plus</td>
+            <td class="text-center fw-600">$70</td>
+            <td class="text-center">Capsules (90ct)</td>
+            <td class="text-center"><span class="badge badge-green">Zn + Se + B1 + C</span></td>
+            <td class="text-center">59</td>
+          </tr>
+          <tr>
+            <td>J.Crow's Lugol's Solution</td>
+            <td class="text-center">$12-18</td>
+            <td class="text-center">Liquid</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+            <td class="text-center">10K+</td>
+          </tr>
+          <tr>
+            <td>Carlyle Lugol's 2%</td>
+            <td class="text-center">$8-12</td>
+            <td class="text-center">Liquid</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+            <td class="text-center">5K+</td>
+          </tr>
+          <tr>
+            <td>Heiltropfen Lugol's 2.2%</td>
+            <td class="text-center">$15-20</td>
+            <td class="text-center">Liquid</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+            <td class="text-center">2K+</td>
+          </tr>
+          <tr>
+            <td>MaryRuth Organics Iodine</td>
+            <td class="text-center">$15-22</td>
+            <td class="text-center">Liquid Drops</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+            <td class="text-center">8K+</td>
+          </tr>
+          <tr>
+            <td>Pure Encapsulations Iodine</td>
+            <td class="text-center">$15-25</td>
+            <td class="text-center">Capsules</td>
+            <td class="text-center"><span class="badge badge-red">None</span></td>
+            <td class="text-center">3K+</td>
+          </tr>
+          <tr>
+            <td>Designs for Health Iodine Synergy</td>
+            <td class="text-center">$20-30</td>
+            <td class="text-center">Capsules</td>
+            <td class="text-center"><span class="badge badge-yellow">Se only</span></td>
+            <td class="text-center">1K+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-green">
+        <h3>Tennant's Winning Angle</h3>
+        <p>Every major competitor sells iodine in isolation. Tennant's is the only Lugol's iodine product that includes the full cofactor stack (Zinc, Selenium, B1, Vitamin C) required for proper iodine metabolism. We are not selling a more expensive version of the same thing. We are selling a fundamentally different, more complete product.</p>
+      </div>
+      <div class="card card-yellow">
+        <h3>Addressing the Price Gap</h3>
+        <p>Competitors sit at $8-30. Tennant's is $70. The ad messaging must justify the premium by educating on why iodine alone doesn't work. Dr. Tennant's own quote: "You can't just supplement iodine by itself and get the results you need." The cofactors are the story. A 90-day supply at $0.78/day is the value reframe.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 6: GOOGLE ADS PLAN ============ -->
+<div class="slide">
+  <div class="slide-number">06 / 10</div>
+  <div class="slide-label">Campaign Architecture</div>
+  <div class="slide-title">Google Ads Plan</div>
+  <div class="slide-subtitle">Priority 1: Capture existing search demand first</div>
+  <div class="content">
+    <div class="grid-2 mb-20">
+      <div class="card card-green">
+        <div class="card-label">Lowest Risk / Fastest to Launch</div>
+        <h3>1. PMax Asset Group</h3>
+        <ul>
+          <li>Add Lugol's as a dedicated asset group inside existing PMax campaign</li>
+          <li>Uses existing PMax learning data, avoids new campaign learning phase</li>
+          <li>Feed iodine-specific images, headlines, descriptions</li>
+          <li>Land on PDP: tennantproducts.com/products/lugols-iodine-plus-90-ct</li>
+          <li>$0 incremental spend (absorbed into current PMax budget)</li>
+        </ul>
+        <p class="mt-8 text-dim fs-sm">PMax is running 4.37x ROAS in January. Adding an asset group for the #1 selling supplement is a no-brainer.</p>
+      </div>
+      <div class="card card-blue">
+        <div class="card-label">High Intent Capture</div>
+        <h3>2. Non-Branded Search Campaign</h3>
+        <ul>
+          <li>"best iodine supplement"</li>
+          <li>"lugols iodine capsules"</li>
+          <li>"iodine supplement with selenium"</li>
+          <li>"thyroid iodine supplement"</li>
+          <li>"iodine supplement with cofactors"</li>
+          <li>"iodine for thyroid health"</li>
+        </ul>
+        <p class="mt-8 text-dim fs-sm">Exact + phrase match. Manual CPC at $2-3. Start $10-15/day.</p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card card-accent">
+        <div class="card-label">Proven Performer Expansion</div>
+        <h3>3. DSA Expansion</h3>
+        <ul>
+          <li>Add Lugol's product pages + blog articles (3 existing) to DSA page feed</li>
+          <li>DSA delivered 5.08x ROAS in January at only $227/month</li>
+          <li>Expanding page targets is low risk, high potential</li>
+        </ul>
+      </div>
+      <div class="card card-accent">
+        <div class="card-label">Brand Protection</div>
+        <h3>4. Branded Iodine Terms</h3>
+        <ul>
+          <li>"dr tennant iodine"</li>
+          <li>"tennant lugols iodine"</li>
+          <li>"dr tennant iodine plus"</li>
+          <li>Low volume but high conversion rate</li>
+          <li>Add to existing branded campaign</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 7: META ADS PLAN ============ -->
+<div class="slide">
+  <div class="slide-number">07 / 10</div>
+  <div class="slide-label">Campaign Architecture</div>
+  <div class="slide-title">Meta Ads Plan</div>
+  <div class="slide-subtitle">Priority 2: Build awareness, retarget, and scale</div>
+  <div class="content">
+    <div class="grid-3 mb-20">
+      <div class="card card-green">
+        <div class="card-label">Highest Confidence</div>
+        <h3>Retargeting Ad Set</h3>
+        <p class="mb-8">$15/day start</p>
+        <ul>
+          <li>Site visitors who viewed iodine pages but didn't buy</li>
+          <li>Past Restore or Digestive Enzyme buyers (cross-sell, cofactor overlap)</li>
+          <li>Cart abandoners from iodine PDPs</li>
+        </ul>
+        <p class="mt-8 text-dim fs-sm">Retargeting delivered 7.70x ROAS in January. This should convert immediately.</p>
+      </div>
+      <div class="card card-blue">
+        <div class="card-label">Growth Driver</div>
+        <h3>Cold Prospecting Ad Set</h3>
+        <p class="mb-8">$20-25/day start</p>
+        <ul>
+          <li>Interest targeting: thyroid health, hormone balance, holistic health, iodine deficiency</li>
+          <li>1-3% LALs from existing Lugol's purchaser list</li>
+          <li>LALs from Restore buyers (high cross-sell probability)</li>
+          <li>Test 3-4 creative angles</li>
+        </ul>
+      </div>
+      <div class="card card-accent">
+        <div class="card-label">Consideration Cycle</div>
+        <h3>Engagement Retargeting</h3>
+        <p class="mb-8">$10/day</p>
+        <ul>
+          <li>Users who engaged with iodine ads/posts but didn't click through</li>
+          <li>Video viewers (50%+ completion)</li>
+          <li>Lower priority but catches the 7-28 day supplement consideration cycle</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Landing Page Strategy</div>
+      <p><strong class="text-bright">Google (high intent):</strong> Send to PDP directly (tennantproducts.com/products/lugols-iodine-plus-90-ct). Buyer is ready, wants price and reviews.</p>
+      <p class="mt-8"><strong class="text-bright">Meta Cold Traffic:</strong> Send to Learn More page (tennantproducts.com/pages/dr-tennants-lugols-iodine-plus). Needs education on why cofactors matter before buying.</p>
+      <p class="mt-8"><strong class="text-bright">Meta Retargeting:</strong> Back to PDP. Already educated, ready to convert.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 8: CREATIVE STRATEGY ============ -->
+<div class="slide">
+  <div class="slide-number">08 / 10</div>
+  <div class="slide-label">Creative Strategy</div>
+  <div class="slide-title">Ad Angles to Test</div>
+  <div class="slide-subtitle">Ranked by confidence based on proven account performance</div>
+  <div class="content">
+    <div class="grid-2 mb-16">
+      <div class="card card-green">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span class="badge badge-green">#1 Highest Confidence</span>
+        </div>
+        <h3>"Iodine Alone Isn't Enough" - Comparison / Education</h3>
+        <p>Strongest USP. Static comparison: "Their iodine: just iodine" vs "Dr. Tennant's: Iodine + Zinc + Selenium + B1 + Vitamin C." Mirrors the "Don't Trust Labels" creative format that's been a top retargeting performer across the account.</p>
+      </div>
+      <div class="card card-blue">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span class="badge badge-blue">#2 Proven Format</span>
+        </div>
+        <h3>UGC / Testimonial</h3>
+        <p>Real reviews from the site: "I find it essential for my thyroid gland to function properly" and "That iodine you gave me has helped me, I have more energy." Testimonial creatives consistently outperform polished brand content across the entire Tennant account.</p>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card card-accent">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span class="badge" style="background:rgba(204,91,39,0.12); color:var(--coral);">#3</span>
+        </div>
+        <h3>Dr. Tennant Authority</h3>
+        <p>Short video or static with Dr. Tennant's quote: "You can't just supplement iodine by itself and get the results you need." Doctor credibility is the brand's core differentiator with the 45-64 female demographic.</p>
+      </div>
+      <div class="card card-accent">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span class="badge" style="background:rgba(204,91,39,0.12); color:var(--coral);">#4</span>
+        </div>
+        <h3>Problem/Solution - Digestive</h3>
+        <p>"Still taking antacids? The real issue might be low iodine." Targets the digestive health entry point. Less competitive than thyroid messaging and captures a completely different search intent.</p>
+      </div>
+      <div class="card card-accent">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+          <span class="badge" style="background:rgba(204,91,39,0.12); color:var(--coral);">#5</span>
+        </div>
+        <h3>"90% Deficient" Stat Hook</h3>
+        <p>The product page states over 90% of the US population is iodine deficient. Strong pattern interrupt for cold traffic. Pair with cofactor education to close the loop.</p>
+      </div>
+    </div>
+
+    <div class="callout mt-20">
+      <div class="callout-title">Creative Assets Needed from Royd/Team</div>
+      <p>3-5 static images (product shots, comparison layouts, testimonial cards) + any existing Dr. Tennant video content discussing iodine. The site has two educational videos linked: "Iodine: The Controversy" (41 min) and "Understanding Lugol's Iodine" (27 min). Either could be cut into 15-30 second ad clips.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 9: BUDGET & TARGETS ============ -->
+<div class="slide">
+  <div class="slide-number">09 / 10</div>
+  <div class="slide-label">Budget & KPIs</div>
+  <div class="slide-title">Phased Budget Scaling</div>
+  <div class="slide-subtitle">Conservative ramp aligned with Terry's comfort level on incremental spend</div>
+  <div class="content">
+    <div class="phase-row">
+      <div class="phase phase-1">
+        <div class="phase-label">Phase 1 | Weeks 1-2</div>
+        <h4>$35-40/day</h4>
+        <ul>
+          <li>Google PMax asset group: $0 incremental</li>
+          <li>Google Non-Branded Search: $10-15/day</li>
+          <li>Meta Retargeting: $15/day</li>
+          <li>Meta Cold Prospecting: $10-15/day</li>
+        </ul>
+        <p class="mt-8 fw-600 text-dim" style="font-size:11px;">Monthly: $1,050-1,200</p>
+      </div>
+      <div class="phase phase-2">
+        <div class="phase-label">Phase 2 | Weeks 3-4</div>
+        <h4>$55-65/day</h4>
+        <ul>
+          <li>Google Non-Branded: scale to $20-25/day if CPA holds</li>
+          <li>Meta Retargeting: $20/day</li>
+          <li>Meta Prospecting: $20-25/day</li>
+          <li>Scale only if Phase 1 hits ROAS targets</li>
+        </ul>
+        <p class="mt-8 fw-600 text-dim" style="font-size:11px;">Monthly: $1,650-1,950</p>
+      </div>
+      <div class="phase phase-3">
+        <div class="phase-label">Phase 3 | Month 2+</div>
+        <h4>$80-100/day</h4>
+        <ul>
+          <li>Scale winners from Phase 1-2 data</li>
+          <li>Add new creative iterations</li>
+          <li>Expand keyword coverage</li>
+          <li>Potential LAL audience scaling</li>
+        </ul>
+        <p class="mt-8 fw-600 text-dim" style="font-size:11px;">Monthly: $2,400-3,000</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Performance Targets</h3>
+        <table>
+          <tr>
+            <td class="text-dim">Target ROAS</td>
+            <td class="text-right fw-600 text-green">3.5x+</td>
+          </tr>
+          <tr>
+            <td class="text-dim">Retargeting CPA target</td>
+            <td class="text-right fw-600">Under $45</td>
+          </tr>
+          <tr>
+            <td class="text-dim">Prospecting CPA target</td>
+            <td class="text-right fw-600">Under $65</td>
+          </tr>
+          <tr>
+            <td class="text-dim">Breakeven CPA</td>
+            <td class="text-right fw-600 text-yellow">$42*</td>
+          </tr>
+          <tr>
+            <td class="text-dim">CPA ceiling (hard stop)</td>
+            <td class="text-right fw-600 text-coral">$125</td>
+          </tr>
+          <tr>
+            <td class="text-dim">ROAS floor (hard stop)</td>
+            <td class="text-right fw-600 text-coral">2.0x</td>
+          </tr>
+        </table>
+        <p class="mt-8 text-dim fs-sm">*Based on $70 AOV, 40% COGS, 3% CC fees. True breakeven likely higher due to cross-sell behavior.</p>
+      </div>
+      <div class="card card-green">
+        <h3>The Cross-Sell Upside</h3>
+        <p>Iodine buyers very likely also purchase Restore ($260) and/or Digestive Enzymes ($96). The product page literally directs customers to take iodine with Restore for cofactors.</p>
+        <div class="divider"></div>
+        <p class="fw-600 text-bright">If the average iodine customer also buys one additional product, the blended AOV could be $150-250+ per customer, not $70.</p>
+        <div class="divider"></div>
+        <p>This completely changes the CPA ceiling. At $200 blended AOV with 40% COGS and 3% fees, breakeven CPA jumps to $114. That means even aggressive prospecting CPAs of $65-80 would be very profitable.</p>
+        <div class="divider"></div>
+        <p class="text-dim fs-sm">Need to confirm cross-sell data with Janice on the call.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SLIDE 10: CALL AGENDA ============ -->
+<div class="slide">
+  <div class="slide-number">10 / 10</div>
+  <div class="slide-label">Call Agenda</div>
+  <div class="slide-title">Questions to Resolve</div>
+  <div class="slide-subtitle">Seven decisions needed to move from planning to build</div>
+  <div class="content">
+    <div class="q-card">
+      <div class="q-num">01</div>
+      <div>
+        <div class="q-text">Offers and Discounts</div>
+        <div class="q-why">What offer can we run for cold traffic? First-time buyer 10-15% discount? Bundle with Digestive Enzymes? Subscribe-and-save? Onboarding form says "we can offer discount codes as needed." A first-order incentive meaningfully improves cold traffic conversion rates and the existing 13.4% discount rate shows offers are already in play.</div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">02</div>
+      <div>
+        <div class="q-text">Creative Assets Status</div>
+        <div class="q-why">Does Janice have the ad copy she was working on? What video assets exist for iodine? Two educational videos on the site (41 min + 27 min) could be cut into 15-30 sec ad clips. Need assets from Royd. Without creative, we can't launch.</div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">03</div>
+      <div>
+        <div class="q-text">Landing Page Readiness</div>
+        <div class="q-why">Is the Learn More page (pages/dr-tennants-lugols-iodine-plus) live and current? Or still a draft/preview? This page is critical for Meta cold traffic. PDP is fine for Google and retargeting but cold audiences need the educational content to justify the $70 price point.</div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">04</div>
+      <div>
+        <div class="q-text">Budget Approval</div>
+        <div class="q-why">Is Terry comfortable with $35-40/day starting point? This is incremental to the existing $145-175/day total account spend. Month 1 total investment is roughly $1,050-1,200. Scaling only happens if Phase 1 targets are met.</div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">05</div>
+      <div>
+        <div class="q-text">Inventory and Supply</div>
+        <div class="q-why">Any supply constraints on Iodine Plus capsules or Iodine Liquid? We don't want to scale into out-of-stock (learned from the probiotic situation). How many units on hand? What's the reorder lead time?</div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">06</div>
+      <div>
+        <div class="q-text">Cross-Sell Data</div>
+        <div class="q-why">Can Janice pull a Shopify report showing what other products Lugol's buyers also purchase? If we know the cross-sell patterns, we can build smarter audience segments and calculate real LTV for iodine-acquired customers. This determines how aggressive we can be on CPA targets.</div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num">07</div>
+      <div>
+        <div class="q-text">Amazon Channel Conflict</div>
+        <div class="q-why">Lugol's Iodine Plus is listed on Amazon. Do we need to account for DTC vs Amazon cannibalization? Should we exclude Amazon shoppers from targeting, or accept that some paid-acquired traffic may convert on Amazon instead of Shopify?</div>
+      </div>
+    </div>
+
+    <div class="callout-green callout mt-20">
+      <div class="callout-title">Once These 7 Are Resolved</div>
+      <p>Build time is 48-72 hours from creative handoff to campaigns live. Google PMax asset group can go same-day. The strategy, architecture, and keyword lists are ready. We just need the green lights.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
