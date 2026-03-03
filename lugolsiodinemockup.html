@@ -142,10 +142,21 @@ h2.sh em     { color: var(--navy); font-style: normal; }
   z-index: 300;
   box-shadow: 0 1px 6px rgba(0,0,0,0.05);
 }
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  overflow: hidden;
+  max-width: 220px;
+}
 .nav-logo img {
-  height: 42px;
+  height: 40px;
   width: auto;
+  max-width: 200px;
   display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .nav-menu {
   display: flex;
@@ -1134,9 +1145,12 @@ h2.sh em     { color: var(--navy); font-style: normal; }
 }
 .f-logo img {
   height: 36px;
+  width: auto;
+  max-width: 200px;
   margin-bottom: 14px;
   filter: brightness(0) invert(1);
   display: block;
+  object-fit: contain;
 }
 .f-about {
   font-size: 13px;
@@ -1237,7 +1251,7 @@ h2.sh em     { color: var(--navy); font-style: normal; }
 @media (max-width: 640px) {
   .ann-bar        { font-size: 10px; padding: 8px 0; }
   .nav            { padding: 0 16px; height: 60px; }
-  .nav-logo img   { height: 34px; }
+  .nav-logo img   { height: 30px; max-width: 160px; }
   .nav-cart       { padding: 8px 14px; font-size: 11px; }
 
   .hero           { padding: 32px 16px 44px; gap: 28px; }
@@ -1316,7 +1330,7 @@ h2.sh em     { color: var(--navy); font-style: normal; }
 
   .footer         { padding: 36px 16px 18px; }
   .footer-top     { grid-template-columns: 1fr; gap: 24px; }
-  .f-logo img     { height: 30px; }
+  .f-logo img     { height: 28px; max-width: 160px; }
   .footer-bottom  { gap: 14px; }
   .fda            { font-size: 10px; }
 
@@ -1658,7 +1672,7 @@ h2.sh em     { color: var(--navy); font-style: normal; }
 
 <!-- ══ NAV ══ -->
 <nav class="nav">
-  <a href="#"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1772529944/Tennant_Products_Logo_Blue.Black_vtlwms.webp" alt="Tennant Products" /></a>
+  <a href="#" class="nav-logo"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1772529944/Tennant_Products_Logo_Blue.Black_vtlwms.webp" alt="Tennant Products" /></a>
   <ul class="nav-menu">
     <li><a href="#">Supplements</a></li>
     <li><a href="#">About Dr. Tennant</a></li>
