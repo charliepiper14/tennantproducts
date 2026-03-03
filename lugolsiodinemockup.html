@@ -1650,6 +1650,357 @@ h2.sh em     { color: var(--navy); font-style: normal; }
   .rating-centre .rating-big { font-size: 56px; }
 }
 
+
+/* ═══════════════════════════════════════
+   STICKY MOBILE ATC BAR
+   Hidden on desktop, slides up on mobile
+   when hero purchase card scrolls out of view
+═══════════════════════════════════════ */
+.sticky-atc {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 500;
+  background: var(--white);
+  border-top: 2px solid var(--navy);
+  padding: 12px 16px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.14);
+  transform: translateY(100%);
+  transition: transform .3s ease;
+}
+.sticky-atc.visible { transform: translateY(0); }
+.sticky-atc-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.sticky-atc-img {
+  width: 44px;
+  height: 52px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+}
+.sticky-atc-info { flex: 1; min-width: 0; }
+.sticky-atc-name {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sticky-atc-price {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 1px;
+}
+.sticky-atc-price span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-300);
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+.sticky-atc-btn {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-family: var(--ff);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .2s;
+  white-space: nowrap;
+}
+.sticky-atc-btn:hover { background: var(--navy-mid); }
+@media (min-width: 981px) {
+  .sticky-atc { display: none !important; }
+}
+@media (max-width: 980px) {
+  .sticky-atc { display: flex; }
+}
+
+/* ═══════════════════════════════════════
+   TRANSFORMATION STRIP (after hero H1)
+═══════════════════════════════════════ */
+.transform-strip {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.transform-icon {
+  width: 36px; height: 36px;
+  background: rgba(245,158,11,0.18);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(245,158,11,0.3);
+}
+.transform-icon svg { color: var(--gold); }
+.transform-copy {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.58;
+}
+.transform-copy strong { color: var(--gold); font-weight: 700; }
+
+/* ═══════════════════════════════════════
+   TRUST BAR - upgraded with specifics
+═══════════════════════════════════════ */
+.t-item.specific { flex-direction: column; align-items: center; text-align: center; padding: 8px 20px; }
+.t-item.specific .t-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.t-item.specific .t-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-500);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   RISK REVERSAL STRIP (under ATC button)
+═══════════════════════════════════════ */
+.risk-reversal {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 11px 14px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #15803d;
+  line-height: 1.45;
+}
+.risk-reversal svg { color: #16a34a; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════
+   COST PER DAY CALLOUT (in pcard)
+═══════════════════════════════════════ */
+.cpd-strip {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 9px 12px;
+  margin-bottom: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.cpd-left {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-500);
+  line-height: 1.4;
+}
+.cpd-left strong { color: var(--text-900); display: block; font-size: 13px; font-weight: 800; }
+.cpd-right {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.cpd-right span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-300);
+  display: block;
+  text-align: right;
+  letter-spacing: 0;
+}
+
+/* ═══════════════════════════════════════
+   MID-PAGE MINI ATC (after reviews)
+═══════════════════════════════════════ */
+.mid-atc {
+  background: var(--navy);
+  padding: 40px 48px;
+  border-top: 3px solid var(--gold);
+}
+.mid-atc-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.mid-atc-img {
+  width: 72px;
+  height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+.mid-atc-copy { flex: 1; min-width: 200px; }
+.mid-atc-copy h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.mid-atc-copy p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+.mid-atc-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.mid-atc-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.mid-atc-price span {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+.mid-atc-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  font-weight: 500;
+}
+.btn-mid-atc {
+  background: #fff;
+  color: var(--navy);
+  border: none;
+  padding: 13px 28px;
+  font-family: var(--ff);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.btn-mid-atc:hover { background: var(--off-white); transform: translateY(-1px); }
+.mid-atc-guarantee {
+  font-size: 11px;
+  color: rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.mid-atc-guarantee svg { color: rgba(255,255,255,0.3); }
+@media (max-width: 640px) {
+  .mid-atc { padding: 28px 16px; }
+  .mid-atc-inner { gap: 20px; }
+  .mid-atc-actions { align-items: flex-start; flex-direction: row; align-items: center; flex-wrap: wrap; gap: 12px; }
+}
+
+/* ═══════════════════════════════════════
+   COMPARISON TABLE
+═══════════════════════════════════════ */
+.compare-section {
+  background: var(--white);
+  padding: 80px 48px;
+  border-top: 1px solid var(--border);
+}
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+}
+.compare-table th {
+  padding: 18px 20px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 2px solid var(--border);
+}
+.compare-table th.col-us {
+  background: var(--navy);
+  color: #fff;
+  position: relative;
+}
+.compare-table th.col-us::after {
+  content: 'Best Choice';
+  position: absolute;
+  top: -11px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.compare-table th.col-other { background: var(--off-white); color: var(--text-500); }
+.compare-table td {
+  padding: 14px 20px;
+  font-size: 13.5px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.compare-table td.feat-name {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-900);
+  background: var(--off-white);
+  font-size: 13px;
+  width: 30%;
+}
+.compare-table td.col-us { background: #eef3fb; font-weight: 700; color: var(--navy); }
+.compare-table td.col-other { color: var(--text-300); }
+.compare-table tr:last-child td { border-bottom: none; }
+.chk { color: #16a34a; font-size: 17px; font-weight: 800; }
+.cross { color: #dc2626; font-size: 17px; }
+.part { color: #f59e0b; font-size: 15px; }
+@media (max-width: 640px) {
+  .compare-section { padding: 44px 16px; }
+  .compare-table th, .compare-table td { padding: 11px 10px; font-size: 12px; }
+  .compare-table td.feat-name { font-size: 11.5px; }
+}
+
 </style>
 </head>
 <body>
@@ -1698,6 +2049,13 @@ h2.sh em     { color: var(--navy); font-style: normal; }
     <h1>Fatigue. Brain Fog.<br>Thyroid Trouble.<br><span class="accent">Your Body May Be Missing<br>This One Critical Mineral.</span></h1>
 
     <p class="hero-sub">Iodine is required by every cell in your body. Yet most adults are deficient without knowing it. Dr. Tennant's clinical-grade Lugol's delivers the dual-form, physician-strength solution your body actually needs.</p>
+
+    <div class="transform-strip">
+      <div class="transform-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/></svg>
+      </div>
+      <p class="transform-copy">Within 30 days most customers report: <strong>more morning energy, sharper focus, and better sleep.</strong> Within 60 to 90 days: thyroid labs improve, metabolism normalises, hair loss slows. This is what your cells have been waiting for.</p>
+    </div>
 
     <div class="symptoms">
       <div class="sym"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Low energy &amp; fatigue</div>
@@ -1758,6 +2116,14 @@ h2.sh em     { color: var(--navy); font-style: normal; }
         </label>
       </div>
 
+      <div class="cpd-strip">
+        <div class="cpd-left">
+          <strong>$1.05 per day</strong>
+          Less than a cup of coffee
+        </div>
+        <div class="cpd-right">$1.05<span>per day</span></div>
+      </div>
+
       <div class="qty-row">
         <span class="qty-label">Quantity</span>
         <div class="qty-ctrl">
@@ -1772,9 +2138,14 @@ h2.sh em     { color: var(--navy); font-style: normal; }
         Add to Cart: $31.50
       </button>
 
+      <div class="risk-reversal">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Not satisfied? Full refund within 30 days. No questions, no hassle.
+      </div>
+
       <div class="micro-g">
         <span class="mg-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Secure</span>
-        <span class="mg-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Ships 1–2 Days</span>
+        <span class="mg-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Ships 1-2 Days</span>
         <span class="mg-item"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-Day Guarantee</span>
       </div>
     </div>
@@ -1784,15 +2155,30 @@ h2.sh em     { color: var(--navy); font-style: normal; }
 <!-- ══ TRUST BAR ══ -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="t-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30-Day Money-Back Guarantee</div>
+    <div class="t-item specific">
+      <span class="t-num">10,247+</span>
+      <span class="t-label">Bottles Sold</span>
+    </div>
     <div class="t-sep"></div>
-    <div class="t-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v11l-5 5h16l-5-5V3"/><line x1="3" y1="9" x2="21" y2="9"/></svg>Third-Party Lab Tested</div>
+    <div class="t-item specific">
+      <span class="t-num">4.8&#9733;</span>
+      <span class="t-label">500+ Verified Reviews</span>
+    </div>
     <div class="t-sep"></div>
-    <div class="t-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Physician Formulated</div>
+    <div class="t-item specific">
+      <span class="t-num">335</span>
+      <span class="t-label">Reorders Last 30 Days</span>
+    </div>
     <div class="t-sep"></div>
-    <div class="t-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c1.25-1.25 2.5-2.5 5-2.5S10 21 12 21s3.75-1.5 5-1.5 3.75 1.25 5 2.5"/><path d="M12 21V8"/><path d="M12 8C12 8 8 4 4 4c0 4 4 8 8 8"/><path d="M12 8c0 0 4-4 8-4 0 4-4 8-8 8"/></svg>Non-GMO · No Fillers</div>
+    <div class="t-item specific">
+      <span class="t-num">30-Day</span>
+      <span class="t-label">Money-Back Guarantee</span>
+    </div>
     <div class="t-sep"></div>
-    <div class="t-item"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Free Shipping Over $75</div>
+    <div class="t-item specific">
+      <span class="t-num">60+</span>
+      <span class="t-label">Years Clinical Research</span>
+    </div>
   </div>
 </div>
 
@@ -2048,6 +2434,98 @@ h2.sh em     { color: var(--navy); font-style: normal; }
       <div class="rc"><div class="rc-stars"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p class="rc-text">"Add it to orange juice and you can barely taste it. Give it 4 to 6 weeks. The mental clarity that builds is unlike anything I've experienced from a supplement. Worth every penny."</p><div class="rc-name">Tom W. &ndash; Charlotte, NC</div><div class="rc-verified"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Verified Purchase · 6 months ago</div></div>
     </div>
   </div>
+
+<!-- ══ MID-PAGE ATC - peak persuasion moment after reviews ══ -->
+<div class="mid-atc">
+  <div class="mid-atc-inner">
+    <img class="mid-atc-img" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1772530403/Screenshot_2026-03-03_at_17.31.59_uutppa.png" alt="Lugol's Iodine Liquid 2oz" />
+    <div class="mid-atc-copy">
+      <h3>Lugol's Iodine Liquid 2oz</h3>
+      <p>Physician-grade 5% formula. 500+ verified reviews. Ships in 1-2 days.</p>
+    </div>
+    <div class="mid-atc-actions">
+      <div>
+        <div class="mid-atc-price">$31.50 <span>$47.00</span></div>
+        <div class="mid-atc-sub">Subscribe &amp; Save price</div>
+      </div>
+      <button class="btn-mid-atc">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:5px"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>Add to Cart
+      </button>
+      <div class="mid-atc-guarantee">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        30-day money-back guarantee
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COMPARISON TABLE ══ -->
+<section class="compare-section">
+  <div class="inner">
+    <p class="eyebrow" style="text-align:center;">How It Compares</p>
+    <h2 class="sh" style="text-align:center;max-width:560px;margin:0 auto;">Why Not Just Buy Iodine<br>From a Pharmacy?</h2>
+    <p style="text-align:center;font-size:14px;color:var(--text-500);max-width:480px;margin:12px auto 0;">Not all iodine is the same. Here is exactly why the formula matters.</p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="text-align:left;background:var(--off-white);color:var(--text-500);">Feature</th>
+          <th class="col-us">Tennant Lugol's</th>
+          <th class="col-other">Standard Supplement</th>
+          <th class="col-other">Pharmacy Iodine</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="feat-name">Iodine form</td>
+          <td class="col-us">Dual (I2 + KI)</td>
+          <td class="col-other">Single form only</td>
+          <td class="col-other">Single form only</td>
+        </tr>
+        <tr>
+          <td class="feat-name">Concentration</td>
+          <td class="col-us">5% clinical grade</td>
+          <td class="col-other">2% or weaker</td>
+          <td class="col-other">Varies, often 2%</td>
+        </tr>
+        <tr>
+          <td class="feat-name">Whole-body coverage</td>
+          <td class="col-us"><span class="chk">&#10003;</span> Thyroid + breast + skin</td>
+          <td class="col-other"><span class="part">&#9651;</span> Thyroid only</td>
+          <td class="col-other"><span class="cross">&#10007;</span> Thyroid only</td>
+        </tr>
+        <tr>
+          <td class="feat-name">Physician formulated</td>
+          <td class="col-us"><span class="chk">&#10003;</span> Dr. Tennant, MD</td>
+          <td class="col-other"><span class="cross">&#10007;</span></td>
+          <td class="col-other"><span class="cross">&#10007;</span></td>
+        </tr>
+        <tr>
+          <td class="feat-name">Third-party tested</td>
+          <td class="col-us"><span class="chk">&#10003;</span> Every batch</td>
+          <td class="col-other"><span class="part">&#9651;</span> Sometimes</td>
+          <td class="col-other"><span class="cross">&#10007;</span></td>
+        </tr>
+        <tr>
+          <td class="feat-name">Delivery format</td>
+          <td class="col-us">Liquid (faster absorption)</td>
+          <td class="col-other">Capsule or tablet</td>
+          <td class="col-other">Topical or capsule</td>
+        </tr>
+        <tr>
+          <td class="feat-name">Fillers / additives</td>
+          <td class="col-us"><span class="chk">&#10003;</span> Zero</td>
+          <td class="col-other"><span class="cross">&#10007;</span> Flow agents common</td>
+          <td class="col-other"><span class="cross">&#10007;</span> Preservatives common</td>
+        </tr>
+        <tr>
+          <td class="feat-name">Money-back guarantee</td>
+          <td class="col-us"><span class="chk">&#10003;</span> 30 days, full refund</td>
+          <td class="col-other"><span class="part">&#9651;</span> Varies</td>
+          <td class="col-other"><span class="cross">&#10007;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 
 <!-- ══ FAQ ══ -->
@@ -2173,5 +2651,58 @@ document.querySelectorAll('.btn-atc, .btn-fcta, .btn-navy').forEach(btn => {
 });
 </script>
 
+
+<!-- ══ STICKY MOBILE ATC BAR ══ -->
+<div class="sticky-atc" id="stickyATC">
+  <div class="sticky-atc-inner">
+    <img class="sticky-atc-img" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1772530403/Screenshot_2026-03-03_at_17.31.59_uutppa.png" alt="Lugol's Iodine" />
+    <div class="sticky-atc-info">
+      <div class="sticky-atc-name">Lugol's Iodine Liquid 2oz</div>
+      <div class="sticky-atc-price">$31.50 <span>$47.00</span></div>
+    </div>
+    <button class="sticky-atc-btn">Add to Cart</button>
+  </div>
+</div>
+
+<script>
+/* Sticky mobile ATC - show when hero purchase card leaves viewport */
+(function() {
+  var bar = document.getElementById('stickyATC');
+  var hero = document.querySelector('.hero');
+  if (!bar || !hero) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting) {
+        bar.classList.add('visible');
+      } else {
+        bar.classList.remove('visible');
+      }
+    });
+  }, { threshold: 0 });
+  io.observe(hero);
+
+  /* ATC flash on sticky bar */
+  bar.querySelector('.sticky-atc-btn').addEventListener('click', function() {
+    var orig = this.textContent;
+    this.textContent = 'Added!';
+    this.style.background = '#16a34a';
+    var self = this;
+    setTimeout(function() { self.textContent = orig; self.style.background = ''; }, 2000);
+  });
+
+  /* Mid-page ATC button flash */
+  var midBtn = document.querySelector('.btn-mid-atc');
+  if (midBtn) {
+    midBtn.addEventListener('click', function() {
+      var orig = this.innerHTML;
+      this.innerHTML = '&#10003; Added to Cart!';
+      this.style.background = '#f0fdf4';
+      this.style.color = '#15803d';
+      var self = this;
+      setTimeout(function() { self.innerHTML = orig; self.style.background = ''; self.style.color = ''; }, 2200);
+    });
+  }
+})();
+</script>
 </body>
 </html>
