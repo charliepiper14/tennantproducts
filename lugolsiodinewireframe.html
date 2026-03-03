@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lugol's Iodine — Sketched Wireframe</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Caveat+Brush&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper:#f5f0e8;--p2:#ede8dc;--ink:#2a2018;--i2:#5c4e3a;--i3:#9a8c78;
+  --i4:#c8bfb0;--blue:#2c4a8c;--blt:#d6def5;--red:#b83030;--gold:#c4860a;
+  --grn:#2d6e3e;--ff:'Caveat',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ddd8ce;background-image:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(80,60,40,.06) 27px,rgba(80,60,40,.06) 28px);font-family:var(--ff);color:var(--ink);padding:28px 18px 60px}
+.sheet{max-width:860px;margin:0 auto;background:var(--paper);box-shadow:2px 3px 0 #ccc8be,4px 6px 0 #b4b0a6,6px 10px 18px rgba(0,0,0,.2);position:relative}
+.sheet::before{content:'';position:absolute;left:-16px;top:36px;width:12px;height:12px;background:#ddd8ce;border-radius:50%;border:2px solid #aaa69e;box-shadow:0 108px 0 #ddd8ce,0 216px 0 #ddd8ce,0 324px 0 #ddd8ce,0 432px 0 #ddd8ce,0 540px 0 #ddd8ce,0 648px 0 #ddd8ce,0 756px 0 #ddd8ce,0 864px 0 #ddd8ce,0 972px 0 #ddd8ce,0 1080px 0 #ddd8ce,0 1188px 0 #ddd8ce,0 1296px 0 #ddd8ce,0 1404px 0 #ddd8ce,0 1512px 0 #ddd8ce,0 1620px 0 #ddd8ce,0 1728px 0 #ddd8ce,0 1836px 0 #ddd8ce,0 1944px 0 #ddd8ce,0 2052px 0 #ddd8ce,0 2160px 0 #ddd8ce}
+.sheet::after{content:'';position:absolute;left:48px;top:0;bottom:0;width:1.5px;background:rgba(184,48,48,.2)}
+
+/* ── doc header ── */
+.hdr{padding:22px 26px 14px 64px;border-bottom:2px solid var(--i4);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:8px}
+.title{font-family:'Caveat Brush',cursive;font-size:23px;color:var(--blue)}
+.meta{font-size:12px;color:var(--i3);line-height:1.7;text-align:right}
+.meta b{color:var(--ink)}
+
+/* ── section ── */
+.s{padding:16px 26px 16px 64px;border-bottom:1px dashed var(--i4);position:relative}
+.s:last-child{border-bottom:none}
+.slbl{position:absolute;left:3px;top:18px;writing-mode:vertical-rl;transform:rotate(180deg);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--i4)}
+
+/* ── block num ── */
+.n{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border:2px solid var(--ink);border-radius:50%;font-size:11px;font-weight:700;margin-right:6px;flex-shrink:0;vertical-align:middle}
+
+/* ── label row ── */
+.lbl{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--i3);display:flex;align-items:center;gap:5px;margin-bottom:8px}
+.lbl::after{content:'';flex:1;height:1px;background:var(--i4)}
+
+/* ── boxes ── */
+.b{border:2px solid var(--i2);border-radius:3px;padding:9px 12px;margin:6px 0;background:var(--paper);box-shadow:1px 1px 0 rgba(42,32,24,.09)}
+.b.nv{background:var(--blt);border-color:var(--blue)}
+.b.dk{background:#d2d6e8;border-color:var(--blue)}
+.b.gr{background:var(--p2);border-color:var(--i2)}
+.b.gd{background:#f5ecd4;border-color:var(--gold)}
+.b.rd{background:#f5d8d8;border-color:var(--red)}
+.b.gn{background:#d8edd8;border-color:var(--grn)}
+
+/* ── layout ── */
+.cols{display:flex;gap:9px;margin:6px 0;align-items:flex-start}
+.c1{flex:1}.c2{flex:2}.c3{flex:3}
+.row{display:flex;gap:7px;margin:6px 0}
+.row .b{flex:1;margin:0}
+
+/* ── type ── */
+.h1{font-family:'Caveat Brush',cursive;font-size:21px;line-height:1.2;margin-bottom:4px}
+.h2{font-family:'Caveat Brush',cursive;font-size:16px;line-height:1.3;margin-bottom:4px}
+.h3{font-size:13.5px;font-weight:700;margin-bottom:3px}
+.bd{font-size:12.5px;color:var(--i2);line-height:1.5}
+
+/* ── lines ── */
+.ls{display:flex;flex-direction:column;gap:4px;margin:5px 0}
+.l{height:8px;background:var(--i4);border-radius:20px}
+
+/* ── image placeholder ── */
+.ip{background:var(--p2);border:2px dashed var(--i3);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--i3);font-size:11px;font-weight:600;text-align:center;position:relative;overflow:hidden}
+.ip::before,.ip::after{content:'';position:absolute;background:var(--i4)}
+.ip::before{width:100%;height:1px;top:50%}
+.ip::after{height:100%;width:1px;left:50%}
+.ip span{position:relative;z-index:1;background:var(--p2);padding:2px 4px}
+
+/* ── buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:6px 14px;border:2.5px solid var(--ink);border-radius:3px;font-family:var(--ff);font-size:12px;font-weight:700;color:var(--ink);background:var(--paper);margin:3px 2px;cursor:default}
+.btn.p{background:var(--blt);border-color:var(--blue);color:var(--blue)}
+.btn.nv{background:#d2d6e8;border-color:var(--blue);color:var(--blue)}
+.btn.gh{background:transparent;border-style:dashed}
+.btn.rd{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ── badges ── */
+.bg{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;border:1.5px solid;margin:2px}
+.bg.nv{border-color:var(--blue);color:var(--blue);background:var(--blt)}
+.bg.rd{border-color:var(--red);color:#fff;background:var(--red)}
+.bg.gn{border-color:var(--grn);color:var(--grn);background:#d8edd8}
+
+/* ── misc ── */
+.stars{color:var(--gold);font-size:13px;letter-spacing:1px}
+.chk{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--i2);margin:4px 0}
+.chk::before{content:'✓';display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;background:var(--blt);border:1.5px solid var(--blue);border-radius:3px;color:var(--blue);font-size:9px;font-weight:700;flex-shrink:0}
+.radio{display:flex;align-items:center;gap:7px;font-size:12.5px;padding:7px 10px;border:1.5px solid var(--i3);border-radius:3px;margin:4px 0;color:var(--i2)}
+.radio.on{border-color:var(--blue);border-width:2px;background:var(--blt);color:var(--blue);font-weight:700}
+.radio::before{content:'';width:13px;height:13px;border:2px solid currentColor;border-radius:50%;flex-shrink:0}
+.radio.on::before{background:var(--blue);box-shadow:inset 0 0 0 3px var(--blt)}
+.qty{display:inline-flex;align-items:center;border:2px solid var(--i2);border-radius:3px;font-size:12.5px}
+.qty em{padding:4px 8px;border-right:1.5px solid var(--i2);color:var(--i2);font-style:normal}
+.qty em:last-child{border-right:none;border-left:1.5px solid var(--i2)}
+.qty strong{padding:4px 12px}
+.ann{display:flex;gap:5px;margin:4px 0;font-size:11.5px;color:var(--red);font-style:italic}
+.ann::before{content:'↳';font-style:normal;font-weight:700;flex-shrink:0}
+.cro{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 5px;background:var(--red);color:#fff;border-radius:2px;margin-left:4px;vertical-align:middle}
+.acc{border:1.5px solid var(--i3);border-radius:3px;padding:9px 13px;margin:5px 0;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:600}
+.acc.op{border-color:var(--blue);background:var(--blt);color:var(--blue)}
+.acc::after{content:'+';font-size:17px;font-weight:400;color:var(--i3)}
+.acc.op::after{content:'×';color:var(--blue)}
+.tbl{width:100%;border-collapse:collapse;margin:8px 0}
+.tbl th,.tbl td{border:1.5px solid var(--i2);padding:6px 8px;font-size:11px;text-align:center}
+.tbl th{background:var(--blt);color:var(--blue);font-weight:700}
+.tbl th.us{background:var(--blue);color:#fff}
+.tbl td.us{background:var(--blt);color:var(--blue);font-weight:700}
+.tbl td.ft{text-align:left;font-weight:600;background:var(--p2)}
+.cpd{background:var(--p2);border:1.5px solid var(--i4);border-radius:4px;padding:7px 10px;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center}
+.rr{background:#d8edd8;border:1.5px solid var(--grn);border-radius:4px;padding:8px 11px;margin-top:7px;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--grn)}
+.div{border:none;border-top:1.5px dashed var(--i4);margin:8px 0}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <div class="title">Lugol's Iodine — Landing Page Wireframe</div>
+    <div style="font-size:11px;color:var(--i3);margin-top:2px;">Google Ads Cold Traffic &nbsp;·&nbsp; Hybrid Mid-Funnel PDP &nbsp;·&nbsp; 18 Blocks</div>
+  </div>
+  <div class="meta">Client: <b>Tennant Products</b><br>Agency: <b>Heath Media</b><br>Version: <b>v5 Final CRO</b></div>
+</div>
+
+<!-- B1 ANN BAR -->
+<div class="s" style="padding-top:11px;padding-bottom:9px;">
+<div class="b dk" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:7px 12px;">
+  <span class="n">1</span>
+  <span style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);">Announcement Bar — scrolling ticker</span>
+  <span class="bd" style="font-size:11px;color:var(--i3);">· Free Shipping · Physician Formulated · 30-Day Guarantee · 4.8★ ·</span>
+</div>
+</div>
+
+<!-- B2 NAV -->
+<div class="s" style="padding-top:11px;padding-bottom:11px;">
+<div class="b" style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 13px;">
+  <div style="display:flex;align-items:center;gap:7px;">
+    <span class="n">2</span>
+    <div class="ip" style="width:108px;height:32px;"><span style="font-size:9px;">LOGO</span></div>
+  </div>
+  <div style="display:flex;gap:14px;"><span class="bd">Supplements</span><span class="bd">About Dr. Tennant</span><span class="bd">Reviews</span><span class="bd">FAQ</span></div>
+  <div style="display:flex;align-items:center;gap:9px;">
+    <span style="font-size:11.5px;color:var(--i2);">+1 682 325 4139</span>
+    <div class="btn nv" style="font-size:11px;padding:5px 11px;">&#128722; Cart (0)</div>
+  </div>
+</div>
+<div class="ann">Sticky nav · remains fixed on scroll throughout entire page</div>
+</div>
+
+<!-- B3 HERO -->
+<div class="s">
+<div class="lbl"><span class="n">3</span> Hero — navy bg, 2-column layout <span class="cro">Above Fold</span></div>
+<div class="cols">
+  <div class="c2">
+    <div class="b nv" style="padding:15px;">
+      <div style="font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;">Physician Formulated · Dr. Jerry Tennant, MD</div>
+      <div class="h1">Fatigue. Brain Fog. Thyroid Trouble.<br><span style="color:var(--gold);">Your Body May Be Missing<br>This One Critical Mineral.</span></div>
+      <div class="b gd" style="margin:10px 0;padding:9px 11px;display:flex;gap:8px;align-items:flex-start;">
+        <div style="width:26px;height:26px;background:var(--p2);border:1.5px solid var(--gold);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;">☀</div>
+        <div class="bd" style="font-size:11.5px;"><b style="color:var(--gold);">Transformation strip</b> — "In 30 days: more energy, sharper focus. In 60-90 days: thyroid labs improve, metabolism normalises." <span class="cro">CRO</span></div>
+      </div>
+      <div class="lbl" style="margin-top:9px;font-size:10px;">Symptom Checklist — 2-col grid</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:11px;">
+        <div class="chk">Low energy &amp; fatigue</div><div class="chk">Brain fog &amp; poor focus</div>
+        <div class="chk">Sluggish metabolism</div><div class="chk">Thyroid dysfunction</div>
+        <div class="chk">Hormone imbalance</div><div class="chk">Poor cell regeneration</div>
+      </div>
+      <div class="bd" style="font-size:11.5px;color:var(--blue);">↓ See how Lugol's works</div>
+    </div>
+  </div>
+  <div class="c1">
+    <div class="b" style="padding:0;overflow:hidden;">
+      <div class="btn rd" style="width:100%;border-radius:0;display:block;text-align:center;font-size:11.5px;padding:8px;margin:0;">Sale: 33% Off Today Only</div>
+      <div style="padding:12px;">
+        <div style="display:flex;gap:8px;margin-bottom:9px;">
+          <div class="ip" style="width:76px;height:100px;flex-shrink:0;"><span style="font-size:9px;">Product<br>Bottle</span></div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div style="font-size:10.5px;color:var(--i3);">4.8 · 500+ reviews</div>
+            <div style="margin-top:5px;"><span class="bg nv" style="font-size:9px;">Non-GMO</span><span class="bg nv" style="font-size:9px;">Lab Tested</span><span class="bg nv" style="font-size:9px;">MD Formula</span></div>
+          </div>
+        </div>
+        <div class="cpd">
+          <div><div class="bd" style="font-size:10.5px;">Less than a coffee</div><b style="font-size:12.5px;">$1.05 per day</b></div>
+          <div style="font-size:20px;font-weight:700;color:var(--blue);line-height:1;">$1.05<span style="font-size:9px;font-weight:400;color:var(--i3);display:block;text-align:right;">/day</span></div>
+        </div>
+        <div class="ann" style="margin:0 0 5px;">Price objection handler <span class="cro">CRO</span></div>
+        <div class="lbl" style="font-size:10px;">Purchase Option</div>
+        <div class="radio on">Subscribe &amp; Save — $31.50 &nbsp;<span class="bg gn" style="font-size:9px;">Save 10%</span></div>
+        <div class="radio">One-Time Purchase — $35.00</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin:8px 0 7px;">
+          <span style="font-size:12px;font-weight:700;">Quantity</span>
+          <div class="qty"><em>−</em><strong>1</strong><em>+</em></div>
+        </div>
+        <div class="btn p" style="width:100%;display:block;text-align:center;padding:11px;font-size:12.5px;margin:0;">&#128722; Add to Cart: $31.50</div>
+        <div class="rr"><span style="font-size:14px;">🛡</span><span>Not satisfied? Full refund in 30 days. No questions, no hassle.</span></div>
+        <div class="ann" style="margin:3px 0 0;">Risk reversal directly under CTA <span class="cro">CRO</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- B4 TRUST BAR -->
+<div class="s" style="padding-top:11px;padding-bottom:11px;">
+<div class="lbl"><span class="n">4</span> Trust Bar — specific numbers, not passive icons <span class="cro">CRO Upgrade</span></div>
+<div class="b gr" style="padding:11px 14px;">
+  <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:6px;">
+    <div style="text-align:center;"><div style="font-size:18px;font-weight:700;">10,247+</div><div style="font-size:10px;color:var(--i3);">Bottles Sold</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;font-weight:700;">4.8★</div><div style="font-size:10px;color:var(--i3);">500+ Verified Reviews</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;font-weight:700;">335</div><div style="font-size:10px;color:var(--i3);">Reorders Last 30 Days</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;font-weight:700;">30-Day</div><div style="font-size:10px;color:var(--i3);">Money-Back Guarantee</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;font-weight:700;">60+</div><div style="font-size:10px;color:var(--i3);">Years Clinical Research</div></div>
+  </div>
+</div>
+<div class="ann">Specific numbers outperform generic badges — specificity is credibility</div>
+</div>
+
+<!-- B5 USP -->
+<div class="s">
+<div class="lbl"><span class="n">5</span> USP Section — 3 navy cards, large gold stat numbers</div>
+<div style="text-align:center;margin-bottom:9px;"><div class="h2">Three Things That Make This Formula Different</div></div>
+<div class="row">
+  <div class="b dk" style="padding:13px;">
+    <div style="font-size:32px;font-weight:700;color:var(--gold);line-height:1;">5%</div>
+    <div class="h3">Physician-Grade Concentration</div>
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:88%"></div><div class="l" style="width:72%"></div></div>
+  </div>
+  <div class="b dk" style="padding:13px;">
+    <div style="font-size:32px;font-weight:700;color:var(--gold);line-height:1;">2x</div>
+    <div class="h3">Dual-Form Iodine</div>
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:88%"></div><div class="l" style="width:72%"></div></div>
+  </div>
+  <div class="b dk" style="padding:13px;">
+    <div style="font-size:32px;font-weight:700;color:var(--gold);line-height:1;">0</div>
+    <div class="h3">Zero Fillers, Zero Compromise</div>
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:88%"></div><div class="l" style="width:72%"></div></div>
+  </div>
+</div>
+<div class="b gr" style="margin-top:6px;padding:8px 12px;display:flex;flex-wrap:wrap;gap:4px;justify-content:space-around;">
+  <span class="bg nv">5% Clinical Strength</span><span class="bg nv">Dual I2+KI</span><span class="bg nv">MD Formulated</span><span class="bg nv">Third-Party Tested</span><span class="bg nv">Liquid Delivery</span>
+</div>
+</div>
+
+<!-- B6 SOCIAL PROOF -->
+<div class="s">
+<div class="lbl"><span class="n">6</span> Social Proof Strip — 3 quote cells, dark navy bg</div>
+<div class="row">
+  <div class="b dk" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:60%"></div></div><div style="font-size:10.5px;color:var(--i3);margin-top:7px;">Sarah M. — Texas</div></div>
+  <div class="b dk" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:60%"></div></div><div style="font-size:10.5px;color:var(--i3);margin-top:7px;">James R. — Colorado</div></div>
+  <div class="b dk" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:60%"></div></div><div style="font-size:10.5px;color:var(--i3);margin-top:7px;">Linda K. — Arizona</div></div>
+</div>
+</div>
+
+<!-- B7 PROBLEM -->
+<div class="s">
+<div class="lbl"><span class="n">7</span> Problem Section — full-bleed background photo</div>
+<div class="b" style="padding:0;overflow:hidden;border-color:var(--blue);">
+  <div style="background:#d0d6ee;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue);">BG IMAGE: Fatigued woman at kitchen table · Dark navy overlay fades left to right · Photo visible on RHS</div>
+  <div class="cols" style="padding:12px;gap:15px;">
+    <div class="c1">
+      <div class="lbl" style="font-size:10px;">LHS — text over photo</div>
+      <div class="h2">Why Modern Life Has Left Most Adults <span style="color:var(--gold);">Iodine Deficient</span></div>
+      <div class="ls" style="margin:7px 0;"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div></div>
+      <div class="b gd" style="display:flex;gap:11px;align-items:center;padding:11px;">
+        <div style="font-size:42px;font-weight:700;color:var(--gold);line-height:1;flex-shrink:0;">74%</div>
+        <div class="ls" style="flex:1;"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:70%"></div></div>
+      </div>
+    </div>
+    <div class="c1">
+      <div class="lbl" style="font-size:10px;">RHS — frosted glass cards</div>
+      <div class="b nv" style="margin-bottom:5px;padding:9px;display:flex;gap:7px;align-items:flex-start;">
+        <div style="width:24px;height:24px;background:var(--blt);border:1.5px solid var(--blue);border-radius:4px;flex-shrink:0;"></div>
+        <div><div class="h3">Thyroid Function</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:80%"></div></div></div>
+      </div>
+      <div class="b nv" style="margin-bottom:5px;padding:9px;display:flex;gap:7px;align-items:flex-start;">
+        <div style="width:24px;height:24px;background:var(--blt);border:1.5px solid var(--blue);border-radius:4px;flex-shrink:0;"></div>
+        <div><div class="h3">Cellular Energy</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:80%"></div></div></div>
+      </div>
+      <div class="b nv" style="padding:9px;display:flex;gap:7px;align-items:flex-start;">
+        <div style="width:24px;height:24px;background:var(--blt);border:1.5px solid var(--blue);border-radius:4px;flex-shrink:0;"></div>
+        <div><div class="h3">Brain &amp; Cognitive Health</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:80%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- B8 DOCTOR -->
+<div class="s">
+<div class="lbl"><span class="n">8</span> Doctor Authority — navy bg, 2-col</div>
+<div class="b dk" style="padding:14px;">
+  <div class="cols" style="gap:16px;">
+    <div class="c1" style="max-width:145px;">
+      <div class="ip" style="height:185px;border-radius:4px;"><span>Dr. Tennant<br>Photo</span></div>
+      <div class="btn rd" style="width:100%;display:block;text-align:center;margin-top:5px;font-size:9.5px;padding:5px;line-height:1.4;">Dr. Jerry Tennant<br>MD, MD(H), PSCD<br>Founder | Tennant Institute</div>
+    </div>
+    <div class="c3">
+      <div class="b nv" style="border-left:4px solid var(--gold);padding:11px;margin-bottom:9px;">
+        <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:82%"></div></div>
+        <div style="font-size:10.5px;color:var(--blue);margin-top:4px;font-style:italic;">— Dr. Jerry Tennant, MD</div>
+      </div>
+      <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:70%"></div></div>
+      <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:9px;">
+        <span class="bg nv" style="font-size:9px;">MD | Ophthalmology</span><span class="bg nv" style="font-size:9px;">MD(H) | Homeopathic</span><span class="bg nv" style="font-size:9px;">PSCD</span><span class="bg nv" style="font-size:9px;">Tennant Institute Founder</span><span class="bg nv" style="font-size:9px;">Author: Healing Is Voltage</span><span class="bg nv" style="font-size:9px;">60+ Years Clinical Research</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- B9 FORMULA -->
+<div class="s">
+<div class="lbl"><span class="n">9</span> Formula — off-white bg, 2-col</div>
+<div class="cols">
+  <div class="c1">
+    <div class="b gr" style="padding:12px;text-align:center;">
+      <div class="ip" style="height:106px;width:68px;margin:0 auto 9px;"><span>Bottle</span></div>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <div class="b" style="padding:5px 8px;display:flex;justify-content:space-between;"><span class="bd" style="font-size:10.5px;">Lugol's Solution (5%)</span><span style="font-size:9.5px;color:var(--i3);">Dual-form</span></div>
+        <div class="b" style="padding:5px 8px;display:flex;justify-content:space-between;"><span class="bd" style="font-size:10.5px;">Potassium Iodide (KI)</span><span style="font-size:9.5px;color:var(--i3);">10mg</span></div>
+        <div class="b" style="padding:5px 8px;display:flex;justify-content:space-between;"><span class="bd" style="font-size:10.5px;">Molecular Iodine (I₂)</span><span style="font-size:9.5px;color:var(--i3);">5mg</span></div>
+        <div class="b" style="padding:5px 8px;display:flex;justify-content:space-between;"><span class="bd" style="font-size:10.5px;">Purified Water</span><span style="font-size:9.5px;color:var(--i3);">USP Grade</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="c2">
+    <div class="h2">Why Lugol's: Not Just<br>Any Iodine Supplement</div>
+    <div class="ls" style="margin:7px 0;"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:82%"></div></div>
+    <div class="chk"><b>Dual-form delivery:</b> Molecular iodine + potassium iodide</div>
+    <div class="chk"><b>Liquid bioavailability:</b> Faster than capsules or tablets</div>
+    <div class="chk"><b>5% clinical concentration</b> — physician-grade standard</div>
+    <div class="chk"><b>Small batch production:</b> Third-party tested every run</div>
+    <div class="chk"><b>Two ingredients only:</b> No fillers, no preservatives</div>
+    <div class="btn nv" style="margin-top:11px;">&#128722; Add to Cart: $31.50 (Subscribe &amp; Save)</div>
+  </div>
+</div>
+</div>
+
+<!-- B10 HOW TO USE -->
+<div class="s">
+<div class="lbl"><span class="n">10</span> How To Use — 3-step visual, white bg</div>
+<div style="text-align:center;margin-bottom:9px;"><div class="h2">Your Daily Lugol's Routine</div></div>
+<div class="row">
+  <div class="b gr" style="padding:13px;text-align:center;">
+    <div style="width:48px;height:48px;background:var(--blt);border:2.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:21px;font-weight:700;color:var(--blue);">1</div>
+    <div class="h3">Add Drops to Water</div>
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:85%"></div><div class="l" style="width:92%"></div></div>
+  </div>
+  <div class="b gr" style="padding:13px;text-align:center;">
+    <div style="width:48px;height:48px;background:var(--blt);border:2.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:21px;font-weight:700;color:var(--blue);">2</div>
+    <div class="h3">Take With Cofactors</div>
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:85%"></div><div class="l" style="width:92%"></div></div>
+  </div>
+  <div class="b gr" style="padding:13px;text-align:center;">
+    <div style="width:48px;height:48px;background:var(--blt);border:2.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:21px;font-weight:700;color:var(--blue);">3</div>
+    <div class="h3">Build Consistency</div>
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:85%"></div><div class="l" style="width:92%"></div></div>
+  </div>
+</div>
+<div class="b gd" style="margin-top:7px;padding:8px 12px;"><span style="font-weight:700;color:var(--gold);">⚠ Dosage note:</span> <span class="bd" style="font-size:11.5px;">On thyroid medication? Consult your physician before starting iodine supplementation.</span></div>
+</div>
+
+<!-- B11 REVIEWS -->
+<div class="s">
+<div class="lbl"><span class="n">11</span> Reviews — centred heading + rating, 3-col card grid</div>
+<div style="text-align:center;margin-bottom:11px;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--i3);margin-bottom:3px;">Customer Reviews</div>
+  <div class="h2">Real-Life Experiences</div>
+  <div style="margin-top:7px;"><div style="font-size:48px;font-weight:700;line-height:1;letter-spacing:-.03em;">4.8</div><div class="stars">★★★★★</div><div style="font-size:11px;color:var(--i3);margin-top:2px;">Based on 500+ verified purchases</div></div>
+</div>
+<div class="row">
+  <div class="b" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:92%"></div><div class="l" style="width:60%"></div></div><div style="font-size:10.5px;font-weight:700;margin-top:7px;">Karen T. — Phoenix, AZ</div><div style="font-size:9.5px;color:var(--grn);font-weight:600;margin-top:2px;">✓ Verified Purchase</div></div>
+  <div class="b" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:92%"></div><div class="l" style="width:60%"></div></div><div style="font-size:10.5px;font-weight:700;margin-top:7px;">Michael D. — Austin, TX</div><div style="font-size:9.5px;color:var(--grn);font-weight:600;margin-top:2px;">✓ Verified Purchase</div></div>
+  <div class="b" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:92%"></div><div class="l" style="width:60%"></div></div><div style="font-size:10.5px;font-weight:700;margin-top:7px;">Jennifer B., NP — Seattle, WA</div><div style="font-size:9.5px;color:var(--grn);font-weight:600;margin-top:2px;">✓ Verified Purchase</div></div>
+</div>
+<div class="row" style="margin-top:6px;">
+  <div class="b" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:85%"></div><div class="l" style="width:72%"></div></div><div style="font-size:10.5px;font-weight:700;margin-top:7px;">Patricia M. — Nashville, TN</div><div style="font-size:9.5px;color:var(--grn);font-weight:600;margin-top:2px;">✓ Verified Subscriber · 8 months</div></div>
+  <div class="b" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:85%"></div><div class="l" style="width:72%"></div></div><div style="font-size:10.5px;font-weight:700;margin-top:7px;">Diane &amp; Robert H. — Denver, CO</div><div style="font-size:9.5px;color:var(--grn);font-weight:600;margin-top:2px;">✓ Verified Purchase</div></div>
+  <div class="b" style="padding:12px;"><div class="stars" style="font-size:11px;margin-bottom:5px;">★★★★★</div><div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:85%"></div><div class="l" style="width:72%"></div></div><div style="font-size:10.5px;font-weight:700;margin-top:7px;">Tom W. — Charlotte, NC</div><div style="font-size:9.5px;color:var(--grn);font-weight:600;margin-top:2px;">✓ Verified Purchase</div></div>
+</div>
+</div>
+
+<!-- B12 MID-PAGE ATC -->
+<div class="s" style="background:#eaecf5;">
+<div class="lbl"><span class="n">12</span> Mid-Page ATC — catches convinced mid-scroll buyers <span class="cro">New CRO</span></div>
+<div class="b nv" style="padding:12px 15px;display:flex;align-items:center;gap:13px;flex-wrap:wrap;">
+  <div class="ip" style="width:50px;height:62px;flex-shrink:0;"><span style="font-size:9px;">Bottle</span></div>
+  <div style="flex:1;">
+    <div class="h3">Lugol's Iodine Liquid 2oz</div>
+    <div class="bd" style="font-size:11.5px;">5% formula · 500+ reviews · Ships 1-2 days</div>
+  </div>
+  <div>
+    <div style="font-size:20px;font-weight:700;color:var(--blue);">$31.50 <span style="font-size:11px;color:var(--i3);text-decoration:line-through;">$47.00</span></div>
+    <div class="btn nv" style="margin-top:4px;font-size:11.5px;padding:7px 15px;">&#128722; Add to Cart</div>
+    <div style="font-size:10px;color:var(--i3);margin-top:3px;text-align:center;">🛡 30-day money-back guarantee</div>
+  </div>
+</div>
+<div class="ann">Placed after reviews at peak social proof — catches buyers who won't scroll back to hero</div>
+</div>
+
+<!-- B13 COMPARISON TABLE -->
+<div class="s">
+<div class="lbl"><span class="n">13</span> Comparison Table — handles "why not pharmacy iodine?" objection <span class="cro">New CRO</span></div>
+<div style="text-align:center;margin-bottom:9px;"><div class="h2">Why Not Just Buy Iodine From a Pharmacy?</div></div>
+<table class="tbl">
+  <thead>
+    <tr>
+      <th style="text-align:left;background:var(--p2);">Feature</th>
+      <th class="us">Tennant Lugol's ★</th>
+      <th>Standard Supplement</th>
+      <th>Pharmacy Iodine</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="ft">Iodine form</td><td class="us">Dual (I2 + KI)</td><td>Single form only</td><td>Single form only</td></tr>
+    <tr><td class="ft">Concentration</td><td class="us">5% clinical grade</td><td>2% or weaker</td><td>Varies</td></tr>
+    <tr><td class="ft">Whole-body coverage</td><td class="us">✓ Thyroid + breast + skin</td><td>△ Thyroid only</td><td>✗ Thyroid only</td></tr>
+    <tr><td class="ft">MD Formulated</td><td class="us">✓ Dr. Tennant</td><td>✗</td><td>✗</td></tr>
+    <tr><td class="ft">Third-party tested</td><td class="us">✓ Every batch</td><td>△ Sometimes</td><td>✗</td></tr>
+    <tr><td class="ft">Zero fillers</td><td class="us">✓</td><td>✗</td><td>✗</td></tr>
+    <tr><td class="ft">30-day guarantee</td><td class="us">✓ Full refund</td><td>△ Varies</td><td>✗</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- B14 FAQ -->
+<div class="s">
+<div class="lbl"><span class="n">14</span> FAQ — accordion, centred, max-width 720px</div>
+<div style="text-align:center;margin-bottom:9px;"><div class="h2">Everything You Need to Know</div></div>
+<div style="max-width:560px;margin:0 auto;">
+  <div class="acc op">What is Lugol's Iodine and how is it different?</div>
+  <div class="b gr" style="padding:8px 12px;margin-top:-1px;border-top:none;border-color:var(--blue);">
+    <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:78%"></div></div>
+  </div>
+  <div class="acc">How much should I take and how quickly will I see results?</div>
+  <div class="acc">Can I take this if I'm on thyroid medication?</div>
+  <div class="acc">What cofactors should I take with iodine?</div>
+  <div class="acc">What is your return policy?</div>
+</div>
+</div>
+
+<!-- B15 BUNDLE -->
+<div class="s">
+<div class="lbl"><span class="n">15</span> Bundle / Upsell — 4-col product cards</div>
+<div style="text-align:center;margin-bottom:9px;"><div class="h2">Products That Work Best With Lugol's</div></div>
+<div class="row">
+  <div class="b" style="text-align:center;padding:10px;"><div class="ip" style="height:62px;margin-bottom:6px;"><span style="font-size:9px;">Cofactors</span></div><div class="h3" style="font-size:11px;">Iodine Cofactors</div><div style="font-size:12.5px;font-weight:700;color:var(--blue);margin:4px 0;">$44.99</div><div class="btn" style="width:100%;display:block;text-align:center;font-size:10.5px;padding:5px;margin:0;">Add to Cart</div></div>
+  <div class="b" style="text-align:center;padding:10px;"><div class="ip" style="height:62px;margin-bottom:6px;"><span style="font-size:9px;">Restore</span></div><div class="h3" style="font-size:11px;">Restore: Cellular Repair</div><div style="font-size:12.5px;font-weight:700;color:var(--blue);margin:4px 0;">$79.99</div><div class="btn" style="width:100%;display:block;text-align:center;font-size:10.5px;padding:5px;margin:0;">Add to Cart</div></div>
+  <div class="b" style="text-align:center;padding:10px;"><div class="ip" style="height:62px;margin-bottom:6px;"><span style="font-size:9px;">Brain Food+</span></div><div class="h3" style="font-size:11px;">Brain Food Plus</div><div style="font-size:12.5px;font-weight:700;color:var(--blue);margin:4px 0;">$59.99</div><div class="btn" style="width:100%;display:block;text-align:center;font-size:10.5px;padding:5px;margin:0;">Add to Cart</div></div>
+  <div class="b" style="text-align:center;padding:10px;"><div class="ip" style="height:62px;margin-bottom:6px;"><span style="font-size:9px;">Probiotics</span></div><div class="h3" style="font-size:11px;">Advanced Probiotics</div><div style="font-size:12.5px;font-weight:700;color:var(--blue);margin:4px 0;">$49.99</div><div class="btn" style="width:100%;display:block;text-align:center;font-size:10.5px;padding:5px;margin:0;">Add to Cart</div></div>
+</div>
+</div>
+
+<!-- B16 URGENCY BAR -->
+<div class="s" style="padding-top:9px;padding-bottom:9px;">
+<div class="b rd" style="padding:8px 12px;display:flex;align-items:center;justify-content:center;gap:8px;">
+  <span class="n" style="border-color:var(--red);color:var(--red);">16</span>
+  <span style="font-size:12px;font-weight:700;color:var(--red);">⏱ Urgency Bar</span>
+  <span class="bd" style="font-size:11.5px;">"33% Off Sale ends soon. Subscribe to lock in your $31.50 price permanently."</span>
+</div>
+</div>
+
+<!-- B17 FINAL CTA -->
+<div class="s">
+<div class="lbl"><span class="n">17</span> Final CTA — navy bg, gold top border, dual buttons</div>
+<div class="b dk" style="padding:20px;text-align:center;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--i3);margin-bottom:5px;">Start Your Protocol Today</div>
+  <div class="h2">Your Thyroid, Brain, and Every Cell<br>in Your Body Are Waiting.</div>
+  <div class="ls" style="max-width:260px;margin:8px auto;"><div class="l" style="width:90%"></div><div class="l" style="width:70%"></div></div>
+  <div style="display:flex;justify-content:center;gap:9px;margin:12px 0;flex-wrap:wrap;">
+    <div class="btn nv" style="font-size:11.5px;padding:10px 20px;">&#128722; Subscribe &amp; Save: $31.50/mo</div>
+    <div class="btn gh" style="font-size:11.5px;padding:10px 20px;">One-Time Purchase: $35.00</div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+    <span class="bg nv" style="font-size:9px;">🔒 Secure</span><span class="bg nv" style="font-size:9px;">🌿 Non-GMO</span><span class="bg nv" style="font-size:9px;">🧪 Lab Tested</span><span class="bg nv" style="font-size:9px;">🚚 Free Shipping</span><span class="bg nv" style="font-size:9px;">🛡 30-Day Guarantee</span>
+  </div>
+</div>
+</div>
+
+<!-- B18 FOOTER -->
+<div class="s">
+<div class="lbl"><span class="n">18</span> Footer — dark navy, 4-col grid</div>
+<div class="b dk" style="padding:14px;">
+  <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:13px;">
+    <div>
+      <div class="ip" style="width:96px;height:25px;margin-bottom:7px;"><span style="font-size:9px;">LOGO (white)</span></div>
+      <div class="ls"><div class="l" style="width:100%"></div><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div></div>
+      <div style="font-size:10.5px;color:var(--i3);margin-top:6px;">Dallas TX · +1 682 325 4139</div>
+    </div>
+    <div><div class="h3" style="font-size:11.5px;margin-bottom:6px;">Products</div><div class="ls"><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:88%"></div><div class="l" style="width:70%"></div><div class="l" style="width:82%"></div></div></div>
+    <div><div class="h3" style="font-size:11.5px;margin-bottom:6px;">Learn</div><div class="ls"><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:70%"></div><div class="l" style="width:82%"></div></div></div>
+    <div><div class="h3" style="font-size:11.5px;margin-bottom:6px;">Support</div><div class="ls"><div class="l" style="width:90%"></div><div class="l" style="width:80%"></div><div class="l" style="width:70%"></div><div class="l" style="width:82%"></div></div></div>
+  </div>
+  <div class="div" style="border-color:var(--i3);margin:9px 0 7px;"></div>
+  <div class="ls" style="max-width:460px;"><div class="l" style="width:100%"></div><div class="l" style="width:88%"></div></div>
+  <div style="font-size:10px;color:var(--i3);margin-top:5px;">* These statements have not been evaluated by the FDA · &copy; 2025 Tennant Products</div>
+</div>
+</div>
+
+<!-- MOBILE STICKY BAR -->
+<div class="s" style="background:var(--p2);padding-top:11px;padding-bottom:14px;">
+<div class="lbl" style="margin-bottom:7px;">Mobile Only — Sticky ATC Bar (fixed bottom) <span class="cro">New CRO</span></div>
+<div class="b nv" style="padding:11px 13px;">
+  <div class="ann" style="margin-bottom:7px;font-style:normal;color:var(--blue);font-size:11.5px;">Fixed to bottom of screen on mobile only. Appears when hero purchase card scrolls out of view via JS IntersectionObserver. Hidden on desktop.</div>
+  <div style="background:#fff;border:2px solid var(--blue);border-radius:3px;padding:9px 13px;display:flex;align-items:center;gap:11px;box-shadow:0 -3px 10px rgba(0,0,0,.1);">
+    <div class="ip" style="width:34px;height:42px;flex-shrink:0;"><span style="font-size:8px;">Img</span></div>
+    <div style="flex:1;">
+      <div style="font-size:11.5px;font-weight:700;">Lugol's Iodine Liquid 2oz</div>
+      <div style="font-size:12.5px;font-weight:800;color:var(--blue);">$31.50 <span style="font-size:10px;color:var(--i3);text-decoration:line-through;font-weight:400;">$47.00</span></div>
+    </div>
+    <div class="btn nv" style="font-size:11.5px;padding:8px 15px;">Add to Cart</div>
+  </div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
