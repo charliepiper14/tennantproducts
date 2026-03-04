@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennant Products | Weekly Performance Report | Feb 22-28, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0f14;
+            --bg-secondary: #111820;
+            --bg-card: #162642;
+            --border: rgba(255,255,255,0.08);
+            --accent-green: #10b981;
+            --accent-green-dim: rgba(16, 185, 129, 0.15);
+            --accent-coral: #cc5b27;
+            --accent-coral-dim: rgba(204, 91, 39, 0.15);
+            --accent-blue: #3b82f6;
+            --accent-blue-dim: rgba(59, 130, 246, 0.15);
+            --accent-red: #ef4444;
+            --accent-red-dim: rgba(239, 68, 68, 0.15);
+            --accent-orange: #f59e0b;
+            --accent-orange-dim: rgba(245, 158, 11, 0.15);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 15px; }
+        .slide { min-height: 100vh; padding: 48px 64px; position: relative; display: flex; flex-direction: column; border-bottom: 1px solid var(--border); }
+        .slide-number { position: absolute; top: 24px; right: 32px; font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+        .slide-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-coral); margin-bottom: 8px; font-weight: 600; }
+        h1 { font-family: 'DM Sans', sans-serif; font-size: 42px; font-weight: 800; line-height: 1.15; margin-bottom: 8px; }
+        h2 { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+        h3 { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+        .subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; max-width: 680px; }
+        .grid { display: grid; gap: 16px; }
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+        .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+        .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+        .card { background: var(--bg-card); border-radius: 12px; padding: 24px; border: 1px solid var(--border); }
+        .card-dark { background: var(--bg-secondary); border-radius: 12px; padding: 24px; border: 1px solid var(--border); }
+        .kpi-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 4px; }
+        .kpi-value { font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700; line-height: 1.2; }
+        .kpi-value-sm { font-family: 'DM Sans', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.2; }
+        .kpi-sub { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .badge-green { background: var(--accent-green-dim); color: var(--accent-green); }
+        .badge-red { background: var(--accent-red-dim); color: var(--accent-red); }
+        .badge-orange { background: var(--accent-orange-dim); color: var(--accent-orange); }
+        .badge-blue { background: var(--accent-blue-dim); color: var(--accent-blue); }
+        .text-green { color: var(--accent-green); }
+        .text-red { color: var(--accent-red); }
+        .text-coral { color: var(--accent-coral); }
+        .text-orange { color: var(--accent-orange); }
+        .text-blue { color: var(--accent-blue); }
+        .text-muted { color: var(--text-muted); }
+        .text-secondary { color: var(--text-secondary); }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th { text-align: left; padding: 10px 14px; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 1px solid var(--border); font-weight: 600; }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        tr:last-child td { border-bottom: none; }
+        .highlight-row td { color: var(--text-primary); font-weight: 600; }
+        .callout { border-left: 3px solid var(--accent-coral); padding: 16px 20px; background: var(--bg-secondary); border-radius: 0 8px 8px 0; margin-top: 16px; }
+        .callout-red { border-left-color: var(--accent-red); background: var(--accent-red-dim); }
+        .callout-green { border-left-color: var(--accent-green); background: var(--accent-green-dim); }
+        .callout-orange { border-left-color: var(--accent-orange); background: var(--accent-orange-dim); }
+        .action-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 12px; }
+        .action-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+        .divider { height: 1px; background: var(--border); margin: 24px 0; }
+        .cover-accent { width: 80px; height: 4px; background: var(--accent-coral); border-radius: 2px; margin-bottom: 24px; }
+        .ratio-display { font-family: 'DM Sans', sans-serif; font-size: 72px; font-weight: 800; color: var(--accent-green); line-height: 1; }
+        @media (max-width: 768px) { .slide { padding: 32px 24px; } .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } h1 { font-size: 28px; } h2 { font-size: 24px; } .kpi-value { font-size: 28px; } }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" style="justify-content: center; align-items: flex-start;">
+    <span class="slide-number">01 / 16</span>
+    <div style="margin-bottom: 32px;">
+        <svg width="160" height="30" viewBox="0 0 160 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="22" font-family="DM Sans, sans-serif" font-weight="700" font-size="17" fill="#ffffff" letter-spacing="0.5">HEATH MEDIA</text>
+        </svg>
+        <p style="font-size: 10px; text-transform: uppercase; letter-spacing: 3px; color: #cc5b27; font-weight: 600; margin-top: 6px;">x Tennant Products</p>
+    </div>
+    <div class="cover-accent"></div>
+    <h1>Weekly Performance<br>Report</h1>
+    <p style="font-size: 22px; color: var(--text-secondary); margin-top: 12px; font-weight: 300;">Sunday Feb 22 to Saturday Feb 28, 2026 &nbsp;|&nbsp; vs Sun Feb 15 to Sat Feb 21, 2026</p>
+
+    <div style="margin-top: 48px; display: flex; gap: 32px; flex-wrap: wrap;">
+        <div>
+            <p class="kpi-label">Blended ROAS</p>
+            <p class="kpi-value text-orange">2.53x</p>
+            <p class="kpi-sub text-red">Down from 2.66x prior week</p>
+        </div>
+        <div>
+            <p class="kpi-label">Total Spend</p>
+            <p class="kpi-value">$1,627</p>
+            <p class="kpi-sub">Meta $454 + Google $1,173</p>
+        </div>
+        <div>
+            <p class="kpi-label">Conv Value (est)</p>
+            <p class="kpi-value text-orange">$4,122</p>
+            <p class="kpi-sub">Meta $1,569 + Google $2,553 (est)</p>
+        </div>
+        <div>
+            <p class="kpi-label">Shopify Orders</p>
+            <p class="kpi-value text-green">162</p>
+            <p class="kpi-sub">$241 AOV | 31 new customers</p>
+        </div>
+    </div>
+
+    <div class="callout callout-orange" style="margin-top: 40px; max-width: 820px;">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-orange);">This week in context:</strong> Blended ROAS remained under pressure for the same structural reason as last week PMax still policy-limited with impression share under 10%, and the DSA campaign dropped sharply from 5.08x ROAS in January to 0.56x this month. The standout this week is Meta ad-level performance: Brain - Copy turned on at 13.19x ROAS and Gut Health - Copy delivered 8.10x. These are the cold-prospecting signals Tennant Products needs to scale toward the 200 new customers per month target. 31 new customers acquired this week, the highest weekly figure in the account.</p>
+    </div>
+</div>
+
+<!-- SLIDE 2: FULL WEEK OVERVIEW -->
+<div class="slide">
+    <span class="slide-number">02 / 16</span>
+    <p class="slide-tag">Full Week Overview</p>
+    <h2>Feb 22-28 Combined Performance</h2>
+    <p class="subtitle">Cross-platform weekly results vs prior week (Feb 15-21, 2026)</p>
+
+    <div class="grid grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+            <p class="kpi-label">Total Spend</p>
+            <p class="kpi-value-sm">$1,627</p>
+            <p class="kpi-sub">Flat vs $1,627 prior week</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Total Conv Value (est)</p>
+            <p class="kpi-value-sm text-orange">$4,122</p>
+            <p class="kpi-sub text-red">Down from $4,327 (-4.7%)</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Blended ROAS</p>
+            <p class="kpi-value-sm text-orange">2.53x</p>
+            <p class="kpi-sub text-red">Down from 2.66x prior week</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Blended CPA</p>
+            <p class="kpi-value-sm">$52.50</p>
+            <p class="kpi-sub text-green">Down from $58.11 prior week</p>
+        </div>
+    </div>
+
+    <div class="grid grid-2">
+        <div class="card-dark">
+            <h3 style="color: var(--accent-coral);">Meta Ads</h3>
+            <table>
+                <tr><td>Spend</td><td style="text-align:right; color: var(--text-primary);">$453.95</td><td style="text-align:right; color: var(--text-muted); font-size:12px;">Flat vs $453.00 prior</td></tr>
+                <tr><td>Purchases</td><td style="text-align:right; color: var(--accent-red);">8</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Down from 9 (-11.1%)</td></tr>
+                <tr><td>Conv Value</td><td style="text-align:right; color: var(--accent-orange);">$1,568.50</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Down from $2,220 (-29.3%)</td></tr>
+                <tr><td>ROAS</td><td style="text-align:right; color: var(--accent-orange);">3.46x</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Down from 4.90x</td></tr>
+                <tr><td>CPA</td><td style="text-align:right; color: var(--accent-orange);">$56.74</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Up from $50.33</td></tr>
+            </table>
+        </div>
+        <div class="card-dark">
+            <h3 style="color: var(--accent-blue);">Google Ads</h3>
+            <table>
+                <tr><td>Spend (est)</td><td style="text-align:right; color: var(--text-primary);">$1,173 (est)</td><td style="text-align:right; color: var(--text-muted); font-size:12px;">Flat vs $1,174 prior</td></tr>
+                <tr><td>Conv Value (est)</td><td style="text-align:right; color: var(--accent-orange);">$2,553 (est)</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">vs $2,113 prior (est)</td></tr>
+                <tr><td>ROAS (est)</td><td style="text-align:right; color: var(--accent-orange);">2.18x (est)</td><td style="text-align:right; color: var(--accent-orange); font-size:12px;">vs 1.80x prior</td></tr>
+                <tr><td>PMax ROAS (monthly)</td><td style="text-align:right; color: var(--accent-red);">2.60x</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Jan was 4.59x</td></tr>
+                <tr><td>Impr Share</td><td style="text-align:right; color: var(--accent-red);">&lt;10%</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Policy cap sustained</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="callout" style="margin-top: 20px;">
+        <p style="font-size: 14px; color: var(--text-secondary);">The headline story this week is not the blended ROAS it is what happened inside Meta. Brain - Copy and Gut Health - Copy both converted at double-digit ROAS, with the BF+ CBO campaign delivering its first meaningful cold-prospecting signal in weeks. These are the ad formats and copy angles that will build the new customer pipeline Tennant Products needs. The BF+ Adv+ ad set has gone quiet this week spending $71.57 with zero conversions recorded, and the Demonstration ad set (paused after last week) is confirmed out. The structure now needs consolidation: direct budget to what is working and build from there. Google weekly estimates are derived from the February monthly total minus confirmed prior weeks exact weekly Google conversion value will be confirmed in next reporting cycle.</p>
+    </div>
+</div>
+
+<!-- SLIDE 3: META PERFORMANCE -->
+<div class="slide">
+    <span class="slide-number">03 / 16</span>
+    <p class="slide-tag">Meta Ads</p>
+    <h2>Meta Campaign Performance | Feb 22-28</h2>
+    <p class="subtitle">vs Prior Week (Feb 15-21, 2026)</p>
+
+    <div class="grid grid-2" style="margin-bottom: 24px;">
+        <div class="card" style="border-top: 3px solid var(--accent-green);">
+            <h3>SS to Retargeting</h3>
+            <div class="grid grid-3" style="gap: 12px;">
+                <div><p class="kpi-label">ROAS</p><p class="kpi-value-sm text-green">8.77x</p><p class="kpi-sub text-green">Up from 10.53x, adjusted</p></div>
+                <div><p class="kpi-label">Spend</p><p class="kpi-value-sm">$174.49</p><p class="kpi-sub">Flat vs $174.04</p></div>
+                <div><p class="kpi-label">Reach</p><p class="kpi-value-sm text-red">1,735</p><p class="kpi-sub text-red">Down from 1,837</p></div>
+            </div>
+            <div class="divider" style="margin: 16px 0;"></div>
+            <table>
+                <tr><td>Purchases</td><td style="text-align:right; color: var(--accent-green);">7</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">Up from 1 last week</td></tr>
+                <tr><td>Conv Value</td><td style="text-align:right; color: var(--accent-green);">$1,530.90</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">Up from $118.80</td></tr>
+                <tr><td>Frequency</td><td style="text-align:right; color: var(--accent-orange);">6.50</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">Down from 7.28</td></tr>
+                <tr><td>Impressions</td><td style="text-align:right; color: var(--text-secondary);">10,694</td></tr>
+            </table>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Retargeting bounced back strongly with 7 purchases this week from 1 last week. Conversion value jumped from $118.80 to $1,530.90 on the same spend. Frequency dropped from 7.28 to 6.50 still elevated but moving in the right direction. Audience reach at 1,735 is below the 1,837 high of last week and still below the 2,000 healthy threshold. Audience expansion from 30 to 60 days is the lever to push here.</p>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-red);">
+            <h3>Brain Food+ CBO</h3>
+            <div class="grid grid-3" style="gap: 12px;">
+                <div><p class="kpi-label">Purchases</p><p class="kpi-value-sm text-red">1</p><p class="kpi-sub text-red">Down from 2</p></div>
+                <div><p class="kpi-label">Spend</p><p class="kpi-value-sm">$279.46</p><p class="kpi-sub">Flat vs $279.05</p></div>
+                <div><p class="kpi-label">ROAS</p><p class="kpi-value-sm text-red">0.13x</p><p class="kpi-sub text-red">Down from 1.37x</p></div>
+            </div>
+            <div class="divider" style="margin: 16px 0;"></div>
+            <table>
+                <tr><td>Conv Value</td><td style="text-align:right; color: var(--accent-red);">$37.60</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Down from $383</td></tr>
+                <tr><td>CPA</td><td style="text-align:right; color: var(--accent-red);">$279.46</td><td style="text-align:right; color: var(--accent-red); font-size:12px;">Up from $139.53</td></tr>
+                <tr><td>Adv+ Ad Set spend</td><td style="text-align:right; color: var(--text-secondary);">$71.57</td><td style="text-align:right; color: var(--text-muted); font-size:12px;">0 conv this week</td></tr>
+                <tr><td>RTG Ad Set</td><td style="text-align:right; color: var(--accent-orange);">1 conv ($37.60)</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="callout callout-red">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-red);">BF+ CBO is in structural trouble and needs immediate intervention.</strong> The Demonstration ad set was paused after last week's zero-conversion result. This week the Adv+ ad set which had delivered 4.77x ROAS on $80.32 last week spent $71.57 and recorded zero conversions. The RTG ad set contributed 1 purchase ($37.60) on $56.04 spend. With $279.46 total spend and only $37.60 in revenue, this campaign is at 0.13x ROAS. Brain - Copy is converting at 13.19x ROAS in the same account this week. The budget allocation between these two campaigns needs urgent review. BF+ CBO is not delivering acquisition value at current structure. The creative insights from ad-level data (next slide) tell the recovery story.</p>
+    </div>
+</div>
+
+<!-- SLIDE 4: META CREATIVE BREAKDOWN -->
+<div class="slide">
+    <span class="slide-number">04 / 16</span>
+    <p class="slide-tag">Creative Performance</p>
+    <h2>Meta Ad Creative Breakdown | Feb 22-28</h2>
+    <p class="subtitle">Ad-level performance biggest week of creative signal yet</p>
+
+    <div class="card-dark" style="margin-bottom: 20px;">
+        <table>
+            <thead>
+                <tr><th>Creative</th><th>Campaign</th><th>Purchases</th><th>Spend</th><th>CPA</th><th>Conv Value</th><th>ROAS</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td>Brain - Copy</td><td>BF+ CBO</td><td>4</td><td>$80.01</td><td style="color: var(--accent-green);">$20.00</td><td>$1,055.68</td><td style="color: var(--accent-green);">13.19x</td><td><span class="badge badge-green">Top Performer</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>Gut Health - Copy</td><td>SS - RTG</td><td>3</td><td>$58.67</td><td style="color: var(--accent-green);">$19.56</td><td>$475.22</td><td style="color: var(--accent-green);">8.10x</td><td><span class="badge badge-green">Scale This</span></td>
+                </tr>
+                <tr>
+                    <td>Testimonial to Dr. Billy Ledbetter</td><td>BF+ CBO</td><td>2</td><td>$102.72</td><td style="color: var(--accent-orange);">$51.36</td><td>$511.00</td><td style="color: var(--accent-green);">4.97x</td><td><span class="badge badge-green">Hold</span></td>
+                </tr>
+                <tr>
+                    <td>Retargeting Website Visitors</td><td>SS - RTG</td><td>7</td><td>$173.11</td><td style="color: var(--accent-orange);">$24.73</td><td>$1,530.90</td><td style="color: var(--accent-green);">8.84x</td><td><span class="badge badge-green">Hold</span></td>
+                </tr>
+                <tr>
+                    <td>Video Ad 2 BrainFood+ (x2)</td><td>BF+ CBO</td><td>0</td><td>$130.28</td><td>n/a</td><td>$0</td><td style="color: var(--accent-red);">0x</td><td><span class="badge badge-red">Review</span></td>
+                </tr>
+                <tr>
+                    <td>Image Ad 1 BrainFood+</td><td>BF+ CBO</td><td>0</td><td>$15.03</td><td>n/a</td><td>$0</td><td style="color: var(--accent-red);">0x</td><td><span class="badge badge-red">Pause</span></td>
+                </tr>
+                <tr>
+                    <td>Image Ad 2 BrainFood+</td><td>BF+ CBO</td><td>0</td><td>$5.39</td><td>n/a</td><td>$0</td><td style="color: var(--accent-red);">0x</td><td><span class="badge badge-red">Pause</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid grid-2">
+        <div class="callout callout-green">
+            <p style="font-size: 13px;"><strong style="color: var(--accent-green);">Brain - Copy is the account's top performer this week at 13.19x ROAS.</strong> This is a copy-led direct-response ad same format as Gut Health - Copy (8.10x) and Energy - Copy (18.85x two weeks ago). The pattern is clear: pain-point copy in this format is what converts cold and warm audiences for Tennant Products. This is the creative template Royd needs to build all new product launch creatives from. The Digestive Enzymes, Lugol's Liquid, and Restore Veggie launch ads must all follow this structure: lead with the symptom, name the enemy, offer the solution.</p>
+        </div>
+        <div class="callout callout-orange">
+            <p style="font-size: 13px;"><strong style="color: var(--accent-orange);">BF+ CBO Video Ad 2 spent $130.28 across two instances with zero conversions.</strong> This format underperformed last week too. With Brain - Copy now confirmed converting at 13.19x, the case for concentrating BF+ CBO budget on copy-led ads is strong. Brief Royd for 2-3 new copy-led variants for Brain Food Plus using the same direct-response structure. The video and image formats in the account are not moving the needle on purchases the copy-led format is the one to scale and replicate across all products.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: GOOGLE MONTHLY DEEP DIVE -->
+<div class="slide">
+    <span class="slide-number">05 / 16</span>
+    <p class="slide-tag">Google Ads Monthly Review</p>
+    <h2>Google Ads Full Month | February 2026</h2>
+    <p class="subtitle">Feb 2026 vs January 2026 full month comparative</p>
+
+    <div class="grid grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+            <p class="kpi-label">Feb Spend</p>
+            <p class="kpi-value-sm text-red">$3,941</p>
+            <p class="kpi-sub text-red">Up from $3,650 (+8.0%)</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Feb Conv Value</p>
+            <p class="kpi-value-sm text-red">$8,078</p>
+            <p class="kpi-sub text-red">Down from $11,648 (-30.7%)</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Google Feb ROAS</p>
+            <p class="kpi-value-sm text-red">2.05x</p>
+            <p class="kpi-sub text-red">Down from 3.19x in January</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Conversions</p>
+            <p class="kpi-value-sm text-orange">46.62</p>
+            <p class="kpi-sub text-red">Down from 55.76 in January</p>
+        </div>
+    </div>
+
+    <div class="card-dark" style="margin-bottom: 20px;">
+        <h3>Campaign Breakdown February vs January</h3>
+        <table>
+            <thead>
+                <tr><th>Campaign</th><th>Feb Spend</th><th>Feb Conv</th><th>Feb ROAS</th><th>Jan ROAS</th><th>Change</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SS - PMax</td><td>$1,932</td><td>29.08</td><td style="color: var(--accent-red);">2.60x</td><td style="color: var(--text-muted); font-size:12px;">4.59x</td><td style="color: var(--accent-red); font-size:12px;">-43.4%</td><td><span class="badge badge-red">Policy-capped &lt;10% IS</span></td>
+                </tr>
+                <tr>
+                    <td>SS - Branded</td><td>$1,451</td><td>15.84</td><td style="color: var(--accent-orange);">2.01x</td><td style="color: var(--accent-orange); font-size:12px;">1.52x</td><td style="color: var(--accent-green); font-size:12px;">+32.0%</td><td><span class="badge badge-orange">Spend down, efficiency up</span></td>
+                </tr>
+                <tr>
+                    <td>HM - Lugol's Iodine</td><td>$330</td><td>0.08</td><td style="color: var(--accent-red);">0x (new)</td><td style="color: var(--text-muted); font-size:12px;">n/a (new)</td><td style="color: var(--text-muted); font-size:12px;">New</td><td><span class="badge badge-orange">Learning window, limited budget</span></td>
+                </tr>
+                <tr>
+                    <td>SS - DSA</td><td>$228</td><td>1.62</td><td style="color: var(--accent-red);">0.56x</td><td style="color: var(--text-muted); font-size:12px;">5.08x</td><td style="color: var(--accent-red); font-size:12px;">-89.0%</td><td><span class="badge badge-red">Critical drop investigate</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="callout callout-red">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-red);">The DSA campaign is the most overlooked underperformer in the account.</strong> It delivered 5.08x ROAS in January ($1,154.96 on $227.32 spend). In February that collapsed to 0.56x ($126.46 on $227.85 spend). That is an 89% ROAS decline on flat spend. The DSA campaign targets the site automatically this collapse suggests either the Shopify pages it is matching to are low-intent product pages, or there has been a significant change in the content DSA is crawling after John's CloudFlare/Blocky changes on Feb 19. Pull the search term report for DSA and audit exactly what pages are being matched. This campaign was a reliable secondary revenue driver in January and the drop is not explained by policy issues.</p>
+    </div>
+    <div class="callout callout-orange" style="margin-top: 8px;">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-orange);">PMax continues to be the most structurally constrained campaign.</strong> $1,932 spend in February against $5,021 in conversion value at 2.60x ROAS versus 4.59x in January on $1,722. The impression share remaining under 10% for the full month confirms the policy restriction has not been resolved. Every week PMax runs at under 10% impression share is a direct loss of the $3-4k monthly revenue this campaign delivered at full health in January. This remains the single biggest Google recovery lever.</p>
+    </div>
+</div>
+
+<!-- SLIDE 6: GOOGLE BRANDED SEARCH -->
+<div class="slide">
+    <span class="slide-number">06 / 16</span>
+    <p class="slide-tag">Search Term Analysis</p>
+    <h2>Branded Search Performance | February 2026</h2>
+    <p class="subtitle">Full month keyword-level spend and efficiency vs January 2026</p>
+
+    <div class="grid grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+            <p class="kpi-label">Feb Branded Spend</p>
+            <p class="kpi-value-sm text-orange">$1,451</p>
+            <p class="kpi-sub text-green">Down from $1,700 Jan (-14.7%)</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Conversions</p>
+            <p class="kpi-value-sm text-green">15.84</p>
+            <p class="kpi-sub text-green">Up from 13.07 Jan (+21.2%)</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">ROAS</p>
+            <p class="kpi-value-sm text-green">2.01x</p>
+            <p class="kpi-sub text-green">Up from 1.52x January</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Avg CPC</p>
+            <p class="kpi-value-sm text-green">$5.30</p>
+            <p class="kpi-sub text-green">Down from $6.32 Jan (-16.2%)</p>
+        </div>
+    </div>
+
+    <div class="card-dark" style="margin-bottom: 20px;">
+        <h3>Top Keyword Performance February 2026 (Full Month)</h3>
+        <table>
+            <thead>
+                <tr><th>Keyword</th><th>Match</th><th>Feb Spend</th><th>Clicks</th><th>CTR</th><th>vs Jan Spend</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td>tennant products</td><td>Exact</td><td>$483.62</td><td>130</td><td style="color: var(--accent-green);">28.02%</td><td style="color: var(--accent-red);">+76.8% vs $273</td><td><span class="badge badge-orange">Monitor spend</span></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>dr tennant products</td><td>Exact</td><td>$371.85</td><td>57</td><td style="color: var(--accent-green);">30.98%</td><td style="color: var(--accent-red);">+54.6% vs $240</td><td><span class="badge badge-orange">Monitor spend</span></td>
+                </tr>
+                <tr>
+                    <td>tennant institute</td><td>Exact</td><td>$305.33</td><td>31</td><td style="color: var(--accent-orange);">19.25%</td><td style="color: var(--accent-red);">-71.7% vs $1,079 Jan</td><td><span class="badge badge-red">Pause immediately low CTR</span></td>
+                </tr>
+                <tr>
+                    <td>dr tennant supplements</td><td>Exact</td><td>$173.37</td><td>26</td><td style="color: var(--accent-green);">44.07%</td><td style="color: var(--accent-red);">+62.2% vs $107</td><td><span class="badge badge-green">High intent hold</span></td>
+                </tr>
+                <tr>
+                    <td>dr tennant restore</td><td>Exact</td><td>$117.01</td><td>30</td><td style="color: var(--accent-orange);">19.61%</td><td style="color: var(--accent-green);">New in Feb</td><td><span class="badge badge-blue">Monitor</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid grid-2">
+        <div class="callout callout-red">
+            <p style="font-size: 13px;"><strong style="color: var(--accent-red);">Tennant Institute spent $305.33 in February at 19.25% CTR.</strong> In January it spent $1,079.39 a major waste source. While spend is down 71.7% month on month, $305 was still consumed by this low-converting branded term. It was flagged for pausing in prior weeks. If this keyword remains active, confirm it is paused at keyword level. Every dollar spent here does not bring in new customers.</p>
+        </div>
+        <div class="callout callout-green">
+            <p style="font-size: 13px;"><strong style="color: var(--accent-green);">Branded efficiency improved month-on-month.</strong> February branded ROAS reached 2.01x versus 1.52x in January, while spend reduced by 14.7%. This is the right direction better efficiency with lower waste. The tighter keyword list and negative keywords are working. The next step is adding a tCPA of $65-75 on "tennant products" and "dr tennant products" to stop Smart Bidding from escalating those two keywords further.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: LUGOL'S IODINE UPDATE -->
+<div class="slide">
+    <span class="slide-number">07 / 16</span>
+    <p class="slide-tag">Lugol's Iodine Month 1 Full Review</p>
+    <h2>Lugol's Iodine Search Campaign | February Full Month</h2>
+    <p class="subtitle">HM to Search to Lugol's Iodine | Feb 15 to Feb 28, 2026 | Learning window now past day 14</p>
+
+    <div class="grid grid-4" style="margin-bottom: 24px;">
+        <div class="card" style="border: 1px solid rgba(245,158,11,0.3);">
+            <p class="kpi-label">Total Month Spend</p>
+            <p class="kpi-value-sm text-orange">$330.03</p>
+            <p class="kpi-sub">Launched Feb 15 2 active weeks</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Total Clicks</p>
+            <p class="kpi-value-sm text-green">294</p>
+            <p class="kpi-sub">Across buyer-intent keywords</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Avg CPC</p>
+            <p class="kpi-value-sm text-green">$1.12</p>
+            <p class="kpi-sub">Efficient for supplement category</p>
+        </div>
+        <div class="card" style="border: 1px solid rgba(239,68,68,0.3);">
+            <p class="kpi-label">Revenue Attributed</p>
+            <p class="kpi-value-sm text-orange">$16.01</p>
+            <p class="kpi-sub">0.08 conversions recorded</p>
+        </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom: 20px;">
+        <div class="card-dark">
+            <h3>Month-to-Date Keyword Performance</h3>
+            <table>
+                <thead><tr><th>Keyword</th><th>Match</th><th>Spend</th><th>Clicks</th><th>CTR</th></tr></thead>
+                <tbody>
+                    <tr class="highlight-row"><td>iodine supplement</td><td>Phrase</td><td>$87.27</td><td>76</td><td style="color: var(--accent-green);">9.07%</td></tr>
+                    <tr class="highlight-row"><td>iodine supplement</td><td>Exact</td><td>$41.85</td><td>37</td><td style="color: var(--accent-green);">7.74%</td></tr>
+                    <tr><td>lugol's iodine</td><td>Exact</td><td>$44.58</td><td>39</td><td style="color: var(--accent-orange);">5.54%</td></tr>
+                    <tr><td>natural iodine supplement</td><td>Phrase</td><td>$28.33</td><td>26</td><td style="color: var(--accent-green);">10.28%</td></tr>
+                    <tr><td>lugol's iodine solution</td><td>Exact</td><td>$13.30</td><td>14</td><td style="color: var(--accent-green);">7.18%</td></tr>
+                    <tr><td>iodine drops supplement</td><td>Phrase</td><td>$15.48</td><td>14</td><td style="color: var(--accent-green);">22.22%</td></tr>
+                    <tr><td>iodine with selenium</td><td>Phrase</td><td>$6.69</td><td>5</td><td style="color: var(--accent-green);">13.89%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="card-dark" style="margin-bottom: 16px;">
+                <h3>Campaign Health Indicators</h3>
+                <table>
+                    <tbody>
+                        <tr><td>Budget Status</td><td style="text-align:right; color: var(--accent-orange);">Limited by budget</td></tr>
+                        <tr><td>Optimization Score</td><td style="text-align:right; color: var(--accent-orange);">55.5 (below 80 target)</td></tr>
+                        <tr><td>Search Impr Share</td><td style="text-align:right; color: var(--accent-red);">&lt;10%</td></tr>
+                        <tr><td>Lost IS (Rank)</td><td style="text-align:right; color: var(--accent-red);">62.04%</td></tr>
+                        <tr><td>Daily Budget</td><td style="text-align:right; color: var(--text-primary);">$30/day</td></tr>
+                        <tr><td>Bid Strategy</td><td style="text-align:right; color: var(--text-secondary);">Maximize Clicks</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-orange">
+                <p style="font-size: 12px;"><strong style="color: var(--accent-orange);">Budget and bid strategy are the two immediate fixes.</strong> Campaign is limited by the $30 daily budget and losing 62% of impression share to rank. Maximize Clicks is not the right bid strategy once the campaign has landing page data. Switch to Maximize Conversions to align Google's algorithm to purchases, and increase budget to $50/day to unlock more impression share. The hybrid landing page being built now is the priority conversion improvement alongside this.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="callout callout-green">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-green);">294 clicks at $1.12 CPC in 14 days confirms commercial intent is there.</strong> "Iodine drops supplement" at 22.2% CTR and "iodine with selenium" at 13.9% are showing the highest intent. Natural iodine supplement at 10.3% is also strong. The campaign is generating traffic the conversion gap is a landing page issue, not a keyword issue. The hybrid landing page that Janice has in development is the right next action. Once live: switch bid strategy to Maximize Conversions, increase budget to $50/day, and pull the search term report to add negatives for informational queries.</p>
+    </div>
+</div>
+
+<!-- SLIDE 8: SHOPIFY PERFORMANCE -->
+<div class="slide">
+    <span class="slide-number">08 / 16</span>
+    <p class="slide-tag">Shopify E-Commerce</p>
+    <h2>Store Performance | Feb 22-28</h2>
+    <p class="subtitle">Shopify data aligned to the Sun-Sat reporting period</p>
+
+    <div class="grid grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+            <p class="kpi-label">Gross Sales (7-day)</p>
+            <p class="kpi-value text-orange">$39,083</p>
+            <p class="kpi-sub text-red">Down from $44,624 (-12.4%)</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Average Order Value</p>
+            <p class="kpi-value text-orange">$241</p>
+            <p class="kpi-sub text-red">Down from $292 prior week</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">New Customers</p>
+            <p class="kpi-value text-green">31</p>
+            <p class="kpi-sub text-green">Up from 28 (+10.7%) highest week</p>
+        </div>
+        <div class="card" style="border: 1px solid rgba(245,158,11,0.3);">
+            <p class="kpi-label">Checkout Completion</p>
+            <p class="kpi-value text-orange">48.0%</p>
+            <p class="kpi-sub text-green">Up from 39.7% prior week</p>
+        </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom: 20px;">
+        <div class="card-dark">
+            <h3>Top Products by Gross Sales (Feb 22-28)</h3>
+            <table>
+                <thead><tr><th>Product</th><th>Units</th><th>Gross Sales</th><th>vs Prior Week</th></tr></thead>
+                <tbody>
+                    <tr class="highlight-row"><td>Restore Pro Veggie</td><td>25</td><td>$6,422</td><td style="color: var(--accent-green);">+130.8%</td></tr>
+                    <tr class="highlight-row"><td>Restore Veggie Formula</td><td>21</td><td>$3,813</td><td style="color: var(--accent-green);">+115.8%</td></tr>
+                    <tr><td>Lugol's Iodine Plus</td><td>57</td><td>$4,137</td><td style="color: var(--accent-green);">+34.3%</td></tr>
+                    <tr><td>Brain Food Plus</td><td>47</td><td>$4,096</td><td style="color: var(--accent-red);">-16.9%</td></tr>
+                    <tr><td>Raw Materials Capsules</td><td>28</td><td>$2,310</td><td style="color: var(--accent-green);">+73.7%</td></tr>
+                    <tr><td>Digestive Enzyme</td><td>30</td><td>$2,850</td><td style="color: var(--accent-red);">-31.8%</td></tr>
+                    <tr><td>Restore Pro Vanilla</td><td>10</td><td>$3,120</td><td style="color: var(--accent-red);">-77.9%</td></tr>
+                    <tr><td>GI 60 Probiotic</td><td>29</td><td>$1,305</td><td style="color: var(--accent-green);">+45.0%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="card-dark" style="margin-bottom: 16px;">
+                <h3>Customer Split</h3>
+                <table>
+                    <thead><tr><th>Type</th><th>Customers</th><th>vs Prior Week</th></tr></thead>
+                    <tbody>
+                        <tr class="highlight-row"><td>New</td><td>31</td><td style="color: var(--accent-green);">+10.7% (was 28)</td></tr>
+                        <tr><td>Returning</td><td>123</td><td style="color: var(--text-secondary);">Flat (was 123)</td></tr>
+                        <tr><td>Total</td><td>154</td><td style="color: var(--text-secondary);">vs 151 prior</td></tr>
+                        <tr><td>Return Rate</td><td colspan="2" style="color: var(--text-secondary);">79.9% (vs 81.5% prior)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-dark">
+                <h3>Checkout Funnel</h3>
+                <table>
+                    <tbody>
+                        <tr><td>Sessions added to cart</td><td style="text-align:right; color: var(--text-primary);">100</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">+6.4%</td></tr>
+                        <tr><td>Sessions reached checkout</td><td style="text-align:right; color: var(--text-primary);">75</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">+10.3%</td></tr>
+                        <tr><td>Completed checkout</td><td style="text-align:right; color: var(--accent-orange);">36</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">+33.3%</td></tr>
+                        <tr><td>Completion rate</td><td style="text-align:right; color: var(--accent-orange);">48.0%</td><td style="text-align:right; color: var(--accent-green); font-size:12px;">Up from 39.7%</td></tr>
+                        <tr><td>Industry benchmark</td><td colspan="2" style="text-align:right; color: var(--text-muted);">70-80%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="callout callout-orange">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-orange);">Checkout completion recovered from 39.7% to 48.0%, progress but still well below target.</strong> 75 sessions reached checkout and 39 abandoned. At $241 AOV that is approximately $9,399 in abandoned checkout revenue this week. The 33% improvement from last week suggests John's CloudFlare/Blocky changes on Feb 19 may have been a partial contributor to the prior week's drop, with bot traffic inflating funnel metrics and depressing the completion rate. Worth watching whether completion rate continues to recover toward the 70-80% benchmark as the CloudFlare configuration settles. Still a meaningful conversion rate optimisation opportunity. Restore Veggie surge of +130.8% is notable. Confirm no fulfilment issues with Rochelle.</p>
+    </div>
+</div>
+
+<!-- SLIDE 9: DAILY TRENDS -->
+<div class="slide">
+    <span class="slide-number">09 / 16</span>
+    <p class="slide-tag">Daily Performance Trends</p>
+    <h2>Daily Shopify Sales + New Customer Acquisition | Feb 22-28</h2>
+    <p class="subtitle">Day-by-day gross sales, orders, and new customer patterns vs prior week</p>
+
+    <div class="grid grid-2">
+        <div class="card-dark">
+            <h3>Daily Gross Sales (Feb 22-28 vs Feb 15-21)</h3>
+            <table>
+                <thead><tr><th>Date</th><th>Gross Sales</th><th>Orders</th><th>AOV</th><th>vs Prior</th></tr></thead>
+                <tbody>
+                    <tr><td>Sun Feb 22</td><td>$872.80</td><td>4</td><td style="color: var(--accent-orange);">$218</td><td><span class="badge badge-red">-89.0%</span></td></tr>
+                    <tr class="highlight-row"><td>Mon Feb 23</td><td>$7,954.70</td><td>37</td><td style="color: var(--accent-orange);">$215</td><td><span class="badge badge-green">+16.2%</span></td></tr>
+                    <tr><td>Tue Feb 24</td><td>$6,438.00</td><td>29</td><td style="color: var(--accent-orange);">$222</td><td><span class="badge badge-red">-39.0%</span></td></tr>
+                    <tr><td>Wed Feb 25</td><td>$6,031.40</td><td>20</td><td>$302</td><td><span class="badge badge-red">-16.0%</span></td></tr>
+                    <tr class="highlight-row"><td>Thu Feb 26</td><td>$7,745.95</td><td>30</td><td>$258</td><td><span class="badge badge-green">+39.7%</span></td></tr>
+                    <tr><td>Fri Feb 27</td><td>$5,782.55</td><td>23</td><td>$251</td><td><span class="badge badge-red">-5.6%</span></td></tr>
+                    <tr><td>Sat Feb 28</td><td>$4,257.65</td><td>19</td><td>$224</td><td><span class="badge badge-green">+960.7%</span></td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Sunday Feb 22 at $872.80 is an anomaly data lag from Saturday night into Sunday morning is likely the explanation, consistent with the Feb 21 Saturday figure last week. Thursday Feb 26 was the week's strongest day at $7,745. The Saturday figure at $4,257 is the healthiest Saturday on record for the account prior Saturday was $401 due to the same data lag issue at reporting cutoff.</p>
+        </div>
+
+        <div>
+            <div class="card-dark" style="margin-bottom: 16px;">
+                <h3>New Customers by Day</h3>
+                <table>
+                    <thead><tr><th>Date</th><th>New Customers</th><th>Revenue</th><th>vs Prior</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sun Feb 22</td><td>0</td><td>$0</td><td style="color: var(--accent-red);">-100%</td></tr>
+                        <tr><td>Mon Feb 23</td><td>3</td><td>$439.88</td><td style="color: var(--accent-red);">-66.7%</td></tr>
+                        <tr class="highlight-row"><td>Tue Feb 24</td><td>7</td><td>$1,504.50</td><td style="color: var(--accent-green);">+250%</td></tr>
+                        <tr><td>Wed Feb 25</td><td>4</td><td>$801.03</td><td style="color: var(--accent-red);">-33.3%</td></tr>
+                        <tr><td>Thu Feb 26</td><td>5</td><td>$740.28</td><td style="color: var(--accent-green);">+25%</td></tr>
+                        <tr class="highlight-row"><td>Fri Feb 27</td><td>7</td><td>$1,543.47</td><td style="color: var(--accent-green);">+40%</td></tr>
+                        <tr><td>Sat Feb 28</td><td>5</td><td>$1,196.49</td><td style="color: var(--text-muted);">n/a</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-dark">
+                <h3>Customer Type Summary</h3>
+                <table>
+                    <tbody>
+                        <tr><td>Total customers</td><td style="text-align:right; color: var(--text-primary);">154</td></tr>
+                        <tr><td>New customers</td><td style="text-align:right; color: var(--accent-green);">31 (20.1%)</td></tr>
+                        <tr><td>Returning customers</td><td style="text-align:right; color: var(--text-primary);">123 (79.9%)</td></tr>
+                        <tr><td>New customer revenue</td><td style="text-align:right; color: var(--accent-green);">$6,225.65</td></tr>
+                        <tr><td>Avg new cust order value</td><td style="text-align:right; color: var(--accent-green);">$200.83</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10: MONTHLY SHOPIFY REVIEW -->
+<div class="slide">
+    <span class="slide-number">10 / 16</span>
+    <p class="slide-tag">Monthly E-Commerce Review</p>
+    <h2>February 2026 Full Month Shopify Summary</h2>
+    <p class="subtitle">4-week performance review vs the 200 new customers/month target</p>
+
+    <div class="grid grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+            <p class="kpi-label">Feb New Customers</p>
+            <p class="kpi-value text-orange">116 (est)</p>
+            <p class="kpi-sub text-red">vs target of 200/month</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Gap to Target</p>
+            <p class="kpi-value text-red">84</p>
+            <p class="kpi-sub">customers short each month</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Feb Blended ROAS</p>
+            <p class="kpi-value text-red">2.56x</p>
+            <p class="kpi-sub text-red">vs 3.52x Jan average</p>
+        </div>
+        <div class="card">
+            <p class="kpi-label">Monthly CAC</p>
+            <p class="kpi-value text-green">$49.61</p>
+            <p class="kpi-sub text-green">Improved vs $60 Jan avg</p>
+        </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-bottom: 20px;">
+        <div class="card-dark">
+            <h3>Weekly New Customer Trend (Feb 2026)</h3>
+            <table>
+                <thead><tr><th>Week</th><th>New Customers</th><th>Trend</th></tr></thead>
+                <tbody>
+                    <tr><td>Feb 1-7</td><td>35</td><td><span class="badge badge-green">Strong start</span></td></tr>
+                    <tr><td>Feb 8-14</td><td>22</td><td><span class="badge badge-red">Dip</span></td></tr>
+                    <tr><td>Feb 15-21</td><td>28</td><td><span class="badge badge-orange">Recovering</span></td></tr>
+                    <tr class="highlight-row"><td>Feb 22-28</td><td>31</td><td><span class="badge badge-green">Highest week</span></td></tr>
+                    <tr><td><strong>February Total</strong></td><td><strong>116 (est)</strong></td><td><span class="badge badge-red">58% of 200 target</span></td></tr>
+                </tbody>
+            </table>
+            <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">The trend is positive weekly new customer count has been recovering through the month. 31 in the final week is the account's best single-week performance. But 116 versus a target of 200 is a 42% gap. Closing this requires a combination of: scaling cold Meta spend, launching product-specific campaigns for Digestive Enzymes and Restore Veggie, and the Lugol's hybrid landing page going live to convert the paid search traffic already being generated.</p>
+        </div>
+        <div class="card-dark">
+            <h3>Monthly Budget Utilisation vs $8,000 Budget</h3>
+            <table>
+                <tbody>
+                    <tr><td>Client Monthly Budget</td><td style="text-align:right; color: var(--text-primary);">$8,000</td></tr>
+                    <tr><td>Meta Feb Spend</td><td style="text-align:right; color: var(--accent-coral);">$1,813 (22.7%)</td></tr>
+                    <tr><td>Google Feb Spend</td><td style="text-align:right; color: var(--accent-blue);">$3,941 (49.3%)</td></tr>
+                    <tr><td>Total Feb Spend</td><td style="text-align:right; color: var(--accent-orange);">$5,754 (71.9%)</td></tr>
+                    <tr style="border-top: 2px solid var(--border);"><td style="font-weight:600; color: var(--accent-green);">Unspent Budget</td><td style="text-align:right; color: var(--accent-green); font-weight:600;">$2,246 (28.1%)</td></tr>
+                </tbody>
+            </table>
+            <div class="callout callout-green" style="margin-top: 12px;">
+                <p style="font-size: 12px;"><strong style="color: var(--accent-green);">$2,246 remained unspent in February.</strong> This is the fuel for new customer acquisition in March. The plan: launch Meta campaigns for Digestive Enzymes and Restore Veggie (Janice confirmed these are priority products), increase cold prospecting budget incrementally, and activate Lugol's Meta campaign once the hybrid landing page is live. All within the $8,000 monthly budget no overage required.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 11: CAC:LTV -->
+<div class="slide">
+    <span class="slide-number">11 / 16</span>
+    <p class="slide-tag">CAC : LTV Analysis</p>
+    <h2>Customer Acquisition Economics | Feb 22-28</h2>
+    <p class="subtitle">Weekly and monthly blended CAC derived from total ad spend and new customer acquisition</p>
+
+    <div class="grid" style="grid-template-columns: 1fr 2fr; gap: 24px; margin-bottom: 24px;">
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgba(16,185,129,0.3);">
+            <p class="kpi-label">Weekly CAC : LTV</p>
+            <p class="ratio-display">1:9.0</p>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-top: 8px;">$52.50 CAC vs $475 LTV</p>
+            <p style="font-size: 13px; color: var(--accent-green); font-weight: 600; margin-top: 4px;">Improved from 1:8.2 prior week</p>
+        </div>
+        <div>
+            <div class="grid grid-3" style="margin-bottom: 16px;">
+                <div class="card">
+                    <p class="kpi-label">Total Ad Spend</p>
+                    <p class="kpi-value-sm">$1,627</p>
+                    <p class="kpi-sub">Meta $454 + Google $1,173</p>
+                </div>
+                <div class="card">
+                    <p class="kpi-label">New Customers</p>
+                    <p class="kpi-value-sm text-green">31</p>
+                    <p class="kpi-sub text-green">Highest weekly figure</p>
+                </div>
+                <div class="card">
+                    <p class="kpi-label">Blended CAC</p>
+                    <p class="kpi-value-sm text-green">$52.50</p>
+                    <p class="kpi-sub">$1,627 / 31 new customers</p>
+                </div>
+            </div>
+            <div class="card-dark">
+                <p class="kpi-label">Monthly Perspective</p>
+                <p style="font-size: 15px; margin-top: 8px;"><span style="color: var(--text-secondary);">Feb Monthly CAC:</span> <strong>$49.61</strong> &nbsp;|&nbsp; <span style="color: var(--text-secondary);">Monthly LTV:CAC:</span> <strong style="color: var(--accent-green);">1:9.6</strong> &nbsp;|&nbsp; <span style="color: var(--text-secondary);">New Customers Feb:</span> <strong>116 (est)</strong></p>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Monthly CAC at $49.61 is the most efficient the account has recorded since launch. At 200 new customers/month target with this CAC, monthly ad spend would need to reach $9,922 (est), just above the $8,000 current budget. The implication: at the current $8,000 budget, the CAC target needs to stay at or below $40 to hit 200 new customers. That requires more cold Meta prospecting at lower CPA, not just more branded spend. Digestive Enzymes and Restore Veggie launches on Meta are the mechanism to get there.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-2">
+        <div class="card-dark">
+            <h3>Week-on-Week CAC:LTV Comparison</h3>
+            <table>
+                <thead><tr><th>Metric</th><th>Feb 15-21</th><th>Feb 22-28</th><th>Change</th></tr></thead>
+                <tbody>
+                    <tr><td>Ad Spend</td><td>$1,627</td><td>$1,627</td><td class="text-muted">Flat</td></tr>
+                    <tr><td>New Customers</td><td>28</td><td style="color: var(--accent-green);">31</td><td class="text-green">+3 (+10.7%)</td></tr>
+                    <tr><td>CAC</td><td>$58.11</td><td style="color: var(--accent-green);">$52.50</td><td class="text-green">-$5.61 (-9.7%)</td></tr>
+                    <tr><td>LTV</td><td>$475</td><td>$475</td><td class="text-muted">Flat</td></tr>
+                    <tr><td>CAC:LTV</td><td>1:8.2</td><td style="color: var(--accent-green);">1:9.0</td><td class="text-green">Improving</td></tr>
+                    <tr><td>Blended ROAS</td><td>2.66x</td><td style="color: var(--accent-red);">2.53x</td><td class="text-red">-0.13x</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-dark">
+            <h3>Unit Economics First Order Profitability</h3>
+            <table>
+                <tbody>
+                    <tr><td>Shopify AOV</td><td style="text-align:right; color: var(--text-primary);">$241.25</td><td style="text-align:right;">100%</td></tr>
+                    <tr><td>COGS (est 40%)</td><td style="text-align:right; color: var(--accent-red);">-$96.50</td><td style="text-align:right; color: var(--accent-red);">-40%</td></tr>
+                    <tr><td>CC + Shipping + Fulfilment</td><td style="text-align:right; color: var(--accent-red);">-$40.50</td><td style="text-align:right; color: var(--accent-red);">-16.8%</td></tr>
+                    <tr style="border-top: 2px solid var(--border);"><td style="font-weight: 600;">Gross Margin</td><td style="text-align:right; font-weight: 600;">$104.25</td><td style="text-align:right; font-weight: 600;">43.2%</td></tr>
+                    <tr><td>Blended CAC (weekly)</td><td style="text-align:right; color: var(--accent-red);">-$52.50</td><td style="text-align:right; color: var(--accent-red);">-21.8%</td></tr>
+                    <tr style="background: var(--accent-green-dim);"><td style="font-weight: 600; color: var(--accent-green);">Net After CAC (First Order)</td><td style="text-align:right; color: var(--accent-green); font-weight: 600;">$51.75</td><td style="text-align:right; color: var(--accent-green); font-weight: 600;">21.5%</td></tr>
+                    <tr style="background: var(--accent-green-dim);"><td style="font-weight: 600; color: var(--accent-green);">12-Month LTV Margin</td><td style="text-align:right; color: var(--accent-green); font-weight: 600;">$422.50</td><td style="text-align:right; color: var(--accent-green); font-weight: 600;">1:9.0 return</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 12: AUDIENCE AND DEMOGRAPHICS -->
+<div class="slide">
+    <span class="slide-number">12 / 16</span>
+    <p class="slide-tag">Audience Intelligence</p>
+    <h2>Customer Demographics + Behaviour | February 2026</h2>
+    <p class="subtitle">Google Ads demographics and device data | Shopify cohort insights | Feb vs Jan</p>
+
+    <div class="grid grid-2" style="margin-bottom: 24px;">
+        <div class="card-dark">
+            <h3>Age Distribution Google Ads (Feb, % of known)</h3>
+            <table>
+                <thead><tr><th>Age Range</th><th>Impr Share</th><th>vs January</th><th>Assessment</th></tr></thead>
+                <tbody>
+                    <tr><td>65+</td><td style="color: var(--accent-green); font-weight:600;">31.95%</td><td style="color: var(--accent-green);">up from 25.9%</td><td><span class="badge badge-green">Core buyer</span></td></tr>
+                    <tr class="highlight-row"><td>55-64</td><td style="color: var(--accent-green); font-weight:600;">26.87%</td><td style="color: var(--accent-green);">up from 22.1%</td><td><span class="badge badge-green">Core buyer</span></td></tr>
+                    <tr><td>45-54</td><td>19.73%</td><td style="color: var(--accent-green);">up from 24.5%</td><td><span class="badge badge-orange">Strong secondary</span></td></tr>
+                    <tr><td>35-44</td><td>12.70%</td><td style="color: var(--text-muted);">steady steady</td><td><span class="badge badge-orange">Emerging</span></td></tr>
+                    <tr><td>25-34</td><td>6.98%</td><td style="color: var(--text-muted);">steady steady</td><td><span class="badge badge-blue">Low priority</span></td></tr>
+                    <tr><td>18-24</td><td>2.01%</td><td style="color: var(--text-muted);">steady minimal</td><td><span class="badge badge-blue">Not a buyer</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-dark">
+            <h3>Gender Split + Device Split (Feb)</h3>
+            <table>
+                <thead><tr><th>Segment</th><th>Feb Share</th><th>vs Jan</th></tr></thead>
+                <tbody>
+                    <tr class="highlight-row"><td>Female</td><td style="color: var(--accent-coral);">62.14%</td><td style="color: var(--accent-green);">up from 63.5%</td></tr>
+                    <tr><td>Male</td><td>38.42%</td><td style="color: var(--text-secondary);">steady</td></tr>
+                </tbody>
+            </table>
+            <div class="divider" style="margin: 12px 0;"></div>
+            <table>
+                <thead><tr><th>Device</th><th>Cost</th><th>Conv</th><th>Note</th></tr></thead>
+                <tbody>
+                    <tr class="highlight-row"><td>Mobile</td><td>$2,078</td><td>32.57</td><td style="color: var(--accent-green);">Primary acquisition</td></tr>
+                    <tr><td>Desktop</td><td>$1,793</td><td>13.05</td><td style="color: var(--text-secondary);">High AOV, lower vol</td></tr>
+                    <tr><td>Tablet</td><td>$69</td><td>1.00</td><td style="color: var(--text-muted);">Minimal</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="grid grid-2">
+        <div class="callout callout-green">
+            <p style="font-size: 13px;"><strong style="color: var(--accent-green);">Core buyer profile confirmed:</strong> Female, 55+, mobile-first. The 55-64 and 65+ age bands represent 58.8% of impressions combined and are growing month on month. This aligns precisely with Tennant Products' target people who are health-conscious, financially established, and motivated by quality and clinical credibility. Dr. Tennant's authority is a genuine purchase driver for this demographic. Ads should lean into the clinical trust angle more than the trend/lifestyle angle.</p>
+        </div>
+        <div class="callout">
+            <p style="font-size: 13px;"><strong style="color: var(--text-secondary);">Mobile conversion is the account's engine 32.57 conversions vs 13.05 on desktop.</strong> Yet mobile users also have a lower consideration window. This reinforces the case for the hybrid landing page: a mobile-first design that leads with symptoms, builds trust quickly, and puts the buy button within easy scroll reach. The oPositiv reference Janice shared is an excellent mobile-first template. Make sure the hybrid Lugol's page is thumb-friendly before launch.</p>
+        </div>
+    </div>
+
+    <div class="card-dark" style="margin-top: 16px;">
+        <h3>Cohort Retention Key Insight (Mar 2025 Feb 2026)</h3>
+        <p style="font-size: 14px; color: var(--text-secondary); margin-top: 8px; line-height: 1.7;">The March 2025 cohort (169 customers) shows the highest Month 3 retention rate in the dataset at 14.2% (24 returning customers). Month 1 retention across all cohorts averages 11-17%, confirming the 30-day repurchase window as the most valuable retention moment. Cohorts from Aug-Nov 2025 show consistent Month 1 retention of 11-15%, confirming the subscription and reorder timing anchor. At 200 new customers/month, this Month 1 retention rate compounds to approximately 22-30 additional orders per month from the prior month's new cohort alone. <strong style="color: var(--accent-green);">This is why every new customer acquired is worth disproportionately more than their first order value.</strong></p>
+    </div>
+</div>
+
+<!-- SLIDE 13: PRODUCT LAUNCHES + STRATEGY -->
+<div class="slide">
+    <span class="slide-number">13 / 16</span>
+    <p class="slide-tag">Product Launch Strategy</p>
+    <h2>Confirmed Launch Pipeline: March 2026</h2>
+    <p class="subtitle">Three confirmed priority products Janice confirmed Feb 25 Slack | Creative assets in progress</p>
+
+    <div class="grid grid-3" style="margin-bottom: 24px;">
+        <div class="card" style="border-top: 3px solid var(--accent-orange);">
+            <p class="slide-tag" style="margin-bottom: 8px;">Priority 1</p>
+            <h3>Lugol's Iodine Liquid</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Google Search campaign live. Hybrid landing page in development. Meta campaign pending page go-live.</p>
+            <table>
+                <tr><td style="font-size:12px;">Google Status</td><td style="text-align:right; font-size:12px; color: var(--accent-green);">Live 294 clicks/month</td></tr>
+                <tr><td style="font-size:12px;">Meta Status</td><td style="text-align:right; font-size:12px; color: var(--accent-orange);">Pending landing page</td></tr>
+                <tr><td style="font-size:12px;">Landing Page</td><td style="text-align:right; font-size:12px; color: var(--accent-orange);">Web dev building now</td></tr>
+                <tr><td style="font-size:12px;">Creative Brief</td><td style="text-align:right; font-size:12px; color: var(--accent-green);">Sent to Royd</td></tr>
+                <tr><td style="font-size:12px;">Next Action</td><td style="text-align:right; font-size:12px; color: var(--accent-coral);">Confirm page live date</td></tr>
+            </table>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-coral);">
+            <p class="slide-tag" style="margin-bottom: 8px;">Priority 2</p>
+            <h3>Restore Veggie Formula</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Strongest WoW growth this week at +130.8%. Zero dedicated ad campaign. Organic demand signal is strong.</p>
+            <table>
+                <tr><td style="font-size:12px;">This Week Sales</td><td style="text-align:right; font-size:12px; color: var(--accent-green);">$6,422 (+130.8%)</td></tr>
+                <tr><td style="font-size:12px;">Meta Status</td><td style="text-align:right; font-size:12px; color: var(--accent-red);">No active campaign</td></tr>
+                <tr><td style="font-size:12px;">Google Status</td><td style="text-align:right; font-size:12px; color: var(--accent-red);">No active campaign</td></tr>
+                <tr><td style="font-size:12px;">Creative Brief</td><td style="text-align:right; font-size:12px; color: var(--accent-green);">Sent to Royd</td></tr>
+                <tr><td style="font-size:12px;">Next Action</td><td style="text-align:right; font-size:12px; color: var(--accent-coral);">Build Meta cold campaign</td></tr>
+            </table>
+        </div>
+        <div class="card" style="border-top: 3px solid var(--accent-blue);">
+            <p class="slide-tag" style="margin-bottom: 8px;">Priority 3</p>
+            <h3>Digestive Enzyme Formula</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Confirmed by Janice. Inventory check with Rochelle in progress. Content request document sent.</p>
+            <table>
+                <tr><td style="font-size:12px;">This Week Sales</td><td style="text-align:right; font-size:12px; color: var(--accent-red);">$2,850 (-31.8%)</td></tr>
+                <tr><td style="font-size:12px;">Meta Status</td><td style="text-align:right; font-size:12px; color: var(--accent-red);">No active campaign</td></tr>
+                <tr><td style="font-size:12px;">Inventory</td><td style="text-align:right; font-size:12px; color: var(--accent-orange);">Confirm with Rochelle</td></tr>
+                <tr><td style="font-size:12px;">Creative Brief</td><td style="text-align:right; font-size:12px; color: var(--accent-green);">Sent to Royd</td></tr>
+                <tr><td style="font-size:12px;">Next Action</td><td style="text-align:right; font-size:12px; color: var(--accent-coral);">Confirm inventory, build Meta</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card-dark" style="margin-bottom: 16px;">
+        <h3>Probiotics (GI 60) Reactivation Readiness</h3>
+        <div class="grid grid-2" style="gap: 24px; margin-top: 8px;">
+            <div>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">The old probiotic campaign was built around the original formula and the creative does not match the GI 60 PDP. Janice asked about reactivating this week. The answer is: not yet. New creative assets from Royd for the GI 60 formula are the prerequisite. Janice confirmed the team is delivering probiotic ad refresh images. Once those are received, a clean Meta ad set will be built around the new GI 60 formula and positioning. This week's data shows GI 60 selling 29 units ($1,305) organically there is demand. Paid support will accelerate it.</p>
+            </div>
+            <div>
+                <table>
+                    <tbody>
+                        <tr><td>GI 60 this week</td><td style="text-align:right; color: var(--accent-green);">29 units | $1,305</td></tr>
+                        <tr><td>vs prior week</td><td style="text-align:right; color: var(--accent-green);">+45% units</td></tr>
+                        <tr><td>Old campaign status</td><td style="text-align:right; color: var(--accent-red);">Paused wrong creative</td></tr>
+                        <tr><td>New assets status</td><td style="text-align:right; color: var(--accent-orange);">Royd delivering</td></tr>
+                        <tr><td>Reactivation ready?</td><td style="text-align:right; color: var(--accent-orange);">When new assets arrive</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="callout callout-green">
+        <p style="font-size: 14px;"><strong style="color: var(--accent-green);">The copy-led ad format (Brain - Copy, Gut Health - Copy, Energy - Copy) is the proven template for all three new product launches.</strong> Each product brief should follow the same direct-response structure: symptom hook to name the problem to introduce the solution to Dr. Tennant authority to subscribe and save CTA. Digestive Enzymes has the clearest problem-solution brief ("bloated, sluggish digestion, trouble absorbing nutrients"). Restore Veggie's surge in organic sales this week suggests strong existing demand that a targeted cold Meta campaign will amplify immediately. Royd has the creative briefs the assets are the blocker. Once they land in the Drive folder, campaigns can be live within 24 hours.</p>
+    </div>
+</div>
+
+<!-- SLIDE 14: BENCHMARK TABLE -->
+<div class="slide">
+    <span class="slide-number">14 / 16</span>
+    <p class="slide-tag">Benchmarking</p>
+    <h2>Performance Benchmarks | Jan 2026 to Feb 2026 Weekly Trend</h2>
+    <p class="subtitle">Key metrics tracked against January baseline and week-on-week progression</p>
+
+    <div class="card-dark">
+        <table>
+            <thead>
+                <tr><th>Metric</th><th>Jan 2026 Avg</th><th>Feb 1-7</th><th>Feb 8-14</th><th>Feb 15-21</th><th>Feb 22-28</th><th>Trend</th></tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="7" style="color: var(--accent-coral); font-weight: 700; padding-top: 14px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--border);">META ADS</td></tr>
+                <tr><td>Meta ROAS</td><td>4.47x</td><td>3.33x</td><td style="color: var(--accent-green);">5.45x</td><td style="color: var(--accent-orange);">4.90x</td><td style="color: var(--accent-orange);">3.46x</td><td><span class="badge badge-orange">Retargeting strong, BF+ drag</span></td></tr>
+                <tr><td>Meta CPA</td><td>$64.51</td><td>$74.17</td><td style="color: var(--accent-green);">$37.76</td><td>$50.33</td><td style="color: var(--accent-orange);">$56.74</td><td><span class="badge badge-orange">Below Jan avg</span></td></tr>
+                <tr><td>Retargeting ROAS</td><td>n/a</td><td>n/a</td><td style="color: var(--accent-green);">10.53x</td><td style="color: var(--accent-green);">10.53x</td><td style="color: var(--accent-green);">8.77x</td><td><span class="badge badge-green">Healthy</span></td></tr>
+                <tr><td colspan="7" style="color: var(--accent-blue); font-weight: 700; padding-top: 14px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--border);">GOOGLE ADS</td></tr>
+                <tr><td>Google ROAS</td><td>3.09x</td><td>1.54x</td><td style="color: var(--accent-green);">2.80x</td><td style="color: var(--accent-red);">1.80x</td><td style="color: var(--accent-orange);">2.18x (est)</td><td><span class="badge badge-orange">Recovering, PMax still capped</span></td></tr>
+                <tr><td>PMax ROAS</td><td>4.59x</td><td>2.43x</td><td style="color: var(--accent-green);">3.46x</td><td style="color: var(--accent-red);">2.52x</td><td style="color: var(--accent-red);">2.60x (monthly)</td><td><span class="badge badge-red">Policy appeal unresolved</span></td></tr>
+                <tr><td>Branded ROAS</td><td>1.52x</td><td>0.44x</td><td>2.01x</td><td>1.36x (est)</td><td style="color: var(--accent-green);">2.01x (monthly)</td><td><span class="badge badge-green">Improving</span></td></tr>
+                <tr><td>DSA ROAS</td><td>5.08x</td><td>n/a</td><td>1.24x</td><td>1.04x</td><td style="color: var(--accent-red);">0.56x (monthly)</td><td><span class="badge badge-red">Critical investigate</span></td></tr>
+                <tr><td>Impr Share</td><td>15-16%</td><td>15.34%</td><td>15.84%</td><td style="color: var(--accent-red);">&lt;10%</td><td style="color: var(--accent-red);">&lt;10%</td><td><span class="badge badge-red">Policy cap sustained</span></td></tr>
+                <tr><td colspan="7" style="color: var(--text-secondary); font-weight: 700; padding-top: 14px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--border);">BLENDED + ACQUISITION</td></tr>
+                <tr><td>Blended ROAS</td><td>3.52x</td><td>2.13x</td><td>3.70x</td><td style="color: var(--accent-red);">2.66x</td><td style="color: var(--accent-red);">2.53x</td><td><span class="badge badge-red">Below target structural causes</span></td></tr>
+                <tr><td>New Customers/Week</td><td>32 avg (est)</td><td>35</td><td>22</td><td>28</td><td style="color: var(--accent-green);">31</td><td><span class="badge badge-green">Best week of Feb</span></td></tr>
+                <tr><td>CAC (weekly)</td><td>$55 (est)</td><td>$46.54</td><td>$60.64</td><td>$58.11</td><td style="color: var(--accent-green);">$52.50</td><td><span class="badge badge-green">Improving</span></td></tr>
+                <tr><td>CAC:LTV</td><td>n/a</td><td>n/a</td><td>1:7.8</td><td>1:8.2</td><td style="color: var(--accent-green);">1:9.0</td><td><span class="badge badge-green">Best ratio on record</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="callout" style="margin-top: 20px;">
+        <p style="font-size: 14px; color: var(--text-secondary);">The CAC:LTV ratio has improved every single week in February from 1:7.8 through 1:8.2 to 1:9.0. This is the business health indicator that matters most. Blended ROAS is below target, but that is driven by structural Google constraints that are being actively addressed. Meta ROAS has declined from its 5.45x peak due to BF+ CBO breakdown but retargeting is stable and the copy-led ad format has now proven itself across three consecutive weeks with Brain - Copy, Gut Health - Copy, and Energy - Copy all delivering strong ROAS. The account is ready to scale.</p>
+    </div>
+</div>
+
+<!-- SLIDE 15: ACTION ITEMS -->
+<div class="slide">
+    <span class="slide-number">15 / 16</span>
+    <p class="slide-tag">Action Items</p>
+    <h2>Priorities for the Week Ahead</h2>
+    <p class="subtitle">Ranked by impact and urgency week of March 1, 2026 (cover period: John Cambridge)</p>
+
+    <div class="action-item" style="border-left: 3px solid var(--accent-red);">
+        <div class="action-num" style="background: var(--accent-red-dim); color: var(--accent-red);">1</div>
+        <div>
+            <p style="font-weight: 600; font-size: 16px;">BF+ CBO Restructure Immediately <span class="badge badge-red" style="margin-left: 8px;">This Week</span></p>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">BF+ CBO at 0.13x ROAS on $279 spend this week. Brain - Copy is converting at 13.19x in the same account. The Adv+ ad set recorded zero conversions this week after 4.77x last week. Structure: pause Adv+ ad set temporarily, consolidate budget into the RTG ad set and directly fund the creatives that are working (Brain - Copy, Gut Health - Copy). Build 2-3 new copy-led variants for Brain Food Plus following the same pain-point direct-response format. Angles: focus, memory, ageing brain. The creative is the fix, not the campaign architecture.</p>
+        </div>
+    </div>
+
+    <div class="action-item" style="border-left: 3px solid var(--accent-red);">
+        <div class="action-num" style="background: var(--accent-red-dim); color: var(--accent-red);">2</div>
+        <div>
+            <p style="font-weight: 600; font-size: 16px;">DSA Campaign Pull Search Term Report + Audit <span class="badge badge-red" style="margin-left: 8px;">Urgent</span></p>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">DSA dropped from 5.08x ROAS in January to 0.56x in February on flat spend. This collapse is not explained by policy issues. Pull the DSA search term report and identify which pages DSA is now matching to the CloudFlare/Blocky changes on Feb 19 may have altered what Google crawls. Confirm the DSA target pages are the correct Shopify product pages (Restore, Brain Food Plus, Digestive Enzymes). If DSA is matching to information pages or blog content, add page exclusions to redirect it to purchase-intent pages. This campaign delivered $1,154 revenue in January recover it.</p>
+        </div>
+    </div>
+
+    <div class="action-item" style="border-left: 3px solid var(--accent-red);">
+        <div class="action-num" style="background: var(--accent-red-dim); color: var(--accent-red);">3</div>
+        <div>
+            <p style="font-weight: 600; font-size: 16px;">PMax Policy Appeal Escalate to Google Support</p>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Full appeal form was submitted in week of Feb 15. Impression share is still under 10% and has been for the entire month of February. The policy restriction has cost an estimated $3,000-4,000 in conversion value versus January performance levels. If no response has been received, escalate via Google Ads support chat or call. Do not wait for email. While escalating: continue auditing all PMax asset group headlines and sitelinks for health claim trigger language ("healing", "brain health improvements", "cellular regeneration") and replace with wellness and support framing. Every flagged asset extends the restriction.</p>
+        </div>
+    </div>
+
+    <div class="action-item" style="border-left: 3px solid var(--accent-orange);">
+        <div class="action-num" style="background: var(--accent-orange-dim); color: var(--accent-orange);">4</div>
+        <div>
+            <p style="font-weight: 600; font-size: 16px;">Lugol's Hybrid Landing Page Confirm Go-Live Date + Switch Bid Strategy</p>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Web developer has a deadline of the week of March 1. Once the hybrid page is live: switch Lugol's Search campaign from Maximize Clicks to Maximize Conversions, increase daily budget from $30 to $50, and confirm Google conversion tracking is firing on the new page. Pull the search term report and add negatives for informational queries that have accumulated over the first 2 weeks. Launch a parallel Meta campaign for Lugol's Liquid targeting the same buyer-intent audience cold prospecting, copy-led format, direct to the hybrid page. Terri is available to record a script for Lugol's prepare the script this week.</p>
+        </div>
+    </div>
+
+    <div class="action-item" style="border-left: 3px solid var(--accent-orange);">
+        <div class="action-num" style="background: var(--accent-orange-dim); color: var(--accent-orange);">5</div>
+        <div>
+            <p style="font-weight: 600; font-size: 16px;">Restore Veggie + Digestive Enzymes Launch Meta Cold Campaigns</p>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Restore Veggie is up 130.8% this week with zero paid support this product has strong organic demand and needs a paid campaign immediately. Digestive Enzymes confirmed by Janice as Priority 3 once inventory is clear with Rochelle. Creative briefs sent to Royd. Once assets land in the Google Drive folder (open sharing), build Meta cold prospecting campaigns for both products using the copy-led format. Wide open audience to start, let Meta's algorithm find the buyer. Budget: $20-25/day each to start, scale after first 7 days of conversion data.</p>
+        </div>
+    </div>
+
+    <div class="action-item" style="border-left: 3px solid var(--accent-blue);">
+        <div class="action-num" style="background: var(--accent-blue-dim); color: var(--accent-blue);">6</div>
+        <div>
+            <p style="font-weight: 600; font-size: 16px;">Retargeting Expand Audience Window Before Frequency Degrades Again</p>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-top: 4px;">Retargeting reach is at 1,735 this week frequency at 6.50 is still elevated. The 30-day to 60-day window expansion was flagged two weeks ago. This week's recovery to 7 purchases ($1,530.90) shows the audience is still responsive but the frequency trajectory is towards saturation. Expand the custom audience window to 60 days this week. With new product launches (Restore Veggie, Digestive Enzymes) creating more site traffic, this expansion should be combined with refreshed creative to make the most of the widened pool.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 16: CLOSING -->
+<div class="slide" style="justify-content: center; align-items: flex-start; background: linear-gradient(135deg, #0a0f14 0%, #162642 100%);">
+    <span class="slide-number">16 / 16</span>
+    <p class="slide-tag">Heath Media x Tennant Products</p>
+    <div class="cover-accent"></div>
+    <h1>Weekly Performance Review</h1>
+    <p style="font-size: 20px; color: var(--text-secondary); margin-top: 8px;">Sunday Feb 22 to Saturday Feb 28, 2026</p>
+
+    <div style="margin-top: 40px; max-width: 760px; display: flex; flex-direction: column; gap: 16px;">
+        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.8;">
+            <strong style="color: var(--accent-orange);">Blended ROAS at 2.53x reflects continued structural Google constraints, not a breakdown in ad quality.</strong> PMax impression share has been under 10% for the entire month of February a policy restriction that has cost an estimated $3-4k in monthly conversion value versus January levels. The DSA campaign collapsed from 5.08x ROAS in January to 0.56x in February, likely connected to the Shopify CloudFlare changes on Feb 19. Both have defined paths to resolution.
+        </p>
+        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.8;">
+            <strong style="color: var(--accent-green);">Meta ad creative has turned a corner.</strong> Brain - Copy at 13.19x ROAS, Gut Health - Copy at 8.10x, and Retargeting recovering to 8.77x this week's ad-level data confirms the copy-led direct-response format is Tennant Products' conversion engine on Meta. This is the template for every new product launch: Restore Veggie, Digestive Enzymes, Lugol's Liquid, and the GI 60 probiotic reactivation.
+        </p>
+        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.8;">
+            <strong style="color: var(--accent-green);">31 new customers this week is the account's best single-week performance.</strong> CAC:LTV improved to 1:9.0 the strongest ratio on record. Every new customer acquired costs $52.50 and returns $475 over 12 months. With Digestive Enzymes and Restore Veggie campaigns about to launch, and the Lugol's hybrid page going live, March has the structural setup to close the gap toward 200 new customers per month.
+        </p>
+        <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.8;">
+            <strong style="color: var(--accent-blue);">Note on cover period:</strong> Charles is away March 1-15. John Cambridge is covering the account. Full briefing on all open actions has been provided. Weekly monitoring continues and all campaigns remain active. Full resumption March 16.
+        </p>
+    </div>
+
+    <p style="font-size: 13px; color: var(--text-muted); margin-top: 48px;">Prepared by Heath Media &nbsp;|&nbsp; Data: Meta Ads Manager, Google Ads, Shopify &nbsp;|&nbsp; Feb 22-28, 2026 &nbsp;|&nbsp; Reporting period aligned Sun-Sat</p>
+</div>
+
+</body>
+</html>
