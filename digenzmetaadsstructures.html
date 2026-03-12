@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digestive Enzymes — Campaign Sign-Off | Heath Media x Tennant Products</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #162642;
+  --navy-mid: #1e3255;
+  --navy-light: #243d6b;
+  --gold: #c9a84c;
+  --gold-dim: rgba(201,168,76,0.15);
+  --gold-border: rgba(201,168,76,0.25);
+  --white: #ffffff;
+  --off-white: #f5f4f1;
+  --border: rgba(0,0,0,0.09);
+  --text: #1a1a1a;
+  --text-mid: #555;
+  --text-muted: #888;
+  --green: #10b981;
+  --red: #ef4444;
+  --orange: #f59e0b;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--text);line-height:1.6;font-size:15px;}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(22,38,66,0.97);backdrop-filter:blur(10px);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid var(--gold-border);}
+.nav-brand{font-size:13px;font-weight:600;color:#fff;letter-spacing:.04em;}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;gap:4px;}
+.nav-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:4px;transition:color .2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-status{display:flex;align-items:center;gap:8px;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase;}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);box-shadow:0 0 6px rgba(245,158,11,.6);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.cover{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding-top:60px;position:relative;overflow:hidden;}
+.cover-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:56px 56px;}
+.cover-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);top:-150px;right:-100px;}
+.cover-inner{position:relative;z-index:2;max-width:1000px;margin:0 auto;padding:80px 48px;}
+.cover-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:36px;}
+.cover-title{font-size:clamp(40px,6vw,68px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;}
+.cover-title em{color:var(--gold);font-style:normal;}
+.cover-sub{font-size:17px;font-weight:300;color:rgba(255,255,255,.5);max-width:500px;margin-bottom:52px;line-height:1.7;}
+.cover-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gold-border);border:1px solid var(--gold-border);border-radius:10px;overflow:hidden;max-width:620px;margin-bottom:40px;}
+.cover-meta-item{background:#162642;padding:18px 20px;}
+.cover-meta-label{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:6px;}
+.cover-meta-value{font-family:'DM Mono',monospace;font-size:14px;font-weight:500;color:var(--gold);}
+.cover-note{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7;max-width:500px;}
+.section{padding:88px 0 72px;}
+.section-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';width:18px;height:1px;background:var(--gold);}
+.section-title{font-size:clamp(26px,3.5vw,38px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:10px;}
+.section-desc{font-size:14px;color:var(--text-mid);max-width:580px;line-height:1.7;font-weight:300;margin-bottom:44px;}
+.overview-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+.ocard{background:#fff;border:1px solid var(--border);border-radius:12px;padding:26px;}
+.ocard-title{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.orow{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;gap:16px;}
+.orow:last-child{border-bottom:none;}
+.orow-label{color:var(--text-mid);flex-shrink:0;}
+.orow-value{font-family:'DM Mono',monospace;font-size:11.5px;font-weight:500;color:var(--navy);text-align:right;}
+.structure{background:var(--navy);border-radius:14px;padding:32px 36px;}
+.structure-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.structure-campaign{background:var(--gold-dim);border:1px solid var(--gold-border);border-radius:7px;padding:12px 18px;font-family:'DM Mono',monospace;font-size:12px;color:var(--gold);margin-bottom:14px;}
+.structure-adsets{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-left:18px;}
+.structure-adset{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:14px 16px;}
+.structure-adset-name{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.8);margin-bottom:10px;}
+.pill{display:inline-block;background:var(--gold-dim);color:var(--gold);font-size:10px;font-family:'DM Mono',monospace;padding:3px 8px;border-radius:4px;margin:2px 2px 2px 0;}
+.structure-budget{margin-top:10px;font-size:10px;color:rgba(255,255,255,.3);font-family:'DM Mono',monospace;}
+.adset-band{padding:16px 48px;position:sticky;top:60px;z-index:100;}
+.adset-band-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.adset-band-1{background:var(--navy-mid);border-top:3px solid var(--gold);}
+.adset-band-2{background:var(--navy);border-top:3px solid rgba(201,168,76,.5);}
+.adset-num{width:34px;height:34px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:var(--navy);flex-shrink:0;}
+.adset-title{font-family:'DM Mono',monospace;font-size:12.5px;color:#fff;margin-left:12px;}
+.adset-budget-tag{font-size:11px;font-weight:600;background:var(--gold-dim);border:1px solid var(--gold-border);color:var(--gold);padding:5px 14px;border-radius:100px;letter-spacing:.06em;}
+.ads-section{padding:44px 0 60px;}
+.ads-section-1{background:var(--off-white);}
+.ads-section-2{background:#fff;}
+.ads-inner{max-width:1100px;margin:0 auto;padding:0 48px;}
+.ad-card{display:grid;grid-template-columns:320px 1fr;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:36px;box-shadow:0 2px 16px rgba(22,38,66,.06);transition:box-shadow .25s;}
+.ads-section-2 .ad-card{background:var(--off-white);}
+.ad-card:hover{box-shadow:0 6px 32px rgba(22,38,66,.11);}
+.ad-media{background:var(--navy);position:relative;min-height:360px;display:flex;flex-direction:column;}
+.ad-media img,.ad-media video{width:100%;height:100%;object-fit:cover;display:block;flex:1;min-height:360px;}
+.media-tag{position:absolute;top:12px;left:12px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:4px;z-index:5;}
+.tag-static{background:var(--navy);color:var(--gold);border:1px solid var(--gold-border);}
+.tag-video{background:var(--gold);color:var(--navy);}
+.ad-num-badge{position:absolute;top:12px;right:12px;width:28px;height:28px;border-radius:50%;background:rgba(22,38,66,.88);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;color:var(--gold);z-index:5;}
+.ad-content{padding:28px 32px;display:flex;flex-direction:column;gap:16px;}
+.ad-code{font-family:'DM Mono',monospace;font-size:10px;color:var(--text-muted);letter-spacing:.04em;}
+.ad-angle{font-size:19px;font-weight:700;color:var(--navy);line-height:1.2;}
+.headlines-row{display:flex;flex-wrap:wrap;gap:7px;}
+.headline-chip{background:var(--navy);color:var(--gold);font-size:11px;font-family:'DM Mono',monospace;padding:5px 12px;border-radius:6px;}
+.meta-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{font-size:10px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:4px;}
+.chip-grey{background:rgba(0,0,0,.07);color:var(--text-mid);}
+.chip-gold{background:var(--gold-dim);color:#7a5c00;}
+.chip-navy{background:rgba(22,38,66,.1);color:var(--navy);}
+.divider-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;}
+.divider-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.copy-stack{display:flex;flex-direction:column;gap:8px;}
+.copy-item{border:1px solid var(--border);border-left:3px solid var(--navy-light);border-radius:0 8px 8px 0;background:var(--off-white);overflow:hidden;cursor:pointer;transition:border-left-color .2s;}
+.ads-section-2 .copy-item{background:#fff;}
+.copy-item:hover{border-left-color:var(--gold);}
+.copy-header{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;}
+.copy-vnum{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;}
+.copy-arrow{font-size:12px;color:var(--text-muted);transition:transform .2s;user-select:none;}
+.copy-item.open .copy-arrow{transform:rotate(180deg);}
+.copy-preview{font-size:12px;color:var(--text-mid);font-style:italic;padding:0 14px 10px;display:block;cursor:pointer;}
+.copy-item.open .copy-preview{display:none;}
+.copy-body{font-size:12.5px;color:var(--text);line-height:1.7;padding:2px 14px 14px;display:none;border-top:1px solid var(--border);}
+.copy-item.open .copy-body{display:block;}
+.note-gold{background:rgba(201,168,76,.06);border:1px solid var(--gold-border);border-radius:8px;padding:12px 14px;}
+.note-red{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:12px 14px;}
+.note-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;}
+.note-label-gold{color:var(--gold);}
+.note-label-red{color:var(--red);}
+.note-text{font-size:12px;color:var(--text-mid);line-height:1.6;}
+.signoff{background:var(--navy);padding:80px 0;position:relative;overflow:hidden;}
+.signoff-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:64px 64px;}
+.signoff-inner{max-width:900px;margin:0 auto;padding:0 48px;position:relative;z-index:2;}
+.signoff-eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.signoff-title{font-size:clamp(28px,4vw,44px);font-weight:700;color:#fff;line-height:1.1;margin-bottom:16px;}
+.signoff-title em{color:var(--gold);font-style:normal;}
+.signoff-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);max-width:520px;line-height:1.7;margin-bottom:48px;}
+.checklist{display:flex;flex-direction:column;gap:10px;margin-bottom:48px;max-width:660px;}
+.check-item{display:flex;align-items:flex-start;gap:14px;padding:15px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;transition:background .2s;}
+.check-item:hover{background:rgba(201,168,76,.05);border-color:var(--gold-border);}
+.check-box{width:22px;height:22px;border:2px solid var(--gold-border);border-radius:5px;flex-shrink:0;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.check-box.checked{background:var(--gold);border-color:var(--gold);}
+.check-box.checked::after{content:'&#10003;';font-size:13px;font-weight:700;color:var(--navy);}
+.check-text{font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.5;}
+.check-text strong{color:#fff;}
+.signoff-hr{height:1px;background:rgba(201,168,76,.12);margin-bottom:40px;}
+.next-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.ns-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:9px;padding:20px;}
+.ns-num{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}
+.ns-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.3;}
+.ns-desc{font-size:11.5px;color:rgba(255,255,255,.4);line-height:1.6;font-weight:300;}
+footer{background:#0d1a2d;padding:22px 48px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(201,168,76,.08);}
+.footer-l{font-size:11px;color:rgba(255,255,255,.2);font-family:'DM Mono',monospace;}
+.footer-r{font-size:11px;color:rgba(255,255,255,.2);}
+@media(max-width:800px){
+  .ad-card{grid-template-columns:1fr;}
+  .overview-grid,.structure-adsets,.next-steps,.cover-meta{grid-template-columns:1fr 1fr;}
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .section-inner,.ads-inner,.signoff-inner,.cover-inner{padding-left:20px;padding-right:20px;}
+  .adset-band{padding:14px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Heath Media <span>x Tennant Products</span></div>
+  <div class="nav-links">
+    <a href="#cover">Intro</a>
+    <a href="#overview">Structure</a>
+    <a href="#adset1">Ad Set 1</a>
+    <a href="#adset2">Ad Set 2</a>
+    <a href="#signoff">Sign-Off</a>
+  </div>
+  <div class="nav-status">
+    <div class="status-dot"></div>
+    Awaiting Approval
+  </div>
+</nav>
+
+<!-- COVER -->
+<div id="cover" class="cover">
+  <div class="cover-grid-bg"></div>
+  <div class="cover-orb"></div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">Campaign Sign-Off — March 2026</div>
+    <h1 class="cover-title">Digestive Enzymes<br><em>Meta Ads Launch</em></h1>
+    <p class="cover-sub">Creative assets, copy pairings, and campaign structure for review and approval before the build goes live in Meta Ads Manager.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Product</div>
+        <div class="cover-meta-value">Digestive Enzymes</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Ad Sets</div>
+        <div class="cover-meta-value">2</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Total Ads</div>
+        <div class="cover-meta-value">7</div>
+      </div>
+      <div class="cover-meta-item">
+        <div class="cover-meta-label">Daily Budget</div>
+        <div class="cover-meta-value">$25 / day</div>
+      </div>
+    </div>
+    <p class="cover-note">Scroll through each ad. Videos are playable inline. Copy variations expand on click. Confirm sign-off on the final slide before we go to build.</p>
+  </div>
+</div>
+
+<!-- STRUCTURE -->
+<section id="overview" class="section" style="background:#fff;">
+  <div class="section-inner">
+    <div class="section-label">Campaign Architecture</div>
+    <h2 class="section-title">Structure Overview</h2>
+    <p class="section-desc">One campaign. Two ad sets split by creative angle — Problem-Led and Authority Proof. No CBO at launch. Learning phase protected for the first seven days with no edits.</p>
+    <div class="overview-grid">
+      <div class="ocard">
+        <div class="ocard-title">Campaign Settings</div>
+        <div class="orow"><span class="orow-label">Campaign Name</span><span class="orow-value">Tennant Products | Digestive Enzymes | Cold | Broad</span></div>
+        <div class="orow"><span class="orow-label">Objective</span><span class="orow-value">Sales — Purchase</span></div>
+        <div class="orow"><span class="orow-label">CBO at Launch</span><span class="orow-value">OFF</span></div>
+        <div class="orow"><span class="orow-label">Total Daily Budget</span><span class="orow-value">$25/day total</span></div>
+        <div class="orow"><span class="orow-label">Audience</span><span class="orow-value">US | Age 40+ | Broad | No interests</span></div>
+        <div class="orow"><span class="orow-label">Placements</span><span class="orow-value">Advantage+ Placements ON</span></div>
+        <div class="orow"><span class="orow-label">Attribution Window</span><span class="orow-value">7-day click, 1-day view, 1-day engaged view</span></div>
+        <div class="orow"><span class="orow-label">Optimisation Event</span><span class="orow-value">Purchase</span></div>
+        <div class="orow"><span class="orow-label">Landing Page</span><span class="orow-value">tennantproducts.com/pages/digestive-enzymes-lp</span></div>
+        <div class="orow"><span class="orow-label">Subscribe and Save</span><span class="orow-value">10% — in all copy</span></div>
+      </div>
+      <div class="ocard">
+        <div class="ocard-title">Advantage+ Creative Settings</div>
+        <div class="orow"><span class="orow-label">Multiple text optimisation</span><span class="orow-value" style="color:var(--green);">ON — copy testing engine</span></div>
+        <div class="orow"><span class="orow-label">Image brightness and contrast</span><span class="orow-value" style="color:var(--green);">ON — low-risk polish only</span></div>
+        <div class="orow"><span class="orow-label">Background generation</span><span class="orow-value" style="color:var(--red);">OFF — protects brand aesthetic</span></div>
+        <div class="orow"><span class="orow-label">Text overlay on images</span><span class="orow-value" style="color:var(--red);">OFF — statics already have copy</span></div>
+        <div class="orow"><span class="orow-label">Music addition to video</span><span class="orow-value" style="color:var(--red);">OFF — voiceover audio is critical</span></div>
+        <div class="orow"><span class="orow-label">Relevant comments</span><span class="orow-value" style="color:var(--green);">ON — social proof in feed</span></div>
+      </div>
+    </div>
+    <div class="structure">
+      <div class="structure-label">Campaign Map</div>
+      <div class="structure-campaign">Tennant Products | Digestive Enzymes | Cold | Broad | [Launch Date] — $25/day total</div>
+      <div class="structure-adsets">
+        <div class="structure-adset">
+          <div class="structure-adset-name">AD SET 1 — ProblemLed | Broad | Cold</div>
+          <span class="pill">Ad 1 — BloatingHook Static</span>
+          <span class="pill">Ad 2 — EnergyDrain Static</span>
+          <span class="pill">Ad 3 — GutWorking Video</span>
+          <div class="structure-budget">$12–15/day | US 40+ Broad | Vars 1+2 for video</div>
+        </div>
+        <div class="structure-adset">
+          <div class="structure-adset-name">AD SET 2 — AuthorityProof | Broad | Cold</div>
+          <span class="pill">Ad 4 — PhysicianFormulated Static</span>
+          <span class="pill">Ad 5 — Testimonial Static</span>
+          <span class="pill">Ad 6 — UGC DrTReview Video</span>
+          <span class="pill">Ad 7 — Clinician Video</span>
+          <div class="structure-budget">$12–15/day | US 40+ Broad | Vars 3+5 for videos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AD SET 1 BAND -->
+<div id="adset1" class="adset-band adset-band-1">
+  <div class="adset-band-inner">
+    <div style="display:flex;align-items:center;">
+      <div class="adset-num">1</div>
+      <div class="adset-title">DE | ProblemLed | Broad | Cold<br><span style="font-size:10px;color:rgba(255,255,255,.4);font-weight:300;">Ads 1–3 &nbsp;|&nbsp; Problem-first hooks targeting bloat, energy drain, gut function</span></div>
+    </div>
+    <div class="adset-budget-tag">$12–15 / day</div>
+  </div>
+</div>
+
+<div class="ads-section ads-section-1">
+<div class="ads-inner">
+
+<!-- AD 1 -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-static">Static 1:1</span>
+    <span class="ad-num-badge">01</span>
+    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1773280488/DE_ProblemLed_Static_BloatingHook_fqzvdk.png" alt="BloatingHook" loading="lazy">
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | ProblemLed | Static | BloatingHook | 1x1</div>
+    <div class="ad-angle">The Bloating Hook</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Stop the Bloat for Good</div>
+      <div class="headline-chip">Your Gut Is Costing You</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">All 5 copy variations</span>
+      <span class="chip chip-navy">1:1 — 1080x1080px</span>
+      <span class="chip chip-gold">Ad Set 1</span>
+    </div>
+    <div class="divider-label">Primary Text — All 5 Variations</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 1 — Bloating Hook</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Still bloated after every meal? Even the healthy ones?...</span>
+        <div class="copy-body">Still bloated after every meal? Even the healthy ones? Here is what most people never get told. Bloating is not about what you are eating. It is about whether your body can actually break it down. After your mid-40s, your natural enzyme production drops. That means even a healthy meal can sit in your gut undigested, causing bloat, discomfort, and that heavy feeling that will not quit. Dr. Tennant's Digestive Enzyme Formula gives your body back the 27 enzymes it needs to actually break down what you eat. Protein, fat, carbohydrates, gluten, dairy, grains. All of it. No more lying down after dinner. No more unbuttoning your waistband by 7pm. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 2 — Energy and Gut Connection</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">That 3pm crash probably has nothing to do with sleep...</span>
+        <div class="copy-body">That 3pm crash probably has nothing to do with sleep. When your digestive system is working overtime just to break down a meal, it pulls energy from everywhere else. Brain, muscles, mood. All of it takes a hit. Most people reach for coffee. The real problem is happening in their gut. Dr. Tennant's Digestive Enzyme Formula supports complete digestion so your body stops burning itself out. Full-spectrum. Physician-formulated. 27 enzymes covering every major food group. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 3 — Nutrient Absorption Angle</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">You could be eating a near-perfect diet and still running on empty...</span>
+        <div class="copy-body">You could be eating a near-perfect diet and still running on empty. If your body cannot break down what you eat, it cannot absorb it. The nutrients pass straight through. Dr. Jerry Tennant designed this formula for clinical results, not a price point. 27 enzymes, full-spectrum coverage, no fillers, no shortcuts. Every ingredient sourced direct from the original manufacturer. Your food is only as good as what you absorb. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 4 — Pattern Interrupt</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Nobody wants to talk about this. But your gut does not care about your feelings...</span>
+        <div class="copy-body">Nobody wants to talk about this. But your gut does not care about your feelings. You eat well, you try to look after yourself, and still the bloat, the gas, the discomfort after meals. After midlife, enzyme production falls off a cliff. Dr. Tennant's Digestive Enzyme Formula puts back what time takes away. 27 full-spectrum enzymes, physician-formulated, no fillers. Your gut can work properly again. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 5 — Social Proof</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">"I used to have to lie down after dinner because of the bloating..."</span>
+        <div class="copy-body">"I used to have to lie down after dinner because of the bloating. Now I go for a walk." That is a real result from a real person who started taking Dr. Tennant's Digestive Enzyme Formula. Not a different diet. Not a cleanse. Just giving the body the 27 digestive enzymes it was no longer producing enough of on its own. Dr. Jerry Tennant has been practising medicine for over 60 years. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD 2 -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-static">Static 1:1</span>
+    <span class="ad-num-badge">02</span>
+    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1773280487/DE_ProblemLed_Static_EnergyDrain-3pmCrash_ijvpne.png" alt="EnergyDrain" loading="lazy">
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | ProblemLed | Static | EnergyDrain-3pmCrash | 1x1</div>
+    <div class="ad-angle">The Energy Drain / 3pm Crash</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Your Gut Is Costing You</div>
+      <div class="headline-chip">27 Enzymes. Real Results.</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">All 5 copy variations</span>
+      <span class="chip chip-navy">1:1 — 1080x1080px</span>
+      <span class="chip chip-gold">Ad Set 1</span>
+    </div>
+    <div class="divider-label">Primary Text — All 5 Variations</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 1 — Bloating Hook</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Still bloated after every meal? Even the healthy ones?...</span>
+        <div class="copy-body">Still bloated after every meal? Even the healthy ones? Here is what most people never get told. Bloating is not about what you are eating. It is about whether your body can actually break it down. After your mid-40s, your natural enzyme production drops. That means even a healthy meal can sit in your gut undigested, causing bloat, discomfort, and that heavy feeling that will not quit. Dr. Tennant's Digestive Enzyme Formula gives your body back the 27 enzymes it needs to actually break down what you eat. Protein, fat, carbohydrates, gluten, dairy, grains. All of it. No more lying down after dinner. No more unbuttoning your waistband by 7pm. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 2 — Energy and Gut Connection</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">That 3pm crash probably has nothing to do with sleep...</span>
+        <div class="copy-body">That 3pm crash probably has nothing to do with sleep. When your digestive system is working overtime just to break down a meal, it pulls energy from everywhere else. Brain, muscles, mood. All of it takes a hit. Most people reach for coffee. The real problem is happening in their gut. Dr. Tennant's Digestive Enzyme Formula supports complete digestion so your body stops burning itself out. Full-spectrum. Physician-formulated. 27 enzymes covering every major food group. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 3 — Nutrient Absorption Angle</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">You could be eating a near-perfect diet and still running on empty...</span>
+        <div class="copy-body">You could be eating a near-perfect diet and still running on empty. If your body cannot break down what you eat, it cannot absorb it. The nutrients pass straight through. Dr. Jerry Tennant designed this formula for clinical results, not a price point. 27 enzymes, full-spectrum coverage, no fillers, no shortcuts. Every ingredient sourced direct from the original manufacturer. Your food is only as good as what you absorb. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 4 — Pattern Interrupt</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Nobody wants to talk about this. But your gut does not care about your feelings...</span>
+        <div class="copy-body">Nobody wants to talk about this. But your gut does not care about your feelings. You eat well, you try to look after yourself, and still the bloat, the gas, the discomfort after meals. After midlife, enzyme production falls off a cliff. Dr. Tennant's Digestive Enzyme Formula puts back what time takes away. 27 full-spectrum enzymes, physician-formulated, no fillers. Your gut can work properly again. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 5 — Social Proof</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">"I used to have to lie down after dinner because of the bloating..."</span>
+        <div class="copy-body">"I used to have to lie down after dinner because of the bloating. Now I go for a walk." That is a real result from a real person who started taking Dr. Tennant's Digestive Enzyme Formula. Not a different diet. Not a cleanse. Just giving the body the 27 digestive enzymes it was no longer producing enough of on its own. Dr. Jerry Tennant has been practising medicine for over 60 years. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD 3 VIDEO -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-video">Video 9:16</span>
+    <span class="ad-num-badge">03</span>
+    <video controls preload="metadata" style="min-height:360px;">
+      <source src="https://res.cloudinary.com/dcnabm5nc/video/upload/v1773280571/DE_ProblemLed_Video_GutWorking-Lifestyle_l71ags.mov" type="video/mp4">
+    </video>
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | ProblemLed | Video | GutWorking-Lifestyle | 9x16</div>
+    <div class="ad-angle">Gut Working — Lifestyle B-Roll with Voiceover</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Stop the Bloat for Good</div>
+      <div class="headline-chip">Your Gut Is Costing You</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">Variations 1 and 2 only</span>
+      <span class="chip chip-navy">9:16 — 1080x1920px</span>
+      <span class="chip chip-gold">Ad Set 1</span>
+    </div>
+    <div class="divider-label">Copy Alignment</div>
+    <div class="note-gold">
+      <div class="note-label note-label-gold">Why Variations 1 and 2 Only</div>
+      <div class="note-text">This is lifestyle B-roll with voiceover covering gut function and energy. Variations 1 (bloating hook) and 2 (3pm energy crash) are the only angles that match the visual and spoken content. Variations 3–5 reference clinical authority and testimonials which are not present in this video. Mismatched copy and creative was the failure identified on the March 11 call — this pairing ensures alignment is locked before build.</div>
+    </div>
+    <div class="divider-label" style="margin-top:4px;">Primary Text — Assigned Variations</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 1 — Bloating Hook</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Still bloated after every meal? Even the healthy ones?...</span>
+        <div class="copy-body">Still bloated after every meal? Even the healthy ones? Here is what most people never get told. Bloating is not about what you are eating. It is about whether your body can actually break it down. After your mid-40s, your natural enzyme production drops. That means even a healthy meal can sit in your gut undigested, causing bloat, discomfort, and that heavy feeling that will not quit. Dr. Tennant's Digestive Enzyme Formula gives your body back the 27 enzymes it needs to actually break down what you eat. Protein, fat, carbohydrates, gluten, dairy, grains. All of it. No more lying down after dinner. No more unbuttoning your waistband by 7pm. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 2 — Energy and Gut Connection</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">That 3pm crash probably has nothing to do with sleep...</span>
+        <div class="copy-body">That 3pm crash probably has nothing to do with sleep. When your digestive system is working overtime just to break down a meal, it pulls energy from everywhere else. Brain, muscles, mood. All of it takes a hit. Most people reach for coffee. The real problem is happening in their gut. Dr. Tennant's Digestive Enzyme Formula supports complete digestion so your body stops burning itself out. Full-spectrum. Physician-formulated. 27 enzymes covering every major food group. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- AD SET 2 BAND -->
+<div id="adset2" class="adset-band adset-band-2">
+  <div class="adset-band-inner">
+    <div style="display:flex;align-items:center;">
+      <div class="adset-num">2</div>
+      <div class="adset-title">DE | AuthorityProof | Broad | Cold<br><span style="font-size:10px;color:rgba(255,255,255,.4);font-weight:300;">Ads 4–7 &nbsp;|&nbsp; Clinical credibility, testimonials, physician authority, and absorption proof</span></div>
+    </div>
+    <div class="adset-budget-tag">$12–15 / day</div>
+  </div>
+</div>
+
+<div class="ads-section ads-section-2">
+<div class="ads-inner">
+
+<!-- AD 4 -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-static">Static 1:1</span>
+    <span class="ad-num-badge">04</span>
+    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1773280487/DE_AuthorityProof_Static_PhysicianFormulated_hlnr2h.png" alt="PhysicianFormulated" loading="lazy">
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | AuthorityProof | Static | PhysicianFormulated | 1x1</div>
+    <div class="ad-angle">Physician Formulated — Authority Static</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Built by a Doctor. It Shows.</div>
+      <div class="headline-chip">27 Enzymes. Real Results.</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">All 5 copy variations</span>
+      <span class="chip chip-navy">1:1 — 1080x1080px</span>
+      <span class="chip chip-gold">Ad Set 2</span>
+    </div>
+    <div class="divider-label">Important</div>
+    <div class="note-red">
+      <div class="note-label note-label-red">Dr. Tennant Video — Excluded Pending Legal Review</div>
+      <div class="note-text">This ad uses the physician static image only. The Dr. Tennant video asset is excluded from this campaign pending legal review of the claim regarding enzyme count at formulation in 2008. Confirmed on the March 11 call by John Tennant. The video must not be added until John has cleared the specific claim.</div>
+    </div>
+    <div class="divider-label" style="margin-top:4px;">Primary Text — All 5 Variations</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 1 — Bloating Hook</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Still bloated after every meal? Even the healthy ones?...</span>
+        <div class="copy-body">Still bloated after every meal? Even the healthy ones? Here is what most people never get told. Bloating is not about what you are eating. It is about whether your body can actually break it down. After your mid-40s, your natural enzyme production drops. That means even a healthy meal can sit in your gut undigested, causing bloat, discomfort, and that heavy feeling that will not quit. Dr. Tennant's Digestive Enzyme Formula gives your body back the 27 enzymes it needs to actually break down what you eat. Protein, fat, carbohydrates, gluten, dairy, grains. All of it. No more lying down after dinner. No more unbuttoning your waistband by 7pm. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 2 — Energy and Gut Connection</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">That 3pm crash probably has nothing to do with sleep...</span>
+        <div class="copy-body">That 3pm crash probably has nothing to do with sleep. When your digestive system is working overtime just to break down a meal, it pulls energy from everywhere else. Brain, muscles, mood. All of it takes a hit. Most people reach for coffee. The real problem is happening in their gut. Dr. Tennant's Digestive Enzyme Formula supports complete digestion so your body stops burning itself out. Full-spectrum. Physician-formulated. 27 enzymes covering every major food group. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 3 — Nutrient Absorption Angle</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">You could be eating a near-perfect diet and still running on empty...</span>
+        <div class="copy-body">You could be eating a near-perfect diet and still running on empty. If your body cannot break down what you eat, it cannot absorb it. The nutrients pass straight through. Dr. Jerry Tennant designed this formula for clinical results, not a price point. 27 enzymes, full-spectrum coverage, no fillers, no shortcuts. Every ingredient sourced direct from the original manufacturer. Your food is only as good as what you absorb. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 4 — Pattern Interrupt</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">Nobody wants to talk about this. But your gut does not care about your feelings...</span>
+        <div class="copy-body">Nobody wants to talk about this. But your gut does not care about your feelings. You eat well, you try to look after yourself, and still the bloat, the gas, the discomfort after meals. After midlife, enzyme production falls off a cliff. Dr. Tennant's Digestive Enzyme Formula puts back what time takes away. 27 full-spectrum enzymes, physician-formulated, no fillers. Your gut can work properly again. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 5 — Social Proof</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">"I used to have to lie down after dinner because of the bloating..."</span>
+        <div class="copy-body">"I used to have to lie down after dinner because of the bloating. Now I go for a walk." That is a real result from a real person who started taking Dr. Tennant's Digestive Enzyme Formula. Not a different diet. Not a cleanse. Just giving the body the 27 digestive enzymes it was no longer producing enough of on its own. Dr. Jerry Tennant has been practising medicine for over 60 years. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD 5 -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-static">Static 1:1</span>
+    <span class="ad-num-badge">05</span>
+    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1773280488/DE_AuthorityProof_Static_Testimonial-LieDown_rwyodc.png" alt="Testimonial-LieDown" loading="lazy">
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | AuthorityProof | Static | Testimonial-LieDown | 1x1</div>
+    <div class="ad-angle">Testimonial — Lie Down After Dinner</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Built by a Doctor. It Shows.</div>
+      <div class="headline-chip">Eat Well. Actually Absorb It.</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">Variations 3 and 5 only</span>
+      <span class="chip chip-navy">1:1 — 1080x1080px</span>
+      <span class="chip chip-gold">Ad Set 2</span>
+    </div>
+    <div class="divider-label">Copy Alignment</div>
+    <div class="note-gold">
+      <div class="note-label note-label-gold">Why Variations 3 and 5 Only</div>
+      <div class="note-text">This static features a testimonial visual about lying down after dinner. Variation 5 (social proof) directly echoes this with the "lie down after dinner" quote. Variation 3 (absorption) reinforces the clinical angle the image implies. Variations 1, 2, and 4 are problem-led energy and pattern interrupt angles that do not match the testimonial framing of this creative.</div>
+    </div>
+    <div class="divider-label" style="margin-top:4px;">Primary Text — Assigned Variations</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 3 — Nutrient Absorption Angle</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">You could be eating a near-perfect diet and still running on empty...</span>
+        <div class="copy-body">You could be eating a near-perfect diet and still running on empty. If your body cannot break down what you eat, it cannot absorb it. The nutrients pass straight through. Dr. Jerry Tennant designed this formula for clinical results, not a price point. 27 enzymes, full-spectrum coverage, no fillers, no shortcuts. Every ingredient sourced direct from the original manufacturer. Your food is only as good as what you absorb. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 5 — Social Proof</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">"I used to have to lie down after dinner because of the bloating..."</span>
+        <div class="copy-body">"I used to have to lie down after dinner because of the bloating. Now I go for a walk." That is a real result from a real person who started taking Dr. Tennant's Digestive Enzyme Formula. Not a different diet. Not a cleanse. Just giving the body the 27 digestive enzymes it was no longer producing enough of on its own. Dr. Jerry Tennant has been practising medicine for over 60 years. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD 6 UGC VIDEO -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-video">Video 9:16</span>
+    <span class="ad-num-badge">06</span>
+    <video controls preload="metadata" style="min-height:360px;">
+      <source src="https://res.cloudinary.com/dcnabm5nc/video/upload/v1773280772/DE_AuthorityProof_Video_UGC-DrTReview_dqfena.mov" type="video/mp4">
+    </video>
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | AuthorityProof | Video | UGC-DrTReview | 9x16</div>
+    <div class="ad-angle">UGC — Influencer Review</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Eat Well. Actually Absorb It.</div>
+      <div class="headline-chip">Built by a Doctor. It Shows.</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">Variations 3 and 5 only</span>
+      <span class="chip chip-navy">9:16 — 1080x1920px</span>
+      <span class="chip chip-gold">Ad Set 2</span>
+    </div>
+    <div class="divider-label">Copy Alignment</div>
+    <div class="note-gold">
+      <div class="note-label note-label-gold">Why Variations 3 and 5 Only</div>
+      <div class="note-text">The influencer covers: Dr. Tennant's credentials, ingredient sourcing, 27 enzymes, bloating, heartburn, acid reflux, and heavy meals. This matches the absorption and social proof angles precisely. Energy and 3pm crash copy must not be assigned to this video — the spoken content does not support it. This was the exact misalignment identified on the March 11 call and is locked here to prevent it recurring.</div>
+    </div>
+    <div class="divider-label" style="margin-top:4px;">Primary Text — Assigned Variations</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 3 — Nutrient Absorption Angle</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">You could be eating a near-perfect diet and still running on empty...</span>
+        <div class="copy-body">You could be eating a near-perfect diet and still running on empty. If your body cannot break down what you eat, it cannot absorb it. The nutrients pass straight through. Dr. Jerry Tennant designed this formula for clinical results, not a price point. 27 enzymes, full-spectrum coverage, no fillers, no shortcuts. Every ingredient sourced direct from the original manufacturer. Your food is only as good as what you absorb. Subscribe and Save 10% on your first order.</div>
+      </div>
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 5 — Social Proof</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">"I used to have to lie down after dinner because of the bloating..."</span>
+        <div class="copy-body">"I used to have to lie down after dinner because of the bloating. Now I go for a walk." That is a real result from a real person who started taking Dr. Tennant's Digestive Enzyme Formula. Not a different diet. Not a cleanse. Just giving the body the 27 digestive enzymes it was no longer producing enough of on its own. Dr. Jerry Tennant has been practising medicine for over 60 years. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD 7 CLINICIAN VIDEO -->
+<div class="ad-card">
+  <div class="ad-media">
+    <span class="media-tag tag-video">Video 9:16</span>
+    <span class="ad-num-badge">07</span>
+    <video controls preload="metadata" style="min-height:360px;">
+      <source src="https://res.cloudinary.com/dcnabm5nc/video/upload/v1773280629/DE_AuthorityProof_Video_Clinician-AbsorptionHook_hs1x5t.mov" type="video/mp4">
+    </video>
+  </div>
+  <div class="ad-content">
+    <div class="ad-code">DE | AuthorityProof | Video | Clinician-AbsorptionHook | 9x16</div>
+    <div class="ad-angle">Clinician — Absorption Hook Talking Head</div>
+    <div class="headlines-row">
+      <div class="headline-chip">Eat Well. Actually Absorb It.</div>
+      <div class="headline-chip">27 Enzymes. Real Results.</div>
+    </div>
+    <div class="meta-chips">
+      <span class="chip chip-grey">Variation 3 only</span>
+      <span class="chip chip-navy">9:16 — 1080x1920px</span>
+      <span class="chip chip-gold">Ad Set 2</span>
+    </div>
+    <div class="divider-label">Copy Alignment</div>
+    <div class="note-gold">
+      <div class="note-label note-label-gold">Why Variation 3 Only</div>
+      <div class="note-text">The clinician speaks directly about the inability to absorb nutrients — specifically the failure to break down meat, dairy, grains, and cruciferous vegetables, and how 27 enzymes address this. Variation 3 (The Nutrient Absorption Angle) is a word-for-word match to her spoken script. Assigning bloating, energy, or social proof copy to this video would create a disconnect between what the viewer hears and what the text above is saying. Single variation. No exceptions.</div>
+    </div>
+    <div class="divider-label" style="margin-top:4px;">Primary Text — Assigned Variation</div>
+    <div class="copy-stack">
+      <div class="copy-item">
+        <div class="copy-header"><span class="copy-vnum">Var 3 — Nutrient Absorption Angle</span><span class="copy-arrow">&#9660;</span></div>
+        <span class="copy-preview">You could be eating a near-perfect diet and still running on empty...</span>
+        <div class="copy-body">You could be eating a near-perfect diet and still running on empty. If your body cannot break down what you eat, it cannot absorb it. The nutrients pass straight through. Dr. Jerry Tennant designed this formula for clinical results, not a price point. 27 enzymes, full-spectrum coverage, no fillers, no shortcuts. Every ingredient sourced direct from the original manufacturer. Your food is only as good as what you absorb. Subscribe and Save 10% on your first order.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- SIGN OFF -->
+<div id="signoff" class="signoff">
+  <div class="signoff-grid-bg"></div>
+  <div class="signoff-inner">
+    <div class="signoff-eyebrow">Client Sign-Off</div>
+    <div class="signoff-title">Ready to <em>Go Live</em></div>
+    <p class="signoff-sub">Tick each item below to confirm sign-off. Once all items are approved we will proceed to the full campaign build in Meta Ads Manager and the campaign will be ready to launch within 24 hours.</p>
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>Campaign structure approved</strong> — Two ad sets, 7 ads total, $25/day split $12–15 per ad set, no CBO at launch.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>All 5 copy variations approved</strong> — Bloating Hook, Energy and Gut Connection, Nutrient Absorption, Pattern Interrupt, Social Proof. All include Subscribe and Save 10%.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>Creative assets approved</strong> — 4 static images and 3 videos as shown. All reviewed and confirmed appropriate for paid media on Meta.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>Copy-to-creative alignment confirmed</strong> — Each video is paired only to copy that matches its spoken content. Energy and 3pm crash copy is not assigned to the UGC or clinician videos.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>Dr. Tennant video exclusion confirmed</strong> — The Dr. Tennant video is excluded from this campaign. John Tennant to advise when the specific claim has been reviewed and cleared before it is added to any ad.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>Landing page confirmed live</strong> — tennantproducts.com/pages/digestive-enzymes-lp is live, Subscribe and Save 10% is active, and the Meta pixel is firing on the purchase confirmation page.</div>
+      </div>
+      <div class="check-item">
+        <div class="check-box"></div>
+        <div class="check-text"><strong>No changes for the first 7 days post-launch</strong> — Learning phase to be protected. No budget edits, no pausing of ads, no copy changes until the first review at day 14.</div>
+      </div>
+    </div>
+    <div class="signoff-hr"></div>
+    <div class="next-steps">
+      <div class="ns-card">
+        <div class="ns-num">Step 01 — On Approval</div>
+        <div class="ns-title">Campaign Build</div>
+        <div class="ns-desc">Charles builds the full campaign in Meta Ads Manager within 24 hours of sign-off. All 7 ads configured with correct copy pairings, UTM parameters, and Advantage+ creative settings.</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num">Step 02 — Launch Week</div>
+        <div class="ns-title">Learning Phase</div>
+        <div class="ns-desc">No changes for the first 7 days. Meta needs purchase events to exit learning. First decision point is day 14 — lowest-performing ad per ad set reviewed against CPP target of $50.</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-num">Step 03 — Parallel Build</div>
+        <div class="ns-title">Lugols Iodine Next</div>
+        <div class="ns-desc">While Digestive Enzymes runs, the Lugol's Iodine Meta campaign will be built once the landing page is confirmed live. Same campaign structure, new angles built around thyroid and mineral deficiency.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-l">Heath Media x Tennant Products — Digestive Enzymes Sign-Off Deck — March 2026</div>
+  <div class="footer-r">Confidential. Prepared by Charles Piper, Heath Media.</div>
+</footer>
+
+</body>
+<script>
+document.querySelectorAll('.ad-card').forEach(function(card){
+  var first = card.querySelector('.copy-item');
+  if(first) first.classList.add('open');
+});
+document.querySelectorAll('.copy-item').forEach(function(item){
+  item.addEventListener('click', function(){ this.classList.toggle('open'); });
+});
+document.querySelectorAll('.check-box').forEach(function(box){
+  box.addEventListener('click', function(e){
+    e.stopPropagation();
+    this.classList.toggle('checked');
+  });
+});
+</script>
+</html>
