@@ -357,7 +357,7 @@
 <div class="overview">
   <h2>Overview</h2>
   <p>This document contains the full build specification for the Activated Bamboo Charcoal cold acquisition campaign on Meta. Every creative, headline, description, and destination URL has been prepared for direct build in Ads Manager.</p>
-  <p>The structure is one campaign (CBO) with two ad sets and eight ads. Ad set one targets the health-conscious detox audience and routes to <code>/pages/aw-yjrfsw</code>. Ad set two targets the morning-after angle for women 40 to 55, routed to <code>/pages/aw-lpgdwb</code>. Daily budget is $100, split evenly between the two. The offer is 20% off plus free shipping, one-time purchase only, with the 10% pop-up suppressed on both landing pages.</p>
+  <p>The structure is one campaign (CBO) with two ad sets and eight ads. Ad set one targets the health-conscious detox audience and routes to <code>/pages/aw-yjrfsw</code>. Ad set two targets the morning-after angle for women 40 to 55, routed to <code>/pages/aw-lpgdwb</code>. Daily budget is $100 at the campaign level, distributed dynamically between the two ad sets by Meta. Both ad sets optimise for Purchase from day one, given the account pixel has sufficient Purchase history from the DE and BF+ campaigns. The offer is 20% off plus free shipping, one-time purchase only, with the 10% pop-up suppressed on both landing pages.</p>
   <p>Every destination URL carries the <code>openExternalBrowser=1</code> parameter so the Meta in-app browser hands off correctly. Creative samples for each ad are shown alongside the spec, with videos playable inline. Backup creative is listed in the reserve section for week two refresh.</p>
 </div>
 
@@ -388,10 +388,10 @@
   <div class="settings-block">
     <h3>Ad set 1 — Detoxers</h3>
     <table class="settings">
-      <tr><td>Name</td><td>ABC | Detoxers-Bloat-ATC | Broad ADV+ 40-65 | Cold | 24.04.26</td></tr>
-      <tr><td>Budget floor</td><td>$50/day (CBO ad set minimum)</td></tr>
-      <tr><td>Optimisation event</td><td>Add to Cart (phase 1)</td></tr>
+      <tr><td>Name</td><td>ABC | Detoxers-Purchase | Broad ADV+ 40-65 | Cold | 24.04.26</td></tr>
+      <tr><td>Optimisation event</td><td>Purchase</td></tr>
       <tr><td>Audience</td><td>Advantage+ Broad</td></tr>
+      <tr><td>Detailed targeting</td><td>None (pixel-led, no interests or behaviours)</td></tr>
       <tr><td>Location</td><td>United States</td></tr>
       <tr><td>Age / Gender</td><td>40 to 65, all genders</td></tr>
       <tr><td>Placements</td><td>Advantage+ placements</td></tr>
@@ -402,10 +402,10 @@
   <div class="settings-block">
     <h3>Ad set 2 — Morning After</h3>
     <table class="settings">
-      <tr><td>Name</td><td>ABC | MorningAfter-ATC | Broad ADV+ 40-55 F | Cold | 24.04.26</td></tr>
-      <tr><td>Budget floor</td><td>$50/day</td></tr>
-      <tr><td>Optimisation event</td><td>Add to Cart (phase 1)</td></tr>
+      <tr><td>Name</td><td>ABC | MorningAfter-Purchase | Broad ADV+ 40-55 F | Cold | 24.04.26</td></tr>
+      <tr><td>Optimisation event</td><td>Purchase</td></tr>
       <tr><td>Audience</td><td>Advantage+ Broad</td></tr>
+      <tr><td>Detailed targeting</td><td>None (pixel-led, no interests or behaviours)</td></tr>
       <tr><td>Location</td><td>United States</td></tr>
       <tr><td>Age / Gender</td><td>40 to 55, women only</td></tr>
       <tr><td>Placements</td><td>Advantage+ placements</td></tr>
@@ -883,8 +883,9 @@
   <div class="watch-block">
     <h4>Day 8 onwards</h4>
     <ul>
-      <li>Review ATC cost per ad set. If under $20, duplicate each ad set with Purchase optimisation and pause the ATC version.</li>
-      <li>Creative refresh brief goes to the design team for two new statics per ad set.</li>
+      <li>Review Purchase cost per ad set. If blended ROAS is above 2.0x, propose a campaign budget lift to $150/day.</li>
+      <li>Underperforming ads paused, top performers continued.</li>
+      <li>Creative refresh brief goes to the design team for two new statics per ad set to test against the initial set.</li>
       <li>Full week-one reporting delivered to Janice in the standard weekly deck format.</li>
     </ul>
   </div>
@@ -893,17 +894,17 @@
   <div class="target-card">
     <div class="target-col">
       <div class="target-week">Week 1</div>
-      <div class="target-val">1.5 – 2.5x</div>
-      <div class="target-note">Blended ROAS during the ATC learning phase</div>
+      <div class="target-val">1.8 – 2.5x</div>
+      <div class="target-note">Purchase optimisation learning phase</div>
     </div>
     <div class="target-col">
       <div class="target-week">Week 2</div>
-      <div class="target-val">2.5 – 3.5x</div>
-      <div class="target-note">Purchase optimisation live</div>
+      <div class="target-val">2.5 – 3.2x</div>
+      <div class="target-note">Post-learning, optimised delivery</div>
     </div>
     <div class="target-col">
       <div class="target-week">Week 3+</div>
-      <div class="target-val">3.5 – 4.0x</div>
+      <div class="target-val">3.0 – 4.0x</div>
       <div class="target-note">Mature blended account target</div>
     </div>
   </div>
