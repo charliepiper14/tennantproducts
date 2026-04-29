@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tennant Products | Weekly Performance Report | Apr 19 to Apr 25, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0f14;
+    --bg-secondary: #111820;
+    --bg-card: #162642;
+    --bg-card-alt: #0f1e35;
+    --accent-green: #10b981;
+    --accent-gold: #c9a84c;
+    --accent-blue: #3b82f6;
+    --accent-red: #ef4444;
+    --accent-orange: #f59e0b;
+    --accent-purple: #8b5cf6;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: rgba(255,255,255,0.08);
+    --border-gold: rgba(201,168,76,0.3);
+    --border-blue: rgba(59,130,246,0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .slide {
+    width: 100%;
+    min-height: 100vh;
+    padding: 48px 64px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .slide-header h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+  }
+  .slide-header h1 span { color: var(--accent-gold); }
+  .slide-meta { text-align: right; }
+  .slide-meta .period {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .slide-meta .brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-top: 2px;
+  }
+  .slide-num {
+    position: absolute;
+    bottom: 24px;
+    right: 64px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  #slide-1 {
+    background: linear-gradient(135deg, #0a0f14 0%, #0f1e35 50%, #162642 100%);
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .cover-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .cover-title span { color: var(--accent-gold); }
+  .cover-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+  .cover-kpis {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .cover-kpi {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .cover-kpi .kpi-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .cover-kpi .kpi-value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cover-kpi .kpi-change { font-size: 11px; font-weight: 600; }
+  .cover-kpi .kpi-change.up { color: var(--accent-green); }
+  .cover-kpi .kpi-change.down { color: var(--accent-red); }
+  .cover-kpi .kpi-change.neutral { color: var(--text-muted); }
+  .exec-callout {
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.04));
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .exec-callout p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .exec-callout strong { color: var(--accent-gold); font-weight: 600; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+  .stats-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stats-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stats-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .stat-card .label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .stat-card .value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-card .value.green { color: var(--accent-green); }
+  .stat-card .value.gold { color: var(--accent-gold); }
+  .stat-card .value.blue { color: var(--accent-blue); }
+  .stat-card .value.red { color: var(--accent-red); }
+  .stat-card .value.orange { color: var(--accent-orange); }
+  .stat-card .change { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .stat-card .change.up { color: var(--accent-green); }
+  .stat-card .change.down { color: var(--accent-red); }
+  .stat-card .change.neutral { color: var(--text-muted); }
+  .stat-card .prev { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-secondary);
+    vertical-align: middle;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .data-table .bold { font-weight: 600; color: var(--text-primary); }
+  .data-table .green { color: var(--accent-green); font-weight: 600; }
+  .data-table .red { color: var(--accent-red); font-weight: 600; }
+  .data-table .gold { color: var(--accent-gold); font-weight: 600; }
+  .data-table .blue { color: var(--accent-blue); font-weight: 600; }
+  .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+  .data-table .total-row td { background: rgba(201,168,76,0.05); font-weight: 600; color: var(--text-primary); border-top: 1px solid var(--border-gold); }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .badge-green { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+  .badge-red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+  .badge-gold { background: rgba(201,168,76,0.15); color: var(--accent-gold); }
+  .badge-blue { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+  .badge-orange { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+  .badge-purple { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-gold);
+  }
+  .insight-box {
+    background: rgba(59,130,246,0.06);
+    border: 1px solid var(--border-blue);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .insight-box strong { color: var(--accent-blue); }
+  .warning-box {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .warning-box strong { color: var(--accent-red); }
+  .success-box {
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .success-box strong { color: var(--accent-green); }
+  .gold-box {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .gold-box strong { color: var(--accent-gold); }
+  .progress-bar-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .progress-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .progress-bar-bg {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .progress-bar-fill { height: 100%; border-radius: 4px; }
+  .progress-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 60px;
+    text-align: right;
+  }
+  .action-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .action-priority {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .priority-1 { background: rgba(239,68,68,0.2); color: var(--accent-red); border: 1px solid rgba(239,68,68,0.3); }
+  .priority-2 { background: rgba(245,158,11,0.2); color: var(--accent-orange); border: 1px solid rgba(245,158,11,0.3); }
+  .priority-3 { background: rgba(59,130,246,0.2); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.3); }
+  .action-content h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .action-content p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .benchmark-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .benchmark-table th {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    padding: 10px 12px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .benchmark-table th:first-child { text-align: left; }
+  .benchmark-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+    color: var(--text-secondary);
+  }
+  .benchmark-table td:first-child { text-align: left; font-weight: 600; color: var(--text-primary); }
+  .benchmark-table .highlight-col {
+    background: rgba(201,168,76,0.06);
+    color: var(--accent-gold) !important;
+    font-weight: 700 !important;
+  }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  #slide-closing {
+    background: linear-gradient(135deg, #0a0f14 0%, #0f1e35 50%, #162642 100%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .mini-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" id="slide-1">
+  <div style="max-width: 900px;">
+    <div class="cover-eyebrow">Heath Media x Tennant Products</div>
+    <h1 class="cover-title">Weekly Performance<br><span>Apr 19 to Apr 25, 2026</span></h1>
+    <p class="cover-subtitle">Blended Paid Media Report &nbsp;|&nbsp; Compared to Apr 12 to Apr 18, 2026</p>
+
+    <div class="cover-kpis">
+      <div class="cover-kpi">
+        <div class="kpi-label">Total Spend</div>
+        <div class="kpi-value">$1,138</div>
+        <div class="kpi-change down">-4.7% WoW</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Blended ROAS</div>
+        <div class="kpi-value" style="color: var(--accent-gold);">1.19x</div>
+        <div class="kpi-change neutral">vs 2.56x (outlier-led)</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Total Conv Value</div>
+        <div class="kpi-value">$1,357</div>
+        <div class="kpi-change down">-55.6% WoW</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">New Customers</div>
+        <div class="kpi-value" style="color: var(--accent-orange);">23</div>
+        <div class="kpi-change down">-28.1% vs 32</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Blended CAC</div>
+        <div class="kpi-value" style="color: var(--accent-orange);">$49.50</div>
+        <div class="kpi-change down">+32.7% vs $37.31</div>
+      </div>
+    </div>
+
+    <div class="exec-callout">
+      <p><strong>Executive Summary:</strong> Total blended paid spend held broadly flat at $1,138.49 with the headline blended ROAS at 1.19x. The previous week's 2.56x figure was outlier-led by a single $2,000 DSA order, so the more useful read is this week's run-rate 1.19x against last week's run-rate 0.88x ex-outlier, a directional improvement. Meta delivered 8 purchases against 4 the week prior, an encouraging volume signal at the campaign level. On the Google side, Branded ROAS recovered strongly to 2.67x after the negative keyword additions took CPC from $6.83 down to $2.96. PMax was finally paused after 4 consecutive weeks at zero revenue. The Activated Bamboo Charcoal cold campaign launched on Friday Apr 24 against $257.77 spend in its first 2 days, with 1 purchase reported. The campaign has since hit a series of attribution and routing issues that are outside the ad layer and were diagnosed across the weekend, all detailed in the Slack record. On the Shopify side, gross sales recovered to $44,479 (+17.3% WoW), 183 orders (+10.9%), and AOV climbed to $242.58 (+7.9%), which is the strongest weekly AOV in five weeks. New customer acquisition softened to 23, the primary structural concern. Returning customer activity drove the revenue lift, with 154 returning customers vs 129 the prior week. The story this week is a healthier Google account, a cleaner Meta campaign-level read with more purchases, and a softer new customer count that needs the ABC campaign to unblock and start performing.</p>
+    </div>
+  </div>
+  <div class="slide-num">1 / 16</div>
+</div>
+
+<!-- SLIDE 2: BLENDED OVERVIEW -->
+<div class="slide" id="slide-2">
+  <div class="slide-header">
+    <h1>Full Week <span>Blended Overview</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 vs Apr 12 to Apr 18, 2026</div>
+      <div class="brand">Tennant Products</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4">
+    <div class="stat-card">
+      <div class="label">Total Ad Spend</div>
+      <div class="value">$1,138.49</div>
+      <div class="change down">-4.7% WoW</div>
+      <div class="prev">Prior: $1,194.06</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Total Conv Value</div>
+      <div class="value gold">$1,357.46</div>
+      <div class="change down">-55.6% WoW</div>
+      <div class="prev">Prior: $3,054.66 (outlier-led)</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Blended ROAS</div>
+      <div class="value gold">1.19x</div>
+      <div class="change up">+0.31x vs 0.88x ex-outlier</div>
+      <div class="prev">Prior headline 2.56x | Run-rate 0.88x</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Total Purchases</div>
+      <div class="value">10.92</div>
+      <div class="change up">Meta 8 | Google 2.92</div>
+      <div class="prev">Prior: 5 total | +5.92 WoW</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4">
+    <div class="stat-card">
+      <div class="label">Meta Spend</div>
+      <div class="value">$746.41</div>
+      <div class="change up">+17.6% WoW</div>
+      <div class="prev">Prior: $634.75</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google Spend</div>
+      <div class="value">$392.08</div>
+      <div class="change up">-29.9% WoW</div>
+      <div class="prev">Prior: $559.31 | Cleaner spend</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Blended CAC</div>
+      <div class="value orange">$49.50</div>
+      <div class="change down">+32.7% WoW</div>
+      <div class="prev">Prior: $37.31 | 23 new customers</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">LTV:CAC Ratio</div>
+      <div class="value gold">9.6x</div>
+      <div class="change down">vs 12.7x prior</div>
+      <div class="prev">LTV basis: $475 | Healthy threshold: 3x+</div>
+    </div>
+  </div>
+
+  <div class="section-label">Platform Split This Week</div>
+  <div class="two-col" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-title">Spend Distribution</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Meta (65.6%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:65.6%; background: var(--accent-gold);"></div></div>
+        <div class="progress-val">$746</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Google (34.4%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:34.4%; background: var(--accent-blue);"></div></div>
+        <div class="progress-val">$392</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Conv Value Distribution</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Meta (50.7%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:50.7%; background: var(--accent-gold);"></div></div>
+        <div class="progress-val">$688</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Google (49.3%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:49.3%; background: var(--accent-blue);"></div></div>
+        <div class="progress-val">$669</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>The 1.19x blended ROAS is a more honest read than last week's 2.56x.</strong> Last week's headline was inflated by a single $2,000 DSA order; this week has no equivalent outlier. Stripping out the impact and comparing run-rate to run-rate, the account moved from 0.88x to 1.19x, a 35% improvement. The two big drivers are PMax being paused after 4 weeks of zero revenue (dead spend now removed), and Branded recovering with the negative keyword work taking CPC from $6.83 to $2.96. Meta volume is up: 8 purchases this week vs 4 prior at campaign level. The CAC at $49.50 is up from $37.31 because new customer count fell to 23 from 32 while spend stayed broadly flat, with ABC absorbing $257.77 in its first 48 hours during a launch period that did not yet produce volume due to the routing and attribution issues being resolved across the weekend.
+  </div>
+  <div class="slide-num">2 / 16</div>
+</div>
+
+<!-- SLIDE 3: META OVERVIEW -->
+<div class="slide" id="slide-3">
+  <div class="slide-header">
+    <h1>Meta Campaign <span>Performance</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 vs Apr 12 to Apr 18, 2026</div>
+      <div class="brand">Facebook & Instagram Ads</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Meta Total Spend</div>
+      <div class="value">$746.41</div>
+      <div class="change up">+17.6% WoW</div>
+      <div class="prev">Prior: $634.75</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Meta Purchases</div>
+      <div class="value green">8</div>
+      <div class="change up">+5 vs 3 prior</div>
+      <div class="prev">Strongest week since mid-March</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Meta Conv Value</div>
+      <div class="value orange">$688.11</div>
+      <div class="change down">-13.4% WoW</div>
+      <div class="prev">Prior: $794.66 | Lower AOV per purchase</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Meta ROAS</div>
+      <div class="value gold">0.92x</div>
+      <div class="change down">-0.33x vs 1.25x</div>
+      <div class="prev">Volume up, value per purchase down</div>
+    </div>
+  </div>
+
+  <div class="section-label">Campaign Breakdown</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Spend</th>
+          <th>Purchases</th>
+          <th>Conv Value</th>
+          <th>ROAS</th>
+          <th>Impressions</th>
+          <th>Reach</th>
+          <th>Clicks</th>
+          <th>LPVs</th>
+          <th>LPV Rate</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">SS - Omnipresent - Engagement - Advt+</td>
+          <td>$313.90</td>
+          <td class="green bold">5</td>
+          <td class="green">$486.00</td>
+          <td class="gold">1.55x</td>
+          <td>12,801</td>
+          <td>4,641</td>
+          <td>178</td>
+          <td>20</td>
+          <td>11.2%</td>
+          <td><span class="badge badge-green">Top performer</span></td>
+        </tr>
+        <tr>
+          <td class="bold">SS - Retargeting</td>
+          <td>$174.74</td>
+          <td>2</td>
+          <td>$123.74</td>
+          <td class="red">0.71x</td>
+          <td>14,153</td>
+          <td>2,275</td>
+          <td>145</td>
+          <td>19</td>
+          <td>13.1%</td>
+          <td><span class="badge badge-orange">Soft week</span></td>
+        </tr>
+        <tr>
+          <td class="bold">HM | ABC | Cold CBO | Detox-Launch</td>
+          <td>$257.77</td>
+          <td>1</td>
+          <td>$78.37</td>
+          <td class="red">0.30x</td>
+          <td>8,976</td>
+          <td>4,886</td>
+          <td>151</td>
+          <td>15</td>
+          <td>9.9%</td>
+          <td><span class="badge badge-blue">Launched 24/04</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>Meta Total (Campaign-level)</td>
+          <td>$746.41</td>
+          <td>8</td>
+          <td>$688.11</td>
+          <td>0.92x</td>
+          <td>35,930</td>
+          <td>11,802</td>
+          <td>474</td>
+          <td>54</td>
+          <td>11.4%</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>SS - Omnipresent - Engagement Advantage+ delivered the cleanest week of the three campaigns:</strong> 5 purchases, $486 conv value, 1.55x ROAS on $313.90 spend. The Tess Sprague Brain Food testimonial inside this campaign is the standout creative this week, recording 4 of the 5 purchases at a 5.42x ROAS on $89.65 spend. The campaign converted at a 0.45 purchase-per-ATC ratio, indicating that the audience reaching cart genuinely converts. This is the campaign carrying account performance right now.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>The Digestive Enzymes campaign is no longer in the active set this week.</strong> The HM - Digestive Enzymes - CBO that absorbed $285.23 the week prior is not present in this week's Meta delivery. The DE landing page traffic and product sales remain steady on Shopify ($4,550 gross, +0.6% WoW). Confirming whether DE was paused intentionally to consolidate spend during the ABC launch window, or whether it ran out of budget, is the first item to verify on the Monday call.
+    </div>
+  </div>
+  <div class="slide-num">3 / 16</div>
+</div>
+
+<!-- SLIDE 4: ABC LAUNCH ANALYSIS -->
+<div class="slide" id="slide-4">
+  <div class="slide-header">
+    <h1>Activated Bamboo Charcoal <span>Cold Launch Week 1</span></h1>
+    <div class="slide-meta">
+      <div class="period">Launched Fri Apr 24, 2026 | First 48 Hours of Delivery</div>
+      <div class="brand">New Product Campaign</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Spend (48hrs)</div>
+      <div class="value">$257.77</div>
+      <div class="change neutral">Daily run-rate $129</div>
+      <div class="prev">Daily target: $150</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Purchases</div>
+      <div class="value orange">1</div>
+      <div class="change neutral">Conv Value: $78.37</div>
+      <div class="prev">Below 50-purchase learning threshold</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">LPV Rate</div>
+      <div class="value red">9.9%</div>
+      <div class="change down">Target: 65-80%</div>
+      <div class="prev">Routing and attribution issues identified</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Reach</div>
+      <div class="value gold">4,886</div>
+      <div class="change up">CPC $1.71 | CTR 1.68%</div>
+      <div class="prev">Top-of-funnel signals are strong</div>
+    </div>
+  </div>
+
+  <div class="section-label">What the Numbers Show vs What Slack Reveals</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Funnel Step</th>
+          <th>Volume</th>
+          <th>Rate</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Impressions</td>
+          <td>8,976</td>
+          <td class="green">CTR 1.68%</td>
+          <td class="green">Healthy CTR for cold traffic on day 1-2</td>
+        </tr>
+        <tr>
+          <td class="bold">Link Clicks</td>
+          <td>151</td>
+          <td>CPC $1.71</td>
+          <td class="green">Strong cost per click for cold</td>
+        </tr>
+        <tr>
+          <td class="bold">Landing Page Views</td>
+          <td class="red">15</td>
+          <td class="red">9.9% LPV rate</td>
+          <td class="red">Critical drop. Target is 65-80%</td>
+        </tr>
+        <tr>
+          <td class="bold">Adds to Cart</td>
+          <td>3</td>
+          <td>20.0% of LPV</td>
+          <td class="green">Cart engagement is fine for those who land</td>
+        </tr>
+        <tr>
+          <td class="bold">Checkouts Initiated</td>
+          <td>3</td>
+          <td>100% of ATC</td>
+          <td class="green">Clean cart-to-checkout</td>
+        </tr>
+        <tr>
+          <td class="bold">Purchases</td>
+          <td>1</td>
+          <td>33.3% of IC</td>
+          <td class="orange">Volume too small to draw conclusions</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warning-box">
+    <strong>Three separate technical issues affected the ABC launch over the launch window:</strong> First, a URL routing error at the landing page tool sent some Meta clicks to a non-existent /pages/detox path that generated 404 responses in Cloudflare logs, fixed Sun Apr 26. Second, a 301 naked-domain to www redirect chain combined with the Facebook in-app browser routed mobile clicks to the Activated Bamboo Charcoal Product Detail Page rather than the dedicated landing page, identified Mon Apr 27 evening. Third, the openExternalBrowser=1 parameter that was correct policy for the previous DE launch had begun stripping Meta tracking cookies on this LP combination, suppressing LPV attribution. All three were resolved by Tue Apr 28 with destination URLs updated to www. and openExternalBrowser=1 removed. Single-day data on Apr 28 (post-fix) showed CPM down 46%, CPC down 43%, ATC cost per event down 78%, and LPV rate moving from 11% to 14.3%, directional confirmation the fixes are working.
+  </div>
+
+  <div class="success-box">
+    <strong>Despite the technical headwinds, ABC organic Shopify sales jumped from $258 to $1,010.50 this week (+292%):</strong> 23 net items sold against 6 the week prior. The ABC cold campaign clearly drove some attributed traffic and demand even with the LPV attribution issue, alongside any organic browsing of the bamboo product page. The 1 ABC purchase reported in Meta plus the broader Shopify lift suggests real product-market fit that the campaign infrastructure must now catch up to.
+  </div>
+  <div class="slide-num">4 / 16</div>
+</div>
+
+<!-- SLIDE 5: GOOGLE ADS DEEP DIVE -->
+<div class="slide" id="slide-5">
+  <div class="slide-header">
+    <h1>Google Ads <span>Deep Dive</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 vs Apr 12 to Apr 18, 2026</div>
+      <div class="brand">Google Ads</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Google Total Spend</div>
+      <div class="value">$392.08</div>
+      <div class="change up">-29.9% WoW</div>
+      <div class="prev">Prior: $559.31 | PMax now paused</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google Conv Value</div>
+      <div class="value gold">$669.35</div>
+      <div class="change down">-70.4% WoW</div>
+      <div class="prev">Prior: $2,260 | $2k DSA outlier removed</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google ROAS</div>
+      <div class="value gold">1.71x</div>
+      <div class="change up">vs 0.46x ex-outlier prior</div>
+      <div class="prev">Cleaner, more sustainable run-rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Conversions</div>
+      <div class="value">2.92</div>
+      <div class="change down">-1.08 vs 4.00 prior</div>
+      <div class="prev">Branded: 1.64 | DSA: 1.28 | PMax: 0</div>
+    </div>
+  </div>
+
+  <div class="section-label">Campaign Breakdown</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Type</th>
+          <th>Spend</th>
+          <th>Conv Value</th>
+          <th>Revenue</th>
+          <th>ROAS</th>
+          <th>Conv</th>
+          <th>Clicks</th>
+          <th>CPC</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">SS - Branded</td>
+          <td style="color:var(--text-muted); font-size:11px;">Search</td>
+          <td>$145.10</td>
+          <td class="green">$386.86</td>
+          <td>$286.95</td>
+          <td class="gold">2.67x</td>
+          <td>1.64</td>
+          <td>49</td>
+          <td class="green">$2.96</td>
+          <td><span class="badge badge-green">Recovered</span></td>
+        </tr>
+        <tr>
+          <td class="bold">SS - DSA</td>
+          <td style="color:var(--text-muted); font-size:11px;">Search</td>
+          <td>$46.20</td>
+          <td class="green">$282.49</td>
+          <td class="green">$384.98</td>
+          <td class="green">6.11x</td>
+          <td>1.28</td>
+          <td>30</td>
+          <td>$1.54</td>
+          <td><span class="badge badge-gold">Strong week</span></td>
+        </tr>
+        <tr>
+          <td class="bold">SS - PMax</td>
+          <td style="color:var(--text-muted); font-size:11px;">Performance Max</td>
+          <td>$200.78</td>
+          <td class="red">$0.00</td>
+          <td class="red">$0.00</td>
+          <td class="red">0.00x</td>
+          <td>0.00</td>
+          <td>174</td>
+          <td>$1.15</td>
+          <td><span class="badge badge-red">Now Paused</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>Google Total</td>
+          <td></td>
+          <td>$392.08</td>
+          <td>$669.35</td>
+          <td>$671.93</td>
+          <td>1.71x</td>
+          <td>2.92</td>
+          <td>253</td>
+          <td>$1.55</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Branded recovered cleanly after the negative keyword additions:</strong> CPC dropped from $6.83 to $2.96, a 56.7% reduction. Conversion volume rose to 1.64 from 1.00. ROAS moved from 0.83x to 2.67x. Search Impression Share holds at 95.40% with Search Lost IS (rank) at 4.60% which is healthy. The "tennant company products", "tennant institute", and related competitor-leakage negatives are doing their job. Ongoing monitoring: tennant Exact Match still spent $82.05 driving 29 clicks but converted on a wider conv value contribution. The branded auction is now operating economically again.
+    </div>
+    <div class="success-box" style="margin:0;">
+      <strong>DSA had another strong week, this time on its actual run-rate:</strong> $46.20 spend, 1.28 conversions, $282.49 conv value, 6.11x ROAS. AOV came in at $301.30 which is consistent with how DSA captures broad-match longer-tail buyers. The 38.46% CTR is exceptional and reflects DSA's ability to match query intent precisely. This is the type of week DSA should produce regularly: small spend, strong economics, useful contribution. Last week's $2,000 single order is now properly contextualised as the once-off it was.
+    </div>
+  </div>
+  <div class="slide-num">5 / 16</div>
+</div>
+
+<!-- SLIDE 6: GOOGLE TREND AND PMAX PAUSE -->
+<div class="slide" id="slide-6">
+  <div class="slide-header">
+    <h1>Google <span>PMax Decision and Branded Recovery</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 | Strategic Read</div>
+      <div class="brand">Google Ads Diagnostics</div>
+    </div>
+  </div>
+
+  <div class="section-label">Week-over-Week Google Trend</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Spend Apr 12-18</th>
+          <th>Conv Value Prior</th>
+          <th>ROAS Prior</th>
+          <th>Spend Apr 19-25</th>
+          <th>Conv Value Current</th>
+          <th>ROAS Current</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">SS - PMax</td>
+          <td>$185.38</td>
+          <td class="red">$0.00</td>
+          <td class="red">0.00x</td>
+          <td>$200.78</td>
+          <td class="red">$0.00</td>
+          <td class="red">0.00x</td>
+          <td class="gold">Paused mid-week</td>
+        </tr>
+        <tr>
+          <td class="bold">SS - Branded</td>
+          <td>$314.28</td>
+          <td>$260.00</td>
+          <td class="red">0.83x</td>
+          <td>$145.10</td>
+          <td class="green">$386.86</td>
+          <td class="green">2.67x</td>
+          <td class="green">CPC -56.7%</td>
+        </tr>
+        <tr>
+          <td class="bold">SS - DSA</td>
+          <td>$59.64</td>
+          <td class="green">$2,000.00*</td>
+          <td class="green">33.53x*</td>
+          <td>$46.20</td>
+          <td>$282.49</td>
+          <td class="green">6.11x</td>
+          <td class="gold">Repeatable run-rate</td>
+        </tr>
+        <tr class="total-row">
+          <td>Google Total</td>
+          <td>$559.31</td>
+          <td>$2,260.00</td>
+          <td>4.04x</td>
+          <td>$392.08</td>
+          <td>$669.35</td>
+          <td>1.71x</td>
+          <td>Cleaner economics</td>
+        </tr>
+        <tr style="background: rgba(16,185,129,0.04);">
+          <td class="bold green">Google Ex-DSA Outlier (Prior)</td>
+          <td>$559.31</td>
+          <td class="red">$260.00</td>
+          <td class="red">0.46x</td>
+          <td>$392.08</td>
+          <td class="green">$669.35</td>
+          <td class="green">1.71x</td>
+          <td class="green">+1.25x improvement</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px; color:var(--text-muted); margin-top:8px; padding: 0 4px;">*Prior week DSA included a single $2,000 conv value order at $59.64 spend, an outlier not representative of run-rate.</div>
+  </div>
+
+  <div class="three-col" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-title">PMax: 4-Week Verdict</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        Across 4 consecutive weeks the campaign spent a cumulative $1,007 with $0 tracked revenue and 0 orders. Search Impression Share stayed below 10%, Search Lost IS (rank) above 90%, with policy-limited asset groups throughout. The decision to pause is the right call. The follow-on action committed in last week's call is a clean rebuild with feed-only asset groups properly segmented by product, using strongest existing imagery, ready for a fresh go-live once the auction-rank and policy issues are no longer carried over from the existing campaign.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Branded: Negatives Working</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        Branded CPC dropped from $6.83 to $2.96, a 56.7% reduction. The negatives applied this week (tennant company, tennant company products, tennant health, tennant institute) removed competitor-leakage queries from the auction. ROAS recovered to 2.67x. Worth continuing to monitor "dr tennant supplements" and "dr tennant restore" as they remain the highest-spend exact-match terms. Both are accurately on-brand and converting at acceptable rates.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">DSA: Reliable Workhorse</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        Last week's outlier removed, DSA is showing what it does best: small spend, broad-match query capture, strong economics. $46.20 spend, $282.49 conv value, 6.11x ROAS, 1.28 conversions. The 38.46% CTR is among the strongest in the account. Worth small budget headroom (raise from $7.50/day to $10/day) once branded is stable, but no urgency. DSA functions correctly at its current scale.
+      </div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <strong>Mobile is now 60% of Google paid clicks at $1.36 average CPC vs $2.04 on Desktop:</strong> 174 mobile clicks at $236.17 spend, 73 desktop clicks at $149.29 spend. Conversion rate is materially better on mobile too: 2.64 conversions on mobile vs 0.28 on desktop. This mirrors the mobile-heavy demographic of the 45-65+ Tennant ICP. The age distribution data confirms 55-64 (29.87% of impressions) and 65+ (25.32%) as the dominant audiences, exactly aligned to the brand's actual customer base.
+  </div>
+  <div class="slide-num">6 / 16</div>
+</div>
+
+<!-- SLIDE 7: SHOPIFY WEEKLY -->
+<div class="slide" id="slide-7">
+  <div class="slide-header">
+    <h1>Shopify <span>Weekly Performance</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 vs Apr 12 to Apr 18, 2026</div>
+      <div class="brand">tennantproducts.com</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Gross Sales</div>
+      <div class="value green">$44,478.80</div>
+      <div class="change up">+17.3% WoW</div>
+      <div class="prev">Prior: $37,919.95</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Total Orders</div>
+      <div class="value green">183</div>
+      <div class="change up">+10.9% WoW</div>
+      <div class="prev">Prior: 165 orders</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Avg Order Value</div>
+      <div class="value green">$242.58</div>
+      <div class="change up">+7.9% WoW</div>
+      <div class="prev">Prior: $224.83 | 5-week high</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">New Customers</div>
+      <div class="value orange">23</div>
+      <div class="change down">-28.1% vs 32</div>
+      <div class="prev">Returning: 154 (87.0% of total)</div>
+    </div>
+  </div>
+
+  <div class="section-label">Daily Shopify Performance</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Gross Sales</th>
+          <th>Gross Sales (Prior)</th>
+          <th>WoW</th>
+          <th>Orders</th>
+          <th>AOV</th>
+          <th>New Customers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Sun Apr 19</td><td class="green">$6,099.00</td><td style="color:var(--text-muted)">$2,515.35</td><td class="green">+142.5%</td><td>27</td><td>$202.26</td><td>6</td></tr>
+        <tr><td class="bold">Mon Apr 20</td><td class="green">$7,271.45</td><td style="color:var(--text-muted)">$5,124.95</td><td class="green">+41.9%</td><td>22</td><td>$249.93</td><td>2</td></tr>
+        <tr><td class="bold">Tue Apr 21</td><td>$7,089.30</td><td style="color:var(--text-muted)">$7,267.00</td><td class="red">-2.4%</td><td>30</td><td>$195.62</td><td>1</td></tr>
+        <tr><td class="bold">Wed Apr 22</td><td class="green bold">$9,375.70</td><td style="color:var(--text-muted)">$5,798.95</td><td class="green">+61.7%</td><td class="green bold">40</td><td>$189.33</td><td>4</td></tr>
+        <tr><td class="bold">Thu Apr 23</td><td class="green">$8,025.85</td><td style="color:var(--text-muted)">$3,165.30</td><td class="green">+153.6%</td><td>28</td><td class="green">$231.81</td><td>5</td></tr>
+        <tr><td class="bold">Fri Apr 24</td><td>$2,964.00</td><td style="color:var(--text-muted)">$9,515.00</td><td class="red">-68.8%</td><td>18</td><td>$157.44</td><td>3</td></tr>
+        <tr><td class="bold">Sat Apr 25</td><td>$3,653.50</td><td style="color:var(--text-muted)">$4,533.40</td><td class="red">-19.4%</td><td>18</td><td>$186.87</td><td>2</td></tr>
+        <tr class="total-row"><td>Total</td><td>$44,478.80</td><td>$37,919.95</td><td>+17.3%</td><td>183</td><td>$242.58</td><td>23</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight-box">
+    <strong>Wednesday Apr 22 was the standout: $9,375.70 across 40 orders.</strong> Volume-led day rather than basket-led, the AOV at $189.33 was below the weekly average. This was the cleanest mid-week performance of the past 5 weeks, indicating returning customer activity strengthened materially. The Sun-Thu portion of the week ran ahead of prior week comparisons by 17-153% daily, with the Fri-Sat dip tied to the typical weekly weekend taper. The $44,479 total is the strongest Saturday-Friday weekly total in five weeks at this account.
+  </div>
+
+  <div class="warning-box">
+    <strong>Checkout-to-purchase completion rate slipped to 30.0% from 50.0% last week:</strong> 50 sessions reached checkout vs 26 the prior week, but only 15 completed vs 13 prior. Cart-to-checkout rate actually improved to 79.4% from 35.6%, so the upper funnel is healthier. The bottleneck has shifted to the payment/confirmation step. Worth a Microsoft Clarity session review on Apr 22 (the highest-volume day) to identify where the friction sits, particularly given the ABC checkout customisations went live this week.
+  </div>
+  <div class="slide-num">7 / 16</div>
+</div>
+
+<!-- SLIDE 8: PRODUCT MIX -->
+<div class="slide" id="slide-8">
+  <div class="slide-header">
+    <h1>Product Mix <span>What Drove Revenue</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 | Top Products by Gross Sales</div>
+      <div class="brand">Shopify Product Analysis</div>
+    </div>
+  </div>
+
+  <div class="section-label">Top Products This Week</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Net Items</th>
+          <th>Gross Sales</th>
+          <th>Prior Gross Sales</th>
+          <th>WoW Change</th>
+          <th>Net Sales</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Restore Professional Formula - Vanilla</td>
+          <td>54</td>
+          <td class="gold">$13,650.00</td>
+          <td style="color:var(--text-muted)">$15,574.00</td>
+          <td class="red">-12.4%</td>
+          <td>$11,232.00</td>
+        </tr>
+        <tr>
+          <td class="bold">Digestive Enzyme Formula</td>
+          <td>48</td>
+          <td>$4,550.50</td>
+          <td style="color:var(--text-muted)">$4,522.00</td>
+          <td class="green">+0.6%</td>
+          <td>$3,847.50</td>
+        </tr>
+        <tr>
+          <td class="bold">Lugol's Iodine Plus</td>
+          <td>64</td>
+          <td>$4,396.00</td>
+          <td style="color:var(--text-muted)">$4,095.00</td>
+          <td class="green">+7.4%</td>
+          <td>$3,696.70</td>
+        </tr>
+        <tr>
+          <td class="bold">Raw Materials Capsules</td>
+          <td>44</td>
+          <td class="green">$3,059.00</td>
+          <td style="color:var(--text-muted)">$1,470.00</td>
+          <td class="green">+108.1%</td>
+          <td>$2,797.20</td>
+        </tr>
+        <tr>
+          <td class="bold">Restore Veggie Formula</td>
+          <td>16</td>
+          <td>$2,845.80</td>
+          <td style="color:var(--text-muted)">$2,008.80</td>
+          <td class="green">+41.7%</td>
+          <td>$2,706.30</td>
+        </tr>
+        <tr>
+          <td class="bold">Restore Professional Formula - Veggie</td>
+          <td>11</td>
+          <td>$2,704.00</td>
+          <td style="color:var(--text-muted)">$2,782.00</td>
+          <td class="red">-2.8%</td>
+          <td>$2,106.00</td>
+        </tr>
+        <tr>
+          <td class="bold">Restore Veggie Formula - Vanilla 14 Single Packets</td>
+          <td>24</td>
+          <td class="green">$2,261.00</td>
+          <td style="color:var(--text-muted)">$570.00</td>
+          <td class="green">+296.7%</td>
+          <td>$1,999.75</td>
+        </tr>
+        <tr>
+          <td class="bold">Fungal Detox</td>
+          <td>28</td>
+          <td class="green">$2,168.40</td>
+          <td style="color:var(--text-muted)">$468.00</td>
+          <td class="green">+363.3%</td>
+          <td>$1,626.30</td>
+        </tr>
+        <tr>
+          <td class="bold">Stress and Adrenal Support</td>
+          <td>24</td>
+          <td class="green">$1,800.00</td>
+          <td style="color:var(--text-muted)">$600.00</td>
+          <td class="green">+200.0%</td>
+          <td>$1,398.75</td>
+        </tr>
+        <tr>
+          <td class="bold">Raw Materials Liquid</td>
+          <td>22</td>
+          <td>$1,496.00</td>
+          <td style="color:var(--text-muted)">$476.00</td>
+          <td class="green">+214.3%</td>
+          <td>$1,234.20</td>
+        </tr>
+        <tr>
+          <td class="bold">Brain Food Plus</td>
+          <td>9</td>
+          <td>$1,139.20</td>
+          <td style="color:var(--text-muted)">$1,216.00</td>
+          <td class="red">-6.3%</td>
+          <td>$915.20</td>
+        </tr>
+        <tr>
+          <td class="bold gold">Activated Bamboo Charcoal</td>
+          <td class="green">23</td>
+          <td class="green">$1,010.50</td>
+          <td style="color:var(--text-muted)">$258.00</td>
+          <td class="green">+291.7%</td>
+          <td>$849.25</td>
+        </tr>
+        <tr>
+          <td class="bold">Lugol's Iodine Liquid</td>
+          <td>26</td>
+          <td>$899.50</td>
+          <td style="color:var(--text-muted)">$1,255.50</td>
+          <td class="red">-28.4%</td>
+          <td>$723.45</td>
+        </tr>
+        <tr>
+          <td class="bold">GI 60 Probiotic Formula</td>
+          <td>13</td>
+          <td>$715.00</td>
+          <td style="color:var(--text-muted)">$710.00</td>
+          <td class="neutral">+0.7%</td>
+          <td>$585.75</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Activated Bamboo Charcoal jumped from $258 to $1,010.50 in gross sales (+292%):</strong> 23 net units sold this week against 6 the prior week. This is the new product launch starting to gain organic traction even before paid spend at meaningful scale begins to land properly attributed. Combined with the $1.5K+ in spend earmarked for the campaign this week, the demand signal is real. Once the LPV attribution issues are stabilised and the campaign exits its early-learning window, ABC has a clear path to becoming the next paid-driven SKU after DE.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Three breakout SKUs this week beyond the core Restore line:</strong> Raw Materials Capsules at +108%, Fungal Detox at +363%, and Stress and Adrenal Support at +200%. These are all customer-led repurchase behaviours rather than paid-driven volume. Restore Vanilla as the anchor delivered $13,650, still 30.7% of weekly mix. Digestive Enzymes held steady at $4,550 even with the DE Meta campaign not running this week, indicating organic search and email continue to support the category. GI 60 stable at $715 awaiting paid relaunch.
+    </div>
+  </div>
+  <div class="slide-num">8 / 16</div>
+</div>
+
+<!-- SLIDE 9: CAC LTV -->
+<div class="slide" id="slide-9">
+  <div class="slide-header">
+    <h1>CAC : LTV <span>Unit Economics</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026</div>
+      <div class="brand">Customer Economics</div>
+    </div>
+  </div>
+
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">New Customers</div>
+      <div class="value orange">23</div>
+      <div class="change down">-28.1% vs 32 prior</div>
+      <div class="prev">Target: 200/month</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Blended CAC</div>
+      <div class="value orange">$49.50</div>
+      <div class="change down">+32.7% WoW</div>
+      <div class="prev">Prior: $37.31</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Customer LTV</div>
+      <div class="value gold">$475</div>
+      <div class="change neutral">Account benchmark</div>
+      <div class="prev">12-month LTV basis</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">LTV:CAC Ratio</div>
+      <div class="value green">9.6x</div>
+      <div class="change down">vs 12.7x prior</div>
+      <div class="prev">Healthy threshold: 3x+</div>
+    </div>
+  </div>
+
+  <div class="section-label">New vs Returning Customers</div>
+  <div class="two-col" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-title">Customer Split This Week</div>
+      <div class="progress-bar-wrap" style="margin-top:8px;">
+        <div class="progress-label">Returning (87.0%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:87.0%; background: var(--accent-blue);"></div></div>
+        <div class="progress-val">154</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">New (13.0%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:13.0%; background: var(--accent-gold);"></div></div>
+        <div class="progress-val">23</div>
+      </div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-top:12px;">
+        New customer share dropped to 13.0% of total customers from 19.9% the prior week. Returning customer count rose to 154 from 129, a 19.4% lift, which is the engine behind this week's $44.5K Shopify gross. The story is clear: the existing customer base is engaged and repurchasing. New customer acquisition is the volume gap to close, which makes the ABC campaign unblock the most strategically important action this coming week.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">CAC Trend (8-Week View)</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:2.0; margin-top:8px;">
+        Mar 8-14: $48.77 (37 new customers)<br>
+        Mar 15-21: $61.44 (28 new customers)<br>
+        Mar 22-28: $73.35 (26 new customers)<br>
+        Mar 29-Apr 4: $51.90 (30 new customers)<br>
+        Apr 5-11: $49.05 (44 new customers)<br>
+        Apr 12-18: $37.31 (32 new customers)<br>
+        <span style="color:var(--accent-orange); font-weight:600;">Apr 19-25: $49.50 (23 new customers)</span><br><br>
+        $49.50 is back in the mid-range of the 8-week view. The improvement last week was real but partly driven by lower spend; this week's reading is closer to the average. The ratio is still 9.6x LTV:CAC which is well above the 3x healthy threshold and reflects strong customer economics. The lever now is volume of new customer acquisition, not unit cost per new customer.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Daily New Customer Acquisition</div>
+  <div class="card">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>New Customers</th>
+          <th>Total Sales</th>
+          <th>Avg First Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Sun Apr 19</td><td class="green bold">6</td><td class="green">$895.75</td><td>$149.29</td></tr>
+        <tr><td class="bold">Mon Apr 20</td><td>2</td><td>$312.30</td><td>$156.15</td></tr>
+        <tr><td class="bold">Tue Apr 21</td><td>1</td><td>$89.76</td><td>$89.76</td></tr>
+        <tr><td class="bold">Wed Apr 22</td><td>4</td><td>$642.08</td><td>$160.52</td></tr>
+        <tr><td class="bold">Thu Apr 23</td><td class="green">5</td><td class="green">$737.59</td><td>$147.52</td></tr>
+        <tr><td class="bold">Fri Apr 24</td><td>3</td><td>$279.60</td><td>$93.20</td></tr>
+        <tr><td class="bold">Sat Apr 25</td><td>2</td><td>$395.14</td><td>$197.57</td></tr>
+        <tr class="total-row"><td>Total</td><td>23</td><td>$3,352.22</td><td>$145.75</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="slide-num">9 / 16</div>
+</div>
+
+<!-- SLIDE 10: COHORT AND RETENTION -->
+<div class="slide" id="slide-10">
+  <div class="slide-header">
+    <h1>Customer Retention <span>Cohort Analysis</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 2025 - Mar 2026 | 12-Month View</div>
+      <div class="brand">Shopify Retention Data</div>
+    </div>
+  </div>
+
+  <div class="section-label">Cohort Retention by Month Cohort</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Cohort Month</th>
+          <th>Cohort Size</th>
+          <th>Month 1</th>
+          <th>Month 2</th>
+          <th>Month 3</th>
+          <th>Month 4</th>
+          <th>Month 5</th>
+          <th>Month 6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Apr 2025</td><td>149</td><td>9.40%</td><td class="gold">10.74%</td><td>8.05%</td><td>7.38%</td><td>3.36%</td><td>6.04%</td></tr>
+        <tr><td class="bold">May 2025</td><td>187</td><td class="gold">17.11%</td><td>12.83%</td><td>6.95%</td><td>10.16%</td><td>8.02%</td><td>3.74%</td></tr>
+        <tr><td class="bold">Jun 2025</td><td>159</td><td class="gold">13.84%</td><td>11.32%</td><td>9.43%</td><td>13.21%</td><td>9.43%</td><td>6.92%</td></tr>
+        <tr><td class="bold">Jul 2025</td><td>186</td><td>11.83%</td><td>8.06%</td><td>8.60%</td><td>5.91%</td><td>8.60%</td><td>4.84%</td></tr>
+        <tr><td class="bold">Aug 2025</td><td>148</td><td class="gold">14.86%</td><td>12.16%</td><td>8.11%</td><td>6.76%</td><td>7.43%</td><td>11.49%</td></tr>
+        <tr><td class="bold">Sep 2025</td><td>136</td><td class="gold">15.44%</td><td>9.56%</td><td>12.50%</td><td>8.09%</td><td>7.35%</td><td>5.88%</td></tr>
+        <tr><td class="bold">Oct 2025</td><td>153</td><td>9.80%</td><td>8.50%</td><td>8.50%</td><td>6.54%</td><td>5.88%</td><td></td></tr>
+        <tr><td class="bold">Nov 2025</td><td>150</td><td>11.33%</td><td>12.00%</td><td>9.33%</td><td class="gold">13.33%</td><td></td><td></td></tr>
+        <tr><td class="bold">Dec 2025</td><td>138</td><td class="gold">15.22%</td><td>7.25%</td><td>7.25%</td><td></td><td></td><td></td></tr>
+        <tr><td class="bold">Jan 2026</td><td>142</td><td>11.97%</td><td class="gold">12.68%</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="bold">Feb 2026</td><td>120</td><td>8.33%</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="bold">Mar 2026</td><td>147</td><td>2.72%</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="two-col">
+    <div class="insight-box" style="margin:0;">
+      <strong>The May, Jun, Aug, Sep, and Dec 2025 cohorts cluster at 13-17% month-1 repeat rates:</strong> This is the band the typical Tennant cohort lands in. The Mar 2026 cohort at 2.72% month-1 looks low at first glance, but most of those customers are still inside their first 30 days and the rate will fill in over the next reporting cycle. The Jan 2026 cohort at 11.97% month-1 and 12.68% month-2 is tracking as one of the strongest recent cohorts, evidence that recent acquisition quality holds up.
+    </div>
+    <div class="gold-box" style="margin:0;">
+      <strong>The retention math reinforces the $475 LTV assumption as conservative:</strong> Across the 12 monthly cohorts, the average customer compounds 6 month-1 to month-6 repeat rates of approximately 8-15% per period. A typical $165 first-order Tennant buyer placing a 12-month basket spend pattern of 2-3 reorders averages $400-500 lifetime spend. The $475 LTV is reasonable. The implication is that this week's $49.50 CAC at a 9.6x LTV:CAC ratio is well within healthy acquisition economics, and the focus should remain on volume rather than further CAC compression.
+    </div>
+  </div>
+  <div class="slide-num">10 / 16</div>
+</div>
+
+<!-- SLIDE 11: META CREATIVE DEEP DIVE -->
+<div class="slide" id="slide-11">
+  <div class="slide-header">
+    <h1>Meta Creative <span>Top Performing Ads This Week</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 19 to Apr 25, 2026 | Ad-Level Performance</div>
+      <div class="brand">Meta Creative Analysis</div>
+    </div>
+  </div>
+
+  <div class="section-label">SS - Omnipresent Engagement Advt+ Ad-Level</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ad Creative</th>
+          <th>Spend</th>
+          <th>Purchases</th>
+          <th>Conv Value</th>
+          <th>ROAS</th>
+          <th>Impressions</th>
+          <th>Clicks</th>
+          <th>CTR</th>
+          <th>LPV Rate</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Tess Sprague Brain Food Testimonial</td>
+          <td>$89.65</td>
+          <td class="green bold">4</td>
+          <td class="green">$486.00</td>
+          <td class="green">5.42x</td>
+          <td>3,287</td>
+          <td>39</td>
+          <td>1.19%</td>
+          <td>20.5%</td>
+          <td><span class="badge badge-green">Top Performer</span></td>
+        </tr>
+        <tr>
+          <td class="bold">Dr. Billy Ledbetter Authority Copy</td>
+          <td>$160.09</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>6,151</td>
+          <td>94</td>
+          <td>1.53%</td>
+          <td>9.6%</td>
+          <td><span class="badge badge-orange">Engagement, no conv</span></td>
+        </tr>
+        <tr>
+          <td class="bold">Don't Trust Labels Static (Value Ad)</td>
+          <td>$64.16</td>
+          <td>1</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>3,363</td>
+          <td>45</td>
+          <td>1.34%</td>
+          <td>6.7%</td>
+          <td><span class="badge badge-blue">Conv unattributed</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">Note: ad-level export captured 3 visible creatives within this campaign. Retargeting and ABC ad-level data sit in separate exports and are commented on in body copy below.</div>
+  </div>
+
+  <div class="two-col" style="margin-bottom:20px;">
+    <div class="success-box" style="margin:0;">
+      <strong>Tess Sprague Brain Food Testimonial is this week's standout creative:</strong> 4 purchases, $486 conv value, 5.42x ROAS on $89.65 spend. The single creative drove the majority of value across the entire account this week. The ad's hook is testimonial-led with the patient voice doing the lifting on credibility. Worth carrying this format into a static and a UGC variation to extend reach without saturating the original. This is the type of creative that should sit in evergreen rotation at increased budget.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Dr. Billy Ledbetter Authority Copy absorbed $160 with no purchases attributed:</strong> Strong CTR at 1.53%, 94 link clicks, but only 9 LPVs (9.6% rate) and zero converted purchases. The drop happens at the click-to-LPV step, identical to the pattern flagged on the ABC campaign. This is the same Meta in-app browser to landing page handoff issue we resolved across the weekend. The ad creative itself is engaging the audience, the destination URL is the suspect. Recommend reviewing the destination URL on this ad against the same www. plus no openExternalBrowser pattern applied to ABC.
+    </div>
+  </div>
+
+  <div class="section-label">Retargeting and ABC Creative Read</div>
+  <div class="three-col">
+    <div class="card">
+      <div class="card-title">SS - Retargeting</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        $174.74 spent, 2 purchases, $123.74 conv value, 0.71x ROAS. Softer week vs prior 2.27x. The Gut Health Copy ad that delivered 7.13x last week did not repeat at the same level. Recommend rotating in a new variant of Gut Health Copy with a refreshed hook, plus continuing Dr Billy Ledbetter and Brain Copy in active rotation as they each delivered conversions in prior weeks.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">ABC | Detoxers Cold (24-25 Apr)</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        Within the 48-hour launch window, Anatomy Hook (Ad 1.4) was the early winner per single-day Apr 28 data shared post-period: lowest CPC, all 5 ATCs and all 10 ICs that day. Sigrid Testimonial (1.3) and Four Benefits Beach (1.2) followed. The campaign-level read for the launch period is masked by the LPV attribution issue, so creative-level conclusions are best deferred until the post-fix data settles.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Creative Refresh Pipeline</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        Tess Sprague variant brief priority. Hangover Blues v2 image with Tennant bottle replacing painkiller is in the vault, ready to deploy on the ABC Morning After ad set when that goes live next week. Brain Copy second-placement remains in the rotation, watching to see if the prior week's recovery holds. Any new ABC creative will reuse the proven 3-second hook structure from Tess Sprague.
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">11 / 16</div>
+</div>
+
+<!-- SLIDE 12: BENCHMARK TABLE -->
+<div class="slide" id="slide-12">
+  <div class="slide-header">
+    <h1>Weekly <span>Benchmark Table</span></h1>
+    <div class="slide-meta">
+      <div class="period">Mar - Apr 2026 Weekly Trend</div>
+      <div class="brand">Tennant Products</div>
+    </div>
+  </div>
+
+  <div class="section-label">Blended Performance by Week</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="benchmark-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Mar 22-28</th>
+          <th>Mar 29-Apr 4</th>
+          <th>Apr 5-11</th>
+          <th>Apr 12-18</th>
+          <th class="highlight-col">Apr 19-25</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Total Ad Spend</td>
+          <td>$1,907</td>
+          <td>$1,557</td>
+          <td>$2,158</td>
+          <td>$1,194</td>
+          <td class="highlight-col">$1,138</td>
+          <td style="font-size:10px; color:var(--text-muted);">-4.7% WoW</td>
+        </tr>
+        <tr>
+          <td>Meta Spend</td>
+          <td>$1,007</td>
+          <td>$1,022</td>
+          <td>$1,357</td>
+          <td>$635</td>
+          <td class="highlight-col">$746</td>
+          <td style="font-size:10px; color:var(--accent-green);">+17.6% WoW</td>
+        </tr>
+        <tr>
+          <td>Google Spend</td>
+          <td>$900</td>
+          <td>$535</td>
+          <td>$801</td>
+          <td>$559</td>
+          <td class="highlight-col">$392</td>
+          <td style="font-size:10px; color:var(--accent-green);">PMax pause savings</td>
+        </tr>
+        <tr>
+          <td>Meta ROAS</td>
+          <td>1.68x</td>
+          <td>2.39x</td>
+          <td class="red" style="color:var(--accent-red) !important;">0.83x</td>
+          <td>1.25x</td>
+          <td class="highlight-col" style="color:var(--accent-orange) !important;">0.92x</td>
+          <td style="font-size:10px; color:var(--accent-orange);">8 purchases vs 3 prior</td>
+        </tr>
+        <tr>
+          <td>Google ROAS</td>
+          <td>4.31x</td>
+          <td>1.16x</td>
+          <td class="red" style="color:var(--accent-red) !important;">0.58x</td>
+          <td>4.04x*</td>
+          <td class="highlight-col" style="color:var(--accent-gold) !important;">1.71x</td>
+          <td style="font-size:10px; color:var(--accent-green);">Branded recovered</td>
+        </tr>
+        <tr>
+          <td>Blended ROAS</td>
+          <td>2.67x</td>
+          <td>1.86x</td>
+          <td class="red" style="color:var(--accent-red) !important;">0.74x</td>
+          <td>2.56x*</td>
+          <td class="highlight-col" style="color:var(--accent-gold) !important;">1.19x</td>
+          <td style="font-size:10px; color:var(--accent-green);">Run-rate cleaner</td>
+        </tr>
+        <tr>
+          <td>New Customers</td>
+          <td>26</td>
+          <td>30</td>
+          <td class="green" style="color:var(--accent-green) !important;">44</td>
+          <td>32</td>
+          <td class="highlight-col" style="color:var(--accent-orange) !important;">23</td>
+          <td style="font-size:10px; color:var(--accent-orange);">-28.1% WoW</td>
+        </tr>
+        <tr>
+          <td>Blended CAC</td>
+          <td>$73.35</td>
+          <td>$51.90</td>
+          <td>$49.05</td>
+          <td class="green" style="color:var(--accent-green) !important;">$37.31</td>
+          <td class="highlight-col" style="color:var(--accent-orange) !important;">$49.50</td>
+          <td style="font-size:10px; color:var(--accent-orange);">+$12.19</td>
+        </tr>
+        <tr>
+          <td>LTV:CAC Ratio</td>
+          <td>6.5x</td>
+          <td>9.2x</td>
+          <td>9.7x</td>
+          <td>12.7x</td>
+          <td class="highlight-col" style="color:var(--accent-green) !important;">9.6x</td>
+          <td style="font-size:10px; color:var(--accent-green);">Still healthy</td>
+        </tr>
+        <tr>
+          <td>Shopify Gross Sales</td>
+          <td>$42,947</td>
+          <td>$41,071</td>
+          <td class="green" style="color:var(--accent-green) !important;">$50,772</td>
+          <td>$37,920</td>
+          <td class="highlight-col" style="color:var(--accent-green) !important;">$44,479</td>
+          <td style="font-size:10px; color:var(--accent-green);">+17.3% WoW</td>
+        </tr>
+        <tr>
+          <td>Shopify Orders</td>
+          <td>196</td>
+          <td>172</td>
+          <td class="green" style="color:var(--accent-green) !important;">263</td>
+          <td>165</td>
+          <td class="highlight-col" style="color:var(--accent-green) !important;">183</td>
+          <td style="font-size:10px; color:var(--accent-green);">+10.9% WoW</td>
+        </tr>
+        <tr>
+          <td>Avg Order Value</td>
+          <td>$219</td>
+          <td>$239</td>
+          <td>$193</td>
+          <td>$230</td>
+          <td class="highlight-col" style="color:var(--accent-green) !important;">$242.58</td>
+          <td style="font-size:10px; color:var(--accent-green);">5-week high</td>
+        </tr>
+        <tr>
+          <td>Returning Customers</td>
+          <td>n/a</td>
+          <td>n/a</td>
+          <td>219</td>
+          <td>129</td>
+          <td class="highlight-col" style="color:var(--accent-green) !important;">154</td>
+          <td style="font-size:10px; color:var(--accent-green);">+19.4% WoW</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px; color:var(--text-muted); margin-top:8px; padding: 0 4px;">*Apr 12-18 figures inflated by single $2,000 DSA conversion outlier. Run-rate Blended ROAS ex-outlier was 0.88x.</div>
+  </div>
+
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Three indicators improved this week against trend:</strong> AOV at $242.58 is the strongest weekly figure in the 5-week view. Shopify gross at $44,479 recovered from last week's softer $37,920. Returning customer count rose to 154 from 129. The customer base is engaged, active, and spending more per order. The economic engine is working at the customer side.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Three indicators that need attention:</strong> New customer acquisition at 23 is the lowest of the 5-week view. Blended CAC moved up to $49.50. Meta ROAS at 0.92x sits below the 1.5-2x band the account targets. The common thread is volume of acquired new customers, which is the metric to focus the coming week's actions on.
+    </div>
+  </div>
+  <div class="slide-num">12 / 16</div>
+</div>
+
+<!-- SLIDE 13: ACTION ITEMS -->
+<div class="slide" id="slide-13">
+  <div class="slide-header">
+    <h1>Action Items <span>Ranked by Priority</span></h1>
+    <div class="slide-meta">
+      <div class="period">Week of Apr 26, 2026</div>
+      <div class="brand">Heath Media Recommendations</div>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-1">1</div>
+    <div class="action-content">
+      <h4>Stabilise ABC campaign LPV recovery and confirm 50-65%+ rate by mid-week</h4>
+      <p>The www. URL change and openExternalBrowser=1 removal went live Mon Apr 27. Single-day Apr 28 data showed LPV rate moving from 11% to 14.3%, with cost per ATC down 78%. The next 48-72 hours should show LPV rate climbing into the 50-65%+ range as Meta's auction settles and the in-app browser handoff stabilises. Priority verification step: confirm the mobile-to-PDP redirect issue is fully resolved at the Auware landing page tool layer (not Cloudflare, not Shopify). If LPV rate is still below 30% by Apr 30, escalate to a parallel duplicate ad set as the diagnostic split-test originally proposed.</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-1">2</div>
+    <div class="action-content">
+      <h4>Confirm DE campaign status and reactivation timeline</h4>
+      <p>The Digestive Enzymes Meta CBO is not present in this week's campaign delivery. Shopify DE sales held at $4,550 (+0.6% WoW) without paid support which is an indication of organic/email demand strength but not a substitute for the paid acquisition layer. Confirm with Janice and John whether DE was paused intentionally during the ABC launch sprint, or whether budget ran out. If intentional, propose a reactivation plan once ABC stabilises. If unintentional, restore the campaign immediately. The DE LP still has the openExternalBrowser parameter applied; it should be reviewed for the same www. and parameter removal pattern applied to ABC.</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-1">3</div>
+    <div class="action-content">
+      <h4>Apply www. and remove openExternalBrowser=1 across all Meta destination URLs</h4>
+      <p>The ABC fix that took LPV rate from 11% to 14.3% on day 1 should be standard practice across the account. Audit Dr. Billy Ledbetter Authority destination URL (this week absorbed $160 with 0 conversions and a 9.6% LPV rate, the same shape as the ABC pre-fix issue). Any DE landing page URLs slated for reactivation. Any Retargeting ads pointing at site URLs. Run as a single audit pass and apply where applicable. This is ten minutes of work and protects against the 80%+ click-to-LPV drop pattern showing up again in another campaign.</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-2">4</div>
+    <div class="action-content">
+      <h4>PMax rebuild: feed-only asset group with clean policy slate</h4>
+      <p>PMax now paused, $1,007 cumulative spend across 4 weeks at $0 revenue is the closing position. The rebuild plan committed in last week's call: clean feed-only asset group properly segmented by product, using strongest existing imagery, fresh creative variants outside the policy-flagged inventory. Target launch the following week (week of May 4) once the existing PMax has been fully archived and the new campaign has a clean auction-rank slate. Initial budget $50/day to start; do not exceed without 7-day learning data showing positive ROAS trajectory.</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-2">5</div>
+    <div class="action-content">
+      <h4>Brief creative team on Tess Sprague variant ads for Meta evergreen</h4>
+      <p>Tess Sprague Brain Food Testimonial delivered 5.42x ROAS on $89.65 spend this week, 4 purchases. The format is testimonial-led, female speaker, brand-product alignment. Brief Royd and Armend on producing 2-3 variations: a static carryover with the same hook framing, a UGC-style 30s variant featuring a different testimonial customer, and a 9:16 vertical adaptation to extend reach to Reels and Stories placements. Budget allocated only when the variant is delivered, not now. Goal: keep the high-ROAS pattern fresh in the account without saturating the original creative.</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-2">6</div>
+    <div class="action-content">
+      <h4>Microsoft Clarity session review on Wed Apr 22 checkout traffic</h4>
+      <p>Checkout-to-purchase rate slipped to 30.0% from 50.0%, with 50 sessions reaching checkout but only 15 completing. Wed Apr 22 was the highest-volume Shopify day of the week (40 orders) which makes it the cleanest day to review for friction patterns. The ABC checkout customisations went live this week with the dual discount code (LP20ABC + LPFREESHIP) firing automatically. Verify the discount messaging reads cleanly at checkout, no JavaScript errors, no interstitial popups blocking the payment step. Avi can run this in 30 minutes with Clarity heatmap and session replay.</p>
+    </div>
+  </div>
+
+  <div class="action-item">
+    <div class="action-priority priority-3">7</div>
+    <div class="action-content">
+      <h4>GI 60 Probiotic relaunch: brief creative and finalise launch window</h4>
+      <p>GI 60 Shopify sales held flat at $715 this week, baseline demand confirmed without paid support. The product is positioned for the next paid relaunch in the pipeline. Recommend launching after ABC stabilises and before any DE reactivation, to avoid splitting learning budgets across multiple new ad sets simultaneously. Creative brief should adapt the Tess Sprague testimonial format to GI 60 with a probiotic-specific testimonial. Target launch week of May 11. Starting budget $75/day inside a dedicated CBO. Historical Probiotic baseline: 4.11x ROAS, $73 CPP.</p>
+    </div>
+  </div>
+  <div class="slide-num">13 / 16</div>
+</div>
+
+<!-- SLIDE 14: DATA TRANSPARENCY -->
+<div class="slide" id="slide-14">
+  <div class="slide-header">
+    <h1>Data Transparency <span>and Context for Client</span></h1>
+    <div class="slide-meta">
+      <div class="period">Key Numbers Framed Clearly</div>
+      <div class="brand">Reporting Notes</div>
+    </div>
+  </div>
+
+  <div class="section-label">Reading the 1.19x Blended ROAS</div>
+  <div class="gold-box">
+    <strong>The 1.19x blended ROAS is a more honest read than last week's 2.56x.</strong> The previous week's headline was inflated by a single $2,000 DSA order that contributed roughly 65% of total conv value. Stripping that outlier out of the prior week, run-rate was 0.88x. This week's 1.19x has no outlier. Comparing run-rate to run-rate: 0.88x vs 1.19x is a 35% improvement. The economics of the account are quietly strengthening week over week.
+  </div>
+
+  <div class="section-label">Meta Volume vs Value</div>
+  <div class="success-box">
+    <strong>Meta delivered 8 purchases vs 3 the week prior, an 167% increase in transaction volume.</strong> Meta conv value was $688 vs $795 last week, slightly down. The implication: more transactions at lower average basket. This is consistent with the introduction of the ABC campaign, which has a $43 product price point pulling AOV down compared to the higher-AOV Restore-led purchases. As ABC matures and the campaign exits early-learning, expect Meta conv value to climb back toward the $800-1,000 weekly range while purchase count holds at current levels.
+  </div>
+
+  <div class="section-label">PMax Decision and Branded Recovery on Google</div>
+  <div class="insight-box">
+    <strong>The two structural Google issues from prior weeks are now resolved or in-flight.</strong> PMax: paused after 4 consecutive weeks at $0 revenue. Branded: negative keywords applied (tennant company, tennant institute, related), CPC dropped 56.7% from $6.83 to $2.96, ROAS recovered to 2.67x. The DSA outlier from last week is now properly contextualised; this week's 6.11x ROAS on the actual run rate is a sustainable performance signal. The Google account is now in a cleaner operating state than at any point in the past 4 weeks.
+  </div>
+
+  <div class="section-label">ABC Launch Honest Read</div>
+  <div class="warning-box">
+    <strong>The ABC launch ran into three separate landing page and attribution issues over its first 96 hours.</strong> URL routing 404 (LP tool config error, fixed Apr 26). Mobile-to-PDP redirect (Auware redirect chain combined with Facebook in-app browser, fixed Apr 28). LPV attribution suppression from openExternalBrowser parameter combined with naked-domain to www redirect (fixed Apr 28). All three diagnosed and fixed across the weekend with extensive Slack collaboration between Heath Media and the Tennant team. None were caused by the ad layer; all sat in the landing page infrastructure. The single-day Apr 28 data shows the fixes are working with cost per ATC down 78% and LPV rate climbing. This week's ABC numbers should be read as launch-window numbers, not steady-state.
+  </div>
+
+  <div class="section-label">Customer Economics Strong, Volume Soft</div>
+  <div class="success-box">
+    <strong>The customer economics signals are healthy: AOV at $242.58 (5-week high), Returning customer count 154 (up 19.4%), LTV:CAC at 9.6x (well above 3x healthy threshold).</strong> The single soft metric is new customer acquisition at 23, the lowest of the 5-week view. The fix for new customer volume is operational: ABC campaign stabilising, DE clarification, Tess Sprague variants in evergreen rotation. None require cost compression or strategic reset; all require execution velocity over the next 7-14 days.
+  </div>
+  <div class="slide-num">14 / 16</div>
+</div>
+
+<!-- SLIDE 15: FORWARD OUTLOOK -->
+<div class="slide" id="slide-15">
+  <div class="slide-header">
+    <h1>Forward Outlook <span>Next 14 Days</span></h1>
+    <div class="slide-meta">
+      <div class="period">Apr 26 to May 9, 2026</div>
+      <div class="brand">Strategic View</div>
+    </div>
+  </div>
+
+  <div class="section-label">Key Milestones and Expectations</div>
+  <div class="three-col" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-title">This Week: ABC Stabilisation</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        The two days post-fix data (Apr 28 onward) is the leading indicator. Target: LPV rate climbing to 50-65%+ by May 1. ATC cost per event sub-$25. Cost per IC sub-$13. Purchase volume reading cleanly through the 7-day click attribution window by May 3. If those marks hit, ABC is delivering as designed and budget can be incrementally raised toward $200/day. If they don't, the fallback is a duplicate ad set with a wholly different LP path to isolate any residual attribution drag.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Week 2: PMax Rebuild Live</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        PMax 2.0 build week of May 4. Feed-only asset group, properly segmented by product, strongest existing imagery, fresh creative outside policy-flagged inventory. Target $50/day initial spend; ramp only after 7-day data shows ROAS trajectory above 1.5x. Goal is to reclaim the prospecting layer that PMax was supposed to fill but never did. If ROAS doesn't materialise within 14 days at the $50/day level, the budget redeploys to a manual-bid Shopping campaign instead.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Week 2-3: GI 60 Brief and Launch</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:1.7; margin-top:4px;">
+        GI 60 Probiotic creative brief lands week of May 4. Tess Sprague format adapted for GI 60. Target launch week of May 11, after ABC has settled and before any DE reactivation. Starting budget $75/day in a dedicated CBO. Historical baseline 4.11x ROAS suggests the product can carry its weight if the creative and offer mechanics are right. Lugol's Iodine and Brain Food Plus remain in the planning pipeline for late May / early June.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Monthly New Customer Acquisition Progress</div>
+  <div class="card" style="margin-bottom:16px;">
+    <div class="progress-bar-wrap" style="margin-top:8px;">
+      <div class="progress-label">April new customers (full month projected)</div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:64%; background: var(--accent-orange);"></div></div>
+      <div class="progress-val">128 / 200</div>
+    </div>
+    <div style="font-size:12px; color:var(--text-secondary); margin-top:8px;">
+      April cumulative new customers through Apr 29: 128 against the 200/month target, tracking 64% of goal. May becomes the first month where the 200 target is realistically reachable, contingent on three conditions: (1) ABC campaign at stable LPV rate driving consistent new customer volume, (2) DE campaign reactivated and contributing, (3) Tess Sprague variant creative live across multiple Meta ad sets. With these three in place at appropriate budget, 180-220 new customers in May is achievable at CAC in the $40-50 range.
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="insight-box" style="margin:0;">
+      <strong>The May path to 200 new customers per month is now structurally clearer than it was 14 days ago:</strong> ABC has product-market fit signal (Shopify sales +292% week over week). Branded is healthier on Google. PMax dead spend is removed. Tess Sprague is the proof point that Meta creative can deliver 5x+ ROAS at scale when the format is right. The ingredients are present. Execution velocity in the next 14 days is what determines May's outcome.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>The two risks to monitor:</strong> If ABC LPV rate doesn't recover into the 50%+ band by May 1, the launch window pushes back another week and the May new customer pace tightens. If Branded competitor activity returns with higher CPCs (the negatives are reactive, not preventive), Branded ROAS can compress again. Both are operational issues with known fixes. Both worth watching daily, not weekly.
+    </div>
+  </div>
+  <div class="slide-num">15 / 16</div>
+</div>
+
+<!-- SLIDE 16: CLOSING -->
+<div class="slide" id="slide-closing">
+  <div style="text-align: center; max-width: 760px; margin: auto;">
+    <div class="cover-eyebrow" style="margin-bottom:24px;">Heath Media x Tennant Products</div>
+    <h1 class="cover-title" style="font-size:40px;">Questions?</h1>
+    <p class="cover-subtitle" style="margin-bottom:40px;">Weekly performance call | Apr 29, 2026</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; text-align:left; margin-bottom:16px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Blended ROAS</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:36px; font-weight:800; color:var(--accent-gold);">1.19x</div>
+        <div style="font-size:11px; color:var(--text-muted);">+0.31x vs run-rate prior</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Shopify Gross</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:36px; font-weight:800; color:var(--accent-green);">$44.5K</div>
+        <div style="font-size:11px; color:var(--text-muted);">+17.3% WoW | AOV $242.58</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">LTV:CAC Ratio</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:36px; font-weight:800; color:var(--accent-green);">9.6x</div>
+        <div style="font-size:11px; color:var(--text-muted);">CAC $49.50 | LTV $475</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; text-align:left; margin-bottom:40px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Branded ROAS</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:36px; font-weight:800; color:var(--accent-green);">2.67x</div>
+        <div style="font-size:11px; color:var(--text-muted);">CPC -56.7% | Negatives working</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">PMax Status</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:36px; font-weight:800; color:var(--accent-orange);">Paused</div>
+        <div style="font-size:11px; color:var(--text-muted);">Rebuild week of May 4</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">ABC Launch</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:36px; font-weight:800; color:var(--accent-blue);">Live</div>
+        <div style="font-size:11px; color:var(--text-muted);">Post-fix data confirms recovery</div>
+      </div>
+    </div>
+
+    <div class="exec-callout">
+      <p>The week of Apr 19-25 is the cleanest read of the account in a month. Run-rate Blended ROAS moved from 0.88x to 1.19x. PMax dead spend removed. Branded ROAS recovered to 2.67x with CPC down 56.7%. Meta delivered 8 purchases against 3 the prior week. Shopify revenue at $44,479 with AOV at a 5-week high of $242.58. ABC launched and the technical issues affecting the launch were diagnosed and fixed across the weekend, with single-day post-fix data confirming the recovery. <strong>Three priorities this week: stabilise ABC LPV rate above 50%, confirm DE campaign status and reactivation timeline, apply www. plus no openExternalBrowser fix as standard across all Meta destination URLs.</strong></p>
+    </div>
+  </div>
+  <div class="slide-num">16 / 16</div>
+</div>
+
+</body>
+</html>
