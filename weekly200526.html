@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tennant Products | WTD Performance | May 17 to May 20, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0f14;
+    --bg-secondary: #111820;
+    --bg-card: #162642;
+    --bg-card-alt: #0f1e35;
+    --accent-green: #10b981;
+    --accent-gold: #c9a84c;
+    --accent-blue: #3b82f6;
+    --accent-red: #ef4444;
+    --accent-orange: #f59e0b;
+    --accent-purple: #8b5cf6;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: rgba(255,255,255,0.08);
+    --border-gold: rgba(201,168,76,0.3);
+    --border-blue: rgba(59,130,246,0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+  .slide {
+    width: 100%;
+    min-height: 100vh;
+    padding: 48px 64px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .slide-header h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+  }
+  .slide-header h1 span { color: var(--accent-gold); }
+  .slide-meta { text-align: right; }
+  .slide-meta .period {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .slide-meta .brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-top: 2px;
+  }
+  .slide-num {
+    position: absolute;
+    bottom: 24px;
+    right: 64px;
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  #slide-1 {
+    background: linear-gradient(135deg, #0a0f14 0%, #0f1e35 50%, #162642 100%);
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+  .cover-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .cover-title span { color: var(--accent-gold); }
+  .cover-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+  .cover-kpis {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .cover-kpi {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .cover-kpi .kpi-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .cover-kpi .kpi-value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .cover-kpi .kpi-change { font-size: 11px; font-weight: 600; }
+  .cover-kpi .kpi-change.up { color: var(--accent-green); }
+  .cover-kpi .kpi-change.down { color: var(--accent-red); }
+  .cover-kpi .kpi-change.neutral { color: var(--text-muted); }
+  .cover-kpi .kpi-change.warn { color: var(--accent-orange); }
+  .exec-callout {
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.04));
+    border: 1px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .exec-callout p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .exec-callout strong { color: var(--accent-gold); font-weight: 600; }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+  .card-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+  .stats-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stats-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stats-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .stat-card .label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .stat-card .value {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-card .value.green { color: var(--accent-green); }
+  .stat-card .value.gold { color: var(--accent-gold); }
+  .stat-card .value.blue { color: var(--accent-blue); }
+  .stat-card .value.red { color: var(--accent-red); }
+  .stat-card .value.orange { color: var(--accent-orange); }
+  .stat-card .change { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .stat-card .change.up { color: var(--accent-green); }
+  .stat-card .change.down { color: var(--accent-red); }
+  .stat-card .change.warn { color: var(--accent-orange); }
+  .stat-card .change.neutral { color: var(--text-muted); }
+  .stat-card .prev { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+  .data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text-secondary);
+    vertical-align: middle;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .data-table .bold { font-weight: 600; color: var(--text-primary); }
+  .data-table .green { color: var(--accent-green); font-weight: 600; }
+  .data-table .red { color: var(--accent-red); font-weight: 600; }
+  .data-table .gold { color: var(--accent-gold); font-weight: 600; }
+  .data-table .blue { color: var(--accent-blue); font-weight: 600; }
+  .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+  .data-table .total-row td { background: rgba(201,168,76,0.05); font-weight: 600; color: var(--text-primary); border-top: 1px solid var(--border-gold); }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .badge-green { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+  .badge-red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+  .badge-gold { background: rgba(201,168,76,0.15); color: var(--accent-gold); }
+  .badge-blue { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+  .badge-orange { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+  .badge-purple { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-gold);
+  }
+  .insight-box {
+    background: rgba(59,130,246,0.06);
+    border: 1px solid var(--border-blue);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .insight-box strong { color: var(--accent-blue); }
+  .warning-box {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .warning-box strong { color: var(--accent-red); }
+  .success-box {
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .success-box strong { color: var(--accent-green); }
+  .gold-box {
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .gold-box strong { color: var(--accent-gold); }
+  .orange-box {
+    background: rgba(245,158,11,0.06);
+    border: 1px solid rgba(245,158,11,0.25);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .orange-box strong { color: var(--accent-orange); }
+  .progress-bar-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .progress-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .progress-bar-bg {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .progress-bar-fill { height: 100%; border-radius: 4px; }
+  .progress-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 60px;
+    text-align: right;
+  }
+  .action-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .action-priority {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .priority-1 { background: rgba(239,68,68,0.2); color: var(--accent-red); border: 1px solid rgba(239,68,68,0.3); }
+  .priority-2 { background: rgba(245,158,11,0.2); color: var(--accent-orange); border: 1px solid rgba(245,158,11,0.3); }
+  .priority-3 { background: rgba(59,130,246,0.2); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.3); }
+  .action-content h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .action-content p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  #slide-closing {
+    background: linear-gradient(135deg, #0a0f14 0%, #0f1e35 50%, #162642 100%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .mini-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .data-quality-flag {
+    display: inline-block;
+    background: rgba(245,158,11,0.15);
+    color: var(--accent-orange);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+  }
+  .outlier-flag {
+    display: inline-block;
+    background: rgba(239,68,68,0.15);
+    color: var(--accent-red);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" id="slide-1">
+  <div style="max-width: 1000px;">
+    <div class="cover-eyebrow">Heath Media x Tennant Products | Week-to-Date Report</div>
+    <h1 class="cover-title">WTD Performance<br><span>May 17 to May 20, 2026</span></h1>
+    <p class="cover-subtitle">Sun-Wed window (4 days, Wed partial) &nbsp;|&nbsp; Compared to prior week May 10 to May 16 + matched Sun-Wed (May 10-13)</p>
+    <div class="cover-kpis">
+      <div class="cover-kpi">
+        <div class="kpi-label">Shopify Gross WTD</div>
+        <div class="kpi-value">$20.2K</div>
+        <div class="kpi-change down">-43.9% Sun-Wed match</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Orders WTD</div>
+        <div class="kpi-value">73</div>
+        <div class="kpi-change down">-48.6% vs 142 prior</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Meta LPV Rate</div>
+        <div class="kpi-value" style="color: var(--accent-green);">74.3%</div>
+        <div class="kpi-change up">vs 58.5% prior week</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Google ROAS</div>
+        <div class="kpi-value" style="color: var(--accent-green);">5.88x</div>
+        <div class="kpi-change up">First post-fix week</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Meta Reported ROAS</div>
+        <div class="kpi-value" style="color: var(--accent-gold);">9.33x</div>
+        <div class="kpi-change warn">4.59x ex-outlier</div>
+      </div>
+    </div>
+    <div class="exec-callout">
+      <p><strong>Executive Summary, WTD May 17 to May 20:</strong> The current week reads two ways and both readings need to sit on the table side by side. On infrastructure, the recovery story from prior week sustained and improved: Meta LPV rate moved from 58.5% to 74.3% blended, ABC LPV held at 74.4%, and Google's primary conversion action correction landed Sat-Sun May 15-16 (Charles), making WTD the first full week of clean post-fix tracking which delivered 10 conversions, $1,443.60 value and 5.88x ROAS on $245.31 of spend. SS-DSA delivered 15.62x ROAS at $16.42 spend. PMax delivered 6.95x on $116.79. On volume, the picture is materially softer: order volume down 48.6% against the matched Sun-Wed of last week (73 vs 142), gross down 43.9% ($20,184 vs $35,983), with Mon May 18 alone accounting for 55.6% of WTD gross at an outlier $461.94 AOV against this account's typical $200 range. Two outliers carry the Meta numbers: Brain Copy in Retargeting recorded 2 purchases at $1,817.25 AOV each totalling $3,634.50 (50.9% of WTD Meta value); Anatomy Hook ABC recorded 5 attributed purchases at $594.40 AOV each against only 1 ABC product unit sold in Shopify ($43 gross), a $2,929 cross-product attribution gap. Strip both outliers and the underlying Meta ROAS reads 4.59x, still healthy. Iodine Plus is the bright product spot at 92 units in 4 days (23/day pace, up from 17.3/day prior week), organic-led. ABC product pace collapsed to 0.25 units/day. Wed May 20 data is partial (5 Google clicks, $6.36 spend confirms data was pulled mid-day). Three transition-period priorities on slide 12.</p>
+    </div>
+  </div>
+  <div class="slide-num">1 / 15</div>
+</div>
+
+<!-- SLIDE 2: WTD vs MATCHED PRIOR — THE HONEST COMPARISON -->
+<div class="slide" id="slide-2">
+  <div class="slide-header">
+    <h1>WTD vs <span>Matched Sun-Wed</span></h1>
+    <div class="slide-meta">
+      <div class="period">The Cleanest Read: Day-Matched Comparison</div>
+      <div class="brand">May 17-20 vs May 10-13</div>
+    </div>
+  </div>
+  <div class="section-label">Day-by-Day, Same Weekday Match</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Weekday</th>
+          <th>WTD Date</th>
+          <th>WTD Orders</th>
+          <th>Prior Same-Day Date</th>
+          <th>Prior Orders</th>
+          <th>Δ Orders</th>
+          <th>WTD Gross</th>
+          <th>Prior Gross</th>
+          <th>Δ Gross</th>
+          <th>WTD AOV</th>
+          <th>Prior AOV</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Sun</td>
+          <td>May 17</td>
+          <td class="green bold">26</td>
+          <td style="color:var(--text-muted);">May 10</td>
+          <td>15</td>
+          <td class="green">+73.3%</td>
+          <td class="green">$4,378.70</td>
+          <td>$3,152.50</td>
+          <td class="green">+38.9%</td>
+          <td>$163.21</td>
+          <td>$200.23</td>
+        </tr>
+        <tr>
+          <td class="bold">Mon</td>
+          <td>May 18</td>
+          <td class="red">18</td>
+          <td style="color:var(--text-muted);">May 11</td>
+          <td>51</td>
+          <td class="red">-64.7%</td>
+          <td>$11,223.81</td>
+          <td>$11,399.20</td>
+          <td>-1.5%</td>
+          <td class="gold bold">$461.94 <span class="outlier-flag">outlier</span></td>
+          <td>$181.60</td>
+        </tr>
+        <tr>
+          <td class="bold">Tue</td>
+          <td>May 19</td>
+          <td class="red">19</td>
+          <td style="color:var(--text-muted);">May 12</td>
+          <td>50</td>
+          <td class="red">-62.0%</td>
+          <td class="red">$3,185.20</td>
+          <td>$12,559.35</td>
+          <td class="red">-74.6%</td>
+          <td>$158.37</td>
+          <td>$202.79</td>
+        </tr>
+        <tr>
+          <td class="bold">Wed</td>
+          <td>May 20 <span class="data-quality-flag">partial</span></td>
+          <td class="red">10</td>
+          <td style="color:var(--text-muted);">May 13</td>
+          <td>26</td>
+          <td class="red">-61.5%</td>
+          <td class="red">$1,396.40</td>
+          <td>$8,871.92</td>
+          <td class="red">-84.3%</td>
+          <td>$135.51</td>
+          <td>$254.41</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2">WTD Total</td>
+          <td>73</td>
+          <td></td>
+          <td>142</td>
+          <td>-48.6%</td>
+          <td>$20,184.11</td>
+          <td>$35,983.97</td>
+          <td>-43.9%</td>
+          <td>$276.49</td>
+          <td>$253.41</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="warning-box" style="margin:0;">
+      <strong>The headline framing flatters WTD relative to reality.</strong> Compared to a full prior week ($55,090 in 7 days vs $20,184 in 4 days), the WTD looks like a 7-day run-rate of $35K. But the matched Sun-Wed comparison strips out the weekend reset effect and reads -43.9% gross, -48.6% orders. The pattern is consistent across three of four days: Mon, Tue and Wed all down 60%+ in order volume against the same weekday last week. Sun was the standout on +73% orders, the first clean post-Consentmo cold-traffic Sunday delivering. Mon held its gross at parity only because the AOV doubled to $461.94 against the prior $181.60 baseline, indicating one or two large basket orders, not a true volume day. With Wed May 20 being a partial-day data pull (5 Google clicks at $6.36 spend confirms the data freeze), the Tue and partial-Wed read is the most concerning sustained pattern.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Three plausible drivers explain the order-volume softening, ranked by likelihood.</strong> First, the Klaviyo send cadence shifted. The prior week's Mon-Tue had $5,047 of combined discount load driving the $24K Mon+Tue peak; WTD Mon-Tue had $3,085 of discount with Mon carrying most of it ($2,909) and Tue almost dry at $176. Second, retail/wholesale-tier large-AOV orders moved earlier in the week (Mon outlier baskets) rather than spreading through Tue. Third, the new customer pace softened slightly to 3.25/day from 4.0/day prior, but not enough to explain the full volume gap, returning customer activity is the dominant variable. Recommendation: confirm with Janice whether a major email send is planned Thu-Sat May 21-23 that would restore the back-half-of-week volume pattern. Iodine momentum visible (next slide) suggests email is firing on that SKU specifically.
+    </div>
+  </div>
+  <div class="slide-num">2 / 15</div>
+</div>
+
+<!-- SLIDE 3: SHOPIFY WTD DEEP DIVE -->
+<div class="slide" id="slide-3">
+  <div class="slide-header">
+    <h1>Shopify WTD <span>Volume Softening, AOV Spike</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026 | 4 days, Wed partial</div>
+      <div class="brand">tennantproducts.com</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Gross Sales WTD</div>
+      <div class="value">$20,184.11</div>
+      <div class="change down">-43.9% Sun-Wed match</div>
+      <div class="prev">vs $35,983.97 prior 4-day match</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Orders WTD</div>
+      <div class="value">73</div>
+      <div class="change down">-48.6% Sun-Wed match</div>
+      <div class="prev">vs 142 prior 4-day match</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">AOV WTD</div>
+      <div class="value gold">$276.49</div>
+      <div class="change warn">+9.1% Sun-Wed match</div>
+      <div class="prev">Mon outlier $461.94 distorting</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Discounts WTD</div>
+      <div class="value">$3,261.68</div>
+      <div class="change down">-58% vs $7,712 prior match</div>
+      <div class="prev">Mon May 18 = $2,909 of total</div>
+    </div>
+  </div>
+  <div class="section-label">Customer Mix Read</div>
+  <div class="stats-grid-3" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">New Customers WTD</div>
+      <div class="value green">13</div>
+      <div class="change up">+44% vs 9 prior 4-day match</div>
+      <div class="prev">3.25/day vs 2.25/day prior match</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Returning Customers WTD</div>
+      <div class="value red">58</div>
+      <div class="change down">-33% vs 86 prior 4-day match</div>
+      <div class="prev">14.5/day vs 21.5/day prior match</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Customer Behavior</div>
+      <div class="value">76 / 84 / 41</div>
+      <div class="change neutral">ATC / Checkout / Purchase sessions</div>
+      <div class="prev">48.8% checkout completion rate</div>
+    </div>
+  </div>
+  <div class="section-label">Daily Shopify Performance</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Gross Sales</th>
+          <th>Discounts</th>
+          <th>Orders</th>
+          <th>AOV</th>
+          <th>Units / Order</th>
+          <th>Returning Cust</th>
+          <th>Return Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Sun May 17</td><td class="green">$4,378.70</td><td>-$135.20</td><td class="green">26</td><td>$163.21</td><td>1.5</td><td>20 / 25</td><td class="green">80%</td></tr>
+        <tr><td class="bold">Mon May 18</td><td class="green bold">$11,223.81 <span class="outlier-flag">outlier</span></td><td class="orange">-$2,908.96</td><td>18</td><td class="gold bold">$461.94</td><td>6.7</td><td>17 / 18</td><td class="green">94%</td></tr>
+        <tr><td class="bold">Tue May 19</td><td class="red">$3,185.20</td><td>-$176.24</td><td>19</td><td>$158.37</td><td>1.6</td><td>13 / 18</td><td>72%</td></tr>
+        <tr><td class="bold">Wed May 20 <span class="data-quality-flag">partial</span></td><td class="red">$1,396.40</td><td>-$41.28</td><td>10</td><td>$135.51</td><td>1.1</td><td>8 / 10</td><td>80%</td></tr>
+        <tr class="total-row"><td>WTD Total</td><td>$20,184.11</td><td>-$3,261.68</td><td>73</td><td>$276.49</td><td>2.8</td><td>58 / 73</td><td>79.5%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="orange-box" style="margin:0;">
+      <strong>Mon May 18 is the entire WTD gross story.</strong> $11,223.81 on 18 orders, AOV $461.94 (2.5x the typical $180-200 baseline), 6.7 units per order (typical orders run 1.5-2.0 units). Discount load of $2,908.96 indicates a major promo email triggered both the high basket size AND the discount stack. The 17 of 18 orders coming from returning customers (94% return rate, vs the 79.5% WTD average) confirms this was a returning-base activation event, almost certainly a Klaviyo send promoting a high-AOV bundle or Restore Pro Vanilla (which accounts for $4,966 of WTD gross alone across the full 4 days). If Mon May 18 were a normal-AOV day at $200, the WTD gross would land closer to $12,600, putting the WTD on a $22K weekly run-rate, materially below the prior week's $55K.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Customer behavior shows a structural funnel quirk worth flagging.</strong> 76 ATC sessions but 84 sessions reaching checkout means roughly 8 sessions hit checkout without going through the standard PDP-then-cart flow. This pattern is consistent with Klaviyo emails containing direct checkout links (skip-cart links) or abandoned-cart recovery flows that re-direct to a populated checkout. 41 completed of 84 reached = 48.8% completion rate, which is below the healthy 55-65% band and worth investigating. The completion gap is mostly Tue and Wed when the email-driven momentum cooled. Once the Tue-Wed funnel data is full, this rate should normalise. If it doesn't, the checkout flow itself merits a manual session walk-through.
+    </div>
+  </div>
+  <div class="slide-num">3 / 15</div>
+</div>
+
+<!-- SLIDE 4: PRODUCT-LEVEL WTD -->
+<div class="slide" id="slide-4">
+  <div class="slide-header">
+    <h1>Product-Level WTD <span>Iodine Leads, ABC Collapses</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026 | Daily Pace vs Prior Week</div>
+      <div class="brand">Shopify Product Movement</div>
+    </div>
+  </div>
+  <div class="section-label">Top 12 Products WTD with Daily-Pace WoW</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Units WTD</th>
+          <th>Gross WTD</th>
+          <th>Net WTD</th>
+          <th>Units/Day WTD</th>
+          <th>Units/Day Prior Week</th>
+          <th>Daily Pace Δ</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Lugol's Iodine Plus</td>
+          <td class="green bold">92</td>
+          <td class="green">$6,349.00</td>
+          <td>$4,809.00</td>
+          <td>23.0</td>
+          <td>17.3</td>
+          <td class="green bold">+33%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Bright spot, organic-led acceleration</td>
+        </tr>
+        <tr>
+          <td class="bold">Restore Pro Vanilla</td>
+          <td>20</td>
+          <td>$4,966.00</td>
+          <td>$4,316.00</td>
+          <td>5.0</td>
+          <td>9.6</td>
+          <td class="red">-48%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Cooled vs prior week peak</td>
+        </tr>
+        <tr>
+          <td class="bold">Digestive Enzyme Formula</td>
+          <td>19</td>
+          <td>$1,805.00</td>
+          <td>$1,353.75</td>
+          <td>4.75</td>
+          <td>9.3</td>
+          <td class="red">-49%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Continued softening</td>
+        </tr>
+        <tr>
+          <td class="bold">Raw Materials Liquid</td>
+          <td>12</td>
+          <td>$816.00</td>
+          <td>$802.40</td>
+          <td>3.0</td>
+          <td>5.0</td>
+          <td>-40%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Slight softening</td>
+        </tr>
+        <tr>
+          <td class="bold">N1O1 Nitric Oxide Lozenges</td>
+          <td>10</td>
+          <td>$593.51</td>
+          <td>$545.56</td>
+          <td>2.5</td>
+          <td>4.7</td>
+          <td class="red">-47%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Slowed but still in top 10</td>
+        </tr>
+        <tr>
+          <td class="bold">Restore Veggie Formula</td>
+          <td>7</td>
+          <td>$1,283.40</td>
+          <td>$1,060.20</td>
+          <td>1.75</td>
+          <td>1.6</td>
+          <td class="green">+11%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Held steady</td>
+        </tr>
+        <tr>
+          <td class="bold">GI 60 Probiotic Formula</td>
+          <td>7</td>
+          <td>$415.00</td>
+          <td>$389.00</td>
+          <td>1.75</td>
+          <td>4.1</td>
+          <td class="red">-58%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Cooled, still no paid support</td>
+        </tr>
+        <tr>
+          <td class="bold">Brain Food Plus</td>
+          <td>5</td>
+          <td>$614.40</td>
+          <td>$614.40</td>
+          <td>1.25</td>
+          <td>2.0</td>
+          <td>-38%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Held against ad spend continued</td>
+        </tr>
+        <tr>
+          <td class="bold">Lugol's Iodine Liquid</td>
+          <td>5</td>
+          <td>$175.00</td>
+          <td>$171.50</td>
+          <td>1.25</td>
+          <td>1.7</td>
+          <td>-27%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Companion to Iodine Plus momentum</td>
+        </tr>
+        <tr>
+          <td class="bold">Microbiome Support</td>
+          <td>4</td>
+          <td>$424.00</td>
+          <td>$328.60</td>
+          <td>1.0</td>
+          <td>0.6</td>
+          <td class="green">+75%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Quiet uptick</td>
+        </tr>
+        <tr>
+          <td class="bold">Fulvic Super-Concentrate</td>
+          <td>4</td>
+          <td>$272.00</td>
+          <td>$256.72</td>
+          <td>1.0</td>
+          <td>1.3</td>
+          <td>-23%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Stable</td>
+        </tr>
+        <tr>
+          <td class="bold">Activated Bamboo Charcoal</td>
+          <td class="red">1</td>
+          <td>$43.00</td>
+          <td>$34.40</td>
+          <td>0.25</td>
+          <td>1.0</td>
+          <td class="red bold">-75%</td>
+          <td style="font-size:11px; color:var(--text-muted);">Despite $513 spend, attribution gap widens</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Lugol's Iodine Plus is the standout SKU of WTD.</strong> 92 units in 4 days at $6,349 gross, daily pace of 23.0 units up from 17.3 the prior week (+33% acceleration). Lugol's Iodine Liquid added 5 more units at $175 gross, taking the combined Iodine line to 97 units WTD. Zero paid support active on either SKU (the dedicated Iodine Search Campaign remains pending LP). The implied driver is Klaviyo email-led demand on Iodine specifically, with the WTD Iodine Plus units representing 47% of total Shopify WTD units sold (92 of 202 total units). This is the second consecutive week of Iodine momentum and confirms the case for a dedicated paid Iodine push as soon as the LP is ready. The opportunity cost of the missing Iodine LP, against this level of demand signal, is real.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>ABC product attribution gap has now widened, not closed.</strong> Meta credits the ABC ad set with 5 attributed purchases at $2,971.98 conversion value (Anatomy Hook 4 days). Shopify shows 1 ABC unit sold at $43 gross / $34.40 net. Even on the LPV-restored measurement layer that delivered 74.4% LPV rate, the ATC of 17 converted to only 1 product-attributable purchase. Two possible reads: (1) the cross-product attribution remains real, with ABC clicks now leading to non-ABC purchases on a 4 to 5 attributed: 1 actual ratio, or (2) the Auware LP itself is failing to convert ATC-to-purchase at meaningfully cold-traffic rates. Either way, the diagnosis points back to Janice's action item: duplicate the ABC LP with varied hero and top-of-page messaging, so the next clean test resolves whether the issue is the page or the attribution model. Without the LP variant test, the structural ABC question stays unresolved.
+    </div>
+  </div>
+  <div class="slide-num">4 / 15</div>
+</div>
+
+<!-- SLIDE 5: META WTD CAMPAIGNS -->
+<div class="slide" id="slide-5">
+  <div class="slide-header">
+    <h1>Meta WTD <span>Campaign-Level</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026 vs May 10-16 daily-rate</div>
+      <div class="brand">Facebook &amp; Instagram Ads</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Meta Spend WTD</div>
+      <div class="value">$765.38</div>
+      <div class="change neutral">$191.34/day</div>
+      <div class="prev">vs $219.38/day prior 7d, -12.8%</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Meta Purchases WTD</div>
+      <div class="value green">11</div>
+      <div class="change up">2.75/day vs 2.71 prior</div>
+      <div class="prev">Daily-pace +1.3%, sustained</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Meta Reported ROAS WTD</div>
+      <div class="value gold">9.33x</div>
+      <div class="change warn">vs 2.87x prior, outlier-led</div>
+      <div class="prev">Ex-outlier: 4.59x clean read</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Meta LPV Rate WTD</div>
+      <div class="value green bold">74.3%</div>
+      <div class="change up">vs 58.5% prior week</div>
+      <div class="prev">Sustained recovery, +1,580 bps</div>
+    </div>
+  </div>
+  <div class="section-label">Campaign Breakdown WTD</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Spend</th>
+          <th>Purch</th>
+          <th>Conv Value</th>
+          <th>ROAS</th>
+          <th>Impr</th>
+          <th>Clicks</th>
+          <th>CTR</th>
+          <th>LPV</th>
+          <th>LPV Rate</th>
+          <th>ATC</th>
+          <th>IC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">SS - Retargeting</td>
+          <td>$80.73</td>
+          <td>2</td>
+          <td class="gold bold">$3,634.50 <span class="outlier-flag">outlier</span></td>
+          <td class="gold bold">45.02x</td>
+          <td>6,661</td>
+          <td>66</td>
+          <td>0.99%</td>
+          <td>45</td>
+          <td class="green">68.2%</td>
+          <td>6</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td class="bold">SS - Omnipresent - Engagement - Advt+</td>
+          <td>$171.76</td>
+          <td>4</td>
+          <td>$537.70</td>
+          <td>3.13x</td>
+          <td>5,294</td>
+          <td>76</td>
+          <td class="green">1.44%</td>
+          <td>60</td>
+          <td class="green bold">78.9%</td>
+          <td>11</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td class="bold">HM | ABC | Cold CBO | Detox-Launch</td>
+          <td>$512.89</td>
+          <td>5</td>
+          <td class="gold">$2,971.98 <span class="data-quality-flag">attribution gap</span></td>
+          <td class="gold">5.79x</td>
+          <td>20,639</td>
+          <td>520</td>
+          <td class="green bold">2.52%</td>
+          <td>387</td>
+          <td class="green">74.4%</td>
+          <td>17</td>
+          <td>12</td>
+        </tr>
+        <tr class="total-row">
+          <td>Meta Total WTD</td>
+          <td>$765.38</td>
+          <td>11</td>
+          <td>$7,144.18</td>
+          <td>9.33x</td>
+          <td>32,594</td>
+          <td>662</td>
+          <td>2.03%</td>
+          <td>492</td>
+          <td>74.3%</td>
+          <td>34</td>
+          <td>24</td>
+        </tr>
+        <tr style="background: rgba(245,158,11,0.04);">
+          <td colspan="3"><strong>Ex-outlier (Brain Copy $3,634.50 removed)</strong></td>
+          <td>9</td>
+          <td>$3,509.68</td>
+          <td>4.59x</td>
+          <td colspan="6" style="font-size:11px; color:var(--accent-orange);">The clean read on the underlying Meta engine, excluding the single high-AOV retargeting outlier</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>ABC delivery and LPV continue to sustain at the post-Consentmo recovery level.</strong> 520 clicks at 2.52% CTR (up from 1.34% prior week), 387 LPVs at 74.4% LPV rate, 17 ATCs, 12 ICs. The Anatomy Hook ad alone produced 467 clicks at 2.38% CTR with 347 LPVs at 74.3% LPV rate. CPC compressed to $0.99 from $0.84 prior week (slight uptick but in range). The funnel infrastructure is now reading cleanly through every layer, what was previously a measurement gap on cold traffic LPVs has fully resolved. ATC-to-IC conversion at 70.6% is healthy. The remaining gap is the IC-to-purchase ratio: 12 ICs but only 5 attributed purchases is 41.7%, and against 1 actual ABC product sold the ratio of attributed-to-actual is 5:1. This isolates the LP and product-fit question, the funnel above the LP is doing its job.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Omnipresent Engagement is the cleanest non-outlier signal in WTD.</strong> $171.76 spend, 76 clicks at 1.44% CTR, 60 LPVs at 78.9% LPV rate (highest of any campaign), 11 ATCs, 9 ICs, 4 purchases at $537.70 conv value, 3.13x ROAS. AOV per purchase at $134.43 sits in the realistic Tennant range. Retargeting Website ($75.40 spend, the outlier $3,634.50 attribution event) is the campaign that needs handled with care: a 45.02x reported ROAS is real in the data, but tied entirely to two $1,817 baskets attributed to Brain Copy. Stripping those two events, Retargeting reports zero attributable conversions on the remaining 64 clicks. This is the same pattern seen prior to the Consentmo unblock, low-volume retargeting with sporadic high-AOV events distorting the campaign-level ROAS.
+    </div>
+  </div>
+  <div class="slide-num">5 / 15</div>
+</div>
+
+<!-- SLIDE 6: META AD-LEVEL WTD -->
+<div class="slide" id="slide-6">
+  <div class="slide-header">
+    <h1>Meta Ad-Level <span>WTD with Outlier Flagging</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026 | Spend over $5</div>
+      <div class="brand">Creative Performance</div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ad Creative</th>
+          <th>Campaign</th>
+          <th>Spend</th>
+          <th>Purch</th>
+          <th>Value</th>
+          <th>ROAS</th>
+          <th>AOV/purch</th>
+          <th>Impr</th>
+          <th>CTR</th>
+          <th>CPC</th>
+          <th>LPV Rate</th>
+          <th>ATC</th>
+          <th>IC</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">Ad 1.4 Anatomy Hook</td>
+          <td style="font-size:11px; color:var(--text-muted);">ABC Cold</td>
+          <td>$472.05</td>
+          <td>5</td>
+          <td class="gold">$2,971.98</td>
+          <td class="gold">6.30x</td>
+          <td>$594.40 <span class="outlier-flag">high</span></td>
+          <td>19,647</td>
+          <td>2.38%</td>
+          <td>$1.01</td>
+          <td class="green bold">74.3%</td>
+          <td>16</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td class="bold">Tess Sprague Brain Food</td>
+          <td style="font-size:11px; color:var(--text-muted);">Omnipresent</td>
+          <td>$159.98</td>
+          <td class="green">4</td>
+          <td class="gold">$537.70</td>
+          <td class="gold">3.36x</td>
+          <td>$134.43</td>
+          <td>4,975</td>
+          <td>1.37%</td>
+          <td>$2.35</td>
+          <td class="green">76.5%</td>
+          <td>11</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td class="bold">Brain - Copy</td>
+          <td style="font-size:11px; color:var(--text-muted);">Retargeting</td>
+          <td>$67.89</td>
+          <td>2</td>
+          <td class="gold bold">$3,634.50 <span class="outlier-flag">outlier</span></td>
+          <td class="gold bold">53.54x</td>
+          <td>$1,817.25 <span class="outlier-flag">outlier</span></td>
+          <td>5,595</td>
+          <td>1.04%</td>
+          <td>$1.17</td>
+          <td class="green">69.0%</td>
+          <td>6</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td class="bold">Ad 1.3 Sigrid Testimonial</td>
+          <td style="font-size:11px; color:var(--text-muted);">ABC Cold</td>
+          <td>$25.35</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>--</td>
+          <td>598</td>
+          <td class="green bold">7.19%</td>
+          <td>$0.59</td>
+          <td class="green">72.1%</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="bold">Ad 1.2 Four Benefits Beach (Reset)</td>
+          <td style="font-size:11px; color:var(--text-muted);">ABC Cold</td>
+          <td>$15.49</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>--</td>
+          <td>394</td>
+          <td class="green">2.54%</td>
+          <td>$1.55</td>
+          <td class="green">90.0%</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="bold">Don't Trust Labels Static</td>
+          <td style="font-size:11px; color:var(--text-muted);">Omnipresent</td>
+          <td>$10.23</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>--</td>
+          <td>270</td>
+          <td class="green">2.96%</td>
+          <td>$1.28</td>
+          <td class="green bold">100.0%</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="bold">Gut Health - Copy (Retarget)</td>
+          <td style="font-size:11px; color:var(--text-muted);">Retargeting</td>
+          <td>$5.83</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>--</td>
+          <td>381</td>
+          <td>0.79%</td>
+          <td>$1.94</td>
+          <td class="green bold">100.0%</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td class="bold">Gut Health - Copy (Omnipresent)</td>
+          <td style="font-size:11px; color:var(--text-muted);">Omnipresent</td>
+          <td>$5.21</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td class="red">0.00x</td>
+          <td>--</td>
+          <td>532</td>
+          <td>0.38%</td>
+          <td>$2.60</td>
+          <td>50.0%</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="three-col">
+    <div class="orange-box" style="margin:0;">
+      <strong>Ad 1.3 Sigrid Testimonial CTR at 7.19% is the highest CTR in the account.</strong> But only $25.35 of spend, 43 clicks, 31 LPVs, 1 ATC, 1 IC, 0 attributed purchases. The hook clearly engages, the LP gets the view, but the conversion does not follow. Worth a closer look at whether Sigrid's testimonial copy promises something the ABC LP doesn't immediately deliver, this is the same creative-LP-fit issue flagged in the prior week's report. Recommend testing Sigrid alongside the duplicated LP variant when it ships.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Tess Sprague Brain Food at 3.36x ROAS, $134.43 AOV, is the cleanest non-ABC creative read.</strong> $159.98 spend, 68 clicks, 52 LPVs at 76.5% LPV rate, 11 ATCs (16.2% LPV-to-ATC rate, very strong for cold), 9 ICs, 4 purchases. This is the model performance signature for healthy cold-to-mid funnel in the account: high LPV, high ATC-to-LPV conversion, IC-to-purchase 44%. Hold steady.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Authority Dr. Billy Ledbetter delivered 0 attributed purchases on $1.55 spend WTD.</strong> The campaign budget allocation to this creative effectively zeroed during the week. The prior week's 7.40x ROAS reading at $43.88 spend was the only data point. With virtually no fresh exposure this week, the creative is unproven over a sustained window. Recommend a deliberate $50/day-equivalent test allocation on Authority once the transition period stabilises, or document in handoff as a candidate for the next agency to validate.
+    </div>
+  </div>
+  <div class="slide-num">6 / 15</div>
+</div>
+
+<!-- SLIDE 7: GOOGLE WTD POST-FIX EVIDENCE -->
+<div class="slide" id="slide-7">
+  <div class="slide-header">
+    <h1>Google WTD <span>First Full Week Post-Fix</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026 | Primary Conv Action Fixed Sat-Sun May 15-16</div>
+      <div class="brand">Google Ads</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Google Spend WTD</div>
+      <div class="value">$245.31</div>
+      <div class="change down">$61.33/day vs $104.56 prior</div>
+      <div class="prev">-41% per day, Branded pulled back</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Conversions WTD</div>
+      <div class="value green bold">10</div>
+      <div class="change up">vs 0 prior period</div>
+      <div class="prev">Stream restored from May 18 fix</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Conv Value WTD</div>
+      <div class="value gold">$1,443.60</div>
+      <div class="change up">vs $0 prior detached</div>
+      <div class="prev">$144.36 avg conv value</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Google ROAS WTD</div>
+      <div class="value green bold">5.88x</div>
+      <div class="change up">First clean reading</div>
+      <div class="prev">SS-DSA 15.62x, PMax 6.95x</div>
+    </div>
+  </div>
+  <div class="section-label">Daily Conversion Recovery, May 17 to May 20</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Clicks</th>
+          <th>Cost</th>
+          <th>Conversions</th>
+          <th>Cost / Conv</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Sun May 17</td><td>39</td><td>$105.76</td><td class="green bold">5</td><td>$21.15</td><td class="green">First post-fix conv day, signal clean</td></tr>
+        <tr><td class="bold">Mon May 18</td><td>39</td><td>$56.96</td><td class="green">4</td><td class="green bold">$14.24</td><td class="green">Best efficiency day, signal accumulating</td></tr>
+        <tr><td class="bold">Tue May 19</td><td>48</td><td>$76.22</td><td>1</td><td>$76.22</td><td>Softer day, branded conv typical range</td></tr>
+        <tr><td class="bold">Wed May 20</td><td>5</td><td>$6.36</td><td>0</td><td>--</td><td class="orange">Partial day, data pulled mid-day</td></tr>
+        <tr class="total-row"><td>WTD Total</td><td>131</td><td>$245.31</td><td>10</td><td>$24.53</td><td>5.88x ROAS on $1,443.60 conv value</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-label">Campaign-Level Post-Fix Performance</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Campaign</th>
+          <th>Type</th>
+          <th>Spend</th>
+          <th>Clicks</th>
+          <th>CPC</th>
+          <th>Conv</th>
+          <th>Conv Value</th>
+          <th>Cost/Conv</th>
+          <th>ROAS</th>
+          <th>Impr Share</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">SS - DSA</td>
+          <td style="color:var(--text-muted); font-size:11px;">Search</td>
+          <td>$16.42</td>
+          <td>13</td>
+          <td>$1.26</td>
+          <td class="green">2</td>
+          <td class="gold">$256.50</td>
+          <td class="green bold">$8.21</td>
+          <td class="gold bold">15.62x</td>
+          <td>13.30%</td>
+          <td><span class="badge badge-green">Star campaign WTD</span></td>
+        </tr>
+        <tr>
+          <td class="bold">HM-TP-PMax-Hero-Feed-2026-05</td>
+          <td style="color:var(--text-muted); font-size:11px;">Performance Max</td>
+          <td>$116.79</td>
+          <td>99</td>
+          <td>$1.18</td>
+          <td class="green">6</td>
+          <td class="gold">$812.15</td>
+          <td>$19.47</td>
+          <td class="gold">6.95x</td>
+          <td>12.67%</td>
+          <td><span class="badge badge-green">Signal accumulation strong</span></td>
+        </tr>
+        <tr>
+          <td class="bold">SS - Branded</td>
+          <td style="color:var(--text-muted); font-size:11px;">Search</td>
+          <td>$112.09</td>
+          <td>19</td>
+          <td>$5.90</td>
+          <td>2</td>
+          <td>$374.95</td>
+          <td>$56.05</td>
+          <td>3.35x</td>
+          <td>82.98%</td>
+          <td><span class="badge badge-blue">Defended despite Amazon pressure</span></td>
+        </tr>
+        <tr>
+          <td class="bold">SS - Iodine Search</td>
+          <td style="color:var(--text-muted); font-size:11px;">Search</td>
+          <td>$0.00</td>
+          <td>0</td>
+          <td>--</td>
+          <td>0</td>
+          <td>$0.00</td>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
+          <td><span class="badge badge-orange">LP still pending</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>Total Account WTD</td>
+          <td></td>
+          <td>$245.31</td>
+          <td>131</td>
+          <td>$1.87</td>
+          <td>10</td>
+          <td>$1,443.60</td>
+          <td>$24.53</td>
+          <td>5.88x</td>
+          <td>12.82%</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>The Google conversion infrastructure correction has been validated across the first full post-fix week.</strong> Charles repointed the primary conversion action on Saturday and Sunday May 15-16. WTD May 17-20 is therefore the first complete tracking window with the corrected primary action firing from day one. SS-DSA's 15.62x ROAS at $16.42 spend across 13 clicks is the strongest single-campaign efficiency reading the account has produced in the available history. PMax at 6.95x on $116.79 sustains the signal accumulation trajectory the smart-bidding model needs, with CPC compressing to $1.18 from $1.67 in the prior week (broken-attribution period). Sun and Mon together delivered 9 of the 10 WTD conversions, with Tue softer at 1 conv. The Active primary action (Google Shopping App Purchase) and the GA4 web-purchase secondary cross-check are both firing consistently.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Branded pulled back materially in WTD, down 53% per day.</strong> $112.09 across 19 clicks vs the prior week's $419.87 across 64 clicks. CTR moved from 40.25% to 27.14%, the largest single-week brand-auction CTR compression in 8 weeks. CPC compressed slightly to $5.90 from $6.56 but stays elevated. Auction insights show amazon.com at 46.89% impression share (down from 59.04%), the first time amazon has eased pressure on Tennant brand terms this month. Tennant's top-of-page rate recovered to 90.10% from 85.59%. The Branded conversion volume held at 2 conversions / $374.95 value / 3.35x ROAS, indicating the brand auction defense is doing its core job at lower volume. Worth monitoring whether the lower spend reflects bidding-strategy auto-adjustment to the now-active conversion signal or a manual budget pull.
+    </div>
+  </div>
+  <div class="slide-num">7 / 15</div>
+</div>
+
+<!-- SLIDE 8: BLENDED VIEW WTD -->
+<div class="slide" id="slide-8">
+  <div class="slide-header">
+    <h1>Blended Paid <span>WTD Overview</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026 | Both Platforms Combined</div>
+      <div class="brand">Cross-Platform Read</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:20px;">
+    <div class="stat-card">
+      <div class="label">Total Paid Spend WTD</div>
+      <div class="value">$1,010.69</div>
+      <div class="change neutral">$252.67/day vs $323.94 prior</div>
+      <div class="prev">-22% per day, both platforms eased</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Combined Conv Value</div>
+      <div class="value gold">$8,587.78</div>
+      <div class="change up">Meta $7,144 + Google $1,444</div>
+      <div class="prev">Outlier-loaded read</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Blended Reported ROAS</div>
+      <div class="value gold">8.50x</div>
+      <div class="change warn">Ex-outlier: 4.90x clean</div>
+      <div class="prev">vs 1.94x prior week (Google = 0)</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Blended CAC WTD</div>
+      <div class="value orange">$77.75</div>
+      <div class="change up">$1,010.69 / 13 new</div>
+      <div class="prev">vs $80.99 prior, -4.0%</div>
+    </div>
+  </div>
+  <div class="section-label">Platform Split WTD</div>
+  <div class="two-col" style="margin-bottom:20px;">
+    <div class="card">
+      <div class="card-title">Spend Distribution</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Meta (75.7%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:75.7%; background: var(--accent-gold);"></div></div>
+        <div class="progress-val">$765</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Google (24.3%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:24.3%; background: var(--accent-blue);"></div></div>
+        <div class="progress-val">$245</div>
+      </div>
+      <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">Meta share lifted vs prior week's 67.7% as Google daily spend eased through the rebuild window.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Conv Value Distribution</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Meta (83.2%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:83.2%; background: var(--accent-gold);"></div></div>
+        <div class="progress-val">$7,144</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Google (16.8%)</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:16.8%; background: var(--accent-blue);"></div></div>
+        <div class="progress-val">$1,444</div>
+      </div>
+      <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">First WTD where Google reports attributed value at all, post-fix. Meta value remains outlier-loaded.</div>
+    </div>
+  </div>
+  <div class="section-label">Paid Contribution to Shopify Gross</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Shopify Gross WTD</td><td class="green">$20,184.11</td><td>Mon outlier $11,224 = 55.6% of total</td></tr>
+        <tr><td class="bold">Paid attributed conv value (Meta + Google)</td><td class="gold">$8,587.78</td><td>42.5% of Shopify gross attributed to paid</td></tr>
+        <tr><td class="bold">Paid ex-outlier value</td><td>$4,953.28</td><td>24.5% of Shopify gross with outlier removed</td></tr>
+        <tr><td class="bold">Implied organic / email / direct</td><td>$11,596.33 to $15,230.83</td><td>57% to 75% of WTD gross flows outside paid attribution</td></tr>
+        <tr class="total-row"><td>Conclusion</td><td colspan="2">Organic + email + direct remain the dominant revenue layer. Paid contribution sits within historical 20-30% range.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="insight-box" style="margin:0;">
+    <strong>The blended ROAS reading at 8.50x is the highest the account has produced in the available history, but it is largely outlier-driven.</strong> Removing the two Brain Copy outlier purchases ($3,634.50) brings blended ROAS to 4.90x, which is in line with strong but healthy paid efficiency. The Google contribution (5.88x ROAS, post-fix) is genuinely new signal and should be treated as the cleanest underlying paid read of the WTD. Meta's underlying ex-outlier 4.59x ROAS combined with Google's 5.88x gives the true paid efficiency picture this week. The ~$4,953 ex-outlier paid value against $20,184 Shopify gross is the 24.5% paid contribution share, consistent with the account's historical organic-led pattern. The story for the client is not the headline 8.50x, it is the now-restored infrastructure on both platforms enabling clean future measurement.
+  </div>
+  <div class="slide-num">8 / 15</div>
+</div>
+
+<!-- SLIDE 9: ATTRIBUTION TRANSPARENCY -->
+<div class="slide" id="slide-9">
+  <div class="slide-header">
+    <h1>Attribution <span>Transparency</span></h1>
+    <div class="slide-meta">
+      <div class="period">Three Outliers, Three Explanations</div>
+      <div class="brand">Data Quality Notes</div>
+    </div>
+  </div>
+  <div class="section-label">Outlier 1: Brain Copy Retargeting</div>
+  <div class="orange-box">
+    <strong>$3,634.50 conv value from 2 purchases = $1,817.25 AOV per purchase.</strong> Brain Copy is the retargeting creative running against website visitors with a Brain Food product focus. The standard Tennant AOV across the account this week is $276.49 blended, $134.43 on the cleanest non-outlier Meta creative (Tess Sprague). A $1,817 AOV is plausible for a Cellular Nutrition Program bundle or a multi-pack Restore Pro order, but not for the Brain Food product the ad creative explicitly promotes. Two scenarios: (1) two returning customers who saw the Brain Copy retargeting ad subsequently bought a large unrelated bundle (cross-product attribution within the 7-day click window), or (2) one or both purchases involve subscription or wholesale-tier pricing. Either way, the $3,634.50 is real attributed value but should not be treated as Brain Copy-driven incremental revenue. The ex-outlier reading is the operational signal.
+  </div>
+  <div class="section-label">Outlier 2: Anatomy Hook ABC Attribution Gap</div>
+  <div class="warning-box">
+    <strong>5 ABC purchases attributed at $2,971.98 conv value, against 1 ABC product sold in Shopify at $43 gross / $34.40 net.</strong> The Meta-attributed AOV of $594.40 per ABC purchase is mathematically impossible against ABC's $43 retail price. This is the same cross-product attribution dynamic flagged in the prior week's deck but with a wider gap: 5:1 attributed-to-actual on the ABC side. The interpretation: cold ABC ad clicks lead users to the ABC LP, where they then purchase non-ABC products from the broader Tennant catalog (Restore, Iodine, Brain Food, etc.). Meta's 7-day click attribution model credits the full subsequent basket to the ABC click. This dynamic was present throughout April but obscured by the Consentmo LPV suppression; with LPV measurement now intact, the attribution gap is visible and quantifiable. Resolution comes from Janice's duplicated ABC LP test, varying the LP to either successfully convert ABC clicks to ABC purchases (closing the gap), or confirming the LP is structurally a category-entry funnel (in which case the campaign objective and product focus should be reconsidered).
+  </div>
+  <div class="section-label">Outlier 3: Monday May 18 Shopify AOV Spike</div>
+  <div class="insight-box">
+    <strong>$11,223.81 gross on 18 orders = $461.94 AOV vs the WTD non-Mon baseline of ~$155.</strong> 17 of 18 orders from returning customers (94% return rate vs 79.5% WTD average). 6.7 units per order vs the WTD 2.8 average. Discount load of $2,908.96 (89% of WTD total discount). This is the signature of a Klaviyo bundle/promo send to the existing customer base hitting on Mon May 18. Likely candidate: Restore Pro Vanilla promotion (20 units sold WTD at $4,966 gross, with Mon almost certainly carrying the bulk), or Cellular Nutrition Program bundle (1 sold at $472). Mon's $11K gross is real revenue but should be understood as an email-led activation event rather than a sustainable order-pace pattern. Strip Mon May 18 out, and WTD reads $8,960 across 55 orders at $163 AOV across Sun-Tue-Wed, a 4-day run rate that projects to $15,680 for a 7-day week (vs the prior week's $55,090).
+  </div>
+  <div class="slide-num">9 / 15</div>
+</div>
+
+<!-- SLIDE 10: SEARCH TERMS & AUCTION -->
+<div class="slide" id="slide-10">
+  <div class="slide-header">
+    <h1>Google Search <span>Terms &amp; Auction</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 17 to May 20, 2026</div>
+      <div class="brand">Google Diagnostics</div>
+    </div>
+  </div>
+  <div class="section-label">Auction Insights WTD</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Competitor</th>
+          <th>Impression Share WTD</th>
+          <th>Impression Share Prior</th>
+          <th>Δ</th>
+          <th>Top of Page Rate WTD</th>
+          <th>Prior Top of Page</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Tennant (You)</td><td>19.65%</td><td>&lt;10%</td><td class="green">+10pp</td><td class="green bold">90.10%</td><td>85.59%</td><td class="green">Recovered, Amazon pressure eased</td></tr>
+        <tr><td class="bold">amazon.com</td><td>46.89%</td><td>59.04%</td><td class="green">-12pp</td><td>94.19%</td><td>91.03%</td><td>Bidding pressure decreased</td></tr>
+        <tr><td class="bold">jcrowsllc.com</td><td>48.64%</td><td>48.82%</td><td class="neutral">flat</td><td>94.40%</td><td>88.49%</td><td>Sustained competitor</td></tr>
+        <tr><td class="bold">earthharmony.com</td><td>26.65%</td><td>21.75%</td><td class="orange">+5pp</td><td>54.01%</td><td>51.27%</td><td>Continued expansion, monitor</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-label">Top WTD Search Terms</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Search Term</th>
+          <th>Spend</th>
+          <th>Clicks</th>
+          <th>Impressions</th>
+          <th>Conversions</th>
+          <th>Match Quality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">tennant products</td><td>$19.03</td><td>12</td><td>30</td><td>0</td><td><span class="badge badge-green">on-brand exact</span></td></tr>
+        <tr><td class="bold">dr tennant</td><td>$8.39</td><td>5</td><td>21</td><td>0</td><td><span class="badge badge-green">on-brand</span></td></tr>
+        <tr><td class="bold">dr tennant's restore</td><td>$11.47</td><td>1</td><td>6</td><td>0</td><td><span class="badge badge-green">product-led brand</span></td></tr>
+        <tr><td class="bold">dr tennant restore</td><td>$2.65</td><td>1</td><td>5</td><td>0</td><td><span class="badge badge-green">product-led brand</span></td></tr>
+        <tr><td class="bold">dr tennant products</td><td>$2.18</td><td>1</td><td>3</td><td>0</td><td><span class="badge badge-green">on-brand</span></td></tr>
+        <tr><td class="bold">dr jerry tennant reviews</td><td>$0.00</td><td>0</td><td>6</td><td>0</td><td><span class="badge badge-orange">new entry, not clicked WTD</span></td></tr>
+        <tr><td class="bold">dr tennant's raw materials</td><td>$0.00</td><td>0</td><td>5</td><td>0</td><td><span class="badge badge-green">product-led brand</span></td></tr>
+        <tr><td class="bold">tennant institute</td><td>$0.00</td><td>0</td><td>5</td><td>0</td><td><span class="badge badge-orange">leakage, no spend WTD</span></td></tr>
+        <tr><td class="bold">bioterminal</td><td>$0.00</td><td>0</td><td>2</td><td>0</td><td><span class="badge badge-blue">product term</span></td></tr>
+        <tr><td class="bold">dr tenant</td><td>$0.00</td><td>0</td><td>2</td><td>0</td><td><span class="badge badge-orange">misspelling</span></td></tr>
+        <tr><td class="bold">dr tennant synergy</td><td>$0.00</td><td>0</td><td>2</td><td>0</td><td><span class="badge badge-blue">brand-adjacent</span></td></tr>
+        <tr><td class="bold">dr tennant texas</td><td>$0.00</td><td>0</td><td>2</td><td>0</td><td><span class="badge badge-blue">location-led brand</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Tennant's auction position has materially strengthened WTD.</strong> Top-of-page rate recovered to 90.10% from 85.59% prior, a 451-basis-point gain in 4 days. Amazon.com's impression share on Tennant brand terms compressed from 59.04% to 46.89%, the first single-week reduction in Amazon's bidding pressure on this brand auction since the issue was identified. Earthharmony.com expanded their impression share to 26.65% (from 21.75%), a competitor worth keeping eyes on through the transition. The reduced Branded spend ($112.09 WTD vs $419.87 prior 7d) may be coincident with reduced competitive pressure rather than caused by it, the smart-bidding model on Branded campaigns adjusted bids downward as the conversion signal restored and the auction softened simultaneously.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Search term leakage materially reduced WTD, partly because of lower Branded spend overall.</strong> The "tennant institute" term that leaked $6.95 the prior week appears 5 times in WTD impressions but generated zero spend, suggesting either the negative was added or the bidding model deprioritised the term as a low-conversion historic match. "dr tennants" plural variants and "tenant products" misspelling do not appear in the top WTD terms. "dr jerry tennant reviews" shows 6 impressions and zero clicks WTD, against the prior week's 4 clicks at 40% CTR. The auction is generally cleaner than the prior week. The negative keyword review action item remains live for the transition handoff but is less urgent in the immediate WTD context.
+    </div>
+  </div>
+  <div class="slide-num">10 / 15</div>
+</div>
+
+<!-- SLIDE 11: MAY MTD PROJECTION -->
+<div class="slide" id="slide-11">
+  <div class="slide-header">
+    <h1>May 2026 <span>Month-to-Date &amp; Projection</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 1 to May 20 actual + May 21-31 projection</div>
+      <div class="brand">Monthly Targeting</div>
+    </div>
+  </div>
+  <div class="section-label">New Customer Acquisition by Month</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>New Customers</th>
+          <th>Returning</th>
+          <th>Total Customers</th>
+          <th>Total Revenue</th>
+          <th>Vs 200 Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Nov 2025</td><td>150</td><td>546</td><td>696</td><td>$184,537</td><td class="orange">-25%</td></tr>
+        <tr><td class="bold">Dec 2025</td><td>138</td><td>536</td><td>674</td><td>$187,564</td><td class="orange">-31%</td></tr>
+        <tr><td class="bold">Jan 2026</td><td>142</td><td>642</td><td>784</td><td>$226,451</td><td class="orange">-29%</td></tr>
+        <tr><td class="bold">Feb 2026</td><td>120</td><td>489</td><td>609</td><td>$146,857</td><td class="red">-40%</td></tr>
+        <tr><td class="bold">Mar 2026</td><td>147</td><td>616</td><td>763</td><td>$187,841</td><td class="orange">-27%</td></tr>
+        <tr><td class="bold">Apr 2026</td><td>138</td><td>594</td><td>732</td><td>$164,288</td><td class="orange">-31%</td></tr>
+        <tr><td class="bold">May 2026 MTD (May 1-20)</td><td class="green">71</td><td>380</td><td>451</td><td>$112,874</td><td>--</td></tr>
+        <tr style="background: rgba(245,158,11,0.06);">
+          <td class="bold">May projection (paced)</td>
+          <td class="orange bold">105-125</td>
+          <td>--</td>
+          <td>--</td>
+          <td>--</td>
+          <td class="red">-37% to -47% vs 200</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">May 2026 Acquisition Trajectory</div>
+      <div class="progress-bar-wrap" style="margin-top:8px;">
+        <div class="progress-label">May 1-20 actual</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:35.5%; background: var(--accent-blue);"></div></div>
+        <div class="progress-val">71 / 200</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Conservative projection</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:55%; background: var(--accent-orange);"></div></div>
+        <div class="progress-val">110 / 200</div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label">Optimistic projection</div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:62.5%; background: var(--accent-gold);"></div></div>
+        <div class="progress-val">125 / 200</div>
+      </div>
+      <div style="font-size:12px; color:var(--text-secondary); margin-top:12px; line-height:1.6;">
+        Current pace 3.55 new customers per day through May 20. Conservative projection holds the pace, optimistic case adds 1/day from Google fix landing. The 200/month target requires 4.30 new/day across the full month, the account has not produced that level since pre-Jan 2026. April's 138 was driven by paid scale during the post-launch period with cleaner attribution.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Blended CAC Trend (10-Week View)</div>
+      <div style="font-size:13px; color:var(--text-secondary); line-height:2.0; margin-top:8px;">
+        Mar 15-21: $61.44 (28 new)<br>
+        Mar 22-28: $73.35 (26 new)<br>
+        Mar 29-Apr 4: $51.90 (30 new)<br>
+        Apr 5-11: $49.05 (44 new)<br>
+        Apr 12-18: $37.31 (32 new)<br>
+        Apr 19-25: $49.50 (23 new)<br>
+        Apr 26-May 2: $72.69 (26 new)<br>
+        May 3-9: $71.21 (28 new)<br>
+        May 10-16: $80.99 (28 new)<br>
+        <span style="color:var(--accent-orange); font-weight:600;">May 17-20 WTD: $77.75 (13 new)</span><br><br>
+        WTD blended CAC at $77.75 sits in line with the prior 4 weeks' band ($71-$81). The 4-week trailing CAC is $75.66. With Google now contributing measurable conversions post-fix, the next 7 days should add 6-8 attributed new customers through Google (per the 5.88x ROAS on $245.31 trajectory), which would compress CAC into the $65-$70 range. The 8-week trailing CAC at $61.50 remains the realistic medium-term anchor.
+      </div>
+    </div>
+  </div>
+  <div class="slide-num">11 / 15</div>
+</div>
+
+<!-- SLIDE 12: ACTION ITEMS WTD-SPECIFIC -->
+<div class="slide" id="slide-12">
+  <div class="slide-header">
+    <h1>Action Items <span>Through Notice Period</span></h1>
+    <div class="slide-meta">
+      <div class="period">May 21 to June 15 | Transition Focus</div>
+      <div class="brand">Heath Media Recommendations</div>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">1</div>
+    <div class="action-content">
+      <h4>Janice to ship the duplicated ABC Auware landing page A/B variant</h4>
+      <p>The ABC attribution gap has now widened in WTD: 5 Meta-attributed purchases at $2,971.98 against 1 actual ABC product sold at $43 gross. With LPV recovery sustained at 74.4% and 387 LPVs from 520 clicks producing only 17 ATCs, the LP-to-ATC rate sits at 4.4%. The LP is the bottleneck the moment infrastructure stopped being. Recommendation: ship the duplicated Auware ABC LP with varied hero image, varied top-of-page messaging, hold everything else (URL pattern, openExternalBrowser=1, Cloudflare exclusion, discount stack LP20ABC + LPFREESHIP) identical. Once live, split ABC ad-set traffic 50/50 between variants for 7 days. This is the single highest-leverage action available, the rest of the infrastructure is now ready to support the test.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">2</div>
+    <div class="action-content">
+      <h4>Charles to complete the Google Ads rebuild documentation pack for handoff</h4>
+      <p>Post-fix data confirms the conversion signal restoration: 10 conversions on $245.31 spend, 5.88x ROAS, SS-DSA at 15.62x, PMax at 6.95x, Branded at 3.35x across 4 days. The primary conversion action correction landed Sat-Sun May 15-16, making WTD the first full week of clean attribution. The Active primary conversion action (Google Shopping App Purchase) is firing through the corrected setup with GA4 web-purchase secondary cross-check. Documentation pack to complete: full campaign structure post-rebuild, conversion action hierarchy with active/retired status, Merchant Center status (correct ID 739795289), Simprosys feed configuration, current GTM container layout, the discovery and resolution timeline from March (Littledata + Google &amp; YouTube app reinstall) through May 15-16 (Google primary action fix), all CSV exports for the past 90 days as a baseline reference. Target completion: by May 28 to allow client review through the back end of the transition.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">3</div>
+    <div class="action-content">
+      <h4>Hold Meta at current configuration through the transition. No creative changes, no audience shifts</h4>
+      <p>The Meta portfolio is now firing cleanly across all measurement layers for the first time since launch. LPV 74.3% blended (74.4% on ABC). Tess Sprague at 3.36x ROAS, $134.43 AOV clean. Anatomy Hook at 6.30x reported (with cross-product caveat). Brain Copy retargeting at 53.54x outlier-driven (treat with care). Recommendation: maintain ABC at $150/day, Omnipresent at current allocation, Retargeting at current allocation. No creative refresh during transition. No audience changes. Two more weeks of clean Meta data provide the cleanest possible handoff baseline. Brief Royd and Armend on creative refresh concepts for handoff documentation only, not active deployment.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-2">4</div>
+    <div class="action-content">
+      <h4>PMax HM-TP-PMax-Hero-Feed-2026-05: hold $35/day through May 24 signal window completion</h4>
+      <p>PMax post-fix performance at 6.95x ROAS on $116.79 across 99 clicks with 6 conversions is the strongest single-campaign sustained signal in the Google rebuild. The 14-day smart-bidding signal accumulation window completes May 24. The CPC compression to $1.18 (from $1.67 pre-fix) shows the algorithm is optimising auction efficiency as the conversion signal stabilises. If 7-day rolling ROAS holds above 3.5x at the May 24 window close, step daily budget up to $50/day. Recommend this is documented in the handoff for the next agency to inherit rather than activated by Charles in the final transition fortnight, the bid model needs continuity of signal post-step-up.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-2">5</div>
+    <div class="action-content">
+      <h4>Iodine Search Campaign: get the LP shipped to capture the organic momentum</h4>
+      <p>Lugol's Iodine Plus is the strongest single-SKU momentum in the account: 92 units WTD at $6,349 gross, 23 units per day pace (+33% vs prior week), zero paid support active. Two consecutive weeks of organic acceleration. The dedicated Iodine Search Campaign has remained $0 spend pending the LP. With the campaign architecture already built and the conversion infrastructure now firing cleanly, the missing variable is the LP itself. Recommend Janice / John prioritise the Iodine LP build above other open items; the demand signal is unambiguous and the cost of waiting is incremental Iodine paid acquisition opportunity the account cannot currently access. If the LP can ship in the back end of the transition, it provides a strong baseline for the next agency to inherit a working Iodine paid funnel.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-3">6</div>
+    <div class="action-content">
+      <h4>Klaviyo send cadence alignment for back half of May</h4>
+      <p>Mon May 18's $11,223 outlier day was clearly email-driven with $2,909 of discount load and 94% returning customer rate. The volume softening on Tue and partial Wed suggests the email cadence concentrated heavily on Mon. Worth confirming with Janice the Klaviyo schedule for May 21-31, and whether the Iodine momentum can be reinforced with a dedicated Iodine flow now that demand has demonstrated. The blended Shopify gross daily rate from organic + email is doing the heavy lifting on revenue, paid is contributing 24-30% per the WTD calculation. Aligning email cadence to where paid traffic is being directed (Brain Food, Restore, ABC category) closes the gap between paid attention and shopping behaviour.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-3">7</div>
+    <div class="action-content">
+      <h4>Final handoff documentation pack: Meta architecture, Consentmo timeline, ABC catalog resolution</h4>
+      <p>Documentation due by June 8 to allow client review window before June 15 final transition. Components: Meta full campaign and ad set architecture, ABC catalog override discovery and resolution documentation (the Shopify Facebook/Instagram channel sync issue), Consentmo discovery and removal timeline (the May 12 fix), Auware landing page setup and openExternalBrowser=1 parameter standard, Shopify Web Pixels Manager configuration, CAPI server-side setup, the full diagnostic record from the April pixel-firing issue through to the May 15-16 Google primary conversion action fix. The single most valuable artifact for the incoming team is the diagnostic timeline, what was tried, what worked, what didn't, and what the structural constraints of the account are. That timeline saves the incoming agency 4-6 weeks of re-discovery.</p>
+    </div>
+  </div>
+  <div class="slide-num">12 / 15</div>
+</div>
+
+<!-- SLIDE 13: BENCHMARK TABLE 6 WEEKS -->
+<div class="slide" id="slide-13">
+  <div class="slide-header">
+    <h1>6-Week <span>Benchmark Table</span></h1>
+    <div class="slide-meta">
+      <div class="period">Weekly Trajectory Apr 12 to WTD May 17-20</div>
+      <div class="brand">Tennant Products</div>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table" style="font-size:12px;">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Apr 12-18</th>
+          <th>Apr 19-25</th>
+          <th>Apr 26-May 2</th>
+          <th>May 3-9</th>
+          <th>May 10-16</th>
+          <th style="background: rgba(201,168,76,0.08); color: var(--accent-gold);">WTD May 17-20</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Days</td><td>7</td><td>7</td><td>7</td><td>7</td><td>7</td><td style="background: rgba(201,168,76,0.04);">4 (Wed partial)</td><td style="font-size:10px;">Day-count varies</td></tr>
+        <tr><td class="bold">Total Paid Spend</td><td>$1,332</td><td>$1,138</td><td>$1,890</td><td>$1,994</td><td>$2,268</td><td style="background: rgba(201,168,76,0.04);">$1,011</td><td style="font-size:10px;">$253/day WTD vs $324/day prior</td></tr>
+        <tr><td class="bold">Meta Reported ROAS</td><td>1.59x</td><td>0.92x</td><td>0.99x</td><td>5.37x</td><td>2.87x</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-gold); font-weight: 700;">9.33x (4.59x ex)</td><td style="font-size:10px;">Outlier-loaded reading</td></tr>
+        <tr><td class="bold">Meta Purchases</td><td>4</td><td>1</td><td>4</td><td>8</td><td>19</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-green); font-weight: 700;">11</td><td style="font-size:10px;">2.75/day vs 2.71 prior</td></tr>
+        <tr><td class="bold">Meta LPV Rate</td><td>15.6%</td><td>14.2%</td><td>10.8%</td><td>11.3%</td><td>58.5%</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-green); font-weight: 700;">74.3%</td><td style="font-size:10px;">Sustained recovery, +1,580 bps</td></tr>
+        <tr><td class="bold">Google Spend</td><td>$559</td><td>$392</td><td>$353</td><td>$455</td><td>$732</td><td style="background: rgba(201,168,76,0.04);">$245</td><td style="font-size:10px;">$61/day vs $105/day</td></tr>
+        <tr><td class="bold">Google ROAS</td><td>4.59x</td><td>1.71x</td><td>0.45x</td><td>0.00x</td><td>0.00x</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-green); font-weight: 700;">5.88x</td><td style="font-size:10px;">Post-fix conversion stream restored</td></tr>
+        <tr><td class="bold">Shopify Gross</td><td>$37,920</td><td>$44,479</td><td>$38,446</td><td>$49,940</td><td>$55,090</td><td style="background: rgba(201,168,76,0.04);">$20,184</td><td style="font-size:10px;">$5,046/day vs $7,870 prior</td></tr>
+        <tr><td class="bold">Shopify Orders</td><td>165</td><td>183</td><td>156</td><td>169</td><td>213</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-red); font-weight: 700;">73</td><td style="font-size:10px;">18.3/day vs 30.4 prior, -40%</td></tr>
+        <tr><td class="bold">Avg Order Value</td><td>$230</td><td>$243</td><td>$246</td><td>$253</td><td>$216</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-gold); font-weight: 700;">$276</td><td style="font-size:10px;">Mon outlier driving spike</td></tr>
+        <tr><td class="bold">New Customers</td><td>32</td><td>23</td><td>26</td><td>28</td><td>28</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-green);">13</td><td style="font-size:10px;">3.25/day vs 4.0 prior, -19%</td></tr>
+        <tr><td class="bold">Blended CAC</td><td>$41.64</td><td>$49.50</td><td>$72.69</td><td>$71.21</td><td>$80.99</td><td style="background: rgba(201,168,76,0.04);">$77.75</td><td style="font-size:10px;">Down marginally, fewer new</td></tr>
+        <tr><td class="bold">Returning Customers</td><td>129</td><td>154</td><td>125</td><td>130</td><td>180</td><td style="background: rgba(201,168,76,0.04); color: var(--accent-red);">58</td><td style="font-size:10px;">14.5/day vs 25.7/day prior</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Three sustained improvements through WTD:</strong> Meta LPV rate moved from 11.3% (prior week) to 74.3% (WTD), a structural infrastructure recovery now sustained across two distinct measurement periods. Google conversion stream restored with the post-fix data delivering 5.88x ROAS on $245.31 spend, the first measurable Google attribution in 14 days of broken signal. Auction position recovered with Tennant's top-of-page rate moving from 85.59% to 90.10% and Amazon's pressure compressing from 59.04% to 46.89%. The infrastructure foundation for the next agency to inherit is now solid.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Two trajectories worth flagging clearly:</strong> Order volume softening with WTD running at 18.3 orders/day against the prior week's 30.4/day, a 40% daily reduction not explained by paid spend changes (paid only down 22% per day). The pattern points to email cadence concentration on Mon May 18 rather than distributed across the WTD. Headline ROAS readings carry significant outlier weight, ex-outlier Meta 4.59x is the clean operational read, headline 9.33x is mathematically true but should not be expected as a sustained future baseline. New customer projection for May at 105-125 sits below April's 138.
+    </div>
+  </div>
+  <div class="slide-num">13 / 15</div>
+</div>
+
+<!-- SLIDE 14: PMA VALIDATION -->
+<div class="slide" id="slide-14">
+  <div class="slide-header">
+    <h1>PMA Validation <span>Cross-Source Triangulation</span></h1>
+    <div class="slide-meta">
+      <div class="period">Power My Analytics vs Platform Native Reporting</div>
+      <div class="brand">Data Quality Sign-Off</div>
+    </div>
+  </div>
+  <div class="section-label">Meta Ads: PMA vs Ads Manager UI</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Meta Ads Manager UI (May 17-20)</th>
+          <th>PMA pma_meta_ads (May 17-19)</th>
+          <th>Δ</th>
+          <th>Reconciliation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Spend</td><td>$765.38</td><td>$732.23</td><td>$33.15</td><td>May 20 partial day not in PMA</td></tr>
+        <tr><td class="bold">Impressions</td><td>32,594</td><td>31,339</td><td>1,255</td><td>May 20 partial day not in PMA</td></tr>
+        <tr><td class="bold">Link Clicks</td><td>662</td><td>638</td><td>24</td><td>May 20 partial day not in PMA</td></tr>
+        <tr><td class="bold">Purchases</td><td>11</td><td>11</td><td class="green">0 (exact)</td><td class="green">Both sources match exactly</td></tr>
+        <tr><td class="bold">Conv Value</td><td>$7,144.18</td><td>$7,144.18</td><td class="green">$0 (exact)</td><td class="green">Both sources match exactly to the cent</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-label">Google Ads: PMA vs Google Ads UI</div>
+  <div class="card" style="margin-bottom:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Google Ads UI (May 17-20)</th>
+          <th>PMA pma_gads (May 17-19)</th>
+          <th>Δ</th>
+          <th>Reconciliation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="bold">Cost</td><td>$245.31</td><td>$238.94</td><td>$6.37</td><td class="green">May 20 partial day ($6.36 in UI)</td></tr>
+        <tr><td class="bold">Impressions</td><td>14,252</td><td>13,509</td><td>743</td><td>May 20 partial impressions</td></tr>
+        <tr><td class="bold">Clicks</td><td>131</td><td>126</td><td>5</td><td class="green">May 20 partial clicks (5 in UI)</td></tr>
+        <tr><td class="bold">Primary Conversions</td><td>10</td><td>9</td><td>1</td><td>Sun May 17 +1 conv attribution lag in PMA</td></tr>
+        <tr><td class="bold">Primary Conv Value</td><td>$1,443.60</td><td>$1,313.10</td><td>$130.50</td><td>Sun May 17 +1 attribution value lag</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="section-label">PMA All Conversions Reveal: The Pre-Fix Picture</div>
+  <div class="warning-box" style="margin-bottom:16px;">
+    <strong>An important diagnostic finding from PMA cross-validation:</strong> The PMA pma_gads tab tracks two conversion streams separately. The "Conversions" column (primary action) reads $0 across the entire May 10-16 prior week. The "All Conversions Value" column reads $15,267.60 across the same May 10-16 prior week. This split confirms the diagnostic: Google was attributing value through secondary conversion actions throughout the pre-fix period, the primary action was simply not the one capturing the actionable signal. The Sat-Sun May 15-16 fix repointed the primary action to the correct conversion source, surfacing the signal that was already being attributed to underlying actions. WTD May 17-19 shows $1,313.10 primary value with $7,768.32 all-conv value, the two figures should converge over the coming weeks as the smart-bidding model accumulates signal under the corrected primary action and attribution stabilises.
+  </div>
+  <div class="section-label">Shopify Cross-Check</div>
+  <div class="insight-box" style="margin-bottom:16px;">
+    <strong>PMA pma_shopify (line-item ingestion) lags by approximately 48 hours.</strong> Latest WTD data in PMA Shopify covers May 17-18 only at the time of pull. For May 17-18, PMA Total Sales reads $12,741.40 across 44 orders. Shopify Gross Sales for the same days totals $15,602.51 with $3,044.16 of discounts, producing Net Sales of $12,558.35. PMA aligns to the Net Sales basis (gross minus discounts) within 1.5%, with the small remaining difference attributable to shipping treatment and timezone cutoff. The Shopify Total Sales by Product report (used as primary source for product-level analysis) and Gross Sales by Day report (used as primary source for daily breakdowns) are both validated against the PMA secondary source.
+  </div>
+  <div class="section-label">A Data Quality Flag for Client Action</div>
+  <div class="orange-box" style="margin-bottom:0;">
+    <strong>The PMA workbook's Paid &amp; Organic Activities_auto2 weekly aggregation tab has not refreshed beyond week ending Jan 3, 2026.</strong> The underlying source tabs (pma_meta_ads, pma_gads, pma_shopify) are refreshing on their standard cadence with current data through May 18-19, but the weekly aggregation view that feeds the client-facing summary is stale by approximately 19-20 weeks. The Monthly aggregation section (FE onwards) is similarly limited. Recommendation: confirm with PMA support whether the weekly aggregation formula or refresh job has failed since early Jan 2026. This is not a paid media operational issue, but it does mean the client-side weekly summary view of paid performance has been blank for 20 weeks. Worth a 15-minute call with PMA to either restore the aggregation or rebuild it. The underlying daily data is intact, so historical reconstruction is straightforward.
+  </div>
+  <div class="slide-num">14 / 15</div>
+</div>
+
+<!-- SLIDE 15: CLOSING -->
+<div class="slide" id="slide-closing">
+  <div style="text-align: center; max-width: 900px; margin: auto;">
+    <div class="cover-eyebrow" style="margin-bottom:24px;">Heath Media x Tennant Products | WTD Report</div>
+    <h1 class="cover-title" style="font-size:40px;">Questions?</h1>
+    <p class="cover-subtitle" style="margin-bottom:40px;">Week-to-date pulse | May 21, 2026</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; text-align:left; margin-bottom:16px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Shopify Gross WTD</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--text-primary);">$20.2K</div>
+        <div style="font-size:11px; color:var(--accent-red);">Day-matched -43.9%</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Orders WTD</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--text-primary);">73</div>
+        <div style="font-size:11px; color:var(--accent-red);">vs 142 prior Sun-Wed</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">AOV WTD</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-gold);">$276</div>
+        <div style="font-size:11px; color:var(--text-muted);">Mon outlier driving</div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; text-align:left; margin-bottom:16px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Meta LPV Rate WTD</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-green);">74.3%</div>
+        <div style="font-size:11px; color:var(--text-muted);">Sustained recovery</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Google ROAS WTD</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-green);">5.88x</div>
+        <div style="font-size:11px; color:var(--text-muted);">Post-fix live, 10 conv</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Iodine Plus Units</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-green);">92</div>
+        <div style="font-size:11px; color:var(--text-muted);">23/day, +33% pace</div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; text-align:left; margin-bottom:40px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Meta Reported ROAS</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-gold);">9.33x</div>
+        <div style="font-size:11px; color:var(--accent-orange);">4.59x ex-outlier</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">ABC Units Sold</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-red);">1</div>
+        <div style="font-size:11px; color:var(--text-muted);">vs 5 Meta-attributed</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">May MTD New</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:32px; font-weight:800; color:var(--accent-blue);">71</div>
+        <div style="font-size:11px; color:var(--text-muted);">Projecting 105-125</div>
+      </div>
+    </div>
+    <div class="exec-callout">
+      <p><strong>WTD May 17-20 is the cleanest test of whether the prior week's infrastructure recovery is sustained.</strong> Meta LPV held at 74.3%, Google conversion stream restored with $1,443 attributed value, ABC LPV at 74.4%. The infrastructure verdict is unambiguous: both platforms are now firing correctly. The volume verdict is softer: orders down 48.6% against day-matched prior week, gross down 43.9%, with Mon May 18 outlier carrying 56% of WTD gross. Two outliers carry the Meta headline ROAS: ex-outlier ROAS is 4.59x clean. ABC product attribution gap widened with 5 Meta-attributed purchases against 1 actual ABC unit sold. Iodine Plus the unambiguous bright spot at 92 units organic-led. <strong>Three transition priorities: ship the ABC LP variant, complete the Google rebuild documentation pack, hold Meta steady for clean handoff baseline.</strong></p>
+    </div>
+  </div>
+  <div class="slide-num">15 / 15</div>
+</div>
+
+</body>
+</html>
