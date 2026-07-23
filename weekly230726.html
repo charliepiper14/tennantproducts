@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tennant Products | Google Ads Weekly | July 12 to July 18, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-primary: #0a0f14;
+    --bg-secondary: #111820;
+    --bg-card: #162642;
+    --bg-card-alt: #0f1e35;
+    --accent-green: #10b981;
+    --accent-gold: #c9a84c;
+    --accent-blue: #3b82f6;
+    --accent-red: #ef4444;
+    --accent-orange: #f59e0b;
+    --accent-purple: #8b5cf6;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --border: rgba(255,255,255,0.08);
+    --border-gold: rgba(201,168,76,0.3);
+    --border-blue: rgba(59,130,246,0.3);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; font-size: 14px; }
+  .slide { width: 100%; min-height: 100vh; padding: 48px 64px; border-bottom: 1px solid var(--border); position: relative; display: flex; flex-direction: column; }
+  .slide-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .slide-header h1 { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
+  .slide-header h1 span { color: var(--accent-gold); }
+  .slide-meta { text-align: right; }
+  .slide-meta .period { font-size: 12px; color: var(--text-secondary); font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; }
+  .slide-meta .brand { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent-gold); margin-top: 2px; }
+  .slide-num { position: absolute; bottom: 24px; right: 64px; font-size: 11px; color: var(--text-muted); font-weight: 500; }
+  #slide-1 { background: linear-gradient(135deg, #0a0f14 0%, #0f1e35 50%, #162642 100%); justify-content: center; min-height: 100vh; }
+  .cover-eyebrow { font-size: 11px; font-weight: 600; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+  .cover-title { font-family: 'DM Sans', sans-serif; font-size: 50px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 8px; }
+  .cover-title span { color: var(--accent-gold); }
+  .cover-subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 44px; font-weight: 400; }
+  .cover-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 36px; }
+  .cover-kpi { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; }
+  .cover-kpi .kpi-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; font-weight: 600; }
+  .cover-kpi .kpi-value { font-family: 'DM Sans', sans-serif; font-size: 26px; font-weight: 800; color: var(--text-primary); line-height: 1; margin-bottom: 6px; }
+  .cover-kpi .kpi-change { font-size: 11px; font-weight: 600; }
+  .cover-kpi .kpi-change.up { color: var(--accent-green); }
+  .cover-kpi .kpi-change.down { color: var(--accent-red); }
+  .cover-kpi .kpi-change.neutral { color: var(--text-muted); }
+  .exec-callout { background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.04)); border: 1px solid var(--border-gold); border-radius: 12px; padding: 20px 24px; }
+  .exec-callout p { font-size: 13.5px; color: var(--text-secondary); line-height: 1.7; }
+  .exec-callout strong { color: var(--accent-gold); font-weight: 600; }
+  .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; }
+  .card-title { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; }
+  .stats-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+  .stats-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
+  .stats-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px; }
+  .stat-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .stat-card .label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; margin-bottom: 8px; }
+  .stat-card .value { font-family: 'DM Sans', sans-serif; font-size: 28px; font-weight: 800; color: var(--text-primary); line-height: 1; margin-bottom: 6px; }
+  .stat-card .value.green { color: var(--accent-green); }
+  .stat-card .value.gold { color: var(--accent-gold); }
+  .stat-card .value.blue { color: var(--accent-blue); }
+  .stat-card .value.red { color: var(--accent-red); }
+  .stat-card .value.orange { color: var(--accent-orange); }
+  .stat-card .change { font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .stat-card .change.up { color: var(--accent-green); }
+  .stat-card .change.down { color: var(--accent-red); }
+  .stat-card .change.neutral { color: var(--text-muted); }
+  .stat-card .prev { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-muted); padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); background: rgba(255,255,255,0.02); }
+  .data-table td { padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text-secondary); vertical-align: middle; }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table .bold { font-weight: 600; color: var(--text-primary); }
+  .data-table .green { color: var(--accent-green); font-weight: 600; }
+  .data-table .red { color: var(--accent-red); font-weight: 600; }
+  .data-table .gold { color: var(--accent-gold); font-weight: 600; }
+  .data-table .blue { color: var(--accent-blue); font-weight: 600; }
+  .data-table .orange { color: var(--accent-orange); font-weight: 600; }
+  .data-table .purple { color: var(--accent-purple); font-weight: 600; }
+  .data-table .total-row td { background: rgba(201,168,76,0.05); font-weight: 600; color: var(--text-primary); border-top: 1px solid var(--border-gold); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .badge-green { background: rgba(16,185,129,0.15); color: var(--accent-green); }
+  .badge-red { background: rgba(239,68,68,0.15); color: var(--accent-red); }
+  .badge-gold { background: rgba(201,168,76,0.15); color: var(--accent-gold); }
+  .badge-blue { background: rgba(59,130,246,0.15); color: var(--accent-blue); }
+  .badge-orange { background: rgba(245,158,11,0.15); color: var(--accent-orange); }
+  .badge-purple { background: rgba(139,92,246,0.15); color: var(--accent-purple); }
+  .section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border-gold); }
+  .insight-box { background: rgba(59,130,246,0.06); border: 1px solid var(--border-blue); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .insight-box strong { color: var(--accent-blue); }
+  .warning-box { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .warning-box strong { color: var(--accent-red); }
+  .success-box { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .success-box strong { color: var(--accent-green); }
+  .gold-box { background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.25); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .gold-box strong { color: var(--accent-gold); }
+  .progress-bar-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .progress-label { font-size: 12px; color: var(--text-secondary); min-width: 190px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .progress-bar-bg { flex: 1; background: rgba(255,255,255,0.06); border-radius: 4px; height: 8px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 4px; }
+  .progress-val { font-size: 12px; font-weight: 600; color: var(--text-primary); min-width: 72px; text-align: right; }
+  .action-item { display: flex; gap: 16px; padding: 15px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 11px; align-items: flex-start; }
+  .action-priority { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; }
+  .priority-1 { background: rgba(239,68,68,0.2); color: var(--accent-red); border: 1px solid rgba(239,68,68,0.3); }
+  .priority-2 { background: rgba(245,158,11,0.2); color: var(--accent-orange); border: 1px solid rgba(245,158,11,0.3); }
+  .priority-3 { background: rgba(59,130,246,0.2); color: var(--accent-blue); border: 1px solid rgba(59,130,246,0.3); }
+  .action-content h4 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .action-content p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .mini-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; margin-bottom: 4px; }
+  #slide-closing { background: linear-gradient(135deg, #0a0f14 0%, #0f1e35 50%, #162642 100%); justify-content: center; align-items: center; text-align: center; }
+  .thesis-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 22px; }
+  .thesis-num { font-family: 'DM Sans', sans-serif; font-weight: 800; line-height: 1; letter-spacing: -1px; }
+  .gauge-wrap { display:flex; flex-direction:column; gap:14px; }
+  .gauge-top { display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px; color:var(--text-secondary); }
+  .gauge-bg { background: rgba(255,255,255,0.06); border-radius: 6px; height: 26px; position: relative; overflow: hidden; }
+  .gauge-fill { height:100%; border-radius:6px; display:flex; align-items:center; padding-left:10px; font-size:11px; font-weight:700; color:#0a0f14; }
+  .headroom-tag { position:absolute; right:10px; top:50%; transform:translateY(-50%); font-size:10px; font-weight:700; color: var(--text-secondary); letter-spacing:0.4px; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" id="slide-1">
+  <div style="max-width: 940px;">
+    <div class="cover-eyebrow">Tennant Products &nbsp;|&nbsp; Google Ads Channel Review</div>
+    <h1 class="cover-title">Google Ads Weekly<br><span>July 12 to July 18, 2026</span></h1>
+    <p class="cover-subtitle">Client week, Sunday to Saturday &nbsp;|&nbsp; Google Ads reconciled to Shopify</p>
+    <div class="cover-kpis">
+      <div class="cover-kpi">
+        <div class="kpi-label">Google Spend</div>
+        <div class="kpi-value">$648.93</div>
+        <div class="kpi-change neutral">$92.70 per day</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Conversion Value</div>
+        <div class="kpi-value" style="color: var(--accent-green);">$7,134</div>
+        <div class="kpi-change neutral">Google attributed</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">ROAS</div>
+        <div class="kpi-value" style="color: var(--accent-gold);">10.99x</div>
+        <div class="kpi-change up">Target 4 to 5x</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">Cost Per Conv</div>
+        <div class="kpi-value" style="color: var(--accent-gold);">$16.93</div>
+        <div class="kpi-change up">38.33 conversions</div>
+      </div>
+      <div class="cover-kpi">
+        <div class="kpi-label">New Customers</div>
+        <div class="kpi-value" style="color: var(--accent-green);">36</div>
+        <div class="kpi-change up">+33.3% WoW</div>
+      </div>
+    </div>
+    <div class="exec-callout">
+      <p><strong>The one line that matters:</strong> This was a new customer acquisition week wearing the costume of a soft revenue week. Store wide orders were flat at 195 against 196, but items per order fell from 2.42 to 1.77 and average order value fell 20.7 percent to $213.19. The Shopify data shows exactly why, and it is not the media. New customers rose 33.3 percent to 36 while returning customers fell 6.8 percent, and the prior week had been carrying a heavily discounted Digestive Enzyme run that sold 127 units against 46 this week. First orders are smaller than repeat orders, so a week that wins more new buyers will always show a lower average basket. Google returned 10.99x on $648.93, at a $16.93 cost per conversion, and even on Shopify's most conservative last click attribution it still reads 7.40x. The channel is performing. The constraint remains the $97.50 a day the campaigns are permitted to spend against $340 allocated.</p>
+    </div>
+    <div style="font-size:11px; color:var(--text-muted); margin-top:16px; line-height:1.6;">Reporting basis: all headline and account figures run the client week, Sunday July 12 to Saturday July 18, 2026, rebuilt from the Google Ads day level export and aligned to Shopify. Campaign, keyword, device, audience and auction breakdowns are published by Google only on its Monday to Sunday window and are shown for July 13 to 19, 2026, labelled as such on each slide.</div>
+  </div>
+  <div class="slide-num">1 / 19</div>
+</div>
+
+<!-- SLIDE 2: THE WEEK IN ONE NUMBER -->
+<div class="slide" id="slide-2">
+  <div class="slide-header">
+    <h1>The Week <span>In One Number</span></h1>
+    <div class="slide-meta">
+      <div class="period">Basket size, answered with Shopify data</div>
+      <div class="brand">Root Cause</div>
+    </div>
+  </div>
+  <div class="thesis-hero">
+    <div class="card" style="text-align:center; padding:28px 24px;">
+      <div class="mini-label">Items Per Order</div>
+      <div class="thesis-num" style="font-size:60px; color:var(--accent-red);">1.77<span style="font-size:24px; color:var(--text-muted);"> vs 2.42</span></div>
+      <div style="font-size:13px; color:var(--text-secondary); margin-top:8px;">down 27.0 percent. Orders held at 195 against 196. Customers did not stop buying, they bought fewer items per visit. This is the whole of the revenue movement.</div>
+    </div>
+    <div class="card" style="text-align:center; padding:28px 24px;">
+      <div class="mini-label">New Customers</div>
+      <div class="thesis-num" style="font-size:60px; color:var(--accent-green);">36<span style="font-size:24px; color:var(--text-muted);"> vs 27</span></div>
+      <div style="font-size:13px; color:var(--text-secondary); margin-top:8px;">up 33.3 percent, lifting the new customer share from 14.4 to 19.4 percent. First orders are smaller than repeat orders, which is the mechanism behind the lower basket.</div>
+    </div>
+  </div>
+  <div class="section-label">Four Facts That Close The Question</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Measure</th><th>Jul 12 to 18</th><th>Jul 5 to 11</th><th>Change</th><th>What It Rules In Or Out</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Orders</td><td>195</td><td>196</td><td class="green">-0.5%</td><td style="font-size:12px;">Rules out a demand or traffic problem. Order volume is intact</td></tr>
+        <tr><td class="bold">Items per order</td><td class="red">1.77</td><td>2.42</td><td class="red">-27.0%</td><td style="font-size:12px;">Rules in basket composition as the cause</td></tr>
+        <tr><td class="bold">Revenue per item</td><td class="green">$121.98</td><td>$110.95</td><td class="green">+9.9%</td><td style="font-size:12px;">Rules out a shift to cheaper products. Items sold were more expensive</td></tr>
+        <tr><td class="bold">Discount rate</td><td class="green">9.54%</td><td>13.56%</td><td class="green">-4.02 pts</td><td style="font-size:12px;">Rules out a promotion this week. The prior week was the discounted one</td></tr>
+        <tr class="total-row"><td>Average order value</td><td>$213.19</td><td>$268.87</td><td>-20.7%</td><td style="font-size:12px;">The outcome, not the cause</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>The prior week was the anomaly, not this one.</strong> Between July 5 and 11 the store ran a heavily discounted Digestive Enzyme push, selling 127 units at an 18.5 percent discount rate against 46 units at 13.8 percent this week. That single product accounts for $7,628 of the $10,616 fall in gross sales, which is 71.9 percent of the entire decline from one item. Strip that promotional week out and the underlying business is stable. Google Ads value per conversion tells the identical story from the other side, $186.11 against $274.48, and the three week series shows weeks one and three within a dollar of each other.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>The trade the week actually made.</strong> Nine more new customers and eleven fewer returning ones. A new customer typically buys one product to try the brand, a returning customer builds a basket. That is why acquisition weeks depress average order value and why average order value on its own is a poor scorecard for a channel whose stated job is new to brand growth. The right frame is cost to acquire against what the customer is worth over time, which is on slide 15. On that measure the week was strong, not weak.
+    </div>
+  </div>
+  <div class="slide-num">2 / 19</div>
+</div>
+
+<!-- SLIDE 3: WEEKLY OVERVIEW -->
+<div class="slide" id="slide-3">
+  <div class="slide-header">
+    <h1>Google Ads <span>Weekly Overview</span></h1>
+    <div class="slide-meta">
+      <div class="period">Client week, July 12 to July 18, 2026</div>
+      <div class="brand">Sunday to Saturday</div>
+    </div>
+  </div>
+  <div class="stats-grid-4">
+    <div class="stat-card">
+      <div class="label">Spend</div>
+      <div class="value">$648.93</div>
+      <div class="change neutral">$92.70 per day</div>
+      <div class="prev">Against $97.50 per day permitted</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Conversion Value</div>
+      <div class="value green">$7,133.74</div>
+      <div class="change neutral">Google attributed</div>
+      <div class="prev">Shopify last click: $4,799.80</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">ROAS</div>
+      <div class="value gold">10.99x</div>
+      <div class="change up">Target: 4 to 5x</div>
+      <div class="prev">7.40x on Shopify last click</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Conversions</div>
+      <div class="value">38.33</div>
+      <div class="change up">CPA $16.93</div>
+      <div class="prev">Value per conversion $186.11</div>
+    </div>
+  </div>
+  <div class="section-label">Daily Detail, And Why The Reporting Window Matters</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Day</th><th>Spend</th><th>Conv Value</th><th>ROAS</th><th>Conv</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Sun 12 Jul</td><td>$99.49</td><td class="green">$1,754.00</td><td class="green">17.63x</td><td>6.00</td><td style="font-size:11px;color:var(--text-muted);">Strongest return of the week</td></tr>
+        <tr><td class="bold">Mon 13 Jul</td><td>$110.66</td><td>$876.20</td><td class="gold">7.92x</td><td>7.33</td><td style="font-size:11px;color:var(--text-muted);">Highest conversion count</td></tr>
+        <tr><td class="bold">Tue 14 Jul</td><td>$100.13</td><td>$742.60</td><td class="gold">7.42x</td><td>5.00</td><td style="font-size:11px;color:var(--text-muted);">Steady</td></tr>
+        <tr><td class="bold">Wed 15 Jul</td><td>$82.88</td><td class="green">$1,823.72</td><td class="green">22.00x</td><td>9.00</td><td style="font-size:11px;color:var(--text-muted);">Best day, nine conversions</td></tr>
+        <tr><td class="bold">Thu 16 Jul</td><td>$89.52</td><td class="red">$330.00</td><td class="red">3.69x</td><td>2.00</td><td style="font-size:11px;color:var(--text-muted);">Weakest day</td></tr>
+        <tr><td class="bold">Fri 17 Jul</td><td>$51.39</td><td>$590.32</td><td class="green">11.49x</td><td>4.00</td><td style="font-size:11px;color:var(--text-muted);">Underspent, budget available</td></tr>
+        <tr><td class="bold">Sat 18 Jul</td><td>$114.86</td><td>$1,016.90</td><td class="gold">8.85x</td><td>5.00</td><td style="font-size:11px;color:var(--text-muted);">Highest spend day</td></tr>
+        <tr class="total-row"><td>Client week</td><td>$648.93</td><td>$7,133.74</td><td>10.99x</td><td>38.33</td><td style="font-size:11px;color:var(--accent-gold);">Sunday to Saturday</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="gold-box" style="margin:0;">
+      <strong>The window choice moves the headline by three full multiples.</strong> Google's default export runs Monday to Sunday, which for this pull was July 13 to 19 and reads $675.90 spend, $5,442.74 value and 8.05x. The client week runs Sunday to Saturday, July 12 to 18, and reads 10.99x. The entire difference is one Sunday. July 19 delivered $63.00 on $126.45 of spend, and July 12 delivered $1,754.00 on $99.49. Both figures are correct for their window. All Shopify reporting is aligned to Sunday to Saturday, so this deck uses the client week throughout, rebuilt from the day level Google export.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Expect the most recent days to improve.</strong> When last week's deck was built on July 20, the July 6 to 12 period read $8,667.70. Pulled again today it reads $9,057.70, a gain of $390.00 or 4.5 percent as conversions matured, with almost all of it landing in Dynamic Search which moved from 11.43x to 15.96x. The same drift should be expected on the closing days of this week. July 19, which sits outside the client week but inside Google's default view, is the day most exposed to that lag and is the main reason the two windows read so differently.
+    </div>
+  </div>
+  <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">Source: Google Ads day level and campaign exports pulled July 23, 2026, and Shopify analytics for July 12 to 18, 2026. Daily conversions derived from cost divided by cost per conversion and reconcile to the campaign total.</div>
+  <div class="slide-num">3 / 19</div>
+</div>
+
+<!-- SLIDE 4: CAMPAIGN PERFORMANCE -->
+<div class="slide" id="slide-4">
+  <div class="slide-header">
+    <h1>Campaign <span>Performance</span></h1>
+    <div class="slide-meta">
+      <div class="period">Google export window, July 13 to July 19</div>
+      <div class="brand">Four Campaigns, Three Serving</div>
+    </div>
+  </div>
+  <div class="section-label">Campaign Breakdown With Week On Week</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead>
+        <tr><th>Campaign</th><th>Type</th><th>Spend</th><th>Conv Value</th><th>ROAS</th><th>Conv</th><th>CPA</th><th>CVR</th><th>CPC</th><th>Budget</th><th>Spend vs Cap</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bold">PMax Hero Feed</td>
+          <td style="color:var(--text-muted);font-size:11px;">Performance Max</td>
+          <td>$371.75</td><td class="gold">$2,677.90</td><td class="gold">7.20x</td><td>17.00</td><td>$21.87</td><td>9.19%</td><td>$2.01</td><td>$50.00</td><td class="red">106%</td>
+          <td><span class="badge badge-red">Over cap</span></td>
+        </tr>
+        <tr>
+          <td class="bold">Branded Search</td>
+          <td style="color:var(--text-muted);font-size:11px;">Search</td>
+          <td>$248.45</td><td class="gold">$2,482.12</td><td class="gold">9.99x</td><td class="green">13.33</td><td class="green">$18.64</td><td class="green">19.60%</td><td>$3.65</td><td>$40.00</td><td>89%</td>
+          <td><span class="badge badge-orange">Ads disapproved</span></td>
+        </tr>
+        <tr>
+          <td class="bold">Dynamic Search</td>
+          <td style="color:var(--text-muted);font-size:11px;">Dynamic Search</td>
+          <td>$55.70</td><td class="green">$282.72</td><td class="green">5.08x</td><td>3.00</td><td class="green">$18.57</td><td>15.79%</td><td>$2.93</td><td>$7.50</td><td class="red">106%</td>
+          <td><span class="badge badge-blue">Starved</span></td>
+        </tr>
+        <tr>
+          <td class="bold">Iodine Search</td>
+          <td style="color:var(--text-muted);font-size:11px;">Search</td>
+          <td>$0.00</td><td>$0.00</td><td>n/a</td><td>0.00</td><td>n/a</td><td>0.00%</td><td>n/a</td><td>not set</td><td>0%</td>
+          <td><span class="badge badge-purple">No landing page</span></td>
+        </tr>
+        <tr class="total-row">
+          <td>Google Total</td><td></td><td>$675.90</td><td>$5,442.74</td><td>8.05x</td><td>33.33</td><td>$20.28</td><td>11.95%</td><td>$2.48</td><td>$97.50</td><td>99%</td><td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">Campaign level splits are only published on Google's Monday to Sunday export window, so this table runs July 13 to 19 while the account headline on slide 3 runs the client week. Campaign figures sum exactly to the account totals shown here.</div>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Branded Search is the standout, and it is the campaign we spent least on.</strong> It returned 9.99x against 7.07x the week before, lifted conversions from 9.00 to 13.33, and halved cost per conversion from $36.25 to $18.64. Average cost per click fell 27 percent to $3.65 and the conversion rate ran at 19.60 percent. It did all of this on 23.9 percent less spend, and it is the only campaign that did not spend to its ceiling, because brand demand is finite. It delivered 45.6 percent of all conversion value from 36.8 percent of spend.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Two of three campaigns spent above their daily budget.</strong> Performance Max ran at $53.11 a day against a $50.00 cap and Dynamic Search at $7.96 against $7.50. Both are being held back by a setting rather than by the market. Dynamic Search has the joint best cost per conversion in the account at $18.57 and the highest optimisation score at 97.5 percent, and it is funded at $7.50 a day. The budget increases proposed in last week's deck, Performance Max to $65 and Dynamic Search to $12 to $15, have not yet been applied, so the account entered this week with the same ceiling it had the week before.
+    </div>
+  </div>
+  <div class="slide-num">4 / 19</div>
+</div>
+
+<!-- SLIDE 5: PMAX DEEP DIVE -->
+<div class="slide" id="slide-5">
+  <div class="slide-header">
+    <h1>Performance Max <span>Over Cap, Second Week Running</span></h1>
+    <div class="slide-meta">
+      <div class="period">PMax Hero Feed</div>
+      <div class="brand">Volume Engine</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="label">Spend</div><div class="value">$371.75</div><div class="change up">+16.5% WoW</div><div class="prev">$53.11 per day vs $50.00 cap</div></div>
+    <div class="stat-card"><div class="label">ROAS</div><div class="value gold">7.20x</div><div class="change down">vs 18.28x prior</div><div class="prev">Two week average 12.32x</div></div>
+    <div class="stat-card"><div class="label">Conversions</div><div class="value">17.00</div><div class="change down">-19.0% WoW</div><div class="prev">CPA $21.87 | CVR 9.19%</div></div>
+    <div class="stat-card"><div class="label">Impressions</div><div class="value blue">19,895</div><div class="change up">+17.5% WoW</div><div class="prev">96.8% of account impressions</div></div>
+  </div>
+  <div class="section-label">The Budget Increase Already Proved The Case</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead><tr><th>Budget Setting</th><th>Period</th><th>Spend</th><th>Per Day</th><th>Conv Value</th><th>ROAS</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">$35 per day cap</td><td>Jun 29 to Jul 5</td><td>$248.82</td><td>$35.55</td><td>$2,266.29</td><td class="gold">9.11x</td><td style="font-size:11px;color:var(--text-muted);">Pinned at cap</td></tr>
+        <tr><td class="bold">$50 per day cap</td><td>Jul 6 to Jul 12</td><td>$319.18</td><td>$45.60</td><td>$5,833.90</td><td class="green">18.28x</td><td style="font-size:11px;color:var(--text-muted);">Strong first week</td></tr>
+        <tr><td class="bold">$50 per day cap</td><td>Jul 13 to Jul 19</td><td>$371.75</td><td>$53.11</td><td>$2,677.90</td><td class="gold">7.20x</td><td style="font-size:11px;color:var(--text-muted);">Pinned at cap</td></tr>
+        <tr class="total-row"><td>$50 cap, both weeks</td><td>Jul 6 to Jul 19</td><td>$690.93</td><td>$49.35</td><td>$8,511.80</td><td>12.32x</td><td style="font-size:11px;color:var(--accent-gold);">Better than at $35</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="gold-box" style="margin:0;">
+      <strong>The step from $35 to $50 raised spend by 39 percent and raised return at the same time.</strong> That is the outcome every budget increase hopes for and rarely gets. Averaged across the two full weeks it has run at $50, Performance Max has delivered 12.32x against the 9.11x it managed at $35 a day. Efficiency did not decay when we fed it, it improved, which tells us the model was previously being forced to bid only on its narrowest and safest pockets of demand. It is now spending $53.11 a day against a $50.00 ceiling for the second week running, and impressions have grown 17.5 percent, so the appetite is still ahead of the funding.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>Two things to watch as it scales.</strong> Cost per click rose 18.9 percent to $2.01 and the conversion rate softened from 10.99 to 9.19 percent, both consistent with the model reaching into colder inventory as budget expands. That is the expected and acceptable trade, and it aligns with the rise in new customers the Shopify data records. Less acceptable is the optimisation score, which has fallen to 63.8 percent, the weakest in the account. That normally reflects pending recommendations and asset group strength rather than a fault, but it should be worked through before the next step. Adding asset groups for Restore, Lugol's Iodine Plus and the gut health line is the structural way to absorb more spend.
+    </div>
+  </div>
+  <div class="slide-num">5 / 19</div>
+</div>
+
+<!-- SLIDE 6: BRANDED DEEP DIVE -->
+<div class="slide" id="slide-6">
+  <div class="slide-header">
+    <h1>Branded Search <span>The Recovery Week</span></h1>
+    <div class="slide-meta">
+      <div class="period">Branded Search, July 13 to July 19</div>
+      <div class="brand">Defend And Tidy</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="label">Spend</div><div class="value">$248.45</div><div class="change down">-23.9% WoW</div><div class="prev">$35.49 per day vs $40 cap</div></div>
+    <div class="stat-card"><div class="label">ROAS</div><div class="value gold">9.99x</div><div class="change up">+41.3% WoW</div><div class="prev">Prior: 7.07x</div></div>
+    <div class="stat-card"><div class="label">Cost Per Conv</div><div class="value green">$18.64</div><div class="change up">-48.6% WoW</div><div class="prev">Prior: $36.25 | 13.33 conv</div></div>
+    <div class="stat-card"><div class="label">Avg CPC</div><div class="value gold">$3.65</div><div class="change up">-27.2% WoW</div><div class="prev">Prior: $5.02 | CVR 19.60%</div></div>
+  </div>
+  <div class="section-label">Keyword Detail, And What Phrase Match Just Proved</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Keyword</th><th>Match</th><th>Cost</th><th>Clicks</th><th>CPC</th><th>CTR</th><th>Prior CTR</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">dr tennant</td><td>Exact</td><td>$80.49</td><td>11</td><td class="red">$7.32</td><td>16.18%</td><td>23.29%</td><td style="font-size:11px;color:var(--accent-orange);">Highest spend, weakest efficiency</td></tr>
+        <tr><td class="bold">dr tennant</td><td>Phrase</td><td>$73.32</td><td class="green">16</td><td class="green">$4.58</td><td class="green">29.63%</td><td>25.00%</td><td style="font-size:11px;color:var(--accent-green);">Beating exact on both measures</td></tr>
+        <tr><td class="bold">dr tennant products</td><td>Exact</td><td>$30.27</td><td>9</td><td>$3.36</td><td>39.13%</td><td>53.33%</td><td style="font-size:11px;color:var(--text-muted);">Pure intent, holding</td></tr>
+        <tr><td class="bold">tennant products</td><td>Exact</td><td>$16.35</td><td>14</td><td class="green">$1.17</td><td class="green">50.00%</td><td>50.00%</td><td style="font-size:11px;color:var(--accent-green);">Cheapest clicks in the account</td></tr>
+        <tr><td class="bold">dr tennant restore</td><td>Exact</td><td>$15.42</td><td>5</td><td>$3.08</td><td>27.78%</td><td>50.00%</td><td style="font-size:11px;color:var(--text-muted);">Product plus brand</td></tr>
+        <tr><td class="bold">dr jerry tennant</td><td>Phrase</td><td>$12.35</td><td>3</td><td>$4.12</td><td>21.43%</td><td>0.00%</td><td style="font-size:11px;color:var(--text-muted);">New coverage, now live</td></tr>
+        <tr><td class="bold">dr jerry tennant</td><td>Exact</td><td>$12.05</td><td>8</td><td class="green">$1.51</td><td>15.38%</td><td>11.63%</td><td style="font-size:11px;color:var(--text-muted);">Founder term, cheap</td></tr>
+        <tr><td class="bold">tennant products</td><td>Phrase</td><td>$8.21</td><td>2</td><td>$4.11</td><td>7.14%</td><td>7.14%</td><td style="font-size:11px;color:var(--text-muted);">Low trigger rate</td></tr>
+        <tr><td class="bold">dr tennant supplements</td><td>Exact</td><td class="red">$0.00</td><td>0</td><td>n/a</td><td class="red">0.00%</td><td>100.00%</td><td style="font-size:11px;color:var(--accent-red);">Went dark, was converting</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Phrase match is now carrying the campaign, and it is outperforming exact on the same term.</strong> The phrase ad group grew from $23.46 to $93.88 of spend and from 11 to 21 clicks. On the identical query, dr tennant, phrase delivered 16 clicks at $4.58 with a 29.63 percent click through rate while exact delivered 11 clicks at $7.32 with 16.18 percent. Phrase should not normally beat exact on a brand term. When it does, it usually means the exact keyword's ad rank is impaired, which fits precisely with the disapproved ads still sitting in this campaign. The phrase expansion recommended earlier this month has validated itself, and it is quietly compensating for a fixable fault.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>The disapproved ads are now in their third week.</strong> The campaign status still reads some ads disapproved and the optimisation score sits at 67.9 percent. This traces back to the Books line being discontinued and its destination pages returning 404, which was diagnosed in early July. The correct fix remains removal of the affected ads rather than an appeal. Alongside that, dr tennant supplements has gone from four clicks at a 100 percent click through rate to zero impressions, and dr jerry tennant reviews and dr jerald tennant remain at zero. Those need a bid and eligibility check. On our own brand name we should be unmissable, and right now we are paying $7.32 a click for the privilege of not quite being.
+    </div>
+  </div>
+  <div class="slide-num">6 / 19</div>
+</div>
+
+<!-- SLIDE 7: DSA DEEP DIVE -->
+<div class="slide" id="slide-7">
+  <div class="slide-header">
+    <h1>Dynamic Search <span>The Most Efficient Campaign We Barely Fund</span></h1>
+    <div class="slide-meta">
+      <div class="period">Dynamic Search, July 13 to July 19</div>
+      <div class="brand">Underfunded Asset</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="label">Spend</div><div class="value">$55.70</div><div class="change neutral">-2.9% WoW</div><div class="prev">$7.96 per day vs $7.50 cap</div></div>
+    <div class="stat-card"><div class="label">Cost Per Conv</div><div class="value green">$18.57</div><div class="change up">-3.0% WoW</div><div class="prev">Joint best in the account</div></div>
+    <div class="stat-card"><div class="label">Optimisation Score</div><div class="value green">97.5%</div><div class="change up">vs 80.8% in June</div><div class="prev">Highest in the account</div></div>
+    <div class="stat-card"><div class="label">Two Week ROAS</div><div class="value gold">10.60x</div><div class="change up">$113.09 spend</div><div class="prev">$1,198.72 value, 6 conversions</div></div>
+  </div>
+  <div class="section-label">Three Week Record On $7.50 A Day</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead><tr><th>Week</th><th>Spend</th><th>Conv Value</th><th>ROAS</th><th>Conv</th><th>CPA</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Jun 29 to Jul 5</td><td>$40.00</td><td>$35.00</td><td class="red">0.88x</td><td>1.00</td><td>$40.00</td><td style="font-size:11px;color:var(--text-muted);">Single conversion week</td></tr>
+        <tr><td class="bold">Jul 6 to Jul 12</td><td>$57.39</td><td>$916.00</td><td class="green">15.96x</td><td>3.00</td><td>$19.13</td><td style="font-size:11px;color:var(--text-muted);">Matured from 11.43x after pull</td></tr>
+        <tr><td class="bold">Jul 13 to Jul 19</td><td>$55.70</td><td>$282.72</td><td class="green">5.08x</td><td>3.00</td><td>$18.57</td><td style="font-size:11px;color:var(--text-muted);">Still above target</td></tr>
+        <tr class="total-row"><td>Three week total</td><td>$153.09</td><td>$1,233.72</td><td>8.06x</td><td>7.00</td><td>$21.87</td><td style="font-size:11px;color:var(--accent-gold);">Above target on aggregate</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="gold-box" style="margin:0;">
+      <strong>This campaign is being judged on a sample too small to judge anything.</strong> At $7.50 a day it buys around 19 clicks and three conversions a week, so a single order swings the weekly ROAS by several multiples. That is why it reads 0.88x, then 15.96x, then 5.08x across three consecutive weeks. Taken together the three weeks return 8.06x on $153.09, comfortably above the 4 to 5x target, at a $21.87 cost per conversion. It spent 106 percent of its budget this week and its impressions grew 39.2 percent. It holds the highest optimisation score in the account at 97.5 percent. Every signal says fund it.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>What Dynamic Search is actually for, and the one caveat.</strong> Its job is to catch the long tail of non brand queries the keyword lists never anticipate, which is precisely the demand pool covered on the next two slides. It is the cheapest way to learn what people search for before committing to build campaigns around it. The caveat worth stating plainly is that its value per conversion is the lowest in the account at $94.24, so it tends to bring single product buyers rather than large baskets. Fund it for discovery and new customer count rather than for revenue per order, and pair the increase with the negative list on slide 9 so the extra budget does not find its way into brand queries that Branded Search should be winning more cheaply.
+    </div>
+  </div>
+  <div class="slide-num">7 / 19</div>
+</div>
+
+<!-- SLIDE 8: DEMAND CAPTURE -->
+<div class="slide" id="slide-8">
+  <div class="slide-header">
+    <h1>Demand Capture <span>Two Pools, Both Still Closed</span></h1>
+    <div class="slide-meta">
+      <div class="period">Search terms, July 13 to July 19</div>
+      <div class="brand">Uncaptured Non Brand</div>
+    </div>
+  </div>
+  <div class="section-label">Where The Impressions Went, And What We Charged For Them</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Demand Cluster</th><th>Terms</th><th>Impressions</th><th>Clicks</th><th>Cost</th><th>CTR</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Brand, including misspellings</td><td>30</td><td>242</td><td class="green">61</td><td>$219.87</td><td class="green">25.21%</td><td><span class="badge badge-green">Captured</span></td></tr>
+        <tr><td class="bold">Iodine, non brand</td><td class="blue">42</td><td class="blue">137</td><td class="red">1</td><td class="red">$1.61</td><td class="red">0.73%</td><td><span class="badge badge-red">Not captured</span></td></tr>
+        <tr><td class="bold">Fulvic and humic minerals</td><td class="blue">14</td><td class="blue">27</td><td class="red">0</td><td class="red">$0.00</td><td class="red">0.00%</td><td><span class="badge badge-purple">New cluster</span></td></tr>
+        <tr><td class="bold">Digestive enzymes, non brand</td><td>6</td><td>7</td><td class="red">0</td><td class="red">$0.00</td><td class="red">0.00%</td><td><span class="badge badge-red">Not captured</span></td></tr>
+        <tr><td class="bold">Other non brand</td><td>8</td><td>9</td><td>0</td><td>$0.00</td><td>0.00%</td><td><span class="badge badge-blue">Monitor</span></td></tr>
+        <tr class="total-row"><td>All search terms</td><td>100</td><td>422</td><td>62</td><td>$221.48</td><td>14.69%</td><td></td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">Across 70 non brand search terms the account served 180 impressions and took a single click for $1.61. Sixty nine of those terms took no click at all. Search term data covers the Search network only and does not include the Performance Max cross network surface.</div>
+  </div>
+  <div class="two-col" style="margin-bottom:14px;">
+    <div class="gold-box" style="margin:0;">
+      <strong>Iodine demand grew again and we still captured none of it.</strong> At word level, iodine drew 130 impressions, lugol's 73 and lugols 54. The two highest volume single queries were lugol's iodine at 46 impressions and lugols iodine at 31, both with zero clicks and zero cost. This is up from the 103 word level impressions recorded in the June 28 to July 4 review, so the trend is rising. Shopify confirms the commercial case independently: Lugol's Iodine Plus sold 63 units this week and Lugol's Iodine Liquid rose from 4 units to 17, up 325 percent. The product sells. The campaign is built. The blocker is the landing page and it sits with John and Janice.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>A second pool has surfaced, and Shopify confirms the product is already moving.</strong> Fourteen fulvic and humic mineral queries appeared this week across 27 impressions with zero clicks. At the same time vitalearthminerals.com entered auction insights for the first time, a direct fulvic and humic competitor. On the Shopify side, Fulvic Super Concentrate sold 14 units against 8 the week before, up 75 percent in units and 53.7 percent in net sales, with no paid support at all. A category is forming in the auction around a product that is already growing organically. This is a Dynamic Search and asset group opportunity now, and a keyword campaign once the volume justifies it.
+    </div>
+  </div>
+  <div class="warning-box">
+    <strong>Sixteen competitor queries appeared, all unserved.</strong> The week surfaced dr clark iodine, dr brownstein's iodine, dr david brownstein iodine, hulda clark lugol's iodine, dr myhill iodine, earth harmony lugol's iodine, lugol's iodine iherb, j crew lugol's iodine which is a misspelling of J Crow's, plus dr wahls supplements, dr wallach products, dr edward howell enzymes, hippocrates digestive enzymes and biocare enzymes. Every one took zero clicks. These are people searching for a named physician formulated supplement, which is exactly the proposition Tennant leads with. Conquesting is a phase three consideration rather than an immediate action, but the map of who to target is now written by the data rather than guessed at.
+  </div>
+  <div class="slide-num">8 / 19</div>
+</div>
+
+<!-- SLIDE 9: SEARCH TERM HYGIENE -->
+<div class="slide" id="slide-9">
+  <div class="slide-header">
+    <h1>Search Term Hygiene <span>Two Corrections To Last Month</span></h1>
+    <div class="slide-meta">
+      <div class="period">Negatives, capture and cost control</div>
+      <div class="brand">Account Tidy</div>
+    </div>
+  </div>
+  <div class="section-label">Reclassifying Terms Previously Marked As Leakage</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Search Term</th><th>Impr</th><th>Clicks</th><th>Cost</th><th>CPC</th><th>Previous Call</th><th>Revised Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">tennant institute</td><td>4</td><td>1</td><td>$3.57</td><td>$3.57</td><td><span class="badge badge-red">Add negative</span></td><td class="green" style="font-size:12px;">Treat as brand. This is the clinic name and the Shopify store handle</td></tr>
+        <tr><td class="bold">dr tenant</td><td class="blue">10</td><td class="red">0</td><td>$0.00</td><td>n/a</td><td><span class="badge badge-red">Add negative</span></td><td class="green" style="font-size:12px;">Capture. Ten impressions, no clicks, no cost. Brand misspelling</td></tr>
+        <tr><td class="bold">dr tennent, dr tennet</td><td>4</td><td class="red">0</td><td>$0.00</td><td>n/a</td><td style="font-size:11px;color:var(--text-muted);">Not previously flagged</td><td class="green" style="font-size:12px;">Capture with the same misspelling ad group</td></tr>
+        <tr><td class="bold">tennantproducts com</td><td>3</td><td>2</td><td class="red">$19.41</td><td class="red">$9.71</td><td style="font-size:11px;color:var(--text-muted);">Not previously flagged</td><td class="orange" style="font-size:12px;">Navigational query at nearly $10 a click. Investigate bid and quality</td></tr>
+        <tr><td class="bold">senergy tennant</td><td>2</td><td>1</td><td>$5.28</td><td>$5.28</td><td style="font-size:11px;color:var(--text-muted);">Not previously flagged</td><td style="font-size:12px;">Brand adjacent. Confirm routing with John</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col" style="margin-bottom:14px;">
+    <div class="insight-box" style="margin:0;">
+      <strong>Why the change of position.</strong> Last month's review recommended exact match negatives on tennantinstitute and the dr tenant misspelling on the basis that they were bleeding spend. This week's data does not support that. The dr tenant misspelling produced ten impressions, zero clicks and zero cost, so nothing is leaking, and it is a person looking for Dr Tennant who cannot spell the name. Tennant Institute is the clinic and the Shopify store handle, so a searcher using it is looking for the business. Negativing either would suppress brand demand rather than protect budget. The correct treatment is a low bid misspelling ad group inside Branded Search, which captures the intent at a fraction of the cost of the correctly spelled terms.
+    </div>
+    <div class="warning-box" style="margin:0;">
+      <strong>Two live cost issues worth a look.</strong> The navigational query tennantproducts com cost $19.41 for two clicks, a $9.71 cost per click on someone who has literally typed the website address into Google. That is the single most expensive click in the account and it should be among the cheapest. It points to either a quality score problem on the ad serving that query or an unnecessarily aggressive bid. Separately, the exact match dr tennant keyword is running at $7.32 a click against $4.58 on phrase for the same query, which reinforces the ad rank concern raised on the Branded slide. Both are contained inside the ad approval and quality workstream rather than needing new budget.
+    </div>
+  </div>
+  <div class="gold-box">
+    <strong>Two keywords to review before the Iodine campaign is switched on.</strong> The campaign carries ki as a phrase match keyword, which is dangerously broad and will match a wide spread of unrelated queries the moment budget is applied. It also carries thyroid stimulating hormone on phrase match, which is an informational medical query rather than a purchase intent one, and it sits close to the disease claim line the brand deliberately stays behind. Both should be resolved before the campaign spends its first dollar, with ki either removed or tightly negatived and thyroid stimulating hormone either dropped or pointed at educational content that observes structure and function language only.
+  </div>
+  <div class="slide-num">9 / 19</div>
+</div>
+
+<!-- SLIDE 10: AUDIENCE & DEVICE -->
+<div class="slide" id="slide-10">
+  <div class="slide-header">
+    <h1>Audience And Device <span>Who Is Buying</span></h1>
+    <div class="slide-meta">
+      <div class="period">Demographics and devices, July 13 to July 19</div>
+      <div class="brand">Targeting Intelligence</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-title">Age Distribution, Share Of Known Impressions</div>
+      <div class="progress-bar-wrap"><div class="progress-label">55 to 64</div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:100%;background:var(--accent-gold);"></div></div><div class="progress-val">26.22%</div></div>
+      <div class="progress-bar-wrap"><div class="progress-label">65 plus</div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:83%;background:var(--accent-gold);"></div></div><div class="progress-val">21.89%</div></div>
+      <div class="progress-bar-wrap"><div class="progress-label">35 to 44</div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:83%;background:var(--accent-blue);"></div></div><div class="progress-val">21.89%</div></div>
+      <div class="progress-bar-wrap"><div class="progress-label">45 to 54</div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:79%;background:var(--accent-blue);"></div></div><div class="progress-val">20.81%</div></div>
+      <div class="progress-bar-wrap"><div class="progress-label">25 to 34</div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:28%;background:var(--text-muted);"></div></div><div class="progress-val">7.30%</div></div>
+      <div class="progress-bar-wrap"><div class="progress-label">18 to 24</div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:8%;background:var(--text-muted);"></div></div><div class="progress-val">2.16%</div></div>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:10px;">The 45 and over band holds 68.92 percent of known impressions. Women are 71.35 percent against 30.27 percent men, and the single largest cell is women aged 55 to 64 at 20.54 percent.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Device, Cost And Conversion</div>
+      <table class="data-table">
+        <thead><tr><th>Device</th><th>Spend</th><th>Share</th><th>Clicks</th><th>CPC</th><th>Conv</th><th>CVR</th><th>CPA</th></tr></thead>
+        <tbody>
+          <tr><td class="bold">Computers</td><td>$346.22</td><td class="gold">51.2%</td><td>82</td><td>$4.22</td><td class="green">16.33</td><td class="green">19.91%</td><td>$21.20</td></tr>
+          <tr><td class="bold">Mobile</td><td>$320.20</td><td>47.4%</td><td>185</td><td class="green">$1.73</td><td>16.00</td><td>8.65%</td><td class="green">$20.01</td></tr>
+          <tr><td class="bold">Tablets</td><td>$9.48</td><td>1.4%</td><td>5</td><td>$1.90</td><td>1.00</td><td>20.00%</td><td class="green">$9.48</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:10px;">Desktop converts at 2.3 times the mobile rate per click, 19.91 percent against 8.65 percent, and has taken the majority of spend for the first time at 51.2 percent. Cost per conversion is almost identical across the two, $21.20 against $20.01, because mobile clicks cost 59 percent less.</div>
+    </div>
+  </div>
+  <div class="section-label">When The Account Serves</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Day</th><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Impressions</td><td>3,140</td><td class="red">1,005</td><td>1,607</td><td>1,878</td><td>3,069</td><td>3,838</td><td class="gold">6,011</td></tr>
+        <tr><td class="bold">Prior week</td><td>2,024</td><td>2,022</td><td>1,908</td><td>2,188</td><td>2,176</td><td>4,358</td><td>2,771</td></tr>
+        <tr><td class="bold">Change</td><td class="green">+55%</td><td class="red">-50%</td><td class="red">-16%</td><td class="red">-14%</td><td class="green">+41%</td><td class="red">-12%</td><td class="green">+117%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="insight-box" style="margin:0;">
+      <strong>Delivery has swung hard towards the weekend.</strong> Saturday impressions more than doubled to 6,011 while Monday halved to 1,005. Most of that swing is Performance Max, which serves across the cross network surface and now delivers a substantial block between four and eight in the morning on Saturday. Hourly delivery peaks at nine, ten, eleven and one, consistent with the older female buyer profile. Shopify shows Saturday July 18 as the lowest revenue day of the week at $3,819.70 on 22 orders, so the extra impression volume is not translating proportionally. Worth monitoring rather than acting on yet.
+    </div>
+    <div class="gold-box" style="margin:0;">
+      <strong>A caveat on the demographic figures.</strong> Age and gender are known for only 371 impressions out of 20,548, which is 1.8 percent of total delivery, because Performance Max reports very little demographic detail on its cross network placements. The profile is therefore drawn almost entirely from Search, where it is reliable and consistent with every prior week and with the client's stated 45 to 64 target. It should not be read as representative of Performance Max delivery. If audience insight at that level matters for the Demand Gen build, Google Analytics 4 and the Shopify customer export are the better sources.
+    </div>
+  </div>
+  <div class="slide-num">10 / 19</div>
+</div>
+
+<!-- SLIDE 11: AUCTION LANDSCAPE -->
+<div class="slide" id="slide-11">
+  <div class="slide-header">
+    <h1>Auction Landscape <span>Share Is Moving Our Way</span></h1>
+    <div class="slide-meta">
+      <div class="period">Auction insights, July 13 to July 19</div>
+      <div class="brand">Competitive Position</div>
+    </div>
+  </div>
+  <div class="section-label">Who We Share The Auction With</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead><tr><th>Advertiser</th><th>Impression Share</th><th>Late June</th><th>Overlap Rate</th><th>Top Of Page</th><th>Position Above You</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">You, Tennant</td><td class="orange">Under 10%</td><td>Under 10%</td><td>n/a</td><td>76.15%</td><td>n/a</td><td style="font-size:11px;color:var(--accent-orange);">Low share, high headroom</td></tr>
+        <tr><td class="bold">amazon.com</td><td class="red">36.44%</td><td>43.98%</td><td>34.10%</td><td>90.03%</td><td>71.50%</td><td style="font-size:11px;color:var(--accent-green);">Share down 7.5 points</td></tr>
+        <tr><td class="bold">jcrowsllc.com</td><td class="red">27.45%</td><td>35.56%</td><td>29.86%</td><td>84.53%</td><td>88.76%</td><td style="font-size:11px;color:var(--accent-green);">Share down 8.1 points</td></tr>
+        <tr><td class="bold">vitalearthminerals.com</td><td>Under 10%</td><td class="purple">Not present</td><td>4.24%</td><td>79.48%</td><td>83.33%</td><td style="font-size:11px;color:var(--accent-purple);">New entrant, fulvic category</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">The late June column is taken from the June 28 to July 4 review for trend context. Google's comparison column in this week's export returned identical values to the current period, so week on week movement cannot be read from the export itself.</div>
+  </div>
+  <div class="two-col">
+    <div class="success-box" style="margin:0;">
+      <strong>Both established competitors have lost ground since late June.</strong> Amazon has come down from 43.98 to 36.44 percent impression share and J Crow's from 35.56 to 27.45 percent, while our own top of page rate improved from 74.15 to 76.15 percent. Our impression share remains under 10 percent, which on a channel returning better than 10x is runway rather than weakness. J Crow's still sits above us 88.76 percent of the time on the shared auction, and that auction is overwhelmingly the iodine one. The gap between their 27.45 percent share and our under 10 percent is the commercial size of the iodine landing page decision.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>The new entrant tells us something the search terms already hinted at.</strong> Vital Earth Minerals appearing for the first time, at a 4.24 percent overlap rate, confirms that the fulvic and humic queries surfacing this week are a real and contested category rather than random noise. A competitor is now paying to be in front of that audience. Tennant has a product for it in Fulvic Super Concentrate, and that product grew 75 percent in units this week with no paid support. The low overlap rate means we are only occasionally in the same auction, which is consistent with having no deliberate coverage there at all.
+    </div>
+  </div>
+  <div class="slide-num">11 / 19</div>
+</div>
+
+<!-- SLIDE 12: SHOPIFY STORE CONTEXT -->
+<div class="slide" id="slide-12">
+  <div class="slide-header">
+    <h1>Store Context <span>What Shopify Recorded</span></h1>
+    <div class="slide-meta">
+      <div class="period">July 12 to July 18 vs July 5 to July 11</div>
+      <div class="brand">Whole Business View</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:18px;">
+    <div class="stat-card"><div class="label">Orders</div><div class="value">195</div><div class="change neutral">-0.5% WoW</div><div class="prev">Prior: 196 | Flat</div></div>
+    <div class="stat-card"><div class="label">Net Sales</div><div class="value green">$37,775</div><div class="change down">Gross $41,572</div><div class="prev">Prior gross: $52,699</div></div>
+    <div class="stat-card"><div class="label">Average Order Value</div><div class="value orange">$213.19</div><div class="change down">-20.7% WoW</div><div class="prev">Prior: $268.87</div></div>
+    <div class="stat-card"><div class="label">Customers</div><div class="value">186</div><div class="change neutral">-1.1% WoW</div><div class="prev">36 new, 150 returning</div></div>
+  </div>
+  <div class="section-label">Daily Revenue And Order Pattern</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Day</th><th>Net Sales</th><th>Orders</th><th>AOV</th><th>Prior Net Sales</th><th>Change</th><th>Google Spend</th><th>Google ROAS</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Sun 12 Jul</td><td>$4,449.55</td><td>23</td><td>$193.46</td><td>$6,238.57</td><td class="red">-28.7%</td><td>$99.49</td><td class="green">17.63x</td></tr>
+        <tr><td class="bold">Mon 13 Jul</td><td>$5,665.27</td><td class="green">37</td><td>$160.38</td><td>$6,582.06</td><td class="red">-13.9%</td><td>$110.66</td><td class="gold">7.92x</td></tr>
+        <tr><td class="bold">Tue 14 Jul</td><td>$4,920.04</td><td>28</td><td>$168.09</td><td>$9,160.66</td><td class="red">-46.3%</td><td>$100.13</td><td class="gold">7.42x</td></tr>
+        <tr><td class="bold">Wed 15 Jul</td><td class="green">$8,075.34</td><td>31</td><td class="green">$253.31</td><td>$5,671.50</td><td class="green">+42.4%</td><td>$82.88</td><td class="green">22.00x</td></tr>
+        <tr><td class="bold">Thu 16 Jul</td><td>$6,310.02</td><td>27</td><td>$233.70</td><td>$8,170.10</td><td class="red">-22.8%</td><td>$89.52</td><td class="red">3.69x</td></tr>
+        <tr><td class="bold">Fri 17 Jul</td><td>$4,535.28</td><td>27</td><td>$167.97</td><td>$6,557.50</td><td class="red">-30.8%</td><td>$51.39</td><td class="green">11.49x</td></tr>
+        <tr><td class="bold">Sat 18 Jul</td><td>$3,819.70</td><td>22</td><td>$173.62</td><td>$3,117.06</td><td class="green">+22.5%</td><td>$114.86</td><td class="gold">8.85x</td></tr>
+        <tr class="total-row"><td>Week</td><td>$37,775.20</td><td>195</td><td>$213.19</td><td>$45,497.45</td><td>-17.0%</td><td>$648.93</td><td>10.99x</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="insight-box" style="margin:0;">
+      <strong>Google and Shopify move together on the best day and diverge on the worst.</strong> Wednesday July 15 was the strongest day on both sides, $8,075.34 in store revenue at a $253.31 average order and 22.00x on Google. Thursday July 16 is the interesting one, where store revenue held at $6,310.02 but Google read only 3.69x, which is the signature of sales arriving through channels other than paid search rather than a paid search failure. Friday is worth flagging separately, where Google spent only $51.39, its lowest day, while returning 11.49x. That is unspent budget on a profitable day.
+    </div>
+    <div class="success-box" style="margin:0;">
+      <strong>Google spend is small relative to the business it sits inside.</strong> The store took $37,775.20 in net sales this week. Google Ads spent $648.93, which is 1.72 percent of net sales. Even on Shopify's own conservative last click attribution, Google is credited with $4,799.80, so the channel returns roughly seven times its cost on the strictest reading available. At the proposed $120 a day the channel would still be under 2.3 percent of current net sales. This is the context that makes the budget case straightforward: the amount under discussion is small against the revenue base and the return is well documented.
+    </div>
+  </div>
+  <div class="slide-num">12 / 19</div>
+</div>
+
+<!-- SLIDE 13: PRODUCT MIX -->
+<div class="slide" id="slide-13">
+  <div class="slide-header">
+    <h1>Product Mix <span>Where The Revenue Moved</span></h1>
+    <div class="slide-meta">
+      <div class="period">Total sales by product, July 12 to July 18</div>
+      <div class="brand">The Basket Answer</div>
+    </div>
+  </div>
+  <div class="section-label">Biggest Movers By Gross Sales</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Product</th><th>Units</th><th>Prior Units</th><th>Gross Sales</th><th>Prior</th><th>Change</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Digestive Enzyme Formula</td><td>46</td><td class="green">127</td><td>$4,332</td><td>$11,961</td><td class="red">-$7,628</td><td style="font-size:11px;color:var(--accent-red);">72% of the entire decline</td></tr>
+        <tr><td class="bold">Restore Professional, Veggie</td><td>9</td><td>18</td><td>$2,262</td><td>$4,576</td><td class="red">-$2,314</td><td style="font-size:11px;color:var(--text-muted);">Units halved</td></tr>
+        <tr><td class="bold">Raw Materials Liquid</td><td>12</td><td>45</td><td>$816</td><td>$3,053</td><td class="red">-$2,237</td><td style="font-size:11px;color:var(--text-muted);">Down 73%</td></tr>
+        <tr><td class="bold">GI 60 Probiotic Formula</td><td>16</td><td>34</td><td>$974</td><td>$2,130</td><td class="red">-$1,156</td><td style="font-size:11px;color:var(--accent-orange);">Flagged growth lever, declining</td></tr>
+        <tr><td class="bold">Activated Bamboo Charcoal</td><td>7</td><td>22</td><td>$331</td><td>$933</td><td class="red">-$602</td><td style="font-size:11px;color:var(--text-muted);">Down 68%</td></tr>
+        <tr><td class="bold">Restore Professional, Vanilla</td><td class="green">68</td><td>57</td><td class="green">$17,212</td><td>$14,482</td><td class="green">+$2,730</td><td style="font-size:11px;color:var(--accent-green);">Largest product, growing</td></tr>
+        <tr><td class="bold">Microbiome Support</td><td class="green">18</td><td>8</td><td class="green">$1,908</td><td>$848</td><td class="green">+$1,060</td><td style="font-size:11px;color:var(--accent-green);">Up 125% in units</td></tr>
+        <tr><td class="bold">Lugol's Iodine Plus</td><td>63</td><td>70</td><td>$4,270</td><td>$4,795</td><td class="orange">-$525</td><td style="font-size:11px;color:var(--text-muted);">Second best seller, stable</td></tr>
+        <tr><td class="bold">Lugol's Iodine Liquid</td><td class="green">17</td><td>4</td><td class="green">$592</td><td>$140</td><td class="green">+$452</td><td style="font-size:11px;color:var(--accent-green);">Up 325% in units</td></tr>
+        <tr><td class="bold">Fulvic Super Concentrate</td><td class="green">14</td><td>8</td><td class="green">$925</td><td>$544</td><td class="green">+$381</td><td style="font-size:11px;color:var(--accent-purple);">Up 75%, no paid support</td></tr>
+        <tr class="total-row"><td>All products</td><td>345</td><td>475</td><td>$42,084</td><td>$52,699</td><td>-$10,616</td><td style="font-size:11px;color:var(--accent-gold);">Units down 27.4%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="warning-box" style="margin:0;">
+      <strong>One product explains the week.</strong> Digestive Enzyme Formula fell from 127 units to 46, a swing of $7,628 in gross sales, which is 71.9 percent of the entire $10,616 decline. Its discount rate in the prior week was 18.5 percent against 13.8 percent this week, so the prior week was running a promotional push that pulled forward volume. GI 60 Probiotic, previously flagged as the next major growth lever, also fell from 34 units to 16 and deserves attention. Activated Bamboo Charcoal fell 68 percent. None of these products currently carry dedicated Google support, so the movement is a merchandising and email question rather than a paid search one.
+    </div>
+    <div class="success-box" style="margin:0;">
+      <strong>What grew points directly at the Google roadmap.</strong> Restore Professional Vanilla, the largest product in the range at $17,212, grew 18.9 percent and now represents 40.9 percent of gross sales. Lugol's Iodine Liquid grew 325 percent in units and Fulvic Super Concentrate 75 percent, both with no paid support at all. Those two are precisely the demand pools sitting uncaptured in the search terms. The iodine landing page and a fulvic asset group are not speculative bets, they point at products that are already growing on their own. Restore's dominance also makes the case for a dedicated Performance Max asset group around it.
+    </div>
+  </div>
+  <div class="slide-num">13 / 19</div>
+</div>
+
+<!-- SLIDE 14: ATTRIBUTION RECONCILIATION -->
+<div class="slide" id="slide-14">
+  <div class="slide-header">
+    <h1>Attribution <span>Reconciling Google To Shopify</span></h1>
+    <div class="slide-meta">
+      <div class="period">Net sales by UTM source, July 12 to July 18</div>
+      <div class="brand">Measurement Integrity</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-title">Net Sales By UTM Source, Last Click</div>
+      <table class="data-table">
+        <thead><tr><th>Source</th><th>Net Sales</th><th>Share</th></tr></thead>
+        <tbody>
+          <tr><td class="bold red">No UTM source recorded</td><td class="red">$29,002.75</td><td class="red">76.8%</td></tr>
+          <tr><td class="bold">google</td><td class="gold">$4,799.80</td><td class="gold">12.7%</td></tr>
+          <tr><td class="bold">recart</td><td>$1,855.00</td><td>4.9%</td></tr>
+          <tr><td class="bold">Klaviyo</td><td>$1,664.85</td><td>4.4%</td></tr>
+          <tr><td class="bold">fb</td><td>$273.00</td><td>0.7%</td></tr>
+          <tr><td class="bold">ig</td><td>$179.80</td><td>0.5%</td></tr>
+          <tr class="total-row"><td>Total net sales</td><td>$37,775.20</td><td>100%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">The Two Numbers For Google, And What Each Means</div>
+      <table class="data-table">
+        <thead><tr><th>Basis</th><th>Value</th><th>ROAS</th><th>Method</th></tr></thead>
+        <tbody>
+          <tr><td class="bold">Google Ads reported</td><td class="green">$7,133.74</td><td class="green">10.99x</td><td style="font-size:11px;">Data driven, 30 day click window, includes view through on PMax</td></tr>
+          <tr><td class="bold">Shopify last click</td><td class="gold">$4,799.80</td><td class="gold">7.40x</td><td style="font-size:11px;">Credits only the final click before purchase</td></tr>
+          <tr><td class="bold">Difference</td><td class="orange">$2,333.94</td><td class="orange">1.49x</td><td style="font-size:11px;">Google claims 49% more than Shopify credits</td></tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;color:var(--text-secondary);margin-top:12px;">Both numbers are correct within their own method. The truth sits between them. The important point is that the conservative floor, 7.40x, is still comfortably above the 4 to 5x target, so the scaling case does not depend on accepting Google's more generous attribution.</div>
+    </div>
+  </div>
+  <div class="warning-box">
+    <strong>Three quarters of store revenue carries no UTM source at all.</strong> $29,002.75 of $37,775.20 net sales, 76.8 percent, arrives with no campaign source recorded. Some of that is genuinely direct or organic traffic and always will be. A meaningful portion will be tagged traffic losing its parameters somewhere between the click and the order, which is the same class of problem behind the broken google and paid-search rows raised earlier this month. Until that proportion falls, every channel on this list is understated and no last click comparison between Google, Klaviyo, Recart and Meta can be treated as a fair contest. This is now the largest measurement issue on the account and it materially affects budget decisions across all channels, not just Google.
+  </div>
+  <div class="two-col">
+    <div class="insight-box" style="margin:0;">
+      <strong>One caution on the google row specifically.</strong> The $4,799.80 credited to source google includes free and organic Google traffic as well as paid, because Surfaces across Google and the free Shopping listings are fed through the same Simprosys integration and tag as google. The genuinely paid portion is therefore somewhat lower than $4,799.80, which means the 7.40x floor is slightly generous. Splitting paid from free requires the medium level breakdown, cpc against organic, which is available in the same Shopify report and is included in the follow up data request.
+    </div>
+    <div class="gold-box" style="margin:0;">
+      <strong>What to do about it, in order.</strong> First, confirm the corrected campaign level tracking templates are live and resolving on all three serving campaigns, using a test click on each. Second, ask Janice to run the same report split by UTM medium so paid and free Google can be separated. Third, check whether the consent banner is defaulting to denied storage for first time visitors, which strips parameters before the order is written and has been the underlying cause of attribution gaps on this account before. That sequence moves from cheapest to most involved and the first two can be done this week.
+    </div>
+  </div>
+  <div class="slide-num">14 / 19</div>
+</div>
+
+<!-- SLIDE 15: CAC, LTV AND COHORT -->
+<div class="slide" id="slide-15">
+  <div class="slide-header">
+    <h1>Acquisition Economics <span>Cohort, LTV And CAC</span></h1>
+    <div class="slide-meta">
+      <div class="period">Cohorts July 2025 to June 2026</div>
+      <div class="brand">The Real Scorecard</div>
+    </div>
+  </div>
+  <div class="stats-grid-4" style="margin-bottom:16px;">
+    <div class="stat-card"><div class="label">New Customers</div><div class="value green">36</div><div class="change up">+33.3% WoW</div><div class="prev">Prior: 27 | Share 19.4%</div></div>
+    <div class="stat-card"><div class="label">Returning Customers</div><div class="value">150</div><div class="change down">-6.8% WoW</div><div class="prev">Prior: 161</div></div>
+    <div class="stat-card"><div class="label">Repeat Orders Per Customer</div><div class="value gold">0.763</div><div class="change neutral">12 month cohort</div><div class="prev">July 2025 cohort, 186 customers</div></div>
+    <div class="stat-card"><div class="label">Implied 12 Month LTV</div><div class="value orange">$376 to $474</div><div class="change neutral">AOV dependent</div><div class="prev">Benchmark in use: $475</div></div>
+  </div>
+  <div class="section-label">Cohort Retention At Equal Maturity, A Fair Comparison</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Horizon</th><th>Cohorts Compared</th><th>Range, Repeat Orders Per Customer</th><th>Average</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">Through month 1</td><td>11 cohorts</td><td>0.092 to 0.246</td><td>0.162</td><td style="font-size:12px;">Stable, no trend</td></tr>
+        <tr><td class="bold">Through month 3</td><td>9 cohorts</td><td>0.233 to 0.423</td><td>0.351</td><td style="font-size:12px;">Stable, no trend</td></tr>
+        <tr><td class="bold">Through month 6</td><td>6 cohorts</td><td>0.458 to 0.733</td><td>0.580</td><td style="font-size:12px;">Stable, no trend</td></tr>
+        <tr class="total-row"><td>Through month 11</td><td>1 cohort, July 2025</td><td>0.763</td><td>0.763</td><td style="font-size:12px;">Only fully matured cohort</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">Comparing cohorts at equal maturity is the only fair method, since recent cohorts have had less time to repeat. On that basis retention shows no deterioration across the year, which means the lifetime value assumption is structurally sound. The variable is average order value, not loyalty.</div>
+  </div>
+  <div class="two-col">
+    <div class="gold-box" style="margin:0;">
+      <strong>The $475 lifetime value benchmark needs a note against it.</strong> The July 2025 cohort produced 0.763 repeat orders per customer over eleven months. Applied to this week's $213.19 average order that implies $376. Applied to the prior week's $268.87 it implies $474, almost exactly the working benchmark. So $475 is defensible at an average order around $270 but generous at $213. Given the twelve month average order value stated in the brief was $440 and the last thirty days was $250, the honest position is that $475 sits at the top of the credible range. It is a reasonable planning figure, it is not a conservative one, and it should be revisited once a full customer export with lifetime spend is available.
+    </div>
+    <div class="success-box" style="margin:0;">
+      <strong>Even at the pessimistic end the economics are strong.</strong> Google spent $648.93 this week. The store gained 36 new customers across all channels. If Google contributed even a third of those, twelve customers, the cost to acquire is $54 against a lifetime value between $376 and $475, a ratio of seven to nine times against a three times healthy threshold. If Google contributed half, the cost falls to $36 and the ratio rises above ten. A true blended figure needs Meta spend for the same week, which is the one missing input. What is already clear is that there is no version of this calculation where the channel is not comfortably profitable.
+    </div>
+  </div>
+  <div class="slide-num">15 / 19</div>
+</div>
+
+<!-- SLIDE 16: THE BUDGET CEILING -->
+<div class="slide" id="slide-16">
+  <div class="slide-header">
+    <h1>The Budget Ceiling <span>Now The Binding Constraint</span></h1>
+    <div class="slide-meta">
+      <div class="period">Capacity versus permission</div>
+      <div class="brand">Strategic View</div>
+    </div>
+  </div>
+  <div class="thesis-hero">
+    <div class="card" style="text-align:center; padding:26px 24px;">
+      <div class="mini-label">Spend Against Own Budget Caps</div>
+      <div class="thesis-num" style="font-size:58px; color:var(--accent-red);">99%</div>
+      <div style="font-size:13px; color:var(--text-secondary); margin-top:8px;">$96.56 a day spent against $97.50 a day permitted on the Google export week. Two of three serving campaigns spent above their individual caps. There is no slack left in the current settings.</div>
+    </div>
+    <div class="card" style="text-align:center; padding:26px 24px;">
+      <div class="mini-label">Google Spend As Share Of Net Sales</div>
+      <div class="thesis-num" style="font-size:58px; color:var(--accent-green);">1.72%</div>
+      <div style="font-size:13px; color:var(--text-secondary); margin-top:8px;">$648.93 of Google spend against $37,775.20 of store net sales. At the proposed $120 a day the channel would still sit under 2.3 percent of current revenue.</div>
+    </div>
+  </div>
+  <div class="section-label">Where The Ceiling Sits</div>
+  <div class="card" style="margin-bottom:16px;">
+    <div class="gauge-wrap">
+      <div>
+        <div class="gauge-top"><span>Actual spend, Google export week</span><span>$96.56 per day</span></div>
+        <div class="gauge-bg"><div class="gauge-fill" style="width:28.4%; background:var(--accent-green);">$96.56</div></div>
+      </div>
+      <div>
+        <div class="gauge-top"><span>Sum of current campaign budget caps</span><span>$97.50 per day</span></div>
+        <div class="gauge-bg"><div class="gauge-fill" style="width:28.7%; background:var(--accent-gold);">$97.50</div><div class="headroom-tag">PMax and DSA both spending over cap</div></div>
+      </div>
+      <div>
+        <div class="gauge-top"><span>Budget the business has allocated to Google</span><span>$340.00 per day</span></div>
+        <div class="gauge-bg"><div class="gauge-fill" style="width:100%; background:linear-gradient(90deg,var(--accent-blue),var(--accent-purple));">$340 available capacity</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="section-label">The Proposed Next Step, For Approval</div>
+  <div class="card" style="margin-bottom:14px;">
+    <table class="data-table">
+      <thead><tr><th>Campaign</th><th>Current</th><th>Proposed</th><th>Change</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">PMax Hero Feed</td><td>$50.00</td><td class="green">$65.00</td><td class="green">+30%</td><td style="font-size:12px;">Spent 106% of cap for two straight weeks. Averaged 12.32x at $50 against 9.11x at $35</td></tr>
+        <tr><td class="bold">Dynamic Search</td><td>$7.50</td><td class="green">$15.00</td><td class="green">+100%</td><td style="font-size:12px;">Spent 106% of cap. Best cost per conversion and highest optimisation score in the account</td></tr>
+        <tr><td class="bold">Branded Search</td><td>$40.00</td><td>$40.00</td><td>Hold</td><td style="font-size:12px;">Spent 89% of cap. Brand demand is finite and cannot be scaled with budget</td></tr>
+        <tr><td class="bold">Iodine Search</td><td>Not set</td><td class="gold">$25.00</td><td class="gold">On landing page</td><td style="font-size:12px;">Sets only once the Lugol's page is live. No budget until there is a destination</td></tr>
+        <tr class="total-row"><td>Daily total</td><td>$97.50</td><td>$120.00</td><td>+23%</td><td style="font-size:12px;">Rising to $145 when Iodine Search switches on. Still 43% of allocated capacity</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="gold-box">
+    <strong>Every figure above is a proposal for Janice to approve before anything is changed in the account.</strong> The increases are deliberately staged at 20 to 30 percent on Performance Max rather than a single jump, held for three to four days and validated against live return before the next step, so Smart Bidding does not reset its learning. Dynamic Search can take a larger proportional step because it is starting from a very low base and its bidding model is comparatively simple. Branded Search holds because you cannot buy more people searching for Dr Tennant. Nothing here commits the account to a tier that is not performing, since each step is checked before the next is taken.
+  </div>
+  <div class="slide-num">16 / 19</div>
+</div>
+
+<!-- SLIDE 17: SCALE MODELLING -->
+<div class="slide" id="slide-17">
+  <div class="slide-header">
+    <h1>Scale Modelling <span>What The Numbers Could Look Like</span></h1>
+    <div class="slide-meta">
+      <div class="period">Illustrative projections</div>
+      <div class="brand">Spend To Revenue Scenarios</div>
+    </div>
+  </div>
+  <div class="section-label">Weekly Scenarios As Spend Climbs</div>
+  <div class="card" style="margin-bottom:16px;">
+    <table class="data-table">
+      <thead><tr><th>Scenario</th><th>Daily Spend</th><th>Weekly Spend</th><th>Assumed ROAS</th><th>Weekly Value</th><th>vs This Week</th><th>Implied Conversions</th></tr></thead>
+      <tbody>
+        <tr><td class="bold">This week</td><td>$92.70</td><td>$648.93</td><td class="gold">10.99x</td><td class="green">$7,133.74</td><td style="color:var(--text-muted);">baseline</td><td>38.33</td></tr>
+        <tr><td class="bold">Step one, proposed</td><td>$120</td><td>$840</td><td class="gold">8.0x</td><td class="green">$6,720</td><td class="orange">-6%</td><td>50</td></tr>
+        <tr><td class="bold">Step two, with Iodine live</td><td>$145</td><td>$1,015</td><td class="gold">7.0x</td><td class="green">$7,105</td><td class="green">0%</td><td>60</td></tr>
+        <tr><td class="bold">Mid</td><td>$200</td><td>$1,400</td><td class="gold">6.0x</td><td class="green">$8,400</td><td class="green">+18%</td><td>83</td></tr>
+        <tr><td class="bold">Target</td><td>$260</td><td>$1,820</td><td class="gold">5.5x</td><td class="green">$10,010</td><td class="green">+40%</td><td>108</td></tr>
+        <tr class="total-row"><td>Allocated ceiling</td><td>$340</td><td>$2,380</td><td>5.0x</td><td>$11,900</td><td>+67%</td><td>141</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--text-muted);margin-top:10px;">Implied conversions calculated at the current $16.93 cost per conversion, held flat for simplicity. In practice cost per conversion will rise as spend moves into colder non brand demand, so the conversion counts are an upper bound rather than a forecast. This week's 10.99x is a strong week, so the first step shows a small revenue dip against it while conversion count rises by roughly a third.</div>
+  </div>
+  <div class="two-col">
+    <div class="gold-box" style="margin:0;">
+      <strong>Read this table on conversions, not on revenue.</strong> Because this week returned an unusually strong 10.99x, the first budget step models as roughly flat revenue while conversions rise from 38 to 50. That is the correct trade and it is exactly what the business asked for. The stated goal is more new to brand customers, not a higher ROAS multiple on a small base. Return is modelled to decay towards 5.0x as budget moves out of brand search, which converts at 19.60 percent, and into cold non brand demand, which costs more per sale. At the full allocated budget the model still lands on the top of the 4 to 5x target while roughly quadrupling conversion volume.
+    </div>
+    <div class="insight-box" style="margin:0;">
+      <strong>What it means against the new customer goal.</strong> The store added 36 new customers this week across every channel. Google is one contributor among several and cannot yet be isolated, because Google reports conversions rather than first time customers and 76.8 percent of store revenue carries no UTM source. What the Shopify data does establish is that new customer count rose 33.3 percent in a week when Google conversions were at their highest of the three week series. Fixing the attribution gap on slide 14 is what turns that correlation into a measured contribution, and it should be treated as a prerequisite for the larger budget tiers rather than an afterthought.
+    </div>
+  </div>
+  <div class="slide-num">17 / 19</div>
+</div>
+
+<!-- SLIDE 18: ACTION ITEMS -->
+<div class="slide" id="slide-18">
+  <div class="slide-header">
+    <h1>Action Items <span>Ranked By Priority</span></h1>
+    <div class="slide-meta">
+      <div class="period">Week of July 20, 2026</div>
+      <div class="brand">Recommendations And Owners</div>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">1</div>
+    <div class="action-content">
+      <h4>Ship the Lugol's Iodine landing page. Owner: John and Janice</h4>
+      <p>Unchanged as the top priority for the third week, and the Shopify data has strengthened it. Iodine drew 130 word level impressions with nothing captured, while Lugol's Iodine Plus sold 63 units and Lugol's Iodine Liquid grew 325 percent in units with no paid support. J Crow's holds 27.45 percent of that auction. The campaign is built and correctly structured, it simply has no destination. This unlocks Iodine Search, gives Performance Max a stronger page for its best converting product, and gives Demand Gen somewhere to send cold traffic.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">2</div>
+    <div class="action-content">
+      <h4>Investigate why 76.8 percent of store revenue carries no UTM source. Owner: Charles with Janice</h4>
+      <p>New and now the largest measurement issue on the account. $29,002.75 of $37,775.20 net sales arrives with no campaign source recorded, which understates every paid and email channel and makes cross channel budget comparison unreliable. Sequence: verify the corrected tracking templates resolve with a test click on each serving campaign, request the same Shopify report split by UTM medium to separate paid from free Google, then check whether the consent banner defaults to denied storage for first time visitors.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">3</div>
+    <div class="action-content">
+      <h4>Approve the budget step, PMax to $65 and Dynamic Search to $15 per day. Owner: Janice</h4>
+      <p>Both campaigns spent 106 percent of their caps and the account used 99 percent of its permitted budget. Performance Max averaged 12.32x across the two weeks at $50, better than the 9.11x it managed at $35, so the last increase improved efficiency rather than eroding it. Google spend is currently 1.72 percent of store net sales, so the sum under discussion is small against the revenue base. Proposal only, nothing changes until approved.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-1">4</div>
+    <div class="action-content">
+      <h4>Clear the disapproved Branded ads, third week outstanding. Owner: Charles</h4>
+      <p>Branded still reads some ads disapproved at a 67.9 percent optimisation score, traced to the discontinued Books line returning 404 on its destination pages. Removal rather than appeal remains the correct fix. Evidence that this is costing us is now direct: phrase match is outperforming exact on the identical dr tennant query, $4.58 against $7.32 a click, which is the signature of impaired ad rank on the exact keyword.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-2">5</div>
+    <div class="action-content">
+      <h4>Build a brand misspelling ad group instead of adding negatives. Owner: Charles</h4>
+      <p>Reversing last month's call. Dr tenant, dr tennent, dr tennet and gerald tennant produced 15 impressions, zero clicks and zero cost, so nothing is leaking. Tennant Institute is the clinic name and the Shopify store handle, so it is brand rather than leakage. A low bid misspelling ad group inside Branded Search captures this intent cheaply. Separately, investigate the $9.71 cost per click on the navigational tennantproducts com query.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-2">6</div>
+    <div class="action-content">
+      <h4>Open coverage on fulvic, and add a Restore asset group. Owner: Charles</h4>
+      <p>Fourteen fulvic queries appeared, Vital Earth Minerals entered auction insights, and Fulvic Super Concentrate grew 75 percent in units unaided. Add fulvic page targeting to Dynamic Search and build a Performance Max asset group around the product. Separately, Restore Professional Vanilla is now 40.9 percent of gross sales and warrants its own asset group so the proposed budget lands on distinct product demand rather than concentrating on one hero set.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-2">7</div>
+    <div class="action-content">
+      <h4>Review GI 60 Probiotic and the Digestive Enzyme promotional cadence. Owner: Janice</h4>
+      <p>Not a paid search item, raised because it drove the week. Digestive Enzyme fell from 127 units to 46 following a discounted push the week before, and GI 60, previously flagged as the next growth lever, fell from 34 units to 16. If heavy discounting is pulling volume forward rather than creating it, that shows up as exactly this pattern. Worth a view on promotional calendar and margin before the next push.</p>
+    </div>
+  </div>
+  <div class="action-item">
+    <div class="action-priority priority-3">8</div>
+    <div class="action-content">
+      <h4>Resolve the ki and thyroid stimulating hormone keywords, and lift the PMax optimisation score. Owner: Charles</h4>
+      <p>Ki on phrase match will match extremely broadly the moment it gets budget, and thyroid stimulating hormone sits close to the disease claim line. Both need resolving before Iodine Search spends anything. Separately, Performance Max has fallen to a 63.8 percent optimisation score, now the weakest in the account, and should be worked up before the next budget step lands on it.</p>
+    </div>
+  </div>
+  <div class="slide-num">18 / 19</div>
+</div>
+
+<!-- SLIDE 19: CLOSING -->
+<div class="slide" id="slide-closing">
+  <div style="text-align:center; max-width:900px; margin:auto;">
+    <div class="cover-eyebrow" style="margin-bottom:24px;">Tennant Products &nbsp;|&nbsp; Google Ads</div>
+    <h1 class="cover-title" style="font-size:40px;">An Acquisition Week,<br><span>Not A Soft Week</span></h1>
+    <p class="cover-subtitle" style="margin-bottom:30px;">Weekly Google Ads review | July 12 to July 18, 2026</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; text-align:left; margin-bottom:14px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Google ROAS</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:34px; font-weight:800; color:var(--accent-gold);">10.99x</div>
+        <div style="font-size:11px; color:var(--text-muted);">7.40x on Shopify last click</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Cost Per Conversion</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:34px; font-weight:800; color:var(--accent-green);">$16.93</div>
+        <div style="font-size:11px; color:var(--text-muted);">38.33 conversions on $648.93</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">New Customers</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:34px; font-weight:800; color:var(--accent-green);">+33.3%</div>
+        <div style="font-size:11px; color:var(--text-muted);">36 against 27 | Share 19.4%</div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; text-align:left; margin-bottom:26px;">
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Items Per Order</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:34px; font-weight:800; color:var(--accent-blue);">1.77</div>
+        <div style="font-size:11px; color:var(--text-muted);">From 2.42 | The week's story</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Budget Utilisation</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:34px; font-weight:800; color:var(--accent-red);">99%</div>
+        <div style="font-size:11px; color:var(--text-muted);">Of own caps | 28% of allocated</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="mini-label">Revenue Without UTM</div>
+        <div style="font-family:'DM Sans',sans-serif; font-size:34px; font-weight:800; color:var(--accent-red);">76.8%</div>
+        <div style="font-size:11px; color:var(--text-muted);">$29,003 unattributed</div>
+      </div>
+    </div>
+    <div class="exec-callout">
+      <p>Orders held flat at 195. Average order value fell because items per order fell from 2.42 to 1.77, and that happened because the week won 33 percent more new customers while the previous week had been running a discounted Digestive Enzyme push that sold 127 units against 46. Google returned 10.99x, or 7.40x on the strictest attribution available, on spend equal to 1.72 percent of store revenue. <strong>Three things to leave with: ship the iodine landing page, approve the step to $120 a day on campaigns already spending over their caps, and fix the 76.8 percent of revenue arriving with no UTM source.</strong></p>
+    </div>
+    <div style="font-size:11px; color:var(--text-muted); margin-top:22px;">Prepared by Charles Piper | July 23, 2026 | Sources: Google Ads campaign, day level and overview exports; Shopify total sales by product, net sales by channel, new versus returning customers, average order value over time, net sales over time, and customer cohort analysis</div>
+  </div>
+  <div class="slide-num">19 / 19</div>
+</div>
+</body>
+</html>
